@@ -24,7 +24,7 @@ Any issues with bugs outside this scope will be closed or ignored.
 
 ### Suggestions
 
-The bugs folder contains lists of the suggestions i have for existing features or triggers, as well as new functionality that i have come up with to cover existing technical limitations.  
+The bugs folder contains lists of the suggestions i have for existing features or triggers, as well as new functionality that i have come up with to cover current technical limitations.  
 If a suggested feature is expansive enough (ex. a new trigger) it gets its own document that goes more in detail to the purpose of the feature and why i think it is necessary.
 
 ### Referencing 
