@@ -22,3 +22,4 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 ## \[2.206\] Hitbox does not update properly after rotating a slope object
 
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.
+Both the hitbox and autobuild are affected by this.
