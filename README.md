@@ -5,7 +5,7 @@ They are not intended as a guide or introduction to the game or the editor, read
 Everything in this document has been deduced using in-game tests. As such, there might be factual errors or misinterpretations despite rigorous testing.  
 I made these notes for me to have a reference i can check anytime. I can understand them, i cannot guarantee you will.
 
-Report any issues or suggestions by raising an issue on this repo. Responses and fixes may take a couple days / weeks.
+Report any issues or suggestions by raising an issue on this repo.
 
 ### Links
 * [Easings Graphs & Tables](https://docs.google.com/spreadsheets/d/e/2PACX-1vRD8SRDrZWaDEqowrnnqCgJnp3mU2FC5mah8tCFuZOFX1KUnR1DrZNIfBwvmAdaO62NDBcMU4CV2e-p/pubhtml)
