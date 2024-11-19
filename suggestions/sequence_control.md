@@ -10,7 +10,7 @@ As to why Sequence should have this capability, it is for ease of use and optimi
 Setting up a Sequence trigger is easier and much less tedious than a switch case. It is also a single trigger and you do not need to spawn multiple Instant Count / Item Compare triggers to implement something as simple as indexing a list. No need for an Item ID either and it makes looping logic much easier to do.  
 Taking this into consideration, i propose a Sequence Control trigger to make up for Sequence's shortcomings.
 
-# Options & Functionality
+## Options & Functionality
 
 Modifies the current step of a Sequence trigger.
 
