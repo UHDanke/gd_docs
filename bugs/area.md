@@ -9,7 +9,8 @@ If the two easings differ they will both apply and conflict \- the game will pic
 
 When a solid object is scaled by a negative value, hitboxes become very thin and buggy. Spikes and other non-solid hitboxes are not affected.
 
-## \[2.207\] Area Fade stops working for one frame after the game is unpaused
+## \[2.207\] Area Fade stops working for a short duration after the game is unpaused
+Unpausing the game undoes the effect of Area Fade for at least one frame (guess, not measured).
 
 ## \[2.207\] Start Position multiplies Area effect
 
@@ -24,6 +25,7 @@ When moving an object affected by Area Scale, Rotate or Move, the object will be
 The real position of the object is not affected, other triggers which use object position will not be affected.
 
 ## \[2.206\] DEAP has no effect when used on Area Tint or Area Fade
+The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.
 
 ## \[2.206\] Area Tint ignores Base / Detail Color
 
@@ -34,6 +36,9 @@ Area Tint ignores the Base / Detail Color setting of single-color objects.
 Edit Area will override other active Edit Areas only if **Duration** \> 0\.
 
 ## \[2.206\] Stop has no effect on Edit Area
+
+Stop does not work on Edit Area.  
+I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.
 
 ## \[2.206\] Area Scale / Rotate / Move visibility may break in certain situations
 
