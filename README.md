@@ -5,18 +5,20 @@ They are not intended as a guide or introduction to the game or the editor, read
 Everything in this document has been deduced using in-game tests. As such, there might be factual errors or misinterpretations despite rigorous testing.  
 I made these notes for me to have a reference i can check anytime. I can understand them, i cannot guarantee you will.
 
-Report any issues or suggestions by raising an issue on this github repo.
+Report any issues or suggestions by raising an issue on this repo. I don't check github often, any responses and fixes may take a couple days / weeks.
 
 ### Links
 * [Easings Graphs & Tables](https://docs.google.com/spreadsheets/d/e/2PACX-1vRD8SRDrZWaDEqowrnnqCgJnp3mU2FC5mah8tCFuZOFX1KUnR1DrZNIfBwvmAdaO62NDBcMU4CV2e-p/pubhtml)
 
 ### Bugs
 
-For the purposes of debugging, i keep track of all bugs i find and figure out the cause of.  
+In order to aid with debugging, i keep track of all bugs i find and figure out the cause of.  
 You can find lists of bugs i have found in the bugs folder, split by trigger type.
 
-I am interested in trigger / editor related bug reports for the purpose of documentation only. If you found a bug you can raise an issue and i can take a look at it, within reason.
-However, i will not debug your trigger setups, this is not my job and i will not do free QA or volunteer work.
+I am interested in trigger / editor related bug reports for the purpose of documentation only.  
+If you found a bug you can raise an issue and i can take a look at it, but i give no guarantees.  
+I will not debug your trigger setups, this is not my job and i do not want to do free QA or volunteer work.
+Any issues with bugs outside this scope will be closed or ignored.
 
 **I can not fix bugs and have no direct way of sending bug reports to the developer of the game. This is not an official bug report channel.**
 
