@@ -6,7 +6,7 @@ If you try to call 2 different Enter triggers with the same Enter Channel and Ef
 ## \[2.206\] Overwriting a spawn remap of ID 2 crashes the game
 
 If you spawn remap group ID 2 to any ID, then call another spawn which remaps group ID 2 to any other non-zero ID, then call a trigger which uses group ID 2, the game will instantly crash when calling the first spawn.  
-Only ID 2 is affected,  
+Only ID 2 is affected.  
 Only Steam and Android exhibit this bug. Mac and IOS are not affected.
 
 ## \[2.207\] Regrouping objects with Group Parent IDs creates phantom groups
@@ -21,5 +21,5 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 
 ## \[2.206\] Hitbox does not update properly after rotating a slope object
 
-Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.
-Both the hitbox and autobuild are affected by this.
+Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
+Autobuild is affected by this.
