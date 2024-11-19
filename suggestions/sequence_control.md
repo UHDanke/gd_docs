@@ -39,7 +39,7 @@ Use control ID instead of group ID.
 ### Usage Examples
 
 Set 0 resets the counter to 0 (like Reset Full).  
-Negative values of Set set the counter starting from the end of the sequence. Set \-1 sets the counter to the last step.  
+Set \-1 sets the counter to the last step.  
 Offset \-1 decreases the counter by 1 (like Reset Step).  
 Offset \+1 increases the counter by 1 (skips step).  
 With Mode Stop and Mode Last, if the counter is outside.  
