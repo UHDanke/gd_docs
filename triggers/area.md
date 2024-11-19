@@ -107,8 +107,8 @@ Link Visible can be used to force objects to be visible to fix any issues regard
 
 ## Effect Strength Coefficient
 
-L \= **Length**  
-Dz \= **Deadzone**
+$L=Length$  
+$Dz=Deadzone$
 
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.  
 **Offset** and **OffsetY** offset the position of the center.  
@@ -125,18 +125,20 @@ $Distance=\sqrt{(Y_{t}-Y_{c}-OffsetY)^{2}+(X_{t}-X_{t}-Offset)^{2}}$
 
 #### Horizontal Proximity
 
-$Distance\=xt-xc-Offset$
+$Distance\=Offset+X_{c}-X_{t}$
 
 #### Vertical Proximity
 
-$Distance\=yt-yc-Offset$
+$Distance\=Offset+Y_{c}-Y_{t}$
 
 **Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1\.
 
 If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
-Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:  
-Effect Strength \= Distance  Mod \- Length  DeadzoneLength \- Length  Deadzone	(Center ⟸ Edge)  
-Inverted Effect Strength \=1-Effect Strength 			(Center ⟹ Edge)
+Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
+
+$EffectStrength_{\ ⟹}=\frac{Distance\times Mod-Length\times Deadzone}{Length\times(1-Deadzone)}$
+
+$EffectStrength_{\ ⟹}=1-EffectStrength_{\ ⟸}$
 
 The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.
 
@@ -153,6 +155,9 @@ With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** 
 
 ### Center ⟹ Edge
 
+| Lenght | Deadzone | <0 | 0 | Edge |
+| :---: | :---: | :---: | :---: | :---: |
+| \>0 | \>1 | <=0
 L \> 0 & Dz \> 1: \[\<=0:1, \>=Dz\*L:0\]  
 L \> 0 & Dz \= 1: \[\<=0:1, L:1, \>L:0\]  
 L \> 0 & 0 \< Dz \< 1: \[\<=0:1, Dz\*L:1, \>=L:0\]  
@@ -184,17 +189,17 @@ L \< 0 & Dz \< 0: \[\<=L:1, 0:Dz/(Dz-1), Dz\*L:0\]
 ## Proximity Settings
 
 | Image | No. | Area | Direction | ModBack | ModFront | Offset |
-| ----- | :---: | :---: | :---: | :---: | :---: | :---: |
-| !(resources/images/area1.png) | 1 | Circular | \|⟹ | No Effect | No Effect | X axis |
-| ![][image2] | 2 | Circular | \|⟸ | No Effect | No Effect | X axis |
-| ![][image3] | 3 | Horizontal | \|⟹ | Left | Right, Absolute | X axis |
-| ![][image4] | 4 | Horizontal | \|⟸ | Left | Right, Absolute | X axis |
-| ![][image5] | 5 | Horizontal | \|⟹ | Left | Right | X axis |
-| ![][image6] | 6 | Horizontal | \|⟸ | Left | Right | X axis |
-| ![][image7] | 7 | Vertical | \|⟹ | Down | Up, Absolute | Y axis |
-| ![][image8] | 8 | Vertical | \|⟸ | Down | Up, Absolute | Y axis |
-| ![][image9] | 9 | Vertical | \|⟸ | Down | Up | Y axis |
-| ![][image10] | 10 | Vertical | \|⟹ | Down | Up | Y axis |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/8d30a8f5-7813-49c6-b008-bee239b53811" width="50%"> | 1 | Circular | \|⟹ | No Effect | No Effect | X axis |
+| <img src="https://github.com/user-attachments/assets/b9e3d8a0-f7a5-4f50-abff-55bc8ea97878" width="50%"> | 2 | Circular | \|⟸ | No Effect | No Effect | X axis |
+| <img src="https://github.com/user-attachments/assets/24f5af6d-f09b-476f-80bf-90269069104f" width="50%"> | 3 | Horizontal | \|⟹ | Left | Right, Absolute | X axis |
+| <img src="https://github.com/user-attachments/assets/e7a29b01-8bf9-4409-acf3-59734c621cbb" width="50%"> | 4 | Horizontal | \|⟸ | Left | Right, Absolute | X axis |
+| <img src="https://github.com/user-attachments/assets/3148644d-6f9a-4bc6-92b1-e3fb5a816ab0" width="50%"> | 5 | Horizontal | \|⟹ | Left | Right | X axis |
+| <img src="https://github.com/user-attachments/assets/2bab4f43-e4fc-4afc-83cb-841c432dd181" width="50%"> | 6 | Horizontal | \|⟸ | Left | Right | X axis |
+| <img src="https://github.com/user-attachments/assets/ba9d01d7-066d-414f-bd5f-62c89ac6ec94" width="50%"> | 7 | Vertical | \|⟹ | Down | Up, Absolute | Y axis |
+| <img src="https://github.com/user-attachments/assets/1c5da365-99c2-4c48-a0f3-db6878e16c25" width="50%"> | 8 | Vertical | \|⟸ | Down | Up, Absolute | Y axis |
+| <img src="https://github.com/user-attachments/assets/11ae6d24-0702-499f-8f29-4d8b1beef073" width="50%"> | 9 | Vertical | \|⟸ | Down | Up | Y axis |
+| <img src="https://github.com/user-attachments/assets/d861d58b-622a-4bcf-b4c5-3fab9074c526" width="50%"> | 10 | Vertical | \|⟹ | Down | Up | Y axis |
 
 ## Specific Settings & Behavior
 
@@ -225,8 +230,8 @@ Center of angle is affected by **Offset** and **OffsetY**.
 
 ##### XY Movement
 
-xf=XMoveEffect Strength \+ xt  
-yf=YMoveEffect Strength \+ yt
+$X_f=XMoveEffect Strength \+ xt  
+$T_f=YMoveEffect Strength \+ yt
 
 ##### Relative Movement
 
