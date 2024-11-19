@@ -32,13 +32,13 @@ P1 and P2 positions, as well as camera positions (center, edges, corners) can be
 
 ## Order & Priority
 
-#### Order
+### Order
 
 Area triggers are processed in the following order:  
 Area Scale 🡒 Area Rotate 🡒 Area Move 🡒 Area Fade / Area Tint  
 It is not possible to change this order with **Priority**.
 
-#### Priority
+### Priority
 
 Area Move, Area Rotate, Area Scale and Area Tint have cumulative effects \- **Priority** decides the order in which they are applied, from highest first to lowest last.  
 Area Fade triggers have exclusive effects \- the trigger with highest **Priority** is used.  
@@ -49,7 +49,7 @@ If there are multiple active triggers with the same **Priority**, then spawn ord
 When multiple Areas target the same objects, they are processed first by Priority, then from oldest to newest.  
 Consecutive Area triggers use the position of center and target objects after the effect of the previous Area trigger is applied. Meaning that if you change the position of an object with an Area trigger, the next Area trigger will use the new position.
 
-#### Multiple Instances
+### Multiple Instances
 
 Normally, spawning the same Area trigger while an instance of it is already active will not create new instances or override previous ones.  
 Spawn order is unaffected by this.  
@@ -79,14 +79,14 @@ With **DEAP** selected, the Area Parent will not be affected by the Area trigger
 
 ## Object Linking
 
-#### Object Linking
+### Object Linking
 
 When linking multiple objects, they are treated as one object for the effects of Area triggers as long as an Area Parent or Group Parent is present.  
 Linked objects do not have to be part of the target group, however Group / Area Parents not part of the target group are ignored.  
 **Ignore Linked** ignores any Area Links present.  
 The Area trigger's effect is applied to all linked objects, even if they are not part of the target group.
 
-#### ID Parent Linking
+### ID Parent Linking
 
 If an ID Parent is present, the entire group is treated as one object for the effects of Area triggers.  
 If no Area Parents or Group Parents are present, the ID Parent acts as both Group Parent and Area Parent.  
@@ -119,15 +119,15 @@ Distance can be calculated using these formulas:
 **c** is position of center  
 **t** is position of target
 
-##### Circular Proximity
+#### Circular Proximity
 
 Distance \= (yt-yc-OffsetY)2+(xt-xc-Offset)2
 
-##### Horizontal Proximity
+#### Horizontal Proximity
 
 Distance \= xt-xc-Offset
 
-##### Vertical Proximity
+#### Vertical Proximity
 
 Distance \=yt-yc- Offset
 
@@ -185,16 +185,16 @@ L \< 0 & Dz \< 0: \[\<=L:1, 0:Dz/(Dz-1), Dz\*L:0\]
 
 | Image | No. | Area | Direction | ModBack | ModFront | Offset |
 | ----- | :---: | :---: | :---: | :---: | :---: | :---: |
-| ![][image1] | 1 | Circular | `|⟹` | No Effect | No Effect | X axis |
-| ![][image2] | 2 | Circular | `|⟸` | No Effect | No Effect | X axis |
-| ![][image3] | 3 | Horizontal | `|⟹` | Left | Right, Absolute | X axis |
-| ![][image4] | 4 | Horizontal | `|⟸` | Left | Right, Absolute | X axis |
-| ![][image5] | 5 | Horizontal | `|⟹` | Left | Right | X axis |
-| ![][image6] | 6 | Horizontal | `|⟸` | Left | Right | X axis |
-| ![][image7] | 7 | Vertical | `|⟹` | Down | Up, Absolute | Y axis |
-| ![][image8] | 8 | Vertical | `|⟸` | Down | Up, Absolute | Y axis |
-| ![][image9] | 9 | Vertical | `|⟸` | Down | Up | Y axis |
-| ![][image10] | 10 | Vertical | `|⟹` | Down | Up | Y axis |
+| ![][image1] | 1 | Circular | \|⟹ | No Effect | No Effect | X axis |
+| ![][image2] | 2 | Circular | \|⟸ | No Effect | No Effect | X axis |
+| ![][image3] | 3 | Horizontal | \|⟹ | Left | Right, Absolute | X axis |
+| ![][image4] | 4 | Horizontal | \|⟸ | Left | Right, Absolute | X axis |
+| ![][image5] | 5 | Horizontal | \|⟹ | Left | Right | X axis |
+| ![][image6] | 6 | Horizontal | \|⟸ | Left | Right | X axis |
+| ![][image7] | 7 | Vertical | \|⟹ | Down | Up, Absolute | Y axis |
+| ![][image8] | 8 | Vertical | \|⟸ | Down | Up, Absolute | Y axis |
+| ![][image9] | 9 | Vertical | \|⟸ | Down | Up | Y axis |
+| ![][image10] | 10 | Vertical | \|⟹ | Down | Up | Y axis |
 
 ## Specific Settings & Behavior
 
