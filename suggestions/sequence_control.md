@@ -40,10 +40,13 @@ Use control ID instead of group ID.
 
 Set 0 resets the counter to 0 (like Reset Full).  
 Set \-1 sets the counter to the last step.  
+
 Offset \-1 decreases the counter by 1 (like Reset Step).  
 Offset \+1 increases the counter by 1 (skips step).    
+
 With Mode Loop, if the counter is larger than the sequence's steps it will loop forwards, if it's negative it loops backwards.  
 The behavior i propose for negative looping is different from Reset Step, which only resets down to the first step and does not go further.  
 With By Group, Set 2 sets the counter to the first step of the second group. Offset \-1 goes back to the previous group, Offset 1 skips to the next group. This is useful for advanced looping logic.  
+
 With Unique Remap the Sequence trigger has an unique counter for each remap trigger. Use Control ID would allow you to target a specific counter.
 
