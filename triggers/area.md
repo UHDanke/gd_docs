@@ -42,7 +42,7 @@ It is not possible to change this order with **Priority**.
 
 Area Move, Area Rotate, Area Scale and Area Tint have cumulative effects \- **Priority** decides the order in which they are applied, from highest first to lowest last.  
 Area Fade triggers have exclusive effects \- the trigger with highest **Priority** is used.  
-If there are multiple active triggers with the same **Priority**, then the order is from oldest first to newest last.
+If there are multiple active triggers with the same **Priority**, then spawn order is used (oldest first to newest last).
 
 ## Multiple Areas
 
@@ -102,7 +102,7 @@ If the affected object is an ID Parent for another group, then the effect is app
 
 Area Fade and Area Tint effects do not apply if the object or Area Parent is not visible.  
 An object counts as visible if its center is within 0.5 blocks of the screen's edges.  
-For Area Scale, Rotate and Move the effect is applied in most cases regardless if the object is visible, however this is [inconsistent](#[2.206]-area-scale-/-rotate-/-move-visibility-may-break-in-certain-situations.).  
+For Area Scale, Rotate and Move the effect is applied in most cases regardless if the object is visible, however this is inconsistent.
 Link Visible can be used to force objects to be visible to fix any issues regarding visibility.
 
 ## Effect Strength Coefficient
