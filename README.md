@@ -13,13 +13,17 @@ Report any issues or suggestions by raising an issue on this github repo.
 ### Bugs
 
 For the purposes of debugging, i keep track of all bugs i find and figure out the cause of.  
-The [Bugs](#bugs) file has links to all other files that contain bug reports, as well as a list of miscellaneous bugs.  
-I take trigger / editor related bug reports in order to document them. **I can not fix bugs and have no way of sending bug reports to the developer of the game.**
+You can find lists of bugs i have found in the bugs folder, split by trigger type.
+
+I am interested in trigger / editor related bug reports for the purpose of documentation only. If you found a bug you can raise an issue and i can take a look at it, within reason.
+However, i will not debug your trigger setups, this is not my job and i will not do free QA or volunteer work.
+
+**I can not fix bugs and have no direct way of sending bug reports to the developer of the game. This is not an official bug report channel.**
 
 ### Suggestions
 
-The [Suggestions](?tab=t.w5fuqbmeupk) tab has links to all other tabs that contain suggestions.  
-Additionally, if a suggested feature is expansive enough (ex. a new trigger) it gets its own document that goes more in detail to the purpose of the feature and why i think it is necessary.
+The bugs folder contains lists of the suggestions i have for existing features or triggers, as well as new functionality that i have come up with to cover existing technical limitations.  
+If a suggested feature is expansive enough (ex. a new trigger) it gets its own document that goes more in detail to the purpose of the feature and why i think it is necessary.
 
 ### Referencing 
 
