@@ -18,3 +18,7 @@ This can cause issues by introducing phantom groups \- the group is technically 
 ## \[2.206\] Cannot create new Group Parent IDs if the trigger has 10 groups already
 
 Group Parent IDs cannot be applied to an object with 10 existing groups, even if the object has that group already.
+
+## \[2.206\] Hitbox does not update properly after rotating a slope object
+
+Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.
