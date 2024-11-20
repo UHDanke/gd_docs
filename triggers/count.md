@@ -26,7 +26,7 @@ Count will activate on the next item update since the stored value no longer mat
 The interrupted spawn is resumed after all activated Count spawns finish.   
 If multiple Count triggers activate at the same time, they are spawned in order, one after the other.
 
-#### Target Order {#target-order}
+#### Target Order
 
 Count instances are ordered by **Target Count** in ascending order if the new **Item ID** value is bigger or equal to the old one, and in descending order if the value is strictly lower.  
 Instances with the same **Target Count** use spawn order (from oldest to newest).
@@ -36,7 +36,7 @@ Instances with the same **Target Count** use spawn order (from oldest to newest)
 The spawn of Count can interrupt other active Count spawns.   
 This happens even if the old and new **Item ID** value are identical, for example from a Pickup trigger that adds 0\.
 
-On an item change, all Count instances with the specified **Item ID** get queued as outlined in [Target Order](#target-order). This Count update will use the new value of the **Item ID** at the moment of the change to update the stored values and decide what instances spawn.
+On an item change, all Count instances with the specified **Item ID** get queued as outlined in Target Order. This Count update will use the new value of the **Item ID** at the moment of the change to update the stored values and decide what instances spawn.
 
 If any of the Count spawns trigger an item change, a new Count update will be created, as described above, using the new item value. The instances will, again, be sorted using the Target Order in ascending or descending order.
 
