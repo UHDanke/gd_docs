@@ -54,7 +54,7 @@ If there is any interest in making this behavior less nonsensical, new Count spa
 ### ID Limits
 
 Minimum **Item ID** is 0, maximum **Item ID** is 9999\.  
-**Item ID** 0 is usable by Count, but only Pickup is able to use it.
+**Item ID** 0 is usable by Count, but only Pickup is able to modify it.
 
 ### Remappable IDs
 
