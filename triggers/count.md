@@ -1,5 +1,7 @@
 # Count
 
+Spawns or toggles a **Group ID** when the **Item ID** value reaches or passes **Target Count**.
+
 ## Activation
 
 Each instance of Count stores the **Item ID**'s last value. When the **Item ID** value changes, Count updates its stored value to the new one.  
