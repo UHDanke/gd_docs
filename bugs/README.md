@@ -1,3 +1,5 @@
+# Bugs
+
 ### Criteria for bugs
 
 The way i classify a certain behavior as a bug is entirely subjective, but there are two main criterias i follow:
