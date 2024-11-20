@@ -40,8 +40,7 @@ It is not possible to change this order with **Priority**.
 
 ### Priority
 
-Area Move, Area Rotate, Area Scale and Area Tint have cumulative effects \- **Priority** decides the order in which they are applied, from highest first to lowest last.  
-Area Fade triggers have exclusive effects \- the trigger with highest **Priority** is used.  
+Area triggers have cumulative effects \- **Priority** decides the order in which they are applied, from highest first to lowest last.  
 If there are multiple active triggers with the same **Priority**, then spawn order is used (oldest first to newest last).
 
 ## Multiple Areas
@@ -136,9 +135,9 @@ $Distance\=Offset+Y_{c}-Y_{t}$
 If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
 Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
 
-$EffectStrength_{\ ⟹}=\frac{Distance\times Mod-Length\times Deadzone}{Length\times(1-Deadzone)}$
+$EffectStrength_{\ |⟹}=\frac{Distance\times Mod-Length\times Deadzone}{Length\times(1-Deadzone)}$
 
-$EffectStrength_{\ ⟹}=1-EffectStrength_{\ ⟸}$
+$EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
 
 The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.
 
@@ -155,36 +154,37 @@ With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** 
 
 ### Center ⟹ Edge
 
-| Lenght | Deadzone | <0 | 0 | Edge |
-| :---: | :---: | :---: | :---: | :---: |
-| \>0 | \>1 | <=0
-L \> 0 & Dz \> 1: \[\<=0:1, \>=Dz\*L:0\]  
-L \> 0 & Dz \= 1: \[\<=0:1, L:1, \>L:0\]  
-L \> 0 & 0 \< Dz \< 1: \[\<=0:1, Dz\*L:1, \>=L:0\]  
-L \> 0 & Dz \= 0: \[\<=0:1, \>=L:0\]  
-L \> 0 & Dz \< 0: \[\<=Dz\*L:1, 0:1/(1-Dz), \>=L:0\]  
-L \= 0 & Dz \> 1:  \[\<=0:0, \>0:1\]  
-L \= 0 & Dz \<= 1: \[\<0:1, \>=0:0\]  
-L \< 0 & Dz \> 1:  \[\<=Dz\*L:1, L:0, \>=0:0\]  
-L \< 0 & Dz \= 1:  \[\<=L:0, \>L:1, \>=0:1\]  
-L \< 0 & 0 \< Dz \< 1: \[\<=L:0, Dz\*L:1, \>=0:1\]  
-L \< 0 & Dz \= 0: \[\<=L:0, \>=0:1\]  
-L \< 0 & Dz \< 0: \[\<=L:0, 0:1/(1-Dz), \>=Dz\*L:1\]
+| Length | Deadzone | Max | Min | Center | Sign |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| L \> 0 | Dz \> 1 | \>=Dz\*L | \<=L | 0 | + |
+| L \> 0 | Dz \= 1 | \< L | \>=L | 1 | + |
+| L \> 0 | 0 \< Dz \< 1 | \<=Dz\*L | \>=L | 1 | + |
+| L \> 0 | Dz \= 0 | \<=0 | \>=L | 1 | + |
+| L \> 0 | Dz \< 0 | \<=Dz\*L | \>=L | Dz/(Dz-1) | -/+ |
+| L \= 0 | Dz \> 1 | \> 0 | 0 | 0 | + |
+| L \= 0 | Dz \<= 1 | \< 0 | 0 | 0 | - |
+| L \< 0 | Dz \> 1 | \<=Dz\*L | \>=L | 0 | - |
+| L \< 0 | Dz \= 1 | \> L | \<=L | 1 | - |
+| L \< 0 | 0 \< Dz \< 1 | \>=Dz\*L | \<=L | 1 | - |
+| L \< 0 | Dz \= 0 | \>=0 | \<=L | 1 | - |
+| L \< 0 | Dz \< 0 | \>=Dz\*L | \<=L | Dz/(Dz-1) | -/+ |
 
 ### Center ⟸ Edge
 
-L \> 0 & Dz \> 1:  \[\<=0:0, L:0, \>=Dz\*L:1\]  
-L \> 0 & Dz \= 1: \[\<=0:0, L:0, \>L:1\]  
-L \> 0 & 0 \< Dz \< 1: \[\<=0:0, Dz\*L:0, \>=L:1\]  
-L \> 0 & Dz \= 0: \[\<=0:0, \>=L:1\]  
-L \> 0 & Dz \< 0:  \[\<=Dz\*L:0, 0:Dz/(1-Dz), \>=L:1\]  
-L \= 0 & Dz \> 1: \[\<=0:1, \>0:0\]  
-L \= 0 & Dz \<= 1: \[\<0:0, \>=0:1\]  
-L \< 0 & Dz \> 1:  \[\<=Dz\*L:0, L:1, \>=0:1\]  
-L \< 0 & Dz \= 1: \[\<L:1, L:0, \>=0:0\]  
-L \< 0 & 0 \< Dz \< 1: \[\<=L:1, Dz\*L:0, \>=0:0\]  
-L \< 0 & Dz \= 0: \[\<=L:1, \>=0:0\]  
-L \< 0 & Dz \< 0: \[\<=L:1, 0:Dz/(Dz-1), Dz\*L:0\]
+| Length | Deadzone | Max | Min | Center | Sign |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| L \> 0 | Dz \> 1 | \<=L | \>=Dz\*L | 0 | + |
+| L \> 0 | Dz \= 1 | \>=L | \< L | 1 | + |
+| L \> 0 | 0 \< Dz \< 1 | \>=L | \<=Dz\*L | 1 | + |
+| L \> 0 | Dz \= 0 | \>=L | \<=0 | 1 | + |
+| L \> 0 | Dz \< 0 | \>=L | \<=Dz\*L | 1/(1-Dz) | -/+ |
+| L \= 0 | Dz \> 1 | 0 | \> 0 | 0 | + |
+| L \= 0 | Dz \<= 1 | 0 | \< 0 | 0 | - |
+| L \< 0 | Dz \> 1 | \>=L | \<=Dz\*L | 0 | - |
+| L \< 0 | Dz \= 1 | \<=L | \> L | 1 | - |
+| L \< 0 | 0 \< Dz \< 1 | \<=L | \>=Dz\*L | 1 | - |
+| L \< 0 | Dz \= 0 | \<=L | \>=0 | 1 | - |
+| L \< 0 | Dz \< 0 | \<=L | \>=Dz\*L | 1/(1-Dz) | -/+ |
 
 ## Proximity Settings
 
@@ -230,17 +230,21 @@ Center of angle is affected by **Offset** and **OffsetY**.
 
 ##### XY Movement
 
-$X_f=XMoveEffect Strength \+ xt  
-$T_f=YMoveEffect Strength \+ yt
+$X_{f} = XMove \times EffectStrength + X_{t}$
+$Y_{f} = YMove \times EffectStrength + Y_{t}$
 
 ##### Relative Movement
 
-radius= MoveDistEffect StrengthMIN(3  distanceRFade,1)  
-distance \= (yc-yt)2+(xc-xt)2  
-angle \= arctan(yc-ytxc-xt)  
-xf \= rcos(angle)+xt  
-yf \= rsin(angle)+yt
+$Distance = \sqrt{(Y_{c}-Y_{t})^2+(X_{c}-X_{t})^2}$
 
+$Radius = MoveDist \times EffectStrength\times \min(\frac{Distance}{RFade},1)$
+
+$Angle = \arctan(\frac{(Y_{c}-Y_{t}}{X_{c}-X_{t}})$
+
+$X_{f} = Radius \times \cos(Angle) + X_{t}$  
+$Y_{f} = Radius \times \sin(Angle) + Y_{t}$
+
+Where:  
 **c** is position of center  
 **t** is position of target  
 **f** is position of target when effect is applied
@@ -267,13 +271,14 @@ Solid objects have limitations when rotated. While the visual rotates by any deg
 #### Behavior
 
 If not linked, objects are scaled along their own X and Y axis.  
-The effect applied is calculated using this formula:  
-Scale=1+Coefficient(Max Scale-1)
+The effect applied is calculated using this formula:
 
-Where *Max Scale* is **ScaleX** or **ScaleY**.
+$EffectScale=1+EffectStrength \times (Scale-1)$
+
+Where *Scale* is **ScaleX** or **ScaleY**.
 
 If the scale value is negative, the object will be flipped around the respective axis.   
-Due to a [bug](#[2.207]-thin-solid-hitboxes-when-scale-is-negative) with Area Scale solid object hitboxes become thin when scaled with a negative value.  
+Due to a bug with Area Scale solid object hitboxes become thin when scaled with a negative value.  
 The degree of slopes can be changed using transform effects like object warping or Area Scale.  
 Move effects (except Area Move and Area Rotate) are also scaled.
 
@@ -290,7 +295,7 @@ Move effects (except Area Move and Area Rotate) are also scaled.
 Multiple Area Fade effects on the same object stack, but unlike other opacity effects, not multiplicatively.  
 The effect multiplies with other opacity effects (Alpha trigger and color channel Opacity).  
 Area Fade does not have an **Easing** option.  
-Due to a [bug](#[2.207]-area-fade-stops-working-for-one-frame-after-the-game-is-unpaused), Area Fade effects stop working for one frame after the game is unpaused.
+Due to a bug, Area Fade effects stop working for one frame after the game is unpaused.
 
 ### Area Tint
 
@@ -307,8 +312,8 @@ Due to a [bug](#[2.207]-area-fade-stops-working-for-one-frame-after-the-game-is-
 Area Tint is applied after other color effects (Color, Pulse, Copy Color).
 
 The effect applied is calculated using this formula:  
-Color=ObjectColor+Tint(ColorChannel-ObjectColor)  
-ObjectColorColor ColorChannel
+$Color=ObjectColor+Tint(ColorChannel-ObjectColor)$  
+$ObjectColor \le Color \le ColorChannel$
 
 If **Tint** \<= 0 no tint is applied.  
 If 0 \< **Tint** \< 1 the max tint is proportional to **Tint**.  
@@ -454,7 +459,6 @@ Advanced Follow targeting is affected by Area effects. Due to this, certain inte
 Using DEAP with Advanced Follow is recommended.
 
 # Bugs
-
 
 # Suggestions
 
