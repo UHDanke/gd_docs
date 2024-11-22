@@ -111,7 +111,6 @@ $Dz=Deadzone$
 
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.  
 **Offset** and **OffsetY** offset the position of the center.  
-**Offset** is not affected by **ModFront** / **ModBack**.
 
 Distance can be calculated using these formulas:
 
@@ -124,18 +123,18 @@ $Distance=\sqrt{(Y_{t}-Y_{c}-OffsetY)^{2}+(X_{t}-X_{t}-Offset)^{2}}$
 
 #### Horizontal Proximity
 
-$Distance\=Offset+X_{c}-X_{t}$
+$Distance\=Offset+(X_{c}-X_{t})\times Mod$
 
 #### Vertical Proximity
 
-$Distance\=Offset+Y_{c}-Y_{t}$
+$Distance\=Offset+(Y_{c}-Y_{t})\times Mod$
 
 **Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1\.
 
 If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
 Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
 
-$EffectStrength_{\ |⟹}=\frac{Distance\times Mod-Length\times Deadzone}{Length\times(1-Deadzone)}$
+$EffectStrength_{\ |⟹}=\frac{Distance-Length\times Deadzone}{Length\times(1-Deadzone)}$
 
 $EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
 
@@ -146,6 +145,7 @@ The result is fed into the **Easing** function and is then used to calculate the
 For radial proximity, Mod has no effect.  
 For horizontal and vertical proximity, **ModBack** is applied if **Distance** is positive and **ModFront** is applied if Distance is negative.  
 For the symmetrical options, the value of **ModFront** is absolute.
+**Offset** is not affected by **ModFront** / **ModBack**.
 
 ### Ease Out
 
@@ -230,7 +230,7 @@ Center of angle is affected by **Offset** and **OffsetY**.
 
 ##### XY Movement
 
-$X_{f} = XMove \times EffectStrength + X_{t}$
+$X_{f} = XMove \times EffectStrength + X_{t}$  
 $Y_{f} = YMove \times EffectStrength + Y_{t}$
 
 ##### Relative Movement
