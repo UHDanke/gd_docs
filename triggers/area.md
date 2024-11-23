@@ -93,9 +93,10 @@ If an Area Parent or Group Parent is present on an object that is not the ID Par
 If the ID Parent object is an Area/Group Parent, other Area/Group Parents in the same group are ignored.
 
 **Ignore GParent** ignores the ID Parent.  
-ID Parents have priority over Object Links.  
-Unlike Object Links, the Area trigger's effect is not applied to objects not part of the target group.   
+ID Parents override object links.  
+Unlike object links, with group links the area effect is not applied to objects not part of the target group.  
 If the affected object is an ID Parent for another group, then the effect is applied to the entire group.
+While object links need multiple objects to count as linked, you only need one ID Parent to create a linked group.  
 
 ## Visibility
 
