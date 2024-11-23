@@ -76,7 +76,7 @@ If you define a non-required template and its default template is undefined, the
 Identical templates are merged into one single variation.  
 All object properties, such as groups, layers, z order, extra options are saved within templates.  
 Due to this it can sometimes be difficult to identify near identical templates in the variations browser.  
-When using Create on a layer, the created objects will use the current layer instead. This does not apply for Layer 2 or on the "All" Layer.  
+When using Create on a layer, the created objects will use the current layer instead. This does not apply for Editor L2 or on the "All" Layer.  
 All blocks, besides other smart blocks, can be part of a template \- including triggers.  
 It is not possible to template smart blocks, as they are ignored when using **Template**.  
 Since they are ignored, the object properties of smart blocks do not matter when templating.
