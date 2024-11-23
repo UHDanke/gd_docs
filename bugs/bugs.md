@@ -33,7 +33,7 @@ Groups spawned by a remapped Instant Collision do not inherit remaps.
 
 ## \[2.207\] Spamming restart (R key) skips spawn activation
 
-Spamming R quickly can skip the activation of spawns placed before the line.
+Spamming R quickly can skip the activation of spawns placed before the origin line.
 I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.
 
 # Area Triggers
