@@ -13,7 +13,7 @@ Report any issues or suggestions by raising an issue on this repo.
 ### Bugs
 
 In order to aid with debugging, i keep track of all bugs i find and figure out the cause of.  
-You can find lists of bugs i have found in the bugs folder, split by trigger type.
+You can find a list of my own findings in the bugs folder, split by trigger type.
 
 I am interested in trigger / editor related bug reports for the purpose of documentation only.  
 If you found a bug you can raise an issue and i can take a look at it, but i give no guarantees.  
@@ -24,7 +24,7 @@ Any issues with bugs outside this scope will be closed or ignored.
 
 ### Suggestions
 
-The suggestions folder contains lists of the suggestions i have for existing features or triggers, as well as new functionality that i have come up with to cover current technical limitations.  
+The suggestions folder contains a list of suggestions i have for existing features or triggers, as well as new functionality that i have come up with to cover current technical limitations.  
 If a suggested feature is expansive enough (ex. a new trigger) it gets its own document that goes more in detail to the purpose of the feature and why i think it is necessary.
 
 ### Referencing 
