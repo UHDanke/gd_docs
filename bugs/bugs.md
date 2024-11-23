@@ -25,7 +25,16 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
 Autobuild is affected by this.
 
-## \[2.206\] Large math operations on ItemIDs are innacurate.
+## \[2.206\] Large math operations on ItemIDs are innacurate
+
+## \[2.207\] Instant Collision resets remaps
+
+Groups spawned by a remapped Instant Collision do not inherit remaps.
+
+## \[2.207\] Spamming restart (R key) skips spawn activation
+
+Spamming R quickly can skip the activation of spawns placed before the line.
+I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.
 
 # Area Triggers
 
