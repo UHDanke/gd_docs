@@ -272,7 +272,10 @@ Solid objects have limitations when rotated. While the visual rotates by any deg
 #### Behavior
 
 If not linked, objects are scaled along their own X and Y axis.  
-The effect applied is calculated using this formula:
+If linked, objects are scaled along the world X and Y axis.  
+Area Scale does not support relative rotation.
+
+The scale effect applied is calculated using this formula:
 
 $EffectScale=1+EffectStrength \times (Scale-1)$
 
