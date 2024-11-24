@@ -107,11 +107,18 @@ Link Visible can be used to force objects to be visible to fix any issues regard
 
 ## Effect Strength Coefficient
 
+The effect of Area triggers varies depending on the distance between the center and targets.  
+The strength coefficient represents the proportion of the applied effect for all Area triggers.
+
+Notations:  
 $L=Length$  
 $Dz=Deadzone$
 
+### Distance
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.  
 **Offset** and **OffsetY** offset the position of the center.  
+The value of distance is sensible to float and addition errors \- centering an object perfectly after it is moved is not always possible.
+
 
 Distance can be calculated using these formulas:
 
@@ -145,13 +152,13 @@ The result is fed into the **Easing** function and is then used to calculate the
 
 For radial proximity, Mod has no effect.  
 For horizontal and vertical proximity, **ModBack** is applied if **Distance** is positive and **ModFront** is applied if Distance is negative.  
-For the symmetrical options, the value of **ModFront** is absolute.
-**Offset** is not affected by **ModFront** / **ModBack**.
+For the symmetrical options, the value of **Distance** is always positive when **ModFront** is applied, even if the value of **ModFront** is negative.  
+**Offset** is not affected by Mod.
 
 ### Ease Out
 
 With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** is applied on **ModFront**.  
-**Ease Out** is also applied when using radial proximity, despite Mod having no effect.
+**Easing2** is mistakenly applied when using radial proximity, conflicting with **Easing**.
 
 ### Center ⟹ Edge
 
