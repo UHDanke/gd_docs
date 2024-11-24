@@ -38,7 +38,7 @@ $$ElasticInOut(x,\ easeRate) =
 
 ## Bounce
 
-$$BounceIn(x) = BounceOut(1-x)$$
+$$BounceIn(x) = 1-BounceOut(1-x)$$
 
 $$BounceOut(x) = 
   \begin{cases}
