@@ -179,7 +179,6 @@ With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** 
 
 ### Center ⟸ Edge
 
-| Length | Deadzone | Max | Min | Center | Sign |
 | Length | Deadzone | [Max](## "Distance value at max strength") | [Min](## "Distance value at min strength") | [Center](## "Strength value at distance 0") | [Sign](## "The sign of distance (positive or negative) where the strength is greater than min") | [Direction](## "The direction (relative to the center) where the strength value decreases") |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $L \gt 0$ | $Dz \gt 1$ | $\le L$ | $\ge Dz\cdot L$ | 1 | + |\|⟹|
