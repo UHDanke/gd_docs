@@ -27,7 +27,7 @@ $$ElasticIn(x,\ easeRate) =
     1 & \text{for}& x \ge 1
   \end{cases}$$
   
-$$ElasticOut(x,\ easeRate) = ElasticIn(1-x,\ easeRate)$$
+$$ElasticOut(x,\ easeRate) = 1-ElasticIn(1-x,\ easeRate)$$
 
 $$ElasticInOut(x,\ easeRate) = 
   \begin{cases}
