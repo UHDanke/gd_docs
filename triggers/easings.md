@@ -99,7 +99,7 @@ $$BackIn(x) =
     1 & \text{for}& 1 \le x
   \end{cases}$$
   
-$$BackOut(x) = BackIn(1-x)$$
+$$BackOut(x) = 1-BackIn(1-x)$$
 
 $$BackInOut(x,\ easeRate) = 
   \begin{cases}
