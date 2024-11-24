@@ -110,10 +110,6 @@ Link Visible can be used to force objects to be visible to fix any issues regard
 The effect of Area triggers varies depending on the distance between the center and targets.  
 The strength coefficient represents the proportion of the applied effect for all Area triggers.
 
-Notations:  
-$L=Length$  
-$Dz=Deadzone$
-
 ### Distance
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.  
 **Offset** and **OffsetY** offset the position of the center.  
@@ -137,17 +133,6 @@ $Distance\=Offset+(X_{c}-X_{t})\cdot Mod$
 
 $Distance\=Offset+(Y_{c}-Y_{t})\cdot Mod$
 
-**Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1\.
-
-If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
-Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
-
-$EffectStrength_{\ |⟹}=\frac{Distance-Length\cdot Deadzone}{Length\cdot(1-Deadzone)}$
-
-$EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
-
-The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.
-
 ### Mod
 
 For radial proximity, Mod has no effect.  
@@ -160,9 +145,30 @@ For the symmetrical options, the value of **Distance** is always positive when *
 With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** is applied on **ModFront**.  
 **Easing2** is mistakenly applied when using radial proximity, conflicting with **Easing**.
 
-### Center ⟹ Edge
+### Length and Deadzone
+**Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1.  
 
-| Length | Deadzone | [Max](## "Distance value at max strength") | [Min](## "Distance value at min strength") | [Center](## "Strength value at distance 0") | [Sign](## "The sign of distance (positive or negative) where the strength is greater than min") | [Direction](## "The direction (relative to the center) where the strength value decreases") |
+If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
+Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
+
+$EffectStrength_{\ |⟹}=\frac{Distance-Length\cdot Deadzone}{Length\cdot(1-Deadzone)}$
+
+$EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
+
+The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.  
+  
+Notations:
+* L = Length  
+* Dz = Deadzone  
+* Max - Distance value at max strength  
+* Min - Distance value at min strength  
+* Center - Strength value at distance 0  
+* Sign - The sign of distance (positive or negative) where the strength is greater than min  
+* Direction -  The direction (relative to the center) along which the strength value decreases  
+
+#### Center ⟹ Edge
+
+| Length | Deadzone | Max | Min | Center | Sign | Direction |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $L \gt 0$ | $Dz \gt 1$ | $\ge Dz\cdot L$ | $\le L$ | 0 | + |\|⟸|
 | $L \gt 0$ | $Dz = 1$ | $\lt L$ | $\ge L$ | 1 | + |\|⟹|
@@ -177,9 +183,9 @@ With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** 
 | $L \lt 0$ | $Dz = 0$ | $\ge 0$ | $\le L$ | 1 | - |\|⟹|
 | $L \lt 0$ | $Dz \lt 0$ | $\ge Dz\cdot L$ | $\le L$ | $Dz/(Dz-1)$ | -/+ |-|
 
-### Center ⟸ Edge
+#### Center ⟸ Edge
 
-| Length | Deadzone | [Max](## "Distance value at max strength") | [Min](## "Distance value at min strength") | [Center](## "Strength value at distance 0") | [Sign](## "The sign of distance (positive or negative) where the strength is greater than min") | [Direction](## "The direction (relative to the center) where the strength value decreases") |
+| Length | Deadzone | Max | Min | Center | Sign | Direction |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $L \gt 0$ | $Dz \gt 1$ | $\le L$ | $\ge Dz\cdot L$ | 1 | + |\|⟹|
 | $L \gt 0$ | $Dz = 1$ | $\ge L$ | $\lt L$ | 0 | + |\|⟸|
