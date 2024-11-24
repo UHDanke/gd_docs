@@ -124,18 +124,18 @@ $Distance=\sqrt{(Y_{t}-Y_{c}-OffsetY)^{2}+(X_{t}-X_{t}-Offset)^{2}}$
 
 #### Horizontal Proximity
 
-$Distance\=Offset+(X_{c}-X_{t})\times Mod$
+$Distance\=Offset+(X_{c}-X_{t})\cdot Mod$
 
 #### Vertical Proximity
 
-$Distance\=Offset+(Y_{c}-Y_{t})\times Mod$
+$Distance\=Offset+(Y_{c}-Y_{t})\cdot Mod$
 
 **Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1\.
 
 If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.  
 Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
 
-$EffectStrength_{\ |⟹}=\frac{Distance-Length\times Deadzone}{Length\times(1-Deadzone)}$
+$EffectStrength_{\ |⟹}=\frac{Distance-Length\cdot Deadzone}{Length\cdot(1-Deadzone)}$
 
 $EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
 
@@ -155,37 +155,38 @@ With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** 
 
 ### Center ⟹ Edge
 
-| Length | Deadzone | Max | Min | Center | Sign |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| L \> 0 | Dz \> 1 | \>=Dz\*L | \<=L | 0 | + |
-| L \> 0 | Dz \= 1 | \< L | \>=L | 1 | + |
-| L \> 0 | 0 \< Dz \< 1 | \<=Dz\*L | \>=L | 1 | + |
-| L \> 0 | Dz \= 0 | \<=0 | \>=L | 1 | + |
-| L \> 0 | Dz \< 0 | \<=Dz\*L | \>=L | Dz/(Dz-1) | -/+ |
-| L \= 0 | Dz \> 1 | \> 0 | 0 | 0 | + |
-| L \= 0 | Dz \<= 1 | \< 0 | 0 | 0 | - |
-| L \< 0 | Dz \> 1 | \<=Dz\*L | \>=L | 0 | - |
-| L \< 0 | Dz \= 1 | \> L | \<=L | 1 | - |
-| L \< 0 | 0 \< Dz \< 1 | \>=Dz\*L | \<=L | 1 | - |
-| L \< 0 | Dz \= 0 | \>=0 | \<=L | 1 | - |
-| L \< 0 | Dz \< 0 | \>=Dz\*L | \<=L | Dz/(Dz-1) | -/+ |
+| Length | Deadzone | [Max](## "Distance value at max strength") | [Min](## "Distance value at min strength") | [Center](## "Strength value at distance 0") | [Sign](## "The sign of distance (positive or negative) where the strength is greater than min") | [Direction](## "The direction (relative to the center) where the strength value decreases") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $L \gt 0$ | $Dz \gt 1$ | $\ge Dz\cdot L$ | $\le L$ | 0 | + |\|⟸|
+| $L \gt 0$ | $Dz = 1$ | $\lt L$ | $\ge L$ | 1 | + |\|⟹|
+| $L \gt 0$ | $0\lt Dz\lt 1$| $\le Dz\cdot L$ | $\ge L$ | 1 | + |\|⟹|
+| $L \gt 0$ | $Dz = 0$ | $\le 0$ | $\ge L$ | 1 | + |\|⟹|
+| $L \gt 0$ | $Dz \lt 0$ | $\le Dz\cdot L$ | $\ge L$ | $Dz/(Dz-1)$ | -/+ |-|
+| $L = 0$ | $Dz \gt 1$ | $\gt 0$ | $\le 0$ | 0 | + |\|⟸|
+| $L = 0$ | $Dz \le 1$ | $\lt 0$ | $\ge 0$ | 0 | - |\|⟸|
+| $L \lt 0$ | $Dz \gt 1$ | $\le Dz\cdot L$ | $\ge L$ | 0 | - |\|⟸|
+| $L \lt 0$ | $Dz = 1$ | $\gt L$ | $\le L$ | 1 | - |\|⟹|
+| $L \lt 0$ | $0\lt Dz\lt 1$| $\ge Dz\cdot L$ | $\le L$ | 1 | - |\|⟹|
+| $L \lt 0$ | $Dz = 0$ | $\ge 0$ | $\le L$ | 1 | - |\|⟹|
+| $L \lt 0$ | $Dz \lt 0$ | $\ge Dz\cdot L$ | $\le L$ | $Dz/(Dz-1)$ | -/+ |-|
 
 ### Center ⟸ Edge
 
 | Length | Deadzone | Max | Min | Center | Sign |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| L \> 0 | Dz \> 1 | \<=L | \>=Dz\*L | 0 | + |
-| L \> 0 | Dz \= 1 | \>=L | \< L | 1 | + |
-| L \> 0 | 0 \< Dz \< 1 | \>=L | \<=Dz\*L | 1 | + |
-| L \> 0 | Dz \= 0 | \>=L | \<=0 | 1 | + |
-| L \> 0 | Dz \< 0 | \>=L | \<=Dz\*L | 1/(1-Dz) | -/+ |
-| L \= 0 | Dz \> 1 | 0 | \> 0 | 0 | + |
-| L \= 0 | Dz \<= 1 | 0 | \< 0 | 0 | - |
-| L \< 0 | Dz \> 1 | \>=L | \<=Dz\*L | 0 | - |
-| L \< 0 | Dz \= 1 | \<=L | \> L | 1 | - |
-| L \< 0 | 0 \< Dz \< 1 | \<=L | \>=Dz\*L | 1 | - |
-| L \< 0 | Dz \= 0 | \<=L | \>=0 | 1 | - |
-| L \< 0 | Dz \< 0 | \<=L | \>=Dz\*L | 1/(1-Dz) | -/+ |
+| Length | Deadzone | [Max](## "Distance value at max strength") | [Min](## "Distance value at min strength") | [Center](## "Strength value at distance 0") | [Sign](## "The sign of distance (positive or negative) where the strength is greater than min") | [Direction](## "The direction (relative to the center) where the strength value decreases") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $L \gt 0$ | $Dz \gt 1$ | $\le L$ | $\ge Dz\cdot L$ | 1 | + |\|⟹|
+| $L \gt 0$ | $Dz = 1$ | $\ge L$ | $\lt L$ | 0 | + |\|⟸|
+| $L \gt 0$ | $0\lt Dz\lt 1$| $\ge L$ | $\le Dz\cdot L$ | 0 | + |\|⟸|
+| $L \gt 0$ | $Dz = 0$ | $\ge L$ | $\le 0$ | 0 | + |\|⟸|
+| $L \gt 0$ | $Dz \lt 0$ | $\ge L$ | $\le Dz\cdot L$ | $1/(1-Dz)$ | -/+ |-|
+| $L = 0$ | $Dz \gt 1$ | $\le 0$ | $\gt 0$ | 1 | + |\|⟹|
+| $L = 0$ | $Dz \le 1$ | $\ge 0$ | $\lt 0$ | 1 | - |\|⟹|
+| $L \lt 0$ | $Dz \gt 1$ | $\ge L$ | $\le Dz\cdot L$ | 1 | - |\|⟹|
+| $L \lt 0$ | $Dz = 1$ | $\le L$ | $\gt L$ | 0 | - |\|⟸|
+| $L \lt 0$ | $0\lt Dz\lt 1$| $\le L$ | $\ge Dz\cdot L$ | 0 | - |\|⟸|
+| $L \lt 0$ | $Dz = 0$ | $\le L$ | $\ge 0$ | 1 | - |\|⟸|
+| $L \lt 0$ | $Dz \lt 0$ | $\le L$ | $\ge Dz\cdot L$ | $1/(1-Dz)$ | -/+ |-|
 
 ## Proximity Settings
 
@@ -231,24 +232,23 @@ Center of angle is affected by **Offset** and **OffsetY**.
 
 ##### XY Movement
 
-$X_{f} = XMove \times EffectStrength + X_{t}$  
-$Y_{f} = YMove \times EffectStrength + Y_{t}$
+$X = XMove \cdot EffectStrength + X_{t}$  
+$Y = YMove \cdot EffectStrength + Y_{t}$
 
 ##### Relative Movement
 
 $Distance = \sqrt{(Y_{c}-Y_{t})^2+(X_{c}-X_{t})^2}$
 
-$Radius = MoveDist \times EffectStrength\times \min(\frac{Distance}{RFade},1)$
+$Radius = MoveDist \cdot EffectStrength\cdot \min(\frac{Distance}{RFade},1)$
 
 $Angle = \arctan(\frac{(Y_{c}-Y_{t}}{X_{c}-X_{t}})$
 
-$X_{f} = Radius \times \cos(Angle) + X_{t}$  
-$Y_{f} = Radius \times \sin(Angle) + Y_{t}$
+$X = Radius \cdot \cos(Angle) + X_{t}$  
+$Y = Radius \cdot \sin(Angle) + Y_{t}$
 
 Where:  
 **c** is position of center  
 **t** is position of target  
-**f** is position of target when effect is applied
 
 ### Area Rotate
 
@@ -277,7 +277,7 @@ Area Scale does not support relative rotation.
 
 The scale effect applied is calculated using this formula:
 
-$EffectScale=1+EffectStrength \times (Scale-1)$
+$EffectScale=1+EffectStrength \cdot (Scale-1)$
 
 Where *Scale* is **ScaleX** or **ScaleY**.
 
@@ -319,10 +319,10 @@ The effect applied is calculated using this formula:
 $Color=ObjectColor+Tint(ColorChannel-ObjectColor)$  
 $ObjectColor \le Color \le ColorChannel$
 
-If **Tint** \<= 0 no tint is applied.  
-If 0 \< **Tint** \< 1 the max tint is proportional to **Tint**.  
-If **Tint** \= 1 at max tint the object color is equal to **Color Channe**l.  
-If **Tint** \> 1 the strength of the tint applied is increased, but still maxes out at the color given by **Color Channel**.
+For $Tint \le 0$ no tint is applied.  
+For $0 \lt Tint \lt 1$ the max tint is proportional to **Tint**.  
+For $Tint = 1$ at max tint the object color is equal to **Color Channe**l.  
+For $Tint \gt 1$ the strength of the tint applied is increased, but still maxes out at the color given by **Color Channel**.
 
 Area Tint does not have an **Easing** option.  
 With **Main Only** or **Secondary Only** selected, only the Base, respectively Detail Color will be tinted.  
@@ -333,13 +333,13 @@ Area Tint ignores the Base / Detail Color setting of single-color objects.
 
 Some variables can be randomized with the corresponding **\+/-** option (the offset). For example, with a value of 5 \+/- 1 a random value between 4 and 6 will be picked.  
 The formula used is:  
-BaseValue+RandomCoefficientRandomOffset
+$RandomValue=BaseValue+RandomCoefficient\cdot RandomOffset$
 
 The random coefficient (a random value between \+/-1) for each setting is calculated per object at level start.
 
 Different triggers can have different base values and offsets, but they all share the same random coefficients since they are defined per object.  
 While you can change the base value and offset of each setting, this will not randomize the values again.  
-it is not possible to change random coefficients without restarting the level.  
+It is not possible to change random coefficients without restarting the level.  
 With linked objects, the Group Parent's random coefficients are used.  
 Shared parameters, like **Length**, have the same random coefficient for all types of Area trigger. This also applies to **OffsetY** and **Offset**. 
 
@@ -347,9 +347,9 @@ Shared parameters, like **Length**, have the same random coefficient for all typ
 
 Edits the parameters of an active Area Trigger.
 
-#### Area Options
+## Area Options
 
-##### Base
+### Base
 
 **Offset**  
 **OffsetY**  
@@ -357,7 +357,7 @@ Edits the parameters of an active Area Trigger.
 **ModBack (BK)**  
 **Deadzone**
 
-##### Area Move
+### Area Move
 
 **MoveDist**  
 **MoveAngle**  
@@ -366,26 +366,26 @@ Edits the parameters of an active Area Trigger.
 **MoveX**  
 **MoveY**
 
-##### Area Rotate
+### Area Rotate
 
 **Rotation**
 
-##### Area Scale
+### Area Scale
 
 **ScaleX**  
 **ScaleY**
 
-##### Area Fade
+### Area Fade
 
 **(To) Opacity**
 
-##### Area Tint
+### Area Tint
 
 **Tint %**  
 **Edit HSV**  
 **Use HSV**
 
-#### Trigger Options
+## Trigger Options
 
 **Duration**  
 **Easing**  
