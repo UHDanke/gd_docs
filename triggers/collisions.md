@@ -1,17 +1,5 @@
-TODO
-# Collision
 
-## Collision Schedule
-* Collision (enter)
-* State (enter)
-* Touch Trigger
-* State (exit)
-* On Death
-* Collision (exit)
-  
-## Interactions with Silent Move and Toggle
-If collisions have yet to be checked, it is possible to prevent a collision from inside a collision spawn by using an instant trigger like Toggle or Move (with the Silent option).  
-This is only possible for enter collisions, collisions are not checked again during exit collisions - the collision exit state is updated if there are no active collisions after all collision objects are checked.  
+# Collision
 
 ## Collision Objects
 Used by Collision and Instant Collision triggers to implement collisions.	
@@ -42,20 +30,37 @@ With the **Activate Group** option, toggles on and spawns the given group instea
 ### Activation
 Collision activates on block collision, but before the collision state is updated.  
 Due to this, if Instant Collision is called from a Collision trigger with the same Block IDs it will spawn the opposite group from the one expected. 
-Collision only activates when the collision state of the target IDs changes.
+Collision only activates when the collision state of the Block IDs changes.
 
 ### Spawn Mechanics
 Collision triggers can be spawn remapped and have spawn inheritance.
-The spawn order of Collision triggers depends on the order collisions are checked.
-If spawn an Instant Collision trigger from inside a Collision trigger, and 
-### Block IDs
-The order of Block IDs does not matter
-Block IDs can be identical
-
-
+The spawn order of Collision triggers depends on the order collisions are checked - which is affected by the Dynamic and Player options.
+If multiple triggers share the same Block IDs, spawn order is used. The order of Block IDs does not matter, Block ID 1 and 2 are interchangeable.
 
 ## Instant Collision Trigger
-Checks the 
+Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.
+Can be remapped, but resets remaps when spawning other groups.
 
-Can be remapped but resets remaps.
-The collision state is
+The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.
+
+## State Blocks
+
+Spawns True ID or False ID when colliding with the Player.
+Can be considered a simpler, single object alternative to collision objects and triggers.
+Collision checks are done individually per each object, as State Blocks do not use Collision IDs.
+
+Unlike Collision, State blocks cannot be remapped.
+State Blocks spawn groups independently even if sharing the same group IDs. However, since they cannot be remapped, if the target group contains a spawn trigger it will still only activate once due to the spawn limit.
+
+## Collision Schedule
+* Collision (enter)
+* State (enter)
+* Touch Trigger
+* State (exit)
+* Collision (exit)
+
+## Interactions with Silent Move and Toggle
+If collisions have yet to be checked, it is possible to prevent a collision from inside a collision spawn by using an instant trigger like Toggle or Move (with the Silent option).  
+This is only possible for enter collisions, collisions are not checked again during exit collisions - the collision exit state is updated if there are no active collisions after all collision objects are checked.
+
+Using Toggle or Silent Move with Instant Collision to do multiple checks per tick is not possible.
