@@ -49,7 +49,6 @@ Spawns True ID or False ID when colliding with the Player.
 Can be considered a simpler, single object alternative to collision objects and triggers.
 Collision checks are done individually per each object, as State Blocks do not use Collision IDs.
 
-Unlike Collision, State blocks cannot be remapped.
 State Blocks spawn groups independently even if sharing the same group IDs. However, since they cannot be remapped, if the target group contains a spawn trigger it will still only activate once due to the spawn limit.
 
 ## Collision Schedule
