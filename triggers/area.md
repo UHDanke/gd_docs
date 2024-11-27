@@ -19,7 +19,7 @@ Keyframe 🡒 Scale 🡒 Rotate 🡒 Move 🡒 Advanced Follow 🡒 Follow 🡒 
 ## EffectIDs
 
 **EffectID**s are unique per type of Area trigger; Spawning a new Area Move will overwrite any active Area Move with the same **EffectID**, but not other kinds of Area trigger like Area Scale, Rotate, etc.  
-**EffectID** 0 is non-exclusive \- there is no limit to how many triggers you can spawn using this ID.
+**EffectID** 0 is not unique - there is no limit to how many triggers you can spawn using this ID.
 
 ## Center
 
@@ -28,7 +28,7 @@ If present, the ID Parent is used as the center.
 Group and Area Parents have no effect on the center.  
 If no valid center exists, the Area trigger uses the level's origin (0,0) coordinate as the center, which is 3 block units below the editor guide axis.  
 P1 and P2 positions, as well as camera positions (center, edges, corners) can be used as the center.  
-**Center Group ID** can be identical to **Target Group ID** \- this will not cause a feedback loop, since the position prior to the area effect is used.
+**Center Group ID** can be identical to **Target Group ID**.
 
 ## Order & Priority
 
@@ -46,17 +46,17 @@ If there are multiple active triggers with the same **Priority**, then spawn ord
 ## Multiple Areas
 
 When multiple Areas target the same objects, they are processed first by Priority, then from oldest to newest.  
-Consecutive Area triggers use the position of center and target objects after the effect of the previous Area trigger is applied. Meaning that if you change the position of an object with an Area trigger, the next Area trigger will use the new position.
+Consecutive Area triggers use the position of center and target objects after the effect of the previous Area trigger is applied. Meaning that if you change the position of an object with an Area trigger, the next Area trigger will use the new positions as reference.
 
 ### Multiple Instances
 
-Normally, spawning the same Area trigger while an instance of it is already active will not create new instances or override previous ones.  
+Normally, spawning the same Area trigger while an instance of it is already active updates the current active instance, it will not create new instances or override previous ones.  
 Spawn order is unaffected by this.  
 Edit Area effects will be stopped and undone.  
-EffectID has no effect on this behavior.  
+**EffectID** has no effect on this behavior.  
 With spawn remapping, it is possible to create additional instances of the same Area trigger for unique sets of target and center IDs.  
 The same target group can be affected by different centers and the same center can affect multiple different target groups.  
-As a result, it is not possible to apply the same Area effect multiple times on the same set of target and center ID. Using **EffectID** to ensure only one instance of Area is active is unnecessary in most cases. Stopping the Area trigger before spawning is only necessary for refreshing active instances or changing spawn order.  
+As a result, it is not possible to use an Area trigger multiple times on the same set of target and center ID. Using **EffectID** to ensure only one instance of Area is active is unnecessary in most cases. Stopping the Area trigger before spawning is only necessary for refreshing active instances or changing spawn order.  
 Special centers like **P1**, **P2**, **C**, etc override the default **Center Group ID** \- which can still be remapped, so it is possible to apply the same Area effect multiple times on the same group without needing to use multiple center groups if using a special center.
 
 ## Spawn Remapping
@@ -64,13 +64,13 @@ Special centers like **P1**, **P2**, **C**, etc override the default **Center Gr
 **Target Group ID** and **Center Group ID** can be remapped.  
 **EffectID** cannot be remapped.  
 **Color Channel** (Area Tint) cannot be remapped.  
-While **EffectID**s are not remappable, ID 0 can be used to apply the same Area effect to multiple different groups. These instances can be stopped individually using a Control ID, but cannot be edited individually as only **GroupID**s or **EffectID**s can be used, which are not remappable.
+While **EffectID**s are not remappable, ID 0 can be used to use the same Area trigger for multiple different groups. These instances can be stopped individually using a Control ID, but cannot be edited individually as only **GroupID**s or **EffectID**s can be used, which are not remappable.
 
 ## Area Parents and Group Parents
 
 If no Area Parents are present, the Group Parent acts as both Group Parent and Area Parent, and vice-versa.  
-With multiple Group Parents, the left-most, then bottom-most Group Parent is used. Likewise for Area Parents.  
 Group and Area Parents do not update dynamically, the choice is done at level start.  
+With multiple Group Parents in the same link, the left-most, then bottom-most Group Parent is used. Likewise for Area Parents.  
 The Group Parent is the center for the effect applied (Area Scale & Area Rotate).  
 The Area Parent is the center used to calculate the distance from the Area trigger's center.  
 With **DEAP** selected, the Area Parent will not be affected by the Area trigger. Linked objects will still be affected.  
@@ -94,7 +94,7 @@ If the ID Parent object is an Area/Group Parent, other Area/Group Parents in the
 
 **Ignore GParent** ignores the ID Parent.  
 ID Parents override object links.  
-Unlike object links, with group links the area effect is not applied to objects not part of the target group.  
+Unlike object links, for group links the area effect is not applied to objects not part of the target group.  
 If the affected object is an ID Parent for another group, then the effect is applied to the entire group.
 While object links need multiple objects to count as linked, you only need one ID Parent to create a linked group.  
 
@@ -102,7 +102,7 @@ While object links need multiple objects to count as linked, you only need one I
 
 Area Fade and Area Tint effects do not apply if the object or Area Parent is not visible.  
 An object counts as visible if its center is within 0.5 blocks of the screen's edges.  
-For Area Scale, Rotate and Move the effect is applied in most cases regardless if the object is visible, however this is inconsistent.
+For Area Scale, Rotate and Move the effect is applied in most cases regardless if the object is visible.
 Link Visible can be used to force objects to be visible to fix any issues regarding visibility.
 
 ## Effect Strength Coefficient
@@ -112,8 +112,8 @@ The strength coefficient represents the proportion of the applied effect for all
 
 ### Distance
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.  
-**Offset** and **OffsetY** offset the position of the center.  
-The value of distance is sensible to float and addition errors \- centering an object perfectly after it is moved is not always possible.
+**Offset** and **OffsetY** offset the position of the center after mod is applied.  
+The distance value is sensible to float and addition errors \- centering an object perfectly after it is moved is not always possible.
 
 
 Distance can be calculated using these formulas:
@@ -123,7 +123,7 @@ Distance can be calculated using these formulas:
 
 #### Circular Proximity
 
-$Distance=\sqrt{(Y_{t}-Y_{c}-OffsetY)^{2}+(X_{t}-X_{t}-Offset)^{2}}$
+$Distance=\sqrt{Offset+Y_{c}-Y_{t})^{2}+(Offset+X_{c}-X_{t})^{2}}$
 
 #### Horizontal Proximity
 
@@ -136,9 +136,9 @@ $Distance\=Offset+(Y_{c}-Y_{t})\cdot Mod$
 ### Mod
 
 For radial proximity, Mod has no effect.  
-For horizontal and vertical proximity, **ModBack** is applied if **Distance** is positive and **ModFront** is applied if Distance is negative.  
+For horizontal and vertical proximity, **ModBack** is applied if $CenterPos>TargetPos$ and **ModFront** is applied if $CenterPos<TargetPos$.  
 For the symmetrical options, the value of **Distance** is always positive when **ModFront** is applied, even if the value of **ModFront** is negative.  
-**Offset** is not affected by Mod.
+Offsets are not affected by mod.
 
 ### Ease Out
 
@@ -251,7 +251,7 @@ $Y = YMove \cdot EffectStrength + Y_{t}$
 
 $Distance = \sqrt{(Y_{c}-Y_{t})^2+(X_{c}-X_{t})^2}$
 
-$Radius = MoveDist \cdot EffectStrength\cdot \min(\frac{Distance}{RFade},1)$
+$Radius = (3\cdot MoveDist) \cdot EffectStrength\cdot \min(\frac{Distance}{RFade},1)$
 
 $Angle = \arctan(\frac{(Y_{c}-Y_{t}}{X_{c}-X_{t}})$
 
@@ -272,7 +272,7 @@ Where:
 
 Rotates objects by a number of degrees given by **Rotation** (360 degrees \= 1 rotation going clockwise).   
 Move effects (except Area Move) are also rotated.  
-Solid objects have limitations when rotated. While the visual rotates by any degree given, the hitbox can only rotate in increments of 90 degrees. If the rotation value is between 90 degree increments, then the hitbox is going to be sized up so the rotated object would fit inside. 
+The hitbox of solid objects is always in line with the coordinate system. While the visual rotates by any degree given, the hitbox can only rotate in increments of 90 degrees. If the rotation value is between 90 degree increments, then the hitbox is going to be sized up so the rotated object would fit inside. 
 
 ### Area Scale
 
@@ -283,8 +283,8 @@ Solid objects have limitations when rotated. While the visual rotates by any deg
 
 #### Behavior
 
-If not linked, objects are scaled along their own X and Y axis.  
-If linked, objects are scaled along the world X and Y axis.  
+If not linked, objects are scaled along their own XY axis.  
+If linked, objects are scaled along the world XY axis.  
 Area Scale does not support relative rotation.
 
 The scale effect applied is calculated using this formula:
