@@ -4,7 +4,7 @@
 
 If you try to call 2 different Enter triggers with the same Enter Channel and Effect IDs but different values for the same variables, the game will crash in playtesting.
 
-## \[2.206\] Overwriting a spawn remap of ID 2 crashes the game
+## \[2.207\] Overwriting a spawn remap of ID 2 crashes the game
 
 If you spawn remap group ID 2 to any ID, then call another spawn which remaps group ID 2 to any other non-zero ID, then call a trigger which uses group ID 2, the game will instantly crash when calling the first spawn.  
 Only ID 2 is affected.  
@@ -25,7 +25,9 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
 Autobuild is affected by this.
 
-## \[2.206\] Large math operations on ItemIDs are innacurate
+## \[2.207\] Pickup operations are innacurate
+
+Multiplying large numbers using Pickup triggers has significant errors.
 
 ## \[2.207\] Instant Collision resets remaps
 
@@ -92,6 +94,7 @@ You can see an example [here](https://youtu.be/8IS5lFdIBus). You can find the le
 
 This issue occurs when the Area Parent of an Area Scale, Rotate or Move effect is moved off screen towards the right (X positive) side.  
 The Area effect will stop applying once off-screen, this will bring it back to its original position, on-screen, which makes the Area effect active again.  
+You can find an example of [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 As a result the object will flicker constantly, moving on and off-screen every other tick.  
 This is not a visual bug, triggers that use object positions are affected.  
 This bug does not occur for the top, bottom or left side of the screen.
