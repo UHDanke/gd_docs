@@ -24,7 +24,7 @@ Below i've added the setup used and the recorded data, as well as some suggestio
 ## The Setup
 There are 11 unique Count instances active, each with different Target Count values.
 These instances are first activated by a Pickup of 1000 from an initial value of 0. On the instance with Target Count 2 there is an additional Item Edit trigger which changes the item value from 1000 to another, lower value.
-To display the exact order, Pickup and Sequence triggers are used to record what instance activated and in what order, where the digit value represents the trigger's Target Count (ex: value 3 represents Target Count 3).
+To display the exact order, Pickup and Sequence triggers are used to record what instance activated and in what order, where the digit value represents the trigger's Target Count for values 4 to 8 (ex: value 4 represents Target Count 4). Values 1,2, and 3 all share the same Target Count of 1.
 
 This is how the setup looks like:
 ![image](https://github.com/user-attachments/assets/8f2e1e11-c7e0-450e-880f-ff3d337a62dd)
@@ -32,7 +32,7 @@ This is how the setup looks like:
 I have uploaded it to the GD servers with the ID **112533336**. The uploaded test setup has some small differences from the recorded tables, but it should still showcase the same issues.
 
 ## Results
-| Pickup | Order Results | Add \-1 | Add 0 | Add \+1 | Override 0 | Override 1000+/-1 | Spawn Branch |
+| Pickup2 | Order Results | Add \-1 | Add 0 | Add \+1 | Override 0 | Override 1000+/-1 | Spawn Branch |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | \-1 | 1265433 | 6541233 | 1233456 | 1233456 | 1233456 | 78 | 1122222 |
 | 0 | 1265433 | 6541233 | 1233456 | 1233456 | 1233456 | 78 | 1122222 |
