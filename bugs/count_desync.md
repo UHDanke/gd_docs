@@ -16,7 +16,7 @@ Whether the index of the list is taken from the beginning or the end of the list
 If there is a new item change inside a Count, then the game goes through all respective Count instances before continuing with the previous Count activation.
 
 There are two issues with this behavior:
-* If you interrupt Count with another Count using the same item id, then the stored value will get updated to the new value, then when continuing with the previous count the stored value gets updated to an old value, this causes the internal value to desync from the item value. 
+* If you interrupt Count with another Count using the same item id, then the stored value will get updated to the new value, when continuing with the previous count the stored value gets updated to an old value, this causes the internal value to desync from the item value. 
 * If the first item increases the value and the second one decreases it, then the game processes the count list in descending order after the second item change. However, when continuing the first item change, the game will use descending order instead of ascending order, and because some count triggers have already been processed the list will start with an offset from the end of the list; This is the reason why some Count instances can be skipped.
 
 Below i've added the setup used and the recorded data, as well as some suggestions i have to this.
