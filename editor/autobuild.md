@@ -128,3 +128,5 @@ Each step also does the following matches, in this order, if the corresponding o
 
 Below you can view a visual guide of all default templates and their variations.  
 Highlighted in white are the default templates for other templates that include any of the smart objects highlighted in red.  
+
+<img src="https://github.com/user-attachments/assets/3c867688-2381-41a9-9c15-ca77dd73e5d5" width="85%">
