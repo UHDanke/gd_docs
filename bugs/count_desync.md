@@ -11,9 +11,9 @@ This prompted me to go back to a bug i've encountered early august, where that "
 
 With this i was able to map out the behavior of Count:  
 Count activates every time the value of the Item ID changes, even if the value remains the same.  
-When activating, the Count instances get ordered in a list based on their Target Count and spawn order. The game copies the item value at the time of activation and then goes through this list, checks whether the instances should spawn and updates the stored value to the copied item value.
-Whether the index of the list is taken from the beginning or the end of the list depends on the last item change - If the item value decreased, then the index is taken from the end of the list. If the item value is updated during the activation of Count, then this order  can be changed despite the Count activation being unfinished.
-If there is a new item change inside a Count, then the game goes through all respective Count instances before continuing with the previous Count activation.
+When activating, the Count instances get ordered in a list based on their Target Count and spawn order. The game copies the item value at the time of activation and then goes through this list, checks whether the instances should spawn and updates the stored value to the copied item value.  
+Whether the index of the list is taken from the beginning or the end of the list depends on the last item change - If the item value decreased, then the index is taken from the end of the list. If the item value is updated during the activation of Count, then this order  can be changed despite the Count activation being unfinished.  
+If there is a new item change inside a Count, then the game goes through all respective Count instances before continuing with the previous Count activation.  
 
 There are two issues with this behavior:
 * If you interrupt Count with another Count using the same item id, then the stored value will get updated to the new value, when continuing with the previous count the stored value gets updated to an old value, this causes the internal value to desync from the item value. 
