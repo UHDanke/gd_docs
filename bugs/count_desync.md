@@ -7,7 +7,7 @@ So i initially started with the misled assumption that Count has some sort of in
 The first clue that something was wrong with how i thought Count worked came from a finding by jrodo on the way Count interacts with Pause and Resume triggers. If you pause a count trigger, use a pickup to skip the count's target count, then resume the count trigger, at a first glance it seems like you've succesfully skipped past the Target Count and prevented the trigger from spawning, and this would be a good alternative for Toggle when using remaps as you cannot toggle Control IDs.
 Except, if you use a Pickup trigger after resuming which doesn't cross the Target Count value, Count still activates. From further testing i've concluded that Count triggers actually store the last value of the Item ID, and everytime they activate this value gets updated. The bug in this case is that pausing stops the Count trigger from updating the item value, and once you resume the item value and the internal count value differ.
 
-This prompted me to go back to a bug i've encountered early august, where that "skipping" behavior i thought existed seemingly broke for no reason. In order to figure out the reason i've created a setup able to record the activation order of Count triggers; Figuring out the reason took about 3 days of testing.
+This prompted me to go back to a bug i've encountered early august, where that "skipping" behavior i thought existed seemingly broke out of nowhere. In order to figure out the reason i've created a setup able to record the activation order of Count triggers, which took about 3 days of testing.
 
 With this i was able to map out the behavior of Count:  
 Count activates every time the value of the Item ID changes, even if the value remains the same.  
