@@ -31,13 +31,13 @@ Due to this, if Instant Collision is called from a Collision trigger with the sa
 Collision only activates when the collision state of the Block IDs changes.
 
 ### Spawn Mechanics
-Collision triggers can be spawn remapped and have spawn inheritance.
-The spawn order of Collision triggers depends on the order collisions are checked - which is affected by the Dynamic and Player options.
+Collision triggers can be spawn remapped and have spawn inheritance.  
+The spawn order of Collision triggers depends on the order collisions are checked - which is affected by the Dynamic and Player options.  
 If multiple triggers share the same **Block IDs**, spawn order is used. The order of **Block IDs** does not matter, **Block ID 1** and **2** are interchangeable.  
 Collision triggers with the **PP** option activate after Player 1 and before Player 2 collisions.
 
 ## Instant Collision Trigger
-Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.
+Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.  
 Can be remapped, but resets remaps when spawning other groups.
 
 The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.
@@ -52,9 +52,9 @@ State Blocks spawn groups independently even if sharing the same group IDs. Howe
 
 ## Collision Schedule
 * Collision (enter)
-* State (enter)
+* State (on)
 * Touch Trigger
-* State (exit)
+* State (off)
 * Collision (exit)
 
 ## Interactions with Silent Move and Toggle
