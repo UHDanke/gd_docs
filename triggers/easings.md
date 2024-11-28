@@ -45,8 +45,8 @@ $$BounceOut(x) =
     0 & \text{for} & x \le 0\\
     7.5625\cdot x^{2} & \text{for}& 0 < x < 2.75^{-1} \\
     7.5625\cdot(x-\frac{1.5}{2.75})\cdot x + 0.75 & \text{for}& 2.75^{-1} < x < 1.1375^{-1} \\
-    7.5625\cdot(x-\frac{2.25}{2.75})\cdot x + 0.9375 & \text{for}& 2.75^{-1} < x < 1.1375^{-1} \\
-    7.5625\cdot(x-\frac{2.625}{2.75})\cdot x + 0.984375 & \text{for}& 2.75^{-1} < x < 1.1375^{-1} \\
+    7.5625\cdot(x-\frac{2.25}{2.75})\cdot x + 0.9375 & \text{for}& 1.1375^{-1} < x < 1.1^{-1} \\
+    7.5625\cdot(x-\frac{2.625}{2.75})\cdot x + 0.984375 & \text{for}& 1.1^{-1} < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
 
