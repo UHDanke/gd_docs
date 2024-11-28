@@ -58,7 +58,7 @@ State Blocks spawn groups independently even if sharing the same group IDs. Howe
 * Collision (exit)
 
 ## Interactions with Silent Move and Toggle
-If collisions have yet to be checked, it is possible to prevent a collision that is yet to be processed from inside a collision spawn by using an instant trigger like Toggle or Move (with the Silent option).  
-This is only possible for enter collisions, collisions are not checked again during exit collisions - the collision exit state is updated after all collision objects are checked.
+During collisions it is possible to prevent another collision that is yet to be processed from inside a Collision trigger by using an instant trigger like Toggle or Move (with the Silent option).  
+This is only possible for enter collisions, collisions are not checked again during exit collisions - the collision exit state is updated after all collision objects are checked during exit collisions.
 
 Using Toggle or Silent Move with Instant Collision to do multiple checks per tick is not possible.
