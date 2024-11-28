@@ -1,9 +1,9 @@
 # WORK IN PROGRESS
-## Activation Order
+## Spawn Order
 
-The activation order of triggers is the order they were spawned in (the spawn order).  
+The activation order of triggers is the order they were spawned in, also known as the spawn order.  
 By default, this is applied horizontally from left to right. If multiple triggers share the same horizontal position, they will activate in the order they were placed in.  
-ORD can be used to enforce an activation order for triggers without the spawn trigger or touch trigger option which activate in the same tick.
+ORD can be used to enforce an activation order for triggers without the spawn or touch trigger option which activate in the same tick.
 
 The following triggers have additional ordering mechanisms which are applied before spawn order:
 
@@ -64,6 +64,10 @@ The remaining ones are scheduled, and will spawn in this order:
 13. Collision (on exit)
 
 ## Spawn Remapping
+
+Spawn remapping is a Spawn trigger option that allows remapping the IDs of spawned triggers to new IDs.
+IDs are not discerned by their type (Item ID, Block ID, Group ID, etc), they are all treated as a single ID for the purposes of remapping.  
+The main purpose of spawn remapping is reusing triggers, but it has many more uses thanks to its versatility.
 
 ### Remap Rules
 
@@ -139,7 +143,6 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 
 #### Group Settings
 
-Partially  
 **Yes**	Control ID  
  **No**	Group ID, Parent ID, ORD, CH, Material ID
 
@@ -180,7 +183,7 @@ Edit Advanced Follow has no effect on type 1 Advanced Follow.
 
 #### Sequence
 
-Without Unique Remap, any activation of the same Sequence trigger advances the same (single) counter, regardless of remaps.  
+Without **Unique Remap**, any activation of the same Sequence trigger advances the same (single) counter, regardless of remaps.  
 With the option selected, every remap origin has its own Sequence counter, allowing for multiple concurrent instances of Sequence from the same trigger.  
 Despite the name, if you call the same Sequence trigger with two spawn triggers with identical remaps, they will not share the same counter.
 
@@ -199,10 +202,10 @@ Triggers that spawn groups also pass on their remaps to the spawned triggers. In
 The following triggers have some form of remap inheritance:
 
 * Instant Count  
-* Item Comp  
+* Item Compare  
 * Collision  
 * Random  
-* Adv Random  
+* Advanced Random  
 * Sequence  
 * Event  
 * On Death  
@@ -228,7 +231,8 @@ Yes, unless Reset Remap is selected.
 Spawning a Timer while there is already another active Timer with the same ItemID updates the Timer's settings and groups, but not the timer's remaps.  
 The only way to clear these remaps is to use a Stop trigger on the current active Timer instance for that ItemID.  
 In a way you can consider the remaps of Timers to be saved inside the Item ID until the Timer trigger is stopped with a Stop trigger.  
-Pause, Resume and Time Control will not reset remaps.
+Pause, Resume and Time Control will not reset remaps.  
+Assigning a value to a timer Item ID with Item Edit creates a paused timer instance with no remaps.
 
 #### Instant Collision
 
@@ -306,6 +310,7 @@ All triggers can be spawned multiple times per tick,  but not all can activate o
 Without remaps, a spawn trigger can spawn the same group once per reset.
 There are two resets per tick, before and after Spawn triggers with delay are scheduled.
 As a result, you can activate the same spawn group from a single Spawn trigger twice per tick - one time from a Spawn trigger with delay, and another time from any other spawn.  
+While the applications of this are limited, having the option of a second activation per tick is very important for instanced spawn triggers like Count and Sequence, where each instance would only be able to activate once per tick otherwise. 
 
 With remaps, the spawn limit is applied separately for each remap origin.
 The remap origin is the first remapped trigger in a spawn chain.    
