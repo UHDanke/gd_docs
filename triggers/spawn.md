@@ -65,7 +65,7 @@ The remaining ones are scheduled, and will spawn in this order:
 
 ## Spawn Remapping
 
-Spawn remapping is a Spawn trigger option that allows remapping the IDs of spawned triggers to new IDs.
+Spawn remapping is a Spawn trigger option that allows remapping the IDs of spawned triggers to new IDs.  
 IDs are not discerned by their type (Item ID, Block ID, Group ID, etc), they are all treated as a single ID for the purposes of remapping.  
 The main purpose of spawn remapping is reusing triggers, but it has many more uses thanks to its versatility.
 
