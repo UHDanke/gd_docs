@@ -6,7 +6,7 @@ $$EaseIn(x,\ easeRate) =
   \begin{cases}
     0 & \text{for} & x \le 0\\
     x^{easeRate} & \text{for}& 0 < x < 1 \\
-    1 & \text{for}& 1 \le x
+    1 & \text{for}& x \ge 1
   \end{cases}$$
   
 $$EaseOut(x,\ easeRate) = EaseIn(x,easeRate^{-1})$$
@@ -22,7 +22,7 @@ $$EaseInOut(x,\ easeRate) =
 
 $$ElasticIn(x,\ easeRate) = 
   \begin{cases}
-    0 & \text{for} & 0 \le x\\
+    0 & \text{for} & x \le 0\\
     ExponentialIn(x)\cdot\sin(\pi\cdot(0.5+\frac{2-2\cdot x}{easeRate})) & \text{for}& 0 < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
@@ -42,7 +42,7 @@ $$BounceIn(x) = 1-BounceOut(1-x)$$
 
 $$BounceOut(x) = 
   \begin{cases}
-    0 & \text{for} & 0 \le x\\
+    0 & \text{for} & x \le 0\\
     7.5625\cdot x^{2} & \text{for}& 0 < x < 2.75^{-1} \\
     7.5625\cdot(x-\frac{1.5}{2.75})\cdot x + 0.75 & \text{for}& 2.75^{-1} < x < 1.1375^{-1} \\
     7.5625\cdot(x-\frac{2.25}{2.75})\cdot x + 0.9375 & \text{for}& 2.75^{-1} < x < 1.1375^{-1} \\
@@ -60,7 +60,7 @@ $$BounceOut(x) =
 
 $$ExponentialIn(x) = 
   \begin{cases}
-    0 & \text{for} & 0 \le x\\
+    0 & \text{for} & x \le 0\\
     2^{10\cdot (x -1)} & \text{for}& 0 < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
@@ -77,7 +77,7 @@ $$ExponentialInOut(x) =
 
 $$SineIn(x) = 
   \begin{cases}
-    0 & \text{for} & 0 \le x\\
+    0 & \text{for} & x \le 0\\
     1-\cos(0.5\cdot\pi\cdot x) & \text{for}& 0 < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
@@ -96,7 +96,7 @@ $$BackIn(x) =
   \begin{cases}
     0 & \text{for} & x \le 0\\
     3.5949095\cdot x^{3}-2.5949095\cdot x^{2} & \text{for}& 0 < x < 1 \\
-    1 & \text{for}& 1 \le x
+    1 & \text{for}& x \ge 1
   \end{cases}$$
   
 $$BackOut(x) = 1-BackIn(1-x)$$
