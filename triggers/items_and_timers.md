@@ -1,3 +1,45 @@
+# Item Edit
+Updates the value of the target variable based on the values of the given parameters using mathematical functions.
+
+## Parameters
+Items and Timers can be selected by ID.	
+Points returns the total amount of points obtained so far.	
+Time returns the value of the level's global timer, which is updated every tick before spawn delays are scheduled.	
+Att returns the player's current attempts.	
+
+## Math Operations
+Besides **Mod**, there are seven buttons which change the operators and functions used in calculation.  
+From top left, the first three buttons change the assignment, parameter and mod operator.  
+The next two on the same line change the sign functions applied after rounding.  
+The two below change the rounding functions applied after the mod and assignment operators.  
+
+### Assignment
+First button changes the assignment operator between = (assign), += (add), -= (subtract), ⋅= (multiply) and \\= (divide).
+
+### Parameters
+Second button changes the operator applied on the two parameters between +, -, ⋅ and \\.
+
+### Mod
+Third button changes the operator applied on Mod and the result of the parameter operation between ⋅ and \\.
+
+#### Sign Functions
+The first button changes the function applied on the result of the mod operation between between none, A (Absolute) and N (Negative).  
+The second button changes the function applied on the result of the assignment operation.  
+Sign functions are applied after the respective rounding functions.
+
+### Rounding Functions
+The first button changes the function applied on the result of the mod operation between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).  
+The second button changes the function applied on the result of the assignment operation.
+
+## Result Assignment
+If the result is assigned to an integer variable like Item or Points, decimal values are truncated. 
+
+### Timers
+Item Edit can initialize timers if there isn't one active already.  
+Timers created using this trigger are paused, use default settings and have no remaps.  
+Item Edit can only update the value of an active timer.	
+
+
 # Count
 
 Spawns or toggles a **Group ID** when the **Item ID** value reaches or passes **Target Count**.
@@ -60,7 +102,7 @@ Minimum **Item ID** is 0, maximum **Item ID** is 9999\.
 
 **Item ID** and **Target ID** can be remapped.
 
-### Spawn Inheritance
+#### Spawn Inheritance
 
 With **Multi Activate**, **Target ID** inherits spawn remaps.  
 Without, **Target ID** does not inherit spawn remaps, instead it inherits the remaps of the oldest active instance of a subsequent Count trigger with the **Multi Activate** option using the same **Item ID**.  
@@ -70,3 +112,47 @@ If an instance of Count is spawned then activated during the spawn, the target o
 
 Count can be instantiated multiple times regardless of remaps.  
 If an instance of Count activates during the spawn of another instance of the same Count trigger, the new spawn will use the remaps of the first unfinished spawn.   
+
+
+
+# Time Trigger
+
+Creates timers which can be used to keep track of elapsed time or activate groups after a given delay.
+
+## Options
+
+**StartTime** overrides the previous value of the timer.
+
+**StopTime** pauses the timer and spawns **Target ID** when the stop value is reached.  
+This option is ignored if the tickbox is unselected.  
+The timer gets set to the stop value if it goes over the stop point.  
+The timer will not stop if it starts or is unpaused from or past the stop value.  
+
+**TimeMod** modifies the timer multiplier. The default multiplier is 1 per second.  
+If **TimeMod** is 0 then the timer is unable to spawn groups.
+
+**Ignore Timewarp** is currently bugged and has no effect.
+
+**Start Paused** pauses the timer.
+
+With **Dont Override**, **StartTime** is ignored when updating the timer.
+
+## Activation
+Time triggers create global timer instances, which are shared by **Item ID**.  
+Activating a Time trigger while there is an already active timer for the given Item ID updates the timer with the trigger's settings and groups.
+
+Timers update every tick, 240 times a second.
+
+When updating, timers record the current timer value which is used to determine whether **Target ID** or Time Event triggers spawn.  
+Unlike Count which is bi-directional, timers are one-directional and this depends on the value of **TimeMod**:
+* For $TimeMod \gt 0$ **Target ID** is spawned if $previousValue \lt StopTime \le currentValue$.	
+* For $TimeMod \lt 0$ **Target ID** is spawned if $previousValue \gt StopTime \ge currentValue$.
+
+### Spawn Mechanics
+Timers activate groups in spawn order.  
+All IDs can be spawn remapped.  
+For remap inheritance, the timer instance stores the remaps.  
+Due to an oversight, remaps can only be set when creating a timer instance, updating a timer will not update the remaps.
+
+
+
