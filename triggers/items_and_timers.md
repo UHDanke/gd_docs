@@ -191,6 +191,28 @@ Item Edit can only update the value of an active timer.
 
 # Item Compare
 
+Spawns **TrueID** or **FalseID** based on the result of the comparison of two parameters.
+
+## Math Operators
+
+### Mod
+First button changes the operator of Mod1 and the first parameter between = (assign), += (add), -= (subtract), ⋅= (multiply) and \\= (divide).
+Second button changes the operator of Mod2 and the second parameter.
+
+### Comparison
+Third button changes the comparison operator between the results of the mod functions between == (equal), >= (greater or equal), <= (lower or equal), > (greater than), < (lower than) and != (not equal).
+
+### Sign Functions
+The two buttons change the functions applied on the results of the mod operations between between none, A (Absolute) and N (Negative).  
+Sign functions are applied after the respective rounding functions.
+
+### Rounding Functions
+TThe two buttons change the functions applied on the results of the mod operations between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).  
+
+### Tolerance
+
+
+
 # Item Persist
 Makes the item or timer given by **Item ID** persistent between attempts.
 
@@ -201,6 +223,6 @@ Targets continue to be persistent until **Reset** is used, even between attempts
 
 **TargetAll** targets all persistent items or timers.
 
-When persistent, items and timers keep all of their values and settings between attempts.
+When persistent, items and timers keep all of their values and settings between attempts.  
 In the case of timers, this includes timer stop options and remaps.
 
