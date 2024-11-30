@@ -114,7 +114,8 @@ With **Dont Override**, **StartTime** is ignored when updating the timer.
 Time triggers create global timer instances, which are shared by **Item ID**.  
 Activating a Time trigger while there is an already active timer for the given Item ID updates the timer with the trigger's settings and groups.
 
-Timers update every tick, 240 times a second.
+Timers update every tick, 240 times a second.  
+Only timers initialized before the first timer spawn will be updated. If a new timer is initialized during or after timer activation, it will be processed in the next update.
 
 When updating, timers record the current timer value which is used to determine whether **Target ID** or Time Event triggers spawn.  
 Unlike Count which is bi-directional, timers are one-directional and this depends on the value of **TimeMod**:
@@ -191,4 +192,15 @@ Item Edit can only update the value of an active timer.
 # Item Compare
 
 # Item Persist
+Makes the item or timer given by **Item ID** persistent between attempts.
+
+**Persistent** makes the target persistent.  
+
+**Reset** makes the target no longer persistent and resets its value to 0.  
+Targets continue to be persistent until **Reset** is used, even between attempts.
+
+**TargetAll** targets all persistent items or timers.
+
+When persistent, items and timers keep all of their values and settings between attempts.
+In the case of timers, this includes timer stop options and remaps.
 
