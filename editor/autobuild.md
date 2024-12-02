@@ -103,7 +103,7 @@ Additionally, the only reference objects used are the ones within the 3x3 area a
 
 When there are multiple variations per template, weights can be added using the **Add** button to randomize the choice.  
 The final chances are calculated by dividing the variation's weight with the sum of the weights of all templates.  
-**Add** adds 10 to the weights of the selected templates when clicked.  
+**Add** adds 10 to the weights of the selected templates.  
 **Zero** resets the weights of the selected templates to 0\.  
 By default, with no weights defined, the top-most left-most variation is used.  
 If at least one variation has a weight, all variations without a weight are excluded and marked with a "0" symbol.
