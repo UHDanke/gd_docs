@@ -123,7 +123,7 @@ Distance can be calculated using these formulas:
 
 #### Circular Proximity
 
-$Distance=\sqrt{Offset+Y_{c}-Y_{t})^{2}+(Offset+X_{c}-X_{t})^{2}}$
+$Distance=\sqrt{(OffsetY+Y_{c}-Y_{t})^{2}+(Offset+X_{c}-X_{t})^{2}}$
 
 #### Horizontal Proximity
 
@@ -249,7 +249,7 @@ $Y = YMove \cdot EffectStrength + Y_{t}$
 
 ##### Relative Movement
 
-$Distance = \sqrt{(Y_{c}-Y_{t})^2+(X_{c}-X_{t})^2}$
+$Distance=\sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}$
 
 $Radius = (3\cdot MoveDist) \cdot EffectStrength\cdot \min(\frac{Distance}{RFade},1)$
 
@@ -261,6 +261,8 @@ $Y = Radius \cdot \sin(Angle) + Y_{t}$
 Where:  
 **c** is position of center  
 **t** is position of target  
+$VerticalOffset$ is **OffsetY** for radial and **Offset** for vertical proximity.  
+$HorizontalOffset$ is **Offset** for radial and horizontal proximity.  
 
 ### Area Rotate
 
