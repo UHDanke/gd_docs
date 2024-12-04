@@ -146,8 +146,8 @@ Stopping the timer clears all settings, remaps and the current value is reset to
 Stops after activating without **Multi Activate**.
 
 ## Activation
-Activates after
-If spawned from inside a timer
+
+
 
 ### Spawn Mechanics
 Can be spawn remapped.
@@ -207,15 +207,15 @@ Spawns **TrueID** or **FalseID** based on the result of the comparison of two pa
 
 ## Math Operators
 
+## Parameters
+Can be items, timers, points, main timer or attempts.
+
 ### Mod
 First button changes the operator of Mod1 and the first parameter between = (assign), += (add), -= (subtract), ⋅= (multiply) and \\= (divide).
 Second button changes the operator of Mod2 and the second parameter.
 
 ### Comparison
 Third button changes the comparison operator between the results of the mod functions between == (equal), >= (greater or equal), <= (lower or equal), > (greater than), < (lower than) and != (not equal).
-
-## Parameters
-Can be items, timers, points, main timer or attempts.
 
 #### Tolerance
 Tol adds tolerance to the comparison functions which allows for slight variations within the given tolerance.
