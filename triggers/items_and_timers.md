@@ -51,6 +51,11 @@ For example, If the first Pickup changes the item value from 0 to 1000, then the
 
 If there is any interest in making this behavior less nonsensical, new Count spawns should discard any queued Count spawns using the same **Item ID**.
 
+##### Stop
+Stopping or Pausing a Count instance removes it from the count update list.  
+If this is done during a count update, the instance is removed from the list but the index offset remains the same.  
+As a result, Count instances that have not been processed yet can be skipped if earlier instances are stopped mid update.
+
 ### ID Limits
 
 Minimum **Item ID** is 0, maximum **Item ID** is 9999\.  
