@@ -51,7 +51,7 @@ For example, If the first Pickup changes the item value from 0 to 1000, then the
 
 If there is any interest in making this behavior less nonsensical, new Count spawns should discard any queued Count spawns using the same **Item ID**.
 
-##### Stop
+#### Stopping During a Count Update
 Stopping or Pausing a Count instance removes it from the count update list.  
 If this is done during a count update, the instance is removed from the list but the index offset remains the same.  
 As a result, Count instances that have not been processed yet can be skipped if earlier instances are stopped mid update.
@@ -122,13 +122,16 @@ Activating a Time trigger while there is an already active timer for the given I
 Timers update every tick, 240 times a second.  
 Only timers initialized before the first timer spawn will be updated. If a new timer is initialized during or after timer activation, it will be processed in the next update.
 
+**TargetID** for Time triggers can only spawn if the timer crosses the **StopTime**, using Item Edit for this purpose will not work. This does not apply to Time Event triggers.  
+The value of timers is checked prior to Time and Time Event trigger spawns.
+
 When updating, timers record the current timer value which is used to determine whether **Target ID** or Time Event triggers spawn.  
 Unlike Count which is bi-directional, timers are one-directional and this depends on the value of **TimeMod**:
 * For $TimeMod \gt 0$ **Target ID** is spawned if $previousValue \lt StopTime \le currentValue$.	
 * For $TimeMod \lt 0$ **Target ID** is spawned if $previousValue \gt StopTime \ge currentValue$.
 
 ### Spawn Mechanics
-Timers activate groups in spawn order.  
+Timers are processed in spawn order.  
 All IDs can be spawn remapped.  
 For remap inheritance, the timer instance stores the remaps.  
 Remaps can only be set when creating a timer instance, updating a timer will not update the remaps.  
@@ -145,6 +148,10 @@ Stops after activating without **Multi Activate**.
 ## Activation
 Activates after
 If spawned from inside a timer
+
+### Spawn Mechanics
+Can be spawn remapped.
+Target does not inherit the Time Event's spawn remaps, the timer's stored remaps are used instead.
 
 # Time Control
 
@@ -207,16 +214,26 @@ Second button changes the operator of Mod2 and the second parameter.
 ### Comparison
 Third button changes the comparison operator between the results of the mod functions between == (equal), >= (greater or equal), <= (lower or equal), > (greater than), < (lower than) and != (not equal).
 
+## Parameters
+Can be items, timers, points, main timer or attempts.
+
+#### Tolerance
+Tol adds tolerance to the comparison functions which allows for slight variations within the given tolerance.
+
+Tolerance formulas for every comparison operator:
+* Equal:  $\left\|Result1-Result2\right\|\le Tol$
+* Not Equal:  $\left\|Result1-Result2\right\|\gt Tol$
+* Greater:  $Result1-Result2 \gt -Tol$
+* Greater or Equal:  $Result1-Result2 \ge -Tol$
+* Lower:  $Result1-Result2 \lt Tol$
+* Lower or Equal:  $Result1-Result2 \le Tol$
+
 ### Sign Functions
 The two buttons change the functions applied on the results of the mod operations between between none, A (Absolute) and N (Negative).  
 Sign functions are applied after the respective rounding functions.
 
 ### Rounding Functions
-TThe two buttons change the functions applied on the results of the mod operations between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).  
-
-### Tolerance
-
-
+The two buttons change the functions applied on the results of the mod operations between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).  
 
 # Item Persist
 Makes the item or timer given by **Item ID** persistent between attempts.
