@@ -27,13 +27,14 @@ With the **Activate Group** option, toggles on and spawns the given group instea
 
 ### Activation
 Collision activates on block collision, but before the collision state is updated.  
-Due to this, if Instant Collision is called from a Collision trigger with the same **Block IDs** it will spawn the opposite group from the one expected. 
+Due to this, if Instant Collision is called from a Collision trigger with the same **Block IDs** it will spawn the opposite group from the one expected.  
 Collision only activates when the collision state of the Block IDs changes.
+If placed before the level origin, Enter Collisions are checked on level start.
 
 ### Spawn Mechanics
 Collision triggers can be spawn remapped and have spawn inheritance.  
 The spawn order of Collision triggers depends on the order collisions are checked - which is affected by the Dynamic and Player options.  
-If multiple triggers share the same **Block IDs**, spawn order is used. The order of **Block IDs** does not matter, **Block ID 1** and **2** are interchangeable.  
+If multiple triggers share the same **Block IDs**, spawn order is used. The order of **Block IDs** does not matter, **Block ID 1** and **2** are interchangeable.   
 Collision triggers with the **PP** option activate after Player 1 and before Player 2 collisions.
 
 ## Instant Collision Trigger
