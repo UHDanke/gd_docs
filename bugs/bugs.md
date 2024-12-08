@@ -1,15 +1,5 @@
 # Misc
 
-## \[2.207\] Enter trigger crash
-
-If you try to call 2 different Enter triggers with the same Enter Channel and Effect IDs but different values for the same variables, the game will crash in playtesting.
-
-## \[2.207\] Overwriting a spawn remap of ID 2 crashes the game
-
-If you spawn remap group ID 2 to any ID, then call another spawn which remaps group ID 2 to any other non-zero ID, then call a trigger which uses group ID 2, the game will instantly crash when calling the first spawn.  
-Only ID 2 is affected.  
-Only Steam and Android exhibit this bug. Mac and IOS are not affected.
-
 ## \[2.207\] Regrouping objects with Group Parent IDs creates phantom groups
 
 Groups are remapped by Regroup and Build Helper, but Group Parent IDs are not.  
@@ -20,14 +10,46 @@ This can cause issues by introducing phantom groups \- the group is technically 
 
 Group Parent IDs cannot be applied to an object with 10 existing groups, even if the object has that group already.
 
-## \[2.206\] Hitbox does not update properly after rotating a slope object
+## \[2.207\] Hitbox does not update properly after rotating a slope object
 
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
 Autobuild is affected by this.
 
-## \[2.207\] Pickup operations are innacurate
+## \[2.207\] Feather Landing event does not trigger if the player does not land with downward velocity
+If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.
 
-Multiplying large numbers using Pickup triggers has significant errors.
+# Particles 
+
+## \[2.207\] Toggling off a Particle Object does not clear particles in playtesting
+
+In editor, toggling off a Particle Object disables and clears all particles created by the particle object.
+In playtesting, the particles are not cleared and become separate from the particle object - any changes to the main object no longer affect the disconnected particles which continue to linger until they despawn.
+
+## \[2.207\] Deselecting **Animate on Trigger** deselects the option for all particle objects
+
+Deselecting the **Animate on Trigger** option deselects the option for all particle objects when the level is saved.  
+
+## \[2.207\] Particles with long lifespans linger after a level restart if **Quick Start** is selected
+
+Particles are not properly cleared when the level restarts if using the **Quick Start** option.
+
+# Enter Effects
+
+## \[2.207\] Enter trigger crash
+
+If you try to call 2 different Enter triggers with the same Enter Channel and Effect IDs but different values for the same variables, the game will crash in playtesting.
+
+## \[2.207\] Enter trigger portals
+
+Using Enter trigger effects on portals only affects the foreground layer of portal objects.
+
+# Spawn Triggers
+
+## \[2.207\] Overwriting a spawn remap of ID 2 crashes the game
+
+If you spawn remap group ID 2 to any ID, then call another spawn which remaps group ID 2 to any other non-zero ID, then call a trigger which uses group ID 2, the game will instantly crash when calling the first spawn.  
+Only ID 2 is affected.  
+Only Steam and Android exhibit this bug. Mac and IOS are not affected.
 
 ## \[2.207\] Instant Collision resets remaps
 
@@ -37,6 +59,31 @@ Groups spawned by a remapped Instant Collision do not inherit remaps.
 
 Spamming R quickly can skip the activation of spawns placed before the origin line.
 I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.
+
+## \[2.207\] Count spawn inheritance without Multi Activate
+
+If Multi Activate is not selected, the Count's spawn target inherits the remaps of the oldest active instance of a subsequent Count trigger with the Multi Activate option using the same Item ID.
+
+# Items and Timers
+
+## \[2.207\] Count desync
+
+The values of Count triggers can be updated improperly when paused and resumed or when spawning pickups from inside other triggers.  
+More information can be found in the count desync file.
+
+## \[2.207\] Pickup operations are innacurate
+
+Multiplying large numbers using Pickup triggers has significant errors.
+
+## \[2.207\] Time **Ignore Timewarp** does nothing
+
+Timer is still slowed down or sped up by timewarp with the option selected.
+
+## \[2.207\] Counter labels do not update properly with items outside the 0-9999 range
+
+Counter labels only update if a Pickup or Item Edit trigger with the same ItemID is used.  
+IDs outside the 0-9999 range refer to ID 0 or 9999. If an ID outside this range is used, it will display the value of ID 0 (if below 0) or 9999 (if above 9999), but will not update when ID 0 / 9999 change values.
+Timers text labels update properly and are not affected by this bug.  
 
 # Area Triggers
 
