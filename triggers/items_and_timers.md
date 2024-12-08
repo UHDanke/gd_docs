@@ -59,7 +59,7 @@ If there is any interest in making this behavior less nonsensical, new Count spa
 
 With **Multi Activate**, **Target ID** inherits spawn remaps.  
 Without, **Target ID** does not inherit spawn remaps, instead it inherits the remaps of the oldest active instance of a subsequent Count trigger with the **Multi Activate** option using the same **Item ID**.  
-If an instance of Count is spawned then activated during the spawn, the target of this activation will not inherit remaps.
+If an instance of Count is spawned then activated during the same spawn, the target of this activation will not inherit remaps.
 
 ### Multiple Instances
 
