@@ -51,17 +51,7 @@ For example, If the first Pickup changes the item value from 0 to 1000, then the
 
 If there is any interest in making this behavior less nonsensical, new Count spawns should discard any queued Count spawns using the same **Item ID**.
 
-#### Stopping During a Count Update
-Stopping or Pausing a Count instance removes it from the count update list.  
-If this is done during a count update, the instance is removed from the list but the index offset remains the same.  
-As a result, Count instances that have not been processed yet can be skipped if earlier instances are stopped mid update.
-
-### ID Limits
-
-Minimum **Item ID** is 0, maximum **Item ID** is 9999\.  
-**Item ID** 0 is usable by Count, but only Pickup is able to modify it.
-
-### Remappable IDs
+### Spawn Remapping
 
 **Item ID** and **Target ID** can be remapped.
 
@@ -116,7 +106,7 @@ If **TimeMod** is 0 then the timer is unable to spawn groups.
 With **Dont Override**, **StartTime** is ignored when updating the timer.
 
 ## Activation
-Time triggers create global timer instances, which are shared by **Item ID**.  
+Time triggers create global timer instances, which are shared by **Item ID**. Timers store all of the Time trigger's groups, properties and remap information.  
 Activating a Time trigger while there is an already active timer for the given Item ID updates the timer with the trigger's settings and groups.
 
 Timers update every tick, 240 times a second.  
@@ -143,15 +133,22 @@ Stopping the timer clears all settings, remaps and the current value is reset to
 
 # Time Event
 
-Stops after activating without **Multi Activate**.
+Spawns **TargetID** when the timer given by **ItemID** reaches the **TargetTime**.  
 
 ## Activation
 
-
+Time Event triggers do not spawn groups on their own, they assign extra groups for timers to spawn at the specified target time.  
+Time Event requires an active timer to work, which can be created with a Time or Item Edit trigger.  
+Unlike Time triggers, a Time Event will spawn its target even if it was initialized after the timer has reached or passed the **TargetTime**.  
 
 ### Spawn Mechanics
-Can be spawn remapped.
-Target does not inherit the Time Event's spawn remaps, the timer's stored remaps are used instead.
+**ItemID** can be remapped.  
+Unlike Count triggers, Time Events are not ordered by **TargetTime**. If multiple Time Events with the same ItemID spawn in the same tick, spawn order will be used.  
+
+Since timers spawn the groups given by Time Event, the spawn behavior is not going to depend on the Time Event, but on the timer:
+* The spawn target inherits the timer's remaps.
+* The timer's spawn limit is applied to all extra groups added by Time Event.
+* Time Events spawn after their given timer, even if it was initialized after the Time Event.
 
 # Time Control
 
@@ -205,10 +202,10 @@ Item Edit can only update the value of an active timer.
 
 Spawns **TrueID** or **FalseID** based on the result of the comparison of two parameters.
 
-## Math Operators
-
 ## Parameters
 Can be items, timers, points, main timer or attempts.
+
+## Math Operators
 
 ### Mod
 First button changes the operator of Mod1 and the first parameter between = (assign), += (add), -= (subtract), ⋅= (multiply) and \\= (divide).
@@ -246,5 +243,31 @@ Targets continue to be persistent until **Reset** is used, even between attempts
 **TargetAll** targets all persistent items or timers.
 
 When persistent, items and timers keep all of their values and settings between attempts.  
-In the case of timers, this includes timer stop options and remaps.
+In the case of timers, this includes timer stop options and remaps.  
 
+Special items like are not affected by Item Persist - Main time and Attempts are persistent, Points are not.
+
+# Counter Labels
+
+Displays the value of a given **ItemID** using a text label.  
+Displays the value of a timer instead if **Time Counter** is selected.  
+Special items like Main Time, Points and Attempts can be displayed if the respective option is selected. As these are items, they will not be displayed if **Time Counter** is selected.  
+Items -1, -2 and -3 can also be used to display the three special items Main Time, Points and Attempts.  
+By default the text of the label is aligned to center, **Left Align** and **Right Align** aligns the text to the left and right respectively.  
+
+If by any reason the label is not updated properly and displays the wrong value, a Pickup with the same ItemID will update the label even if it doesn't change the value of the item.  
+Timers outside the 0-9999 range are not updated and always displayed as 0.  
+Points will not be displayed by a counter label until the first point is obtained.  
+
+# Item ID Limits
+
+## Items
+Items are limited between ID 0 and 9999.  
+
+While some triggers can be assigned items outside the usual range, these items refer to either ID 0 or 9999.  
+ItemIDs below 0 are reserved for items like Main Time, Points and Attempts.  
+
+## Timers
+Timers are not limited and can be assigned both positive IDs higher than 9999 and negative IDs lower than 0.  
+The only triggers able to use negative timers are Time, Time Event, Time Control and Item Persist.  
+Item Edit and Item Compare are not able to be used to assign or extract values from these timers, it is not possible to use these timers as a way to store numerical values. It is possible however to store remaps, which can be accessed by Time Event.
