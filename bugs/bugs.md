@@ -43,6 +43,11 @@ If you try to call 2 different Enter triggers with the same Enter Channel and Ef
 
 Using Enter trigger effects on portals only affects the foreground layer of portal objects.
 
+## \[2.207\] Legacy Enter triggers cannot be spawned
+
+Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.  
+Touch Trigger does work however.
+
 # Spawn Triggers
 
 ## \[2.207\] Overwriting a spawn remap of ID 2 crashes the game
