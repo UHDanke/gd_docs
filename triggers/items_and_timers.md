@@ -105,7 +105,7 @@ If **TimeMod** is 0 then the timer is unable to spawn groups.
 
 With **Dont Override**, **StartTime** is ignored when updating the timer.
 
-## Activation
+## Timers
 Time triggers create global timer instances, which are shared by **Item ID**. Timers store all of the Time trigger's groups, properties and remap information.  
 Activating a Time trigger while there is an already active timer for the given Item ID updates the timer with the trigger's settings and groups.
 
