@@ -309,8 +309,8 @@ Move effects (except Area Move and Area Rotate) are also scaled.
 
 #### Behavior
 
-**From Opacity** is the opacity at min value, while **To Opacity** is the opacity at max.  
-Multiple Area Fade effects on the same object stack, but unlike other opacity effects, not multiplicatively.  
+**From Opacity** is the opacity at min value, while **To Opacity** is the opacity at max.
+Unlike other Area triggers, Area Fade effects do not stack additively or multiplicatively with one another. When multiple Area Fade effects are applied on the same object, the one with the highest Effect Strength is applied regardless of the opacity value. If there is a tie, the first effect is used as determined by **Priority** and spawn order.  
 The effect multiplies with other opacity effects (Alpha trigger and color channel Opacity).  
 Area Fade does not have an **Easing** option.  
 Due to a bug, Area Fade effects stop working for one frame after the game is unpaused.
