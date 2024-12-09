@@ -1,5 +1,5 @@
 # WORK IN PROGRESS
-## Spawn Order
+# Spawn Order
 
 The activation order of triggers is the order they were spawned in, also known as the spawn order.  
 By default, this is applied horizontally from left to right. If multiple triggers share the same horizontal position, they will activate in the order they were placed in.  
@@ -7,34 +7,34 @@ ORD can be used to enforce an activation order for triggers without the spawn or
 
 The following triggers have additional ordering mechanisms which are applied before spawn order:
 
-#### Count
+### Count
 
 First ordered by Target Count in ascending or descending order depending on whether the last item change increased or decreased the value.  
 Count activates after every Pickup or Item Edit trigger with the Item option, even if the value remains the same. In this case ascending order is used.  
 If Target Count is the same, spawn order will be used.
 
-#### Time Event
+### Time Event
 
 Activation order depends on the spawn order of Timer triggers for different Item IDs.  
 If Item IDs are identical, spawn order is used.
 
-#### Collision
+### Collision
 
 Activation order depends on the order collision objects are checked.  
 Player collisions are checked before dynamic collisions.  
 If two collision triggers share the same collision IDs, spawn order is used. The order of the IDs does not matter.
 
-#### Area Triggers
+### Area Triggers
 
 Priority is applied first, from highest first to lowest last.  
 If Priority is the same, spawn order is used.
 
-#### Advanced Follow
+### Advanced Follow
 
 Priority is applied first, from highest first to lowest last.  
 If Priority is the same, spawn order is used.
 
-### Spawn Schedule
+## Spawn Schedule
 
 The following spawns are instant:
 
@@ -57,26 +57,26 @@ The remaining ones are scheduled, and will spawn in this order:
 6. Keyframe  
 7. Collision (on enter)  
 8. State (on enter)  
-9. Touch Trigger  
+9. Instant (touch triggered)  
 10. State (on exit)  
 11. On Death  
 12. Instant (from timeline)   
 13. Collision (on exit)
 
-## Spawn Remapping
+# Spawn Remapping
 
 Spawn remapping is a Spawn trigger option that allows remapping the IDs of spawned triggers to new IDs.  
 IDs are not discerned by their type (Item ID, Block ID, Group ID, etc), they are all treated as a single ID for the purposes of remapping.  
 The main purpose of spawn remapping is reusing triggers, but it has many more uses thanks to its versatility.
 
-### Remap Rules
+## Remap Rules
 
 New spawn remaps overwrite inherited remaps.  
 If an ID is remapped to multiple IDs within the same trigger (one-to-many), the highest (last in the list) new ID is used.
 
-### Remappable Triggers
+## Remappable Triggers
 
-#### Fully Remappable
+### Fully Remappable
 
 * Move  
 * Stop  
@@ -214,7 +214,7 @@ The following triggers have some form of remap inheritance:
 * Keyframe
 * Count
 * Spawn
-* Timer
+* Time
 
 ### Notes & Exceptions
 
@@ -226,11 +226,11 @@ Yes if Multi Activated is selected, otherwise the target inherits the remaps of 
 
 Yes, unless Reset Remap is selected.
 
-#### Timer
+#### Timers
 
-Spawning a Timer while there is already another active Timer with the same ItemID updates the Timer's settings and groups, but not the timer's remaps.  
-The only way to clear these remaps is to use a Stop trigger on the current active Timer instance for that ItemID.  
-In a way you can consider the remaps of Timers to be saved inside the Item ID until the Timer trigger is stopped with a Stop trigger.  
+Remaps of Time triggers are stored inside timers.  
+Remaps can only be assigned when the timer is initialized, Time triggers update the timer's settings and groups, but not the timer's remaps.  
+The only way to clear these remaps is to use a Stop trigger on one the groups or control IDs of the last Time trigger called for that ItemID.   
 Pause, Resume and Time Control will not reset remaps.  
 Assigning a value to a timer Item ID with Item Edit creates a paused timer instance with no remaps.
 
@@ -240,7 +240,7 @@ Resets remaps.
 
 #### Time Event
 
-Makes the Timer with the given Item ID spawn a group, so the spawn uses the Timer's remaps.
+Makes the timer with the given Item ID spawn a group, so the spawn uses the timer's remaps.
 
 #### Checkpoint
 
@@ -267,9 +267,10 @@ Values above 999 are reserved for special color channels.
 
 #### Item IDs
 
-Values below 0 are reserved for special items (-1 is Time, \-2 is Points, \-3 is Attempts).  
-Pickup can reference (but not change, they get limited to 0 or 9999\) IDs outside 0-9999.  
-Item Edit cannot use ID 0\.
+Values below 0 are reserved for special items (-1 is Time, -2 is Points, -3 is Attempts).  
+Pickup, Item Edit and Item Compare can reference (but not change, they get limited to 0 or 9999) IDs outside 0-9999.  
+Item Edit cannot use ID 0 as a parameter.  
+Time, Time Event and Time Control can reference and use IDs outside 0-9999. As Item Compare and Item Edit cannot reference out of bounds IDs, accessing the values of these timers is not possible. It is however possible to store remaps inside timers and spawn a group with those remaps using Time Event.  
 
 #### Song Channels
 
@@ -295,7 +296,8 @@ The following IDs are:
 
 * Control IDs  
 * Area Effect IDs  
-* Enter Effect IDs  
+* Enter Effect IDs
+* Item IDs (timers only)
 * Material IDs (between −/+ 32767\)  
 * Enter Channels (between −/+ 32767\)  
 * SFX IDs  
@@ -310,7 +312,7 @@ All triggers can be spawned multiple times per tick,  but not all can activate o
 Without remaps, a spawn trigger can spawn the same group once per reset.  
 There are two resets per tick, before and after Spawn triggers with delay are scheduled.  
 As a result, you can activate the same spawn group from a single Spawn trigger twice per tick - one time from a Spawn trigger with delay, and another time from any other spawn.    
-While the applications of this are limited, having the option of a second activation per tick is very important for instanced spawn triggers like Count and Sequence, where each instance would only be able to activate once per tick otherwise. 
+While the applications of this are limited, having the option of a second activation per tick is very important for instanced spawn triggers like Count and Sequence, where otherwise each instance would only be able to activate once per tick which can interfere if the spawn is either on a timer or by player input. 
 
 With remaps, the spawn limit is applied separately for each remap origin.  
 The remap origin is the first remapped trigger in a spawn chain.    
