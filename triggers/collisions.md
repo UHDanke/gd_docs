@@ -73,6 +73,7 @@ Generally, it doesn't make sense to stop or disable collision triggers for perfo
 Other bad attempts at optimization:
 - Spawning thousands of individual Instant Collision triggers at once instead of using Collision Triggers, this is laggier as it spawns more triggers at once
 - Trying to reinvent the wheel by disabling Collision triggers based on a player-made distance measurement, the game already does this
+- Replacing Collision triggers with Instant Collision spawn loops
 
 What optimizations DO make sense, if necessary:
 - Using as few dynamic objects as possible
