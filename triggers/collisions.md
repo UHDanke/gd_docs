@@ -66,7 +66,7 @@ Using Toggle or Silent Move with Instant Collision to do multiple checks per tic
 Generally, it doesn't make sense to stop or disable collision triggers for performance purposes, or to use Instant Collision instead for the following reasons:
 - Collision triggers only activate on Collision ID state changes
 - The overhead of Collision trigger instances being active (stored in memory) is very small and doesn't significantly affect performance on modern devices
-- The main performance cost of Collision and Instant Collision triggers is spawning other triggers; Collision checks are often the main reason for lag
+- The main performance cost of Collision and Instant Collision triggers is spawning other triggers; Collision object checks are often the main reason for lag
 - Collisions are checked every tick regardless of whether any Collision trigger is active
 - Collisions are not checked if the objects are toggled off or more than 175 units apart (unless Extended Collision is used)
 
