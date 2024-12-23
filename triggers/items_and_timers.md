@@ -9,6 +9,7 @@ If the stored value is different from the new one and **Target Count** is betwee
 With **Activate Group** selected Count enables and spawns the **Target ID**. This can interfere with Toggle triggers if they target the same group.  
 Without **Multi Activate**, Count stops after one activation.
 
+
 ## Spawn Mechanics
 
 ### Stored Value
@@ -244,6 +245,10 @@ Targets continue to be persistent until **Reset** is used, even between attempts
 
 When persistent, items and timers keep all of their values and settings between attempts.  
 In the case of timers, this includes timer stop options and remaps.  
+
+Count triggers are not persistent between attempts, the Count's stored item value does not get updated on respawn if the Count was activated prior to the checkpoint. If the persistent item value changes after the checkpoint, the Count's stored value and item value will differ.    
+
+While timers are persistent, Time Event triggers are not.
 
 Special items like are not affected by Item Persist - Main time and Attempts are persistent, Points are not.
 
