@@ -297,7 +297,7 @@ Where *Scale* is **ScaleX** or **ScaleY**.
 
 If the scale value is negative, the object will be flipped around the respective axis.   
 Due to a bug with Area Scale solid object hitboxes become thin when scaled with a negative value.  
-Area Scale will not work if both X and Y scale are equal to 0. Objects can be scaled by 0 on one axis if the other axis is non-zero; To scale an object on both X and Y two Area Scale triggers are needed.  
+Area Scale will not work if both X and Y scale are equal to 0. Objects can be scaled by 0 on one axis if the other axis is non-zero; To scale an object on both X and Y to 0 two Area Scale triggers are needed.  
 Area Scale is considered a scaling effect by Scale trigger's **Relative Scale** option.     
 The degree of slopes can be changed using transform effects like object warping or Area Scale.  
 Move effects (except Area Move and Area Rotate) are also scaled.
@@ -311,7 +311,7 @@ Move effects (except Area Move and Area Rotate) are also scaled.
 
 #### Behavior
 
-**From Opacity** is the opacity at min value, while **To Opacity** is the opacity at max.  
+**From Opacity** is the opacity at maximum strength, while **To Opacity** is the opacity at minimum.  
 Unlike other Area triggers, Area Fade effects do not stack additively or multiplicatively with one another. When multiple Area Fade effects are applied on the same object, the one with the highest Effect Strength is applied regardless of the opacity value. If there is a tie, the first effect is used as determined by **Priority** and spawn order.  
 The effect multiplies with other opacity effects (Alpha trigger and color channel Opacity).  
 Area Fade does not have an **Easing** option.  
