@@ -297,6 +297,8 @@ Where *Scale* is **ScaleX** or **ScaleY**.
 
 If the scale value is negative, the object will be flipped around the respective axis.   
 Due to a bug with Area Scale solid object hitboxes become thin when scaled with a negative value.  
+Area Scale will not work if both X and Y scale are equal to 0. Objects can be scaled by 0 on one axis if the other axis is non-zero; To scale an object on both X and Y two Area Scale triggers are needed.  
+Area Scale is considered a scaling effect by Scale trigger's **Relative Scale** option.     
 The degree of slopes can be changed using transform effects like object warping or Area Scale.  
 Move effects (except Area Move and Area Rotate) are also scaled.
 
