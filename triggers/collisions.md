@@ -51,7 +51,7 @@ State Blocks spawn groups independently even if sharing the same group IDs. Howe
 # Collision Schedule
 * Collision (enter)
 * State (on)
-* Touch Trigger
+* Instant (Touch Trigger)
 * State (off)
 * Collision (exit)
 
