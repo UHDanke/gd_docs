@@ -133,7 +133,8 @@ All IDs, including the reference IDs, can be remapped.
 ## Timings
 
 Edit Advanced Follow is instant, the reference values are taken at the time of spawning.  
-The target must have been affected in the previous Advanced Follow update in order for Edit Advanced Follow to work
+
+The target must under an active Advanced Follow effect in order for Edit Advanced Follow to work. This happens after an Advanced Follow action, not when the Advanced Follow trigger is spawned.
 
 # Re-Target Advanced Follow
 
