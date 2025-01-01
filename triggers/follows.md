@@ -89,7 +89,8 @@ Available modes are:
 **Delay** adds a delay (in seconds) to the position of the follow center and the start of the Advanced Follow effect. 
 
 **MaxRange** is the distance from center in (small step) units inside which the Advanced Follow effect is applied.  
-If **MaxRange** is equal to 0, no distance limit is applied. If it's less than 0, then Advanced Follow will stop working.
+If **MaxRange** is equal to 0, no distance limit is applied. If it's less than 0, then Advanced Follow will stop working.  
+Like **StartSpeed** and **StartDir**, **MaxRange** has a reference ID which currently does nothing.
 
 **MaxSpeed** limits the target's speed to the given speed value.	
 If **MaxSpeed** is less than or equal to 0, no speed limit is used. 
