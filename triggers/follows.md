@@ -76,29 +76,6 @@ With **Mode 1** and **2**, the rotation follows the object's direction of moveme
 
 With Ignore Disabled, targets that are toggled off are skipped by Advanced Follow.
 
-## Pause and Resume
-
-Pausing disables the Advanced Follow instance temporarily. Delays are not paused and continue to tick down while the trigger is inactive.  
-The spawn order of the instance is kept when resuming.
-
-## Advanced Follow Update
-
-Advanced Follow actions are processed after Follow Player Y, but before Follow and Area triggers.
-
-Each action performs its motion calculation then executes the movement given by the result. 
-They are done sequentially as dictated by Priority and spawn order. 
-Positions are updated after each action and can be used by other Advanced Follow triggers right after.
-
-If the target ends up not being under the effect of any Advanced Follow triggers, it loses all velocity on the next Advanced Follow update and can no longer be affected by Edit and Re-Target Advanced Follow.
-
-### Velocity Duplication Bug
-
-Multiple Advanced Follow actions on the same object are bugged and do not stack properly.  
-Because each action executes the movement without checking if said velocity has been already applied on the target in the current tick, the same velocity is applied multiple times erronously. In other words, the object moves way faster than it should if there are multiple non-exclusive Advanced Follow triggers acting on the same object.  
-This bug is shared across all modes of movement.  
-The actions are done separately on each axis - two Advanced Follow triggers, one **X Only** and another **Y Only** will not duplicate the other's motion.  
-This also applies to **Rotation**, which is more noticeable when using **Mode 3**.
-
 ## Mode
 
 Mode selects the movement mode of Advanced Follow.  
@@ -127,11 +104,15 @@ As a side-effect, Edit Advanced Follow will not work on **Mode 1**.
 
 ### Mode 2
 
-Acceleration
-Friction
+**Acceleration** is the multiplier of the target's acceleration. 1.00 **Acceleration** is equal to 0.01 increase in speed per tick.
+
+**Friction** is the percentage of velocity lost every tick. Values of **Friction** are not limited - values below 0 and above 100 will increase the velocity exponentialy if there is no opposing force.  
+Friction is applied prior to acceleration.
+
 NearDist
-NearFriction
-NearAccel
+
+With NearDist, the values of acceleration and friction depend on the distance 
+NearFriction / NearAccel are the values
 
 ### Mode 2 & 3
 
@@ -158,22 +139,45 @@ Due to a bug, only one object per **Target GID** can be affected by **StartSpeed
 
 ### Mode 3
 
-SteerForce is the multiplier of the max rotational speed applied on the object towards the follow center. 1.00 SteerForce is equal to 0.01 radians / tick.
+**SteerForce** is the multiplier of the max rotational speed applied on the object towards the follow center.  
+1.00 **SteerForce** is equal to 0.01 radians / tick. Steering is done prior to braking and acceleration.
 
-SteerForceLow / SteerForceHigh replaces SteerForce if the velocity of the object is strictly below / above SpeedRangeLow / SpeedRangeHigh. 
+**SteerForceLow** / **SteerForceHigh** replaces **SteerForce** if the velocity of the object is strictly below / above **SpeedRangeLow** / **SpeedRangeHigh**. 
 
 The target starts braking if the direction of movement and the direction towards the center are offset by more than **BreakAngle**.
 If **BreakAngle** is above or equal to 180 degrees, the target will never brake. If it's below 0, it will be stuck braking.
 
-BreakForce is the percentage of velocity lost every tick while braking, similar to Friction in Mode 2.
-Unlike friction, BreakForce is limited between 0 and 100 and Acceleration is not applied while braking.
+**BreakForce** is the percentage of velocity lost every tick while braking, similar to friction in **Mode 2**.
+Unlike friction, **BreakForce** is limited between 0 and 100 and acceleration is not applied while braking.
 
-SteerForce, SteerForceLow and SteerForceHigh are not applied while braking - BreakSteerForce is used instead if the velocity of the target is below BreakSteerSpeedLimit.
+**SteerForce** , **SteerForceLow** and **SteerForceHigh** are not applied while braking - **BreakSteerForce** is used instead if the velocity of the target is equal to or below **BreakSteerSpeedLimit**.
 
 In Mode 3, acceleration is applied in the direction of movement. With **Target Dir**, acceleration is applied towards the follow center like in Mode 2.
 
 **SlowAccel** and **SlowDist** currently do nothing.
 
+## Advanced Follow Update
+
+Advanced Follow actions are processed after Follow Player Y, but before Follow and Area triggers.
+
+Each action performs its motion calculation then executes the movement given by the result. 
+They are done sequentially as dictated by Priority and spawn order. 
+Positions are updated after each action and can be used by other Advanced Follow triggers right after.
+
+If the target ends up not being under the effect of any Advanced Follow triggers, it loses all velocity on the next Advanced Follow update and can no longer be affected by Edit and Re-Target Advanced Follow.
+
+### Velocity Duplication Bug
+
+Multiple Advanced Follow actions on the same object are bugged and do not stack properly.  
+Because each action executes the movement without checking if said velocity has been already applied on the target in the current tick, the same velocity is applied multiple times erronously. In other words, the object moves way faster than it should if there are multiple non-exclusive Advanced Follow triggers acting on the same object.  
+This bug is shared across all modes of movement.  
+The actions are done separately on each axis - two Advanced Follow triggers, one **X Only** and another **Y Only** will not duplicate the other's motion.  
+This also applies to **Rotation**, which is more noticeable when using **Mode 3**.
+
+## Pause and Resume
+
+Pausing disables the Advanced Follow instance temporarily. Delays are not paused and continue to tick down while the trigger is inactive.  
+The spawn order of the instance is kept when resuming.
 
 # Edit Advanced Follow
 
