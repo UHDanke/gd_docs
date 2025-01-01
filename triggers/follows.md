@@ -141,25 +141,26 @@ If **StartDir** has a defined ID, the direction used is aimed towards the refere
 
 The object's default direction points upwards. The default is used if no reference IDs are defined, or if the reference returns no valid direction.
 
-The behavior of **StartSpeed** depends on the options **Init**, **Set** and **Add**.
-If **Init** is used and this is the first action applied on the target, the object's velocity is set to **StartSpeed**.
-If **Set** is used and StartSpeed is different from 0, the object's velocity is replaced by **StartSpeed**.
-If **Add** is used, **StartSpeed** is added to the object's current velocity.
+The behavior of **StartSpeed** depends on the options **Init**, **Set** and **Add**.  
+If **Init** is used and this is the first action applied on the target, the object's velocity is set to **StartSpeed**.  
+If **Set** is used and StartSpeed is different from 0, the object's velocity is replaced by **StartSpeed**.  
+If **Add** is used, **StartSpeed** is added to the object's current velocity.  
 
 Due to a bug, only one object per **Target GID** can be affected by **StartSpeed**.
 
-
 ### Mode 3
 
+In Mode 3, acceleration is applied in the direction of movement. With **Target Dir**, acceleration is applied towards the follow center like in Mode 2.
+
+**SlowAccel** and **SlowDist** currently do nothing.
 
 
-Acceleration
-TargetDir
-SlowAccel
-SlowDist
+SteerForce is the multiplier of the max rotational speed applied on the object towards the follow center. 1.00 SteerForce is equal to 0.01 radians / tick.
 
+SteerForceLow / SteerForceHigh replaces SteerForce if the velocity of the object is strictly below / above SpeedRangeLow / SpeedRangeHigh. 
 
-SteerForce
+BreakForce is the percentage of velocity lost every tick while braking, similar to Friction in Mode 2.
+Unlike friction, BreakForce is limited between 0 and 100.
 
 
 # Edit Advanced Follow
