@@ -5,6 +5,7 @@
 ## P1/P2/C (Pages 78, 85)
 
 ![image](https://github.com/user-attachments/assets/6632f1de-3f88-41f5-ac7a-ee58d92176dc)
+![image](https://github.com/user-attachments/assets/276f3814-e8ee-41ec-9ad0-a58720809a22)
 
 **C** is the bottom-left corner of the screen, not the center.
 
@@ -69,6 +70,7 @@ The definition of Target Dir is filler and doesn't explain anything concrete. Ta
 
 # Re-Target Advanced Follow Target GID
 ![image](https://github.com/user-attachments/assets/242405cb-c5e5-48c4-960d-97347e3ba932)
+![image](https://github.com/user-attachments/assets/7e3a56d0-473b-43fe-927a-c0156cc50dc7)
 
 For Re-Target Advanced Follow, Target GID is the group ID of an Advanced Follow trigger, not the Target GID of Advanced Follow.
 
@@ -90,17 +92,25 @@ Advanced Follow movement breaks when using Rotation on targets part of linked ob
 ## Timewarp
 
 ### Mode 1 Easing
-Mode 1 Advanced Follow triggers with 0 Easing follow the target with easing if timewarp is less than 1.
+Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1.
 
 The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0.
 
-This bug makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down.
+This behavior makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down.  
+This also affects Mode 2 movement that relies on moving objects for a single tick very fast with high speed and limited MaxRange or 100 Friction.
 
 ### Max Rotation Speed
 
 The max rotation speed of the Rotate option does not scale with timewarp.
 
+## Speedup when using high Friction values
+
+Friction values over 100 can reverse the speed of an object, and if above 200 friction this speed will increase exponentially until the game crashes.
+
 ## StartSpeed and Speed are not multipliers
+
+StartSpeed and Speed are not multipliers when using a speed reference ID.  
+It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.  
 
 ## Options that do nothing
 
@@ -112,3 +122,20 @@ The following options do nothing:
 While a MaxRange reference ID has limited applications, one such example is with Mode 1 with 0 easing - this would allow you to move a singular object from a group to a target position (like a target move for objects), which is very useful.
 
 # Suggestions & Additions
+
+## AdvFollow Ignore Timewarp
+
+Add **Ignore Timewarp** option to Advanced Follow. When used this would ensure high speed movement isn't affected while slowing down time.
+
+## Edit AdvFollow Mod X and Mod Y reference ID
+
+Add a reference ID besides Mod X and Mod Y, to allow the speed to be modified on the X or Y axis of a reference object. This would allow for accurate bounce physics off slopes or angled lines which is currently very difficult to do.
+
+## Speed Multiplier
+
+If speed not being a multiplier is intentional, a **Speed Multiplier** option should be added to allow for that behavior. While it takes an extra workaround, this would allow the implementation of accurate collision motions between solid phyisic objects.
+
+## Edit AdvFollow Use Dir
+Add **Use Dir** option so the object's current direction is used for direction calculations.  
+With Speed this would allow adding speed in the direction of movement without using an individual reference ID for each block.  
+If Redirect Dir worked, you could use Dir to offset the direction of movement by a set amount of degrees.
