@@ -133,7 +133,7 @@ Add a reference ID besides Mod X and Mod Y, to allow the speed to be modified on
 
 ## Speed Multiplier
 
-If speed not being a multiplier is intentional, a **Speed Multiplier** option should be added to allow for that behavior. While it takes an extra workaround, this would allow the implementation of accurate collision motions between solid phyisic objects.
+If speed not being a multiplier is intentional, a **Speed Multiplier** option should be added to allow for that behavior. While it takes an extra workaround, this would allow the implementation of accurate collision motions between solid phyisic objects. Additionally, any kind of movement could be converted to advanced follow speed values with this feature.
 
 ## Edit AdvFollow Use Dir
 Add **Use Dir** option so the object's current direction is used for direction calculations.  
