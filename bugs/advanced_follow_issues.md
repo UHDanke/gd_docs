@@ -95,6 +95,8 @@ Targets move way faster than they should if there are multiple Advanced Follows 
 
 Rotation is also duplicated when using Mode 3.
 
+A solution to this bug would be for only the first Advanced Follow in a tick to move by the velocity value, and subsequent ones to move by the difference in velocity.
+
 ## Rotation and Object Groups
 
 Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.
