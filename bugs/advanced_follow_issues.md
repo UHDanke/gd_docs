@@ -137,5 +137,5 @@ If speed not being a multiplier is intentional, a **Speed Multiplier** option sh
 
 ## Edit AdvFollow Use Dir
 Add **Use Dir** option so the object's current direction is used for direction calculations.  
-With Speed this would allow adding speed in the direction of movement without using an individual reference ID for each block.  
+With Speed this would allow adding speed in the direction of movement without using an individual reference ID for each target.  
 If Redirect Dir worked, you could use Dir to offset the direction of movement by a set amount of degrees.
