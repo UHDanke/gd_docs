@@ -1,10 +1,8 @@
 
 
-
-
 # Documentation Issues
 
-## P1/P2/C (Page 78)
+## P1/P2/C (Pages 78, 85)
 
 ![image](https://github.com/user-attachments/assets/6632f1de-3f88-41f5-ac7a-ee58d92176dc)
 
@@ -52,15 +50,65 @@ I don't have a good way to describe this easing outside of mentioning the veloci
 
 These definitions imply NearFriction and NearAccel replace Friction and Acceleration when inside NearDist but that is not the case - the values of acceleration and friction vary between normal and near values linearly, based on the distance of the target from the follow center divided by NearDist.
 
+# StartDir
 ![image](https://github.com/user-attachments/assets/edb86c48-d543-4434-93b9-975d58f2683f)
 
-StartDir offsets the angle when using a direction reference.
+StartDir offsets the angle when using a direction reference ID.
 
-# Direction Reference (Page 81, 82)
+# Direction Reference (Pages 81, 83, 85)
 
 ![image](https://github.com/user-attachments/assets/f1d001f1-4dad-41ae-8def-82a9faaf493c)
 
 StartSpeed is never a multiplier, it is a set value even when using a speed reference; only the movement direction is copied.
 
+# Target Dir (Page 83)
 
 ![image](https://github.com/user-attachments/assets/7d64c91c-8588-4a04-a9ce-2c694abec8c4)
+
+The definition of Target Dir is filler and doesn't explain anything concrete. Target Dir makes the object accelerate towards the follow center (like in Mode 2), without it acceleration is done in the direction of movement.
+
+# Re-Target Advanced Follow Target GID
+![image](https://github.com/user-attachments/assets/242405cb-c5e5-48c4-960d-97347e3ba932)
+
+For Re-Target Advanced Follow, Target GID is the group ID of an Advanced Follow trigger, not the Target GID of Advanced Follow.
+
+# Bugs
+
+## Velocity Duplication
+Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger.
+
+[Example Video](https://youtu.be/obZ-G22lizU)
+
+Rotation is also duplicated when using Mode 3.
+
+## Rotation and Object Groups
+
+Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.
+
+[Example Video](https://youtu.be/KJJ2YNqvOO8)
+
+## Timewarp
+
+### Mode 1 Easing
+Mode 1 Advanced Follow triggers with 0 Easing follow the target with easing if timewarp is less than 1.
+
+The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0.
+
+This bug makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down.
+
+### Max Rotation Speed
+
+The max rotation speed of the Rotate option does not scale with timewarp.
+
+## StartSpeed and Speed are not multipliers
+
+## Options that do nothing
+
+The following options do nothing:
+- MaxRange Reference ID
+- Redirect Dir (Edit AdvFollow)
+- SlowDist and SlowAccel (Mode 3)
+
+While a MaxRange reference ID has limited applications, one such example is with Mode 1 with 0 easing - this would allow you to move a singular object from a group to a target position (like a target move for objects), which is very useful.
+
+# Suggestions & Additions
