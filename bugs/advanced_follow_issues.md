@@ -121,6 +121,10 @@ The following options do nothing:
 
 While a MaxRange reference ID has limited applications, one such example is with Mode 1 with 0 easing - this would allow you to move a singular object from a group to a target position (like a target move for objects), which is very useful.
 
+## StartSpeed works on one target
+
+If there are multiple targets inside Target GID, StartSpeed applies on one target only.
+
 # Suggestions & Additions
 
 ## AdvFollow Ignore Timewarp
