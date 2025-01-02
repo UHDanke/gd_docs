@@ -25,54 +25,66 @@ This definition is alright if you know that a target under no Advanced Follow ha
 
 Set will not override the current velocity if StartSpeed is equal to 0.
 
-# Delay  (Pages 79, 80)
+## Delay  (Pages 79, 80)
 ![image](https://github.com/user-attachments/assets/b5daa52a-a337-49d5-93a5-09b872d71f42)
 
 This definition is incomplete - the position of the follow center is also delayed.
 
-# MaxSpeed (Pages 79, 80)
+## MaxSpeed (Pages 79, 80)
 ![image](https://github.com/user-attachments/assets/24593595-6893-4f2d-8c2b-b82d28312f52)
 
 Leaving MaxSpeed at 0 doesn't limit speed, it makes it unlimited.
 
-# MaxRange (Pages 79, 80)
+## MaxRange (Pages 79, 80)
 ![image](https://github.com/user-attachments/assets/de58dcba-86f0-4257-9a13-eb2200af2eb9)
 
 Only mentioning start of movement implies the target will continue to follow when exiting MaxRange, which isn't the case - MaxRange is the radius in which the Advanced Follow effect is applied, exiting this range removes all target velocity.
 
-# Easing (Page 79)
+## Easing (Page 79)
 ![image](https://github.com/user-attachments/assets/16a6e0b6-f46c-4a92-a06c-1c7839fa63a7)
 
 This definition is wrong, easing is applied at all times.  
 I don't have a good way to describe this easing outside of mentioning the velocity equation ($Velocity=Distance/Easing$).
 
-# NearFriction and NearAccel (Page 81)
+## NearFriction and NearAccel (Page 81)
 ![image](https://github.com/user-attachments/assets/a3ae08a5-ea9d-41ad-97e2-b3ea498b4449)
 
 These definitions imply NearFriction and NearAccel replace Friction and Acceleration when inside NearDist but that is not the case - the values of acceleration and friction vary between normal and near values linearly, based on the distance of the target from the follow center divided by NearDist.
 
-# StartDir
+## StartDir
 ![image](https://github.com/user-attachments/assets/edb86c48-d543-4434-93b9-975d58f2683f)
 
 StartDir offsets the angle when using a direction reference ID.
 
-# Direction Reference (Pages 81, 83, 85)
+## Direction Reference (Pages 81, 83, 85)
 
 ![image](https://github.com/user-attachments/assets/f1d001f1-4dad-41ae-8def-82a9faaf493c)
 
 StartSpeed is never a multiplier, it is a set value even when using a speed reference; only the movement direction is copied.
 
-# Target Dir (Page 83)
+## Target Dir (Page 83)
 
 ![image](https://github.com/user-attachments/assets/7d64c91c-8588-4a04-a9ce-2c694abec8c4)
 
 The definition of Target Dir is filler and doesn't explain anything concrete. Target Dir makes the object accelerate towards the follow center (like in Mode 2), without it acceleration is done in the direction of movement.
 
-# Re-Target Advanced Follow Target GID
+## Re-Target Advanced Follow Target GID
 ![image](https://github.com/user-attachments/assets/242405cb-c5e5-48c4-960d-97347e3ba932)
 ![image](https://github.com/user-attachments/assets/7e3a56d0-473b-43fe-927a-c0156cc50dc7)
 
 For Re-Target Advanced Follow, Target GID is the group ID of an Advanced Follow trigger, not the Target GID of Advanced Follow.
+
+## SteerForceLow/High
+![image](https://github.com/user-attachments/assets/4cd1f96b-a241-4759-bfb9-a24e41fe6374)
+
+This is straight up wrong, steerforce settings have nothing to do with MaxRange, the trigger doesn't even work on targets outside that range.  
+SteerForceLow / SteerForceHigh replaces SteerForce if the velocity of the object is strictly below / above SpeedRangeLow / SpeedRangeHigh.
+
+## BreakAngle
+![image](https://github.com/user-attachments/assets/b0238496-0fff-4a2e-b09c-91fbfb0754d7)
+
+This could use clarification as to what angle its talking about.  
+The target starts braking if the angle between the direction of movement and the direction towards the follow center (where the target goes and where it wants to go, to put it another way) is higher than BreakAngle - in other words its how much the target tolerates going in a different direction before its forced to brake and steer itself towards the center. 
 
 # Bugs
 
