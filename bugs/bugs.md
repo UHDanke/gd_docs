@@ -150,3 +150,10 @@ You can find an example of [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 As a result the object will flicker constantly, moving on and off-screen every other tick.  
 This is not a visual bug, triggers that use object positions are affected.  
 This bug does not occur for the top, bottom or left side of the screen.
+
+## Toggle and negative Length
+Toggle disables Area effects on the object only if Length is negative.
+This should be replaced by a dedicated **Ignore Disabled** feature as there is no indication length does that.
+
+
+
