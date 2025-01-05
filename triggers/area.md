@@ -5,7 +5,7 @@
 Unlike their non-Area versions, the effects of Area triggers are virtual \- the effect is temporary and is undone when the trigger is stopped.  
 Area effects are recalculated every game tick, 240 times per second.  
 Non-Area Move, Rotate and Scaling effects use the real position of the objects.  
-However, triggers that use the position of an object as a target will use the virtual position of the object.
+However, triggers that target the position of an object will use the virtual position of the object.
 
 ## Timings
 
@@ -14,7 +14,7 @@ The latest point at which you can call an Area trigger and still be processed wi
 Collisions happen after Area triggers are processed.
 
 Move processing order:  
-Keyframe 🡒 Scale 🡒 Rotate 🡒 Move 🡒 Advanced Follow 🡒 Follow 🡒 **Area**
+Keyframe 🡒 Scale 🡒 Rotate 🡒 Move 🡒 Advanced Follow Y 🡒 Advanced Follow 🡒 Follow 🡒 **Area**
 
 ## EffectIDs
 
@@ -100,9 +100,12 @@ While object links need multiple objects to count as linked, you only need one I
 
 ## Visibility
 
-Area Fade and Area Tint effects do not apply if the object or Area Parent is not visible.  
-An object counts as visible if its center is within 0.5 blocks of the screen's edges.  
-For Area Scale, Rotate and Move the effect is applied in most cases regardless if the object is visible.
+An object counts as not visible if its center is outside of the screen's edges by at least half a block.  
+Objects can take up to ~0.1333 seconds to count as not visible in some cases.  
+
+Area Fade and Area Tint effects do not apply if the target is not visible.  
+For Area Move, Scale and Rotate, if an object is not visible Area will calculate the distance from the object's virtual position instead of its real position.
+
 Link Visible can be used to force objects to be visible to fix any issues regarding visibility.
 
 ## Effect Strength Coefficient
@@ -449,7 +452,7 @@ Stopping the Area trigger will undo and stop all active Area and Edit Area effec
 
 ### Toggle
 
-Toggle has no effect on Area effects.
+Toggle disables Area effects on targets only if **Length** is negative, otherwise has no effect.
 
 ### Follow
 
