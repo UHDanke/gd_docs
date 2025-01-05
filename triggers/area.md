@@ -177,14 +177,14 @@ Notations:
 | $L \gt 0$ | $Dz = 1$ | $\lt L$ | $\ge L$ | 1 | + |\|⟹|
 | $L \gt 0$ | $0\lt Dz\lt 1$| $\le Dz\cdot L$ | $\ge L$ | 1 | + |\|⟹|
 | $L \gt 0$ | $Dz = 0$ | $\le 0$ | $\ge L$ | 1 | + |\|⟹|
-| $L \gt 0$ | $Dz \lt 0$ | $\le Dz\cdot L$ | $\ge L$ | $Dz/(Dz-1)$ | -/+ |-|
+| $L \gt 0$ | $Dz \lt 0$ | $\le Dz\cdot L$ | $\ge L$ | $Dz/(Dz-1)$ | -/+ |\|⟹|
 | $L = 0$ | $Dz \gt 1$ | $\gt 0$ | $\le 0$ | 0 | + |\|⟸|
 | $L = 0$ | $Dz \le 1$ | $\lt 0$ | $\ge 0$ | 0 | - |\|⟸|
 | $L \lt 0$ | $Dz \gt 1$ | $\le Dz\cdot L$ | $\ge L$ | 0 | - |\|⟸|
 | $L \lt 0$ | $Dz = 1$ | $\gt L$ | $\le L$ | 1 | - |\|⟹|
 | $L \lt 0$ | $0\lt Dz\lt 1$| $\ge Dz\cdot L$ | $\le L$ | 1 | - |\|⟹|
 | $L \lt 0$ | $Dz = 0$ | $\ge 0$ | $\le L$ | 1 | - |\|⟹|
-| $L \lt 0$ | $Dz \lt 0$ | $\ge Dz\cdot L$ | $\le L$ | $Dz/(Dz-1)$ | -/+ |-|
+| $L \lt 0$ | $Dz \lt 0$ | $\ge Dz\cdot L$ | $\le L$ | $Dz/(Dz-1)$ | -/+ |\|⟸|
 
 #### Center ⟸ Edge
 
@@ -194,14 +194,14 @@ Notations:
 | $L \gt 0$ | $Dz = 1$ | $\ge L$ | $\lt L$ | 0 | + |\|⟸|
 | $L \gt 0$ | $0\lt Dz\lt 1$| $\ge L$ | $\le Dz\cdot L$ | 0 | + |\|⟸|
 | $L \gt 0$ | $Dz = 0$ | $\ge L$ | $\le 0$ | 0 | + |\|⟸|
-| $L \gt 0$ | $Dz \lt 0$ | $\ge L$ | $\le Dz\cdot L$ | $1/(1-Dz)$ | -/+ |-|
+| $L \gt 0$ | $Dz \lt 0$ | $\ge L$ | $\le Dz\cdot L$ | $1/(1-Dz)$ | -/+ |\|⟸|
 | $L = 0$ | $Dz \gt 1$ | $\le 0$ | $\gt 0$ | 1 | + |\|⟹|
 | $L = 0$ | $Dz \le 1$ | $\ge 0$ | $\lt 0$ | 1 | - |\|⟹|
 | $L \lt 0$ | $Dz \gt 1$ | $\ge L$ | $\le Dz\cdot L$ | 1 | - |\|⟹|
 | $L \lt 0$ | $Dz = 1$ | $\le L$ | $\gt L$ | 0 | - |\|⟸|
 | $L \lt 0$ | $0\lt Dz\lt 1$| $\le L$ | $\ge Dz\cdot L$ | 0 | - |\|⟸|
 | $L \lt 0$ | $Dz = 0$ | $\le L$ | $\ge 0$ | 1 | - |\|⟸|
-| $L \lt 0$ | $Dz \lt 0$ | $\le L$ | $\ge Dz\cdot L$ | $1/(1-Dz)$ | -/+ |-|
+| $L \lt 0$ | $Dz \lt 0$ | $\le L$ | $\ge Dz\cdot L$ | $1/(1-Dz)$ | -/+ |\|⟹|
 
 ## Proximity Settings
 
