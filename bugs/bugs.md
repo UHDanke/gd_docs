@@ -132,28 +132,28 @@ Edit Area will override other active Edit Areas only if **Duration** \> 0\.
 Stop does not work on Edit Area.  
 I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.
 
-## \[2.206\] Area Scale / Rotate / Move visibility may break in certain situations
+## \[2.207\] Area Scale / Rotate / Move visibility issues
 
-Area Scale / Rotate / Move effects are not applied in certain situations where the object would be visible after multiple Area effects.  
-I was not able to figure out the exact reason why this happens, it seems there are multiple related bugs that cause this inconsistent behavior.  
-Most of these issues can be fixed by using a Link Visible trigger on the group, but this isn't always desirable.
+If an object stops being visible, Area Scale / Rotate / Move will calculate the distance between the center and the object's virtual position instead of its real position.
 
 ### Multiple Areas
 
-You can see an example [here](https://youtu.be/8IS5lFdIBus). You can find the level ID in the video description.
+Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description.
 
-### X Positive
+### Flickering
 
-This issue occurs when the Area Parent of an Area Scale, Rotate or Move effect is moved off screen towards the right (X positive) side.  
-The Area effect will stop applying once off-screen, this will bring it back to its original position, on-screen, which makes the Area effect active again.  
-You can find an example of [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
-As a result the object will flicker constantly, moving on and off-screen every other tick.  
-This is not a visual bug, triggers that use object positions are affected.  
-This bug does not occur for the top, bottom or left side of the screen.
+Flickering is caused when a target goes off screen and ends up back on screen every other tick due to the distance being calculated differently for visible and non-visible targets.  
+Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
+
+### Rendering
+
+Objects that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
 
 ## Toggle and negative Length
-Toggle disables Area effects on the object only if Length is negative.
+Toggle disables Area effects on the object only if Length is negative.  
 This should be replaced by a dedicated **Ignore Disabled** feature as there is no indication length does that.
+
+
 
 
 
