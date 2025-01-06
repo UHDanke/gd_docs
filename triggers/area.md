@@ -452,7 +452,7 @@ Stopping the Area trigger will undo and stop all active Area and Edit Area effec
 
 ### Toggle
 
-Toggle disables Area effects on targets only if **Length** is negative, otherwise has no effect.
+Toggle disables Area effects on targets only in certain cases, (for example - **Length** is negative and using a Center ⟹ Edge proximity), otherwise has no effect.
 
 ### Follow
 
