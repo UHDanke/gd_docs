@@ -18,6 +18,14 @@ Autobuild is affected by this.
 ## \[2.207\] Feather Landing event does not trigger if the player does not land with downward velocity
 If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.
 
+## \[2.207\] Object Rotations are highly innacurate for slow speeds.
+The position of objects and their rotations get offset if rotations are slow (~30 degrees per second).  
+All rotation transformations are affected except Area Rotate.
+
+## \[2.207\] Move Trigger Target Dynamic ignores X and Y Only
+
+Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
+
 # Particles 
 
 ## \[2.207\] Toggling off a Particle Object does not clear particles in playtesting
@@ -41,7 +49,7 @@ If you try to call 2 different Enter triggers with the same Enter Channel and Ef
 
 ## \[2.207\] Enter trigger portals
 
-Using Enter trigger effects on portals only affects the foreground layer of portal objects.
+Using Enter trigger effects on portals and other objects composed of multiple objects only affects the foreground layer of portal objects.
 
 ## \[2.207\] Legacy Enter triggers cannot be spawned
 
@@ -73,7 +81,7 @@ If Multi Activate is not selected, the Count's spawn target inherits the remaps 
 
 ## \[2.207\] Count desync
 
-The values of Count triggers can be updated improperly when paused and resumed or when spawning pickups from inside other triggers.  
+The values of Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item.  
 More information can be found in the count desync file.
 
 ## \[2.207\] Pickup operations are innacurate
@@ -97,6 +105,9 @@ Timers text labels update properly and are not affected by this bug.
 Ease Out is currently bugged and does not apply the effect properly to the radial proximity options.  
 If the two easings differ they will both apply and conflict \- the game will pick and apply one of them. This is most obvious with opposing easings.
 
+## \[2.207\] ModBack / ModFront do nothing for the radial options
+ModBack / ModFront are still displayed when used on the radial options despite doing nothing.
+
 ## \[2.207\] Thin solid hitboxes when scale is negative
 
 When a solid object is scaled by a negative value, hitboxes become very thin and buggy. Spikes and other non-solid hitboxes are not affected.
@@ -110,6 +121,10 @@ Area effects are accumulated for every calculation when starting from a Start Po
 Only the first tick is affected, the effect is properly applied on the second one.  
 All Area triggers are affected.  
 With Area Scale and Area Move, this can crash your game.
+
+### Scale / Rotate Bug
+Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
+The Start Position multiply bug is the main way you can scale or rotate an object by the amount needed to perform this bug.
 
 ## \[2.206\] Silent Move visual delay
 
@@ -150,8 +165,8 @@ Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 Objects that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
 
 ## Toggle and negative Length
-Toggle disables Area effects on the object only if Length is negative.  
-This should be replaced by a dedicated **Ignore Disabled** feature as there is no indication length does that.
+Toggle disables Area effects on the object only in some cases for certain proximities and if Length is negative.  
+This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.
 
 
 
