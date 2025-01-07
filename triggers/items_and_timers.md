@@ -246,7 +246,8 @@ Targets continue to be persistent until **Reset** is used, even between attempts
 When persistent, items and timers keep all of their values and settings between attempts.  
 In the case of timers, this includes timer stop options and remaps.  
 
-Count triggers are not persistent between attempts, the Count's stored item value does not get updated on respawn if the Count was activated prior to the checkpoint. If the persistent item value changes after the checkpoint, the Count's stored value and item value will differ.    
+Count triggers are not persistent between attempts, the Count's stored item value does not get updated on respawn if the Count was activated prior to the checkpoint.  
+If the persistent item value changes after the checkpoint, the Count's stored value and item value will differ.    
 
 While timers are persistent, Time Event triggers are not.
 
