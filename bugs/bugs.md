@@ -6,6 +6,34 @@ Groups are remapped by Regroup and Build Helper, but Group Parent IDs are not.
 The object remains the Group Parent ID for the old group despite said group no longer being in the group list.  
 This can cause issues by introducing phantom groups \- the group is technically unused and not visible in the group list of the affected object, so it'll be available for Regroup and Build Helper, but the object is still the Group Parent ID for said group, so if a trigger relies on Group Parent IDs like Area or Advanced Follow, then said object will be used as the center, causing issues.
 
+## \[2.207\] IDs that are not affected by Build Helper or Regroup
+
+This is a list of all IDs that are not affected by Build Helper or Regroup. While i do not know which ones are on purpose, i'll bold the ones that cause issues:
+- **Group Parent ID**
+- Enter Channel ID
+- **Control ID**
+- Material ID
+- Enter Channel
+- CH
+- Target Channel (Start Position)
+- Color ID (Color trigger, Pulse trigger)
+- **Rotate Target ID (Rotate)**
+- Animation ID (Animate)
+- **Animation Group ID (Animate Keyframe)**
+- **Reference IDs (Advanced Follow, Edit Advanced Follow)**
+- **Effect ID (Area triggers)**
+- **Group ID (Sequence)**
+- Target Channel (Rotate Gameplay)
+- Channel (Song)
+- **Unique ID, SFXGroup (SFX)**
+- **Group ID, Unique ID, SFXGroup (SFX)**
+- Extra ID, Extra ID2 (Event)
+- **Item ID (Counter Label)**
+- Color Channel (Area Tint, Enter Tint Effect)
+- Enter Channel (Legacy Enter Effect)
+- Enter Channel, EffectID (Enter Effect triggers, Stop Enter Effect)
+- **RespawnID (Checkpoint)**
+
 ## \[2.206\] Cannot create new Group Parent IDs if the trigger has 10 groups already
 
 Group Parent IDs cannot be applied to an object with 10 existing groups, even if the object has that group already.
@@ -30,16 +58,26 @@ Move (Target Mode) options X and Y Only are ignored when using dynamic movement.
 
 ## \[2.207\] Toggling off a Particle Object does not clear particles in playtesting
 
-In editor, toggling off a Particle Object disables and clears all particles created by the particle object.
+In editor, toggling off a Particle Object disables and clears all particles created by it.
 In playtesting, the particles are not cleared and become separate from the particle object - any changes to the main object no longer affect the disconnected particles which continue to linger until they despawn.
 
 ## \[2.207\] Deselecting **Animate on Trigger** deselects the option for all particle objects
 
 Deselecting the **Animate on Trigger** option deselects the option for all particle objects when the level is saved.  
 
+## \[2.207\] Once animated, a Particle Object will continue forever even if toggled off
+
+Toggling should make a Particle Object with Animate on Trigger require another animate activation when toggled back on.
+An **Animate Once** option would be nice to have for this situation, since using particle objects instead of Spawn Particle is better in some situations.
+
 ## \[2.207\] Particles with long lifespans linger after a level restart if **Quick Start** is selected
 
 Particles are not properly cleared when the level restarts if using the **Quick Start** option.
+
+## \[2.207\] Uniform Color particles spawned by Spawn Particle are not uniform
+
+A particle with the Uniform Color option that is spawned will use the color channel value at the time of spawning instead of syncing with the color channel continuously.
+
 
 # Enter Effects
 
@@ -56,6 +94,7 @@ Using Enter trigger effects on portals and other objects composed of multiple ob
 Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.  
 Touch Trigger does work however.
 
+
 # Spawn Triggers
 
 ## \[2.207\] Overwriting a spawn remap of ID 2 crashes the game
@@ -68,6 +107,10 @@ Only Steam and Android exhibit this bug. Mac and IOS are not affected.
 
 Groups spawned by a remapped Instant Collision do not inherit remaps.
 
+## \[2.207\] Checkpoint resets remaps
+
+Groups spawned by a remapped Checkpoint do not inherit remaps.
+
 ## \[2.207\] Spamming restart (R key) skips spawn activation
 
 Spamming R quickly can skip the activation of spawns placed before the origin line.
@@ -75,7 +118,26 @@ I assume the reason this happens is because the level restarts before the spawn 
 
 ## \[2.207\] Count spawn inheritance without Multi Activate
 
-If Multi Activate is not selected, the Count's spawn target inherits the remaps of the oldest active instance of a subsequent Count trigger with the Multi Activate option using the same Item ID.
+If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
+This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.
+
+## Triggers that are not remappable or not fully remappable
+
+The following triggers cannot be remapped, or have some IDs that are not remappable. I have bolded the ones that cause some issues or make things more difficult in certain situations.
+
+These triggers are not remappable:
+- Color  
+- Rotate Gameplay  
+- **Gradient** (ID can get remapped but it always disables the gradient)
+- **Checkpoint**  
+- Legacy Enter Effect triggers (not spawnable)
+
+These triggers have IDs that are not remappable:
+- **Pulse (Color ID)**
+- Spawn (Original Group ID)
+- **Area Triggers (Effect ID)**
+- **Area Tint, Enter Tint (Color Channel)**
+
 
 # Items and Timers
 
@@ -87,6 +149,7 @@ More information can be found in the count desync file.
 ## \[2.207\] Pickup operations are innacurate
 
 Multiplying large numbers using Pickup triggers has significant errors.
+This isn't the case for Item Edit triggers however.
 
 ## \[2.207\] Time **Ignore Timewarp** does nothing
 
@@ -149,7 +212,8 @@ I am not sure if this is unimplemented or a side effect of how Edit Area was imp
 
 ## \[2.207\] Area Scale / Rotate / Move visibility issues
 
-If an object stops being visible, Area Scale / Rotate / Move will calculate the distance between the center and the object's virtual position instead of its real position.
+If an object stops being visible, Area Scale / Rotate / Move will calculate the distance between the center and the object's virtual position instead of its real position.  
+Alternatively, it might be that (if the Area effect is undone before processing the moves then reapplied again) that the visibility check is done prior to when Area is undone, instead of after, and that the Area trigger skips reapplying the effect if the target is not visible.
 
 ### Multiple Areas
 
