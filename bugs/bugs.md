@@ -54,6 +54,31 @@ All rotation transformations are affected except Area Rotate.
 
 Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
 
+# Keyframes 
+
+## \[2.207\] Keyframe movement is bugged if using a Parent ID in Animate Keyframe.
+
+The parent's position is static when using a Parent ID inside the Animate Keyframe trigger, which results in bugged movement when scaling or rotating the keyframe.
+
+## \[2.207\] Warp Skew of keyframes is ignored when animating the keyframe.
+
+Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.
+
+## \[2.207\] Keyframes merge when copying to another level
+
+Keyframes have a hidden unique ID which is used to determine what keyframe objects are connected.  
+The ID is kept even when copying to another level which results in the copied keyframes combining with existing ones.  
+This makes merging parts of a level that use keyframes difficult, as you cannot manually select the unique ID of the keyframe.
+
+## \[2.207\] Keyframe lines are not visible until reloading the level if pasted in a new level.
+
+Keyframes copied to another level will not display the connecting lines until reloading the editor.
+
+## \[2.207\] Animate Keyframe Position Y Mod cannot be 0 if Position X Mod is different than 0
+
+If the value of Position Y Mod is equal to 0 when exiting the editor it will automatically copy the value of Position X Mod.
+There are some cases where using only the X movement of a keyframe chain is required which is currently not possible to do outside of the editor.
+
 # Particles 
 
 ## \[2.207\] Toggling off a Particle Object does not clear particles in playtesting
