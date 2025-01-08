@@ -218,7 +218,7 @@ With Area Scale and Area Move, this can crash your game.
 Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
 The Start Position multiply bug is the main way you can scale or rotate an object by the amount needed to perform this bug.
 
-## \[2.206\] Silent Move visual delay
+## \[Not Bug\] Silent Move visual delay
 
 **EDIT**: Not a bug, but a side-effect of Silent Move being instant. If Silent is activated from the timeline (which is after moves are processed but before the frame is updated) the wrong position will be displayed until the next Area update.  
 ~~When moving an object affected by Area Scale, Rotate or Move, the object will be rendered in the wrong position for one frame.~~
