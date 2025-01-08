@@ -54,6 +54,10 @@ All rotation transformations are affected except Area Rotate.
 
 Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
 
+## \[2.207\] Player Reversed event only works on pads and orbs
+
+The Player Reversed event only works when activating a pad or orb with the Reverse option.
+
 # Keyframes 
 
 ## \[2.207\] Keyframe movement is bugged if using a Parent ID in Animate Keyframe.
