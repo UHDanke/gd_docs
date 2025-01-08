@@ -141,7 +141,7 @@ If there are multiple targets inside Target GID, StartSpeed applies on one targe
 
 ## Physics issues when outside MaxRange
 
-Even if an Advanced Follow target loses all velocity by leaving the MaxRange of the effect, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.
+Even if an Advanced Follow target loses all velocity by leaving the MaxRange of the effect, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.  
 Without DontBoostX/Y, the player's jump will be boosted everytime the player jumps off the target. Sometimes the target will have no physics.  
 Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.
 
