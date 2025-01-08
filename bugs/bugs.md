@@ -220,8 +220,9 @@ The Start Position multiply bug is the main way you can scale or rotate an objec
 
 ## \[2.206\] Silent Move visual delay
 
-When moving an object affected by Area Scale, Rotate or Move, the object will be rendered in the wrong position for one frame.  
-The real position of the object is not affected, other triggers which use object position will not be affected.
+**EDIT**: Not a bug, but a side-effect of Silent Move being instant. If Silent is activated from the timeline (which is after moves are processed but before the frame is updated) the wrong position will be displayed until the next Area update.
+~~When moving an object affected by Area Scale, Rotate or Move, the object will be rendered in the wrong position for one frame.~~
+~~The real position of the object is not affected, other triggers which use object position will not be affected.~~
 
 ## \[2.206\] DEAP has no effect when used on Area Tint or Area Fade
 The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.
