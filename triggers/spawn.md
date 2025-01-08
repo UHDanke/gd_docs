@@ -128,7 +128,7 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 * Bulge  
 * Pinch  
 * Gray Scale  
-* Enter Triggers  
+* Enter triggers (except Enter Tint)
 * Enter Stop
 
 ### Not Remappable
@@ -137,29 +137,33 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 * Rotate Gameplay  
 * Gradient  
 * Checkpoint  
-* Enter Effect Triggers (not spawnable)
+* Legacy Enter triggers (not spawnable)
 
 ### Partially Remappable
 
 #### Group Settings
 
 **Yes**	Control ID  
- **No**	Group ID, Parent ID, ORD, CH, Material ID
+**No**	Group ID, Parent ID, ORD, CH, Material ID
 
 #### Pulse
 
 **Yes**	Channel ID, Group ID  
- **No**	Color ID
+**No**	Color ID
 
 #### Spawn
 
 **Yes**	Group ID, New Group ID  
- **No**	Original Group ID
+**No**	Original Group ID
 
 #### Area Triggers
 
 **Yes**	Target Group ID, Center Group ID  
- **No**	Effect ID, Color Channel (Area Tint)
+**No**	Effect ID, Color Channel (Area Tint)
+
+### Enter Tint Effect
+**Yes**	Enter Channel, Effect ID
+**No**	Color Channel
 
 ### Notes
 
@@ -191,7 +195,7 @@ Despite the name, if you call the same Sequence trigger with two spawn triggers 
 
 In editor preview, remapping the ID has no effect. However, in playtesting, remapping the ID makes the gradient not spawn.
 
-#### Enter Effect Triggers
+#### Legacy Enter Triggers
 
 It does not seem like you can spawn these triggers as of version 2.207.
 
