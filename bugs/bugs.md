@@ -8,31 +8,31 @@ This can cause issues by introducing phantom groups \- the group is technically 
 
 ## \[2.207\] IDs that are not affected by Build Helper or Regroup
 
-This is a list of all IDs that are not affected by Build Helper or Regroup. While i do not know which ones are on purpose, i'll bold the ones that cause issues:
-- **Group Parent ID**
+This is a list of all IDs that are not affected by Build Helper or Regroup. While i do not know which ones are on purpose, i'll highlight the ones that cause issues or look like oversights:
+- _**Group Parent ID**_
 - Enter Channel ID
-- **Control ID**
+- _**Control ID**_
 - Material ID
 - Enter Channel
 - CH
 - Target Channel (Start Position)
 - Color ID (Color trigger, Pulse trigger)
-- **Rotate Target ID (Rotate)**
+- _**Rotate Target ID (Rotate)**_
 - Animation ID (Animate)
-- **Animation Group ID (Animate Keyframe)**
-- **Reference IDs (Advanced Follow, Edit Advanced Follow)**
-- **Effect ID (Area triggers)**
-- **Group ID (Sequence)**
+- _**Animation Group ID (Animate Keyframe)**_
+- _**Reference IDs (Advanced Follow, Edit Advanced Follow)**_
+- _**Effect ID (Area triggers)**_
+- _**Group ID (Sequence)**_
 - Target Channel (Rotate Gameplay)
 - Channel (Song)
-- **Unique ID, SFXGroup (SFX)**
-- **Group ID, Unique ID, SFXGroup (SFX)**
+- _**Unique ID, SFXGroup (SFX)**_
+- _**Group ID, Unique ID, SFXGroup (SFX)**_
 - Extra ID, Extra ID2 (Event)
-- **Item ID (Counter Label)**
+- _**Item ID (Counter Label)**_
 - Color Channel (Area Tint, Enter Tint Effect)
 - Enter Channel (Legacy Enter Effect)
 - Enter Channel, EffectID (Enter Effect triggers, Stop Enter Effect)
-- **RespawnID (Checkpoint)**
+- _**RespawnID (Checkpoint)**_
 
 ## \[2.206\] Cannot create new Group Parent IDs if the trigger has 10 groups already
 
@@ -152,27 +152,27 @@ This makes one-time Count activations in remapped setups annoying to execute, si
 
 ## Triggers that are not remappable or not fully remappable
 
-The following triggers cannot be remapped, or have some IDs that are not remappable. I have bolded the ones that cause some issues or make things more difficult in certain situations.
+The following triggers cannot be remapped, or have some IDs that are not remappable. I have highlighted the ones that cause some issues or make things more difficult in certain situations.
 
 These triggers are not remappable:
-- Color  
+- _**Color**_  
 - Rotate Gameplay  
-- **Gradient** (ID can get remapped but it always disables the gradient)
+- _**Gradient (ID can get remapped but it always disables the gradient)**_
 - **Checkpoint**  
 - Legacy Enter Effect triggers (not spawnable)
 
 These triggers have IDs that are not remappable:
-- **Pulse (Color ID)**
+- _**Pulse (Color ID)**_
 - Spawn (Original Group ID)
-- **Area Triggers (Effect ID)**
-- **Area Tint, Enter Tint (Color Channel)**
+- _**Area Triggers (Effect ID)**_
+- _**Area Tint, Enter Tint (Color Channel)**_
 
 
 # Items and Timers
 
 ## \[2.207\] Count desync
 
-The values of Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item.  
+The values of Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.  
 More information can be found in the count desync file.
 
 ## \[2.207\] Pickup operations are innacurate
