@@ -104,7 +104,7 @@ An object counts as not visible if its center is outside of the screen's edges b
 Objects can take up to ~0.1333 seconds to count as not visible in some cases.  
 
 Area Fade and Area Tint effects do not apply if the target is not visible.  
-For Area Move, Scale and Rotate, if an object is not visible Area will calculate the effect strength improperly in certain cases.
+For Area Move, Scale and Rotate, if an object is not visible the effect will stop being applied in certain cases.
 
 Link Visible can be used to force objects to be visible to fix any issues regarding visibility.
 
