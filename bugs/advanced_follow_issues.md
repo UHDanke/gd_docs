@@ -88,7 +88,7 @@ The target starts braking if the angle between the direction of movement and the
 
 # Bugs
 
-## Velocity Duplication
+## [2.207] Velocity Duplication
 Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger.
 
 [Example Video](https://youtu.be/obZ-G22lizU)
@@ -97,15 +97,15 @@ Rotation is also duplicated when using Mode 3.
 
 A solution to this bug would be for only the first Advanced Follow in a tick to move by the velocity value, and subsequent ones to move by the difference in velocity.
 
-## Rotation and Object Groups
+## [2.207] Rotation and Object Groups
 
 Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.
 
 [Example Video](https://youtu.be/KJJ2YNqvOO8)
 
-## Timewarp
+## [2.207] Timewarp
 
-### Mode 1 Easing
+### Instant Movement reduction
 Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1.
 
 The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0.
@@ -117,16 +117,16 @@ This also affects Mode 2 movement that relies on moving objects for a single tic
 
 The max rotation speed of the Rotate option does not scale with timewarp.
 
-## Speedup when using high Friction values
+## [2.207] Speedup when using high Friction values
 
 Friction values over 100 can reverse the speed of an object, and if above 200 friction this speed will increase exponentially until the game crashes.
 
-## StartSpeed and Speed are not multipliers
+## [2.207] StartSpeed and Speed are not multipliers
 
 StartSpeed and Speed are not multipliers when using a speed reference ID.  
 It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.  
 
-## Options that do nothing
+## [2.207] Options that do nothing
 
 The following options do nothing:
 - MaxRange Reference ID
@@ -135,17 +135,17 @@ The following options do nothing:
 
 While a MaxRange reference ID has limited applications, one such example is with Mode 1 with 0 easing - this would allow you to move a singular object from a group to a target position (like a target move for objects), which is very useful.
 
-## StartSpeed works on one target
+## [2.207] StartSpeed works on one target
 
 If there are multiple targets inside Target GID, StartSpeed applies on one target only.
 
-## Physics issues when outside MaxRange
+## [2.207] Physics issues when outside MaxRange
 
 Even if an Advanced Follow target loses all velocity by leaving the MaxRange of the effect, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.  
 Without DontBoostX/Y, the player's jump will be boosted everytime the player jumps off the target. Sometimes the target will have no physics.  
 Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.
 
-## Camera position is updated after move
+## [2.207] Camera position is updated after move
 
 The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
 This also affects Area triggers and Move (Lock Camera).
