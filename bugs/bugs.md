@@ -251,8 +251,7 @@ I am not sure if this is unimplemented or a side effect of how Edit Area was imp
 
 ## [2.207] Area Scale / Rotate / Move visibility issues
 
-If an object stops being visible, Area Scale / Rotate / Move will calculate the distance between the center and the object's virtual position instead of its real position.  
-Alternatively, it might be that (if the Area effect is undone before processing the moves then reapplied again) that the visibility check is done prior to when Area is undone, instead of after, and that the Area trigger skips reapplying the effect if the target is not visible.
+If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.
 
 ### Multiple Areas
 
@@ -260,12 +259,12 @@ Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video descripti
 
 ### Flickering
 
-Flickering is caused when a target goes off screen and ends up back on screen every other tick due to the distance being calculated differently for visible and non-visible targets.  
+Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick. 
 Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 
 ### Rendering
 
-Objects that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
+Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
 
 ## [2.207] Toggle and negative Length
 Toggle disables Area effects on the object only in some cases for certain proximities and if Length is negative.  
