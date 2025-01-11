@@ -35,7 +35,8 @@ If multiple triggers share the same **Block IDs**, spawn order is used. The orde
 Collision triggers with the **PP** option activate after Player 1 and before Player 2 collisions.
 
 # Instant Collision Trigger
-Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.  
+Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.
+
 Can be remapped, but resets remaps when spawning other groups.
 
 The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.
