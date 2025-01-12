@@ -150,6 +150,10 @@ Using DontBoostX/Y is not enough to fix this issue, the player will also be forc
 The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
 This also affects Area triggers and Move (Lock Camera).
 
+## [2.207] Mode 3 X/Y Only cannot steer if other modes are present
+
+When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1 or 2 is present on the other axis.  
+
 # Suggestions & Additions
 
 ## AdvFollow Ignore Timewarp
