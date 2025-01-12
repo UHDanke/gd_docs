@@ -68,7 +68,14 @@ Linking rules are the same as for Area triggers, more information can be found i
 The Area Parent is the object group's center for distance calculations and the center of rotation when using **Rotate Dir**.  
 While Group Parents are also considered Area Parents if no Area Parent is present already, they are not used by Advanced Follow.
 
+## Random Values
+
+Certain parameters can be randomized with the +/- option. 
+
+Similarly to Area triggers, these random coefficients are picked per object at level start and cannot be changed. More information can be found in the Area documentation.
+
 ## Follow Center
+
 **Follow GID** must be a single object, or have an ID Parent.  
 If present, the ID Parent is used as the center.  
 Group and Area Parents have no effect on the center.  
