@@ -12,6 +12,10 @@ It does not use velocities, so it will be treated like other moves by Advanced F
 
 Advanced Follow Y movements are processed before Advanced Follow.
 
+There can be only one follow player trigger active per **Target Group ID**, activating a new one will update the previous one's values.
+
+Advanced Follow Y can be instanced with spawn remapping and **Target Group ID** can be spawn remapped.
+
 ## Settings
 
 **Speed** controls the easing of the movement, to get the Advanced Follow equivalent use this formula:	
