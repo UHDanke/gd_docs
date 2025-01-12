@@ -47,15 +47,24 @@ If no valid center exists, the Advanced Follow will not work.
 ## X and Y Only
 
 **X** and **Y Only** limit the movement action of Advanced Follow to the X or Y axis.
-If Advanced Follow is present on one axis only, then the target will only have velocity on that respective axis.
+If a target has an Advanced Follow present on one axis only, then the target will only have velocity on that respective axis.
 
-Mode 1 Easing and Mode 2 Friction are applied per each axis individually so there isn't a change in behavior.
+### Mode 1
+Easing is applied on each axis separately.
 
-The direction of Mode 2 Acceleration is parallel to the axis. 
+### Mode 2
+Friction is applied on each axis separately.
+The acceleration target is picked on a point that intersects the target's X or Y axis.  
+
+### Mode 3 
+Braking is applied on each axis separately.  
+The steering target is picked on a point that intersects the target's X or Y axis.  
+Without **Target Dir**, acceleration will be applied on the given axis based on the target's angle relative to it.  
+The target is unable to steer if **Mode 1** or **2** is present on the other axis.  
 
 ## Rotation
 
-Rotation speed is limited to 0.5 rad/tick. This is not affected by timewarp values below 1.  
+Rotation speed is limited to 0.5 rad/tick. This is not affected by slowing down with timewarp.  
 
 The rotation of the object is updated when entering the area of effect of the Advanced Follow.
 
@@ -72,8 +81,11 @@ The target's rotation is not updated if the target's distance from the follow ce
 With **Mode 1** and **2**, the rotation follows the object's direction of movement.
 
 **Mode 3** has the following changes to rotation:
-- Rotation always aims at the follow center, rotation speed is also limited by the steering speed
+- Rotation always aims at the follow center
+- Rotation speed is limited by the steering speed
 - **Rotate Easing** and **Rotate Deadzone** have no effect
+
+Having any **Mode 1** or **2** Advanced Follows active on the same target will override **Mode 3** rotation.
 
 ## Ignore Disabled
 
@@ -145,11 +157,13 @@ Due to a bug, only one object per **Target GID** can be affected by **StartSpeed
 
 **SteerForceLow** / **SteerForceHigh** replaces **SteerForce** if the velocity of the object is strictly below / above **SpeedRangeLow** / **SpeedRangeHigh**. 
 
-The target starts braking if the direction of movement and the direction towards the center are offset by more than **BreakAngle**.
+The target stops accelerating and starts braking if the direction of movement and the direction towards the center are offset by more than **BreakAngle**.
+Breaking stops being applied once the target reaches 0 velocity, acceleration will continue to be disabled until the offset returns below **BreakAngle**.
+
 If **BreakAngle** is above or equal to 180 degrees, the target will never brake. If it's below 0, it will be stuck braking.
 
 **BreakForce** is the percentage of velocity lost every tick while braking, similar to friction in **Mode 2**.
-Unlike friction, **BreakForce** is limited between 0 and 100 and acceleration is not applied while braking.
+Unlike friction, **BreakForce** is limited between 0 and 100.
 
 **SteerForce** , **SteerForceLow** and **SteerForceHigh** are not applied while braking - **BreakSteerForce** is used instead if the velocity of the target is equal to or below **BreakSteerSpeedLimit**.
 
@@ -197,7 +211,8 @@ Edit Advanced Follow will not work on a Mode 1 Advanced Follow trigger, as Mode 
 
 Mod X and Y multiply the current acceleration of the object on the respective axis prior to applying Speed.
 
-With **X Only** and **Y Only**, only the Speed component VelocityX, respectively VelocityY is used.
+With **X Only** and **Y Only**, the trigger will only edit the velocity of the given axis.  
+This is also the case if the target is affected by Advanced Follow on one axis only.
 
 ## Speed and Dir
 
