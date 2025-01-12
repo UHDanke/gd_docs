@@ -46,9 +46,12 @@ If no valid center exists, the Advanced Follow will not work.
 
 ## X and Y Only
 
-X and Y Only limit the movement action of Advanced Follow to the X or Y axis.
+**X** and **Y Only** limit the movement action of Advanced Follow to the X or Y axis.
+If Advanced Follow is present on one axis only, then the target will only have velocity on that respective axis.
 
-Mode 1 actions
+Mode 1 Easing and Mode 2 Friction are applied per each axis individually so there isn't a change in behavior.
+
+The direction of Mode 2 Acceleration is parallel to the axis. 
 
 ## Rotation
 
@@ -108,12 +111,9 @@ As a side-effect, Edit Advanced Follow will not work on **Mode 1**.
 **Acceleration** is the multiplier of the target's acceleration. 1.00 **Acceleration** is equal to 0.01 increase in speed per tick.
 
 **Friction** is the percentage of velocity lost every tick. Values of **Friction** are not limited - values below 0 and above 100 will increase the velocity exponentialy if there is no opposing force.  
-Friction is applied prior to acceleration.
+**Friction** is applied prior to acceleration.
 
-NearDist
-
-With NearDist, the values of acceleration and friction depend on the distance 
-NearFriction / NearAccel are the values
+With **NearDist** the values of acceleration and friction change linearly, from normal values when distance is equal to or bigger than **NearDist** to **NearAccel** and **NearFriction** values when distance is 0.
 
 ### Mode 2 & 3
 
@@ -180,6 +180,7 @@ This also applies to **Rotation**, which is more noticeable when using **Mode 3*
 Pausing disables the Advanced Follow instance temporarily. Delays are not paused and continue to tick down while the trigger is inactive.  
 The spawn order of the instance is kept when resuming.
 
+
 # Edit Advanced Follow
 
 Modifies the speed and direction of an Advanced Follow target.
@@ -236,6 +237,7 @@ Edit Advanced Follow is instant, the reference values are taken at the time of s
 The target must be under an active Advanced Follow effect in order for Edit Advanced Follow to work. This happens after an Advanced Follow action, not when the Advanced Follow trigger is spawned.
 
 If an Advanced Follow has Delay, Edit Advanced Follow will not work if the Advanced Follow has not been active for at least the amount of Delay.
+
 
 # Re-Target Advanced Follow
 
