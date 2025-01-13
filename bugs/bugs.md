@@ -92,6 +92,11 @@ Keyframes copied to another level will not display the connecting lines until re
 If the value of Position Y Mod is equal to 0 when exiting the editor it will automatically copy the value of Position X Mod.
 There are some cases where using only the X movement of a keyframe chain is required which is currently not possible to do outside of the editor.
 
+## [2.207] Keyframe Preview does not match scaling
+![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)
+
+Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.
+
 # Particles 
 
 ## [2.207] Toggling off a Particle Object does not clear particles in playtesting
