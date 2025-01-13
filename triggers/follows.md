@@ -18,8 +18,9 @@ Follow triggers are processed after all other movements but before Area triggers
 Another exception to this is Move Silent - Follow will not copy instant movements.  
 Follows will copy the movements of previous Follows based on spawn order.  
 
-**Target Group ID** and **Follow Group ID** can be spawn remapped.	
-For all Follow triggers there can only be one instance per unique combination of follow and target IDs. Calling a new instance will update the X / Y Mod values of the active one and refresh the Move Time if it's longer than the remaining time.
+**Target Group ID** and **Follow Group ID** can be spawn remapped.  
+For all Follow triggers there can only be one instance per unique combination of follow and target IDs.  
+Calling a new instance will update the X / Y Mod values of the active one and refresh the Move Time if it's longer than the remaining time.
 
 # Advanced Follow Y
 
@@ -30,14 +31,12 @@ Advanced Follow Y works most similar to a Mode 1 Advanced Follow trigger that fo
 ## Mechanics
 
 Advanced Follow Y works on individual objects only - it ignores all group or object links.	
-
 It does not use velocities, so it will be treated like other moves by Advanced Follow triggers.	
 
 Advanced Follow Y movements are processed before Advanced Follow.
 
+Advanced Follow Y can be instanced with spawn remapping and **Target Group ID** can be spawn remapped.  
 There can be only one follow player trigger active per **Target Group ID**, activating a new one will update the previous one's values.
-
-Advanced Follow Y can be instanced with spawn remapping and **Target Group ID** can be spawn remapped.
 
 ## Settings
 
