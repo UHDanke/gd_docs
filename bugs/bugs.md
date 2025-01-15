@@ -43,9 +43,6 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
 Autobuild is affected by this.
 
-## [2.207] Feather Landing event does not trigger if the player does not land with downward velocity
-If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.
-
 ## [2.207] Object Rotations are highly innacurate for slow speeds.
 The position of objects and their rotations get offset if rotations are slow (~30 degrees per second).  
 All rotation transformations are affected except Area Rotate.
@@ -53,10 +50,6 @@ All rotation transformations are affected except Area Rotate.
 ## [2.207] Move Trigger Target Dynamic ignores X and Y Only
 
 Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
-
-## [2.207] Player Reversed event only works on pads and orbs
-
-The Player Reversed event only works when activating a pad or orb with the Reverse option.
 
 ## [2.207] On-load triggers have effect lines
 
@@ -66,6 +59,19 @@ On-load triggers like Link Visible and UI have effect lines when placed on the t
 ## [2.207] Duration lines of triggers with touch option are extended if placed before the origin
 ![image](https://github.com/user-attachments/assets/1656a857-9ed7-49e8-adf1-79428b37c828)
 
+# Events
+
+## [2.207] Player Reversed event only works on pads and orbs
+
+The Player Reversed event only works when activating a pad or orb with the Reverse option.
+
+## [2.207] Feather Landing event does not trigger if the player does not land with downward velocity
+If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.
+
+## [2.207] Left/Right Release events do not trigger if interrupted by the other direction on mobile
+
+On mobile devices, if you press Left while already pressing Right (and vice-versa), releasing Right after this will not trigger a Right Release (or Left Release) event.  
+This affects both player events.
 
 # Keyframes 
 
@@ -99,9 +105,9 @@ Keyframe scaling is relative to the Group Parent ID's rotation, which is not ref
 
 # Particles 
 
-## [2.207] Toggling off a Particle Object does not clear particles in playtesting
+## [2.207] Toggling off or unloading a Particle Object does not clear particles in playtesting
 
-In editor, toggling off a Particle Object disables and clears all particles created by it.
+In editor, toggling off or unloading a Particle Object disables and clears all particles created by it.
 In playtesting, the particles are not cleared and become separate from the particle object - any changes to the main object no longer affect the disconnected particles which continue to linger until they despawn.
 
 ## [2.207] Deselecting **Animate on Trigger** deselects the option for all particle objects
