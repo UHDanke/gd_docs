@@ -51,6 +51,18 @@ All rotation transformations are affected except Area Rotate.
 
 Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
 
+## [2.207] Move Trigger Camera Lock X axis bugs on level replay
+
+While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
+This only happens if the Move trigger is placed left or ontop of the level origin.
+
+## [2.207] Relative Scale doesn't work with Scale 0.00
+
+This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
+Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
+Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
+In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
+
 ## [2.207] On-load triggers have effect lines
 
 On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite activating only when the level loads.
