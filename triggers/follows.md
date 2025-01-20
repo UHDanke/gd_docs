@@ -1,4 +1,4 @@
-.# Follow
+# Follow
 
 Copies a target's movement on the X and Y axis for a set duration and applies it on another group.
 
@@ -22,7 +22,8 @@ Follows will copy the movements of previous Follows based on spawn order.
 For all Follow triggers there can only be one instance per unique combination of follow and target IDs.  
 Calling a new instance will update the X / Y Mod values of the active one and refresh the Move Time if it's longer than the remaining time.
 
-For compatibility with Scale, Rotate and Move which are delayed by one tick, Follow is active by an additional tick prior to stopping. If Move Time is 0, then Follow will be active for 2 ticks.
+For compatibility with Scale, Rotate and Move which are delayed by one tick, Follow is active by an additional tick prior to stopping.  
+If Move Time is 0, then Follow will be active for 2 ticks.
 
 # Advanced Follow Y
 
