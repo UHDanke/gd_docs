@@ -80,10 +80,11 @@ Other bad attempts at optimization:
 
 What optimizations DO make sense, if necessary:
 - Using as few dynamic objects as possible
-- Toggling off dynamic collision objects
+- Toggling off dynamic collision objects when not in use
 - Avoid using Extended Collision if the objects are not scaled up
 - Avoid using Extended Collision on dynamic objects if the level has a large amount of collision objects more than 175 units away from the dynamic object
-- Toggling off Extended Collision objects (if in above case)
+- Toggling off Extended Collision objects when not in use (if in above case)
+- Toggling off non-dynamic collision objects when not in use (but generally not necessary)
 
 When Dynamic needs to be used:
 - Dynamic only dictates whether the collision object checks collisions with other collision objects, it has nothing to do with whether the collision object can be moved or not
