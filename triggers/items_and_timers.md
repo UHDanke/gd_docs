@@ -139,7 +139,10 @@ Spawns **TargetID** when the timer given by **ItemID** reaches the **TargetTime*
 ## Activation
 
 Time Event triggers do not spawn groups on their own, they assign extra groups for timers to spawn at the specified target time.  
+
 Time Event requires an active timer to work, which can be created with a Time or Item Edit trigger.  
+It can be initialized even if the timer isn't active, and will continue to be active when the timer is cleared by Stop.
+
 Unlike Time triggers, a Time Event will spawn its target even if it was initialized after the timer has reached or passed the **TargetTime**.  
 
 ### Spawn Mechanics
@@ -149,7 +152,7 @@ Unlike Count triggers, Time Events are not ordered by **TargetTime**. If multipl
 Since timers spawn the groups given by Time Event, the spawn behavior is not going to depend on the Time Event, but on the timer:
 * The spawn target inherits the timer's remaps.
 * The timer's spawn limit is applied to all extra groups added by Time Event.
-* Time Events spawn after their given timer, even if it was initialized after the Time Event.
+* Time Events spawn after the corresponding timer, even if the Time Event was created before the timer.
 
 # Time Control
 
