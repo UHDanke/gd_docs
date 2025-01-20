@@ -8,6 +8,7 @@ The **Dynamic** option allows collision objects to check collisions with other c
 The collision state is updated every tick after all scheduled moves are processed, even if the position of the player or objects has not changed.  
 Collision checks are done even if there is no active Collision trigger.  
 If the object is toggled off, the collision check is skipped.  
+Collisions are always active even if the objects are off-screen.
 As a small optimization, distance is checked before collision. If the objects or entities are more than 175 units apart (from center to center) on the X or Y axis the collision check is skipped.  
 If one of the objects has Extended Collision the distance check is ignored and the collision will be checked regardless of distance.  
 
@@ -26,7 +27,7 @@ With the **Activate Group** option, toggles on and spawns the given group instea
 Collision activates on block collision, but before the collision state is updated.  
 Due to this, if Instant Collision is called from a Collision trigger with the same **Block IDs** it will spawn the opposite group from the one expected.  
 Collision only activates when the collision state of the Block IDs changes.
-If placed before the level origin, Enter Collisions are checked on level start.
+If placed before the level origin, Enter Collisions can activate when the level loads.
 
 ## Spawn Mechanics
 Collision triggers can be spawn remapped and have spawn inheritance.  
@@ -69,6 +70,7 @@ Generally, it doesn't make sense to stop or disable collision triggers for perfo
 - The overhead of Collision trigger instances being active (stored in memory) is very small and doesn't significantly affect performance on modern devices
 - The main performance cost of Collision and Instant Collision triggers is spawning other triggers; Collision object checks are often the main reason for lag
 - Collisions are checked every tick regardless of whether any Collision trigger is active
+- Collisions are always active even if off-screen
 - Collisions are not checked if the objects are toggled off or more than 175 units apart (unless Extended Collision is used)
 
 Other bad attempts at optimization:
