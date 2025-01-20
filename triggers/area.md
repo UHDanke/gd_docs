@@ -4,6 +4,7 @@
 
 Unlike their non-Area versions, the effects of Area triggers are virtual \- the effect is temporary and is undone when the trigger is stopped.  
 Area effects are recalculated every game tick, 240 times per second.  
+
 Non-Area Move, Rotate and Scaling effects use the real position of the objects.  
 However, triggers that target the position of an object will use the virtual position of the object.  
 Triggers that apply transformations (rotation or scaling) on an object will use the virtual transform of the object.  
