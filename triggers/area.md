@@ -7,7 +7,7 @@ Area effects are recalculated every game tick, 240 times per second.
 
 Non-Area Move, Rotate and Scaling effects use the real position of the objects.  
 However, triggers that target the position of an object will use the virtual position of the object.  
-Triggers that apply transformations (rotation or scaling) on an object will use the virtual transform of the object.  
+Triggers that use transformations (rotation or scaling) of an object as reference will use the virtual transform of the object.  
 
 ## Timings
 
@@ -519,3 +519,11 @@ Advanced Follow works on objects and supports object links.
 Area effects happen after Advanced Follow movements.  
 Advanced Follow targeting is affected by Area effects. Due to this, certain interactions can create loops or crash / freeze the game.  
 Using DEAP with Advanced Follow is recommended.
+
+### Rotate
+
+Aim and Follow modes use the object's virtual rotation instead of the real rotation, so using Area Rotate to offset these rotations will not work as they will constantly try to override the rotation made by Area Rotate.
+
+### Scale
+
+Relative Scale and Relative Rotation use the object's virtual scale or rotation as reference.
