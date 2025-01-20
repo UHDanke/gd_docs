@@ -43,7 +43,7 @@ There can be only one follow player trigger active per **Target Group ID**, acti
 
 ## Settings
 
-**Speed** controls the easing of the movement, to get the Advanced Follow equivalent use this formula:	
+**Speed** controls the easing of the movement, to get the Advanced Follow equivalent use this formula:  
 $Easing(AdvFollow) = 4/Speed$ 
 
 If **Speed** is equal to 4 or more then no easing is applied.
