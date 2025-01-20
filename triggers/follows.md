@@ -33,7 +33,7 @@ Advanced Follow Y works most similar to a Mode 1 Advanced Follow trigger that fo
 
 ## Mechanics
 
-Advanced Follow Y works on individual objects only - it ignores all group or object links.	
+Advanced Follow Y works on individual objects only - it ignores ID Parents and object links.  
 It does not use velocities, so it will be treated like other moves by Advanced Follow triggers.	
 
 Advanced Follow Y movements are processed before Advanced Follow.
