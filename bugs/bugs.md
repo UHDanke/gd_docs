@@ -63,6 +63,14 @@ Relative Scale lets you mimic additive scaling (increasing scale by an amount re
 Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
 In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
 
+## [2.207] Rotate Aim / Follow infinite rotation
+
+When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.  
+If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
+
+[Video 1](https://youtu.be/uE5I8bRaMSg)  
+[Video 2](https://youtu.be/GkujxqE5pok)
+
 ## [2.207] On-load triggers have effect lines
 
 On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite activating only when the level loads.
