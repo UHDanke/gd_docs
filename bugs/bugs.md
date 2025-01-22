@@ -301,7 +301,10 @@ Objects with a hitbox that stop being visible once brought off-screen do not ren
 Toggle disables Area effects on the object only in some cases for certain proximities and if Length is negative.  
 This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.
 
+## [2.207] Edit Area Tint / Fade doesn't pause in editor
 
+Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.
 
+[Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
 
 
