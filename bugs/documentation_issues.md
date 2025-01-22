@@ -90,3 +90,66 @@ MoveAngle is counter-clockwise instead of clockwise, 0 is down and 180 is up ins
 ![image](https://github.com/user-attachments/assets/6e0de744-8791-4d87-8844-d9ab5f678319)
 
 With Relative objects move away from the center.
+
+## [Page 97] RFade
+
+![image](https://github.com/user-attachments/assets/352b2ed1-479c-4709-9c25-37650e4408fe)
+
+I somewhat understand what this refers to but the explanation is lacking.	
+With RFade, if the distance of the object is less than RFade (in small step units), MoveDist decreases linearly from 1 to 0 (when in the center).
+
+## [Page 112] Sequence Unique Remap
+
+The explanation is completely missing.	
+Unique Remap makes the sequence trigger have a separate counter for each set of remaps.	
+Worth mentioning that this behavior is per set of remaps, if two sets contain the same remaps they will still have separate counters.
+
+## [Page 114] Reset
+
+![image](https://github.com/user-attachments/assets/1db1bb3d-bc63-4dbb-b84e-5025cafb8d8e)
+
+Also resets the electroman adventures destroyable blocks.
+
+## [Page 119] Loop & Dont Reset
+
+Both options aren't explained under the Song trigger section.  
+Dont Reset is a recent option, but Loop isn't.
+
+## [Page 124] FFT
+
+![image](https://github.com/user-attachments/assets/31a05066-38b2-4640-9926-e5df2eb6f38e)
+
+This is one of the options i'm not able to tell what is actually supposed to do.  
+I notice some differences in how the sounds are pitched, but i cannot tell if this is placebo or actually real.  
+My assumption is that this option changes the pitch shift algorithm to one that uses FFT, but i honestly have no idea, so i think it's a good sign that more info is needed / the option needs to be explained better.
+
+## [Page 129] UI Settings
+
+![image](https://github.com/user-attachments/assets/1f7d9871-edb7-4d03-b251-6a2e98b765ef)
+
+This explanation is a complete mess.  
+Auto aligns objects to the nearest screen edge. Left, Right, Top, Bottom aligns objects to the respective edge. Center has no alignment.  
+What alignment means in this case is the object is moved by the distance between the green (minimal) edge## and the orange (your screen) edge.
+
+## Camera Guide
+![image](https://github.com/user-attachments/assets/6d6a213f-ace3-43f7-87c8-830b6547bfd4)
+
+Guaranteed view is 480 by 320 units or 3:2, not 4:3.
+
+## [Page 130] Visibility Link
+
+![image](https://github.com/user-attachments/assets/aae6b943-009f-4a66-9cad-187f6098445c)
+
+Worth mentioning that toggled off objects will not count as on-screen for visibility links.
+
+## [Page 130] Collision Player
+
+![image](https://github.com/user-attachments/assets/834c8391-2731-4045-b3f4-76f1ffd7d0ef)
+
+Worth to add that you do not need the other collision to be dynamic if you are using P1 or P2.
+
+## [Page 138] Teleport Target
+
+![image](https://github.com/user-attachments/assets/114ee390-879d-404b-97cb-c83a16cb4ee5)
+
+Can be more than one object, it picks one at random.
