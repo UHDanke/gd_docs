@@ -87,6 +87,10 @@ These edges are initialized when the level loads, however, if the camera trigger
 Example:  
 ![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
 
+## [2.207] Color resumes when respawning from a checkpoint if stopped
+
+If a Color trigger is stopped with a Stop trigger, the color change will resume when you respawn from a checkpoint.  
+Pausing the Color trigger does not do this.
 
 # Events
 
