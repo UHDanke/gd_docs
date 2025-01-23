@@ -41,7 +41,8 @@ The following spawns are instant:
 * Spawn  
 * Count  
 * Instant Count  
-* Instant Collision  
+* Instant Collision
+* Item Compare
 * Random  
 * Advanced Random  
 * Sequence  
@@ -50,7 +51,7 @@ The following spawns are instant:
 The remaining ones are scheduled, and will spawn in this order:
 
 1. Spawn (delay)  
-2. Toggle Block  
+2. Toggle Orb/Block  
 3. Event  
 4. Touch  
 5. Timer & Time Event  
@@ -65,7 +66,7 @@ The remaining ones are scheduled, and will spawn in this order:
 
 # Spawn Remapping
 
-Spawn remapping is a Spawn trigger option that allows remapping the IDs of spawned triggers to new IDs.  
+Spawn remapping is a Spawn trigger option that allows spawning triggers reconfigured to a different set of IDs.
 IDs are not discerned by their type (Item ID, Block ID, Group ID, etc), they are all treated as a single ID for the purposes of remapping.  
 The main purpose of spawn remapping is reusing triggers, but it has many more uses thanks to its versatility.
 
@@ -309,7 +310,7 @@ The following IDs are:
 
 ## Activation Limits
 
-All triggers can be spawned multiple times per tick,  but not all can activate or create multiple instances per tick.
+All triggers can be spawned multiple times per tick, but not all can activate or create multiple instances per tick.
 
 ### Spawn Limit
 
