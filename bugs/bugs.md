@@ -79,6 +79,15 @@ On-load triggers like Link Visible and UI have effect lines when placed on the t
 ## [2.207] Duration lines of triggers with touch option are extended if placed before the origin
 ![image](https://github.com/user-attachments/assets/1656a857-9ed7-49e8-adf1-79428b37c828)
 
+## [2.207] Gradient doesn't account for screen rotation when loading the level
+
+Gradient triggers without any references use the screen's edges as reference instead.  
+These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
+
+Example:  
+![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
+
+
 # Events
 
 ## [2.207] Player Reversed event only works on pads and orbs
