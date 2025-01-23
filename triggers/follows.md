@@ -87,6 +87,10 @@ Advanced Follow effects prior to the exclusive action are still applied.
 **Exclusive** is applied on both X and Y even if **X** or **Y Only** is used.  
 The only way to control the exclusive area of effect is with **MaxRange**.	
 
+### Max Speed and Friction
+
+Settings that change the velocity of a target such as Acceleration, Max Speed and Friction are applied on each respective Advanced Follow.
+
 ## Object Links
 
 Advanced follow can use object and group links.  
@@ -132,17 +136,14 @@ Without **Target Dir**, acceleration will be applied on the given axis based on 
 The target is unable to steer if **Mode 1** or **2** is present on the other axis.  
 
 ## Rotation
-
+With **Rotate Dir**, the target rotates towards the follow center.   
+Rotation is done independently by each Advanced Follow action.  
+The rotation of the object is updated when entering the area of effect of the Advanced Follow.  
 Rotation speed is limited to 0.5 rad/tick. This is not affected by slowing down with timewarp.  
-
-The rotation of the object is updated when entering the area of effect of the Advanced Follow.
-
-Rotation is done independently by each Advanced Follow action.
 
 **Rotation Offset** offsets the rotation's target angle by a value given in degres.  
 
-**Rotate Easing** eases the rotation using the formula:
-
+**Rotate Easing** eases the rotation using the formula:  
 $nextRotation = \frac{(currentAngle-targetAngle)}{easing}$
 
 The target's rotation is not updated if the target's distance from the follow center is less than **Rotate Deadzone**, given in small step units.
@@ -159,6 +160,12 @@ Having any **Mode 1** or **2** Advanced Follows active on the same target will o
 ## Ignore Disabled
 
 With Ignore Disabled, targets that are toggled off are skipped by Advanced Follow.
+
+## Visibility
+
+Advanced Follow acts on all targets, including the ones placed off-screen.  
+
+Link Visible is not needed when using Advanced Follow.
 
 ## Mode
 
@@ -308,7 +315,8 @@ The randomization is done individually per target everytime the trigger is activ
 
 ## Target Control ID
 
-If Target Control ID is selected, Target GID references the Control ID of one or more Advanced Follow instances. Edit Advanced Follow acts on all Target GIDs of the referenced instances.
+If Target Control ID is selected, Target GID references the Control ID of one or more Advanced Follow instances.  
+Edit Advanced Follow acts on all targets that have at least one of the Advanced Follows' Target GIDs.
 
 ## Remapping
 
