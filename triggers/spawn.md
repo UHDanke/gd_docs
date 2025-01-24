@@ -135,6 +135,7 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 ### Not Remappable
 
 * Color  
+* Keyframes
 * Rotate Gameplay  
 * Gradient  
 * Checkpoint  
