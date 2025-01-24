@@ -219,7 +219,7 @@ These triggers have IDs that are not remappable:
 - Spawn (Original Group ID)
 - _**Area Triggers (Effect ID)**_
 - _**Area Tint, Enter Tint (Color Channel)**_
-
+- _**Keyframe (GroupID, SpawnGID)**_
 
 # Items and Timers
 
