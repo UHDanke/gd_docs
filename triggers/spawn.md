@@ -87,8 +87,7 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 * Scale  
 * Follow  
 * Animate  
-* Keyframe Animation  
-* Keyframe  
+* Animate Keyframe  
 * Follow Player Y  
 * Advanced Follow  
 * Edit Advanced Follow  
@@ -119,7 +118,7 @@ If an ID is remapped to multiple IDs within the same trigger (one-to-many), the 
 * Collision  
 * Instant Collision  
 * On Death  
-*  End  
+* End  
 * Teleport  
 * Shock Wave  
 * Shock Line  
