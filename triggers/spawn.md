@@ -70,7 +70,7 @@ Spawn remapping is a Spawn trigger option that allows spawning triggers reconfig
 IDs are not discerned by their type (Item ID, Block ID, Group ID, etc), they are all treated as a single ID for the purposes of remapping.    
 The main purpose of spawn remapping is reusing triggers, but it has many more uses thanks to its versatility.
 
-Remapping does not change the IDs of triggers, it spawns independent copies of triggers (called instances) with remapped IDs.
+Remapping does not change the IDs of triggers, remapping creates independent copies of triggers (called instances) with new IDs.
 
 ## Remap Rules
 
