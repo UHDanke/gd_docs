@@ -16,6 +16,12 @@ Example ID:
 Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.  
 While this seems intentional, an option to enable 240hz start positions would be nice to have.
 
+## [2.207] Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently
+
+Pressing the F3 Preview Mode hotkey two times or more while editor playtesting is paused moves objects permanently.
+
+The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.
+
 ## [2.207] Incorrect trigger duration line length when teleporting
 
 The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.
