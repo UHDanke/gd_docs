@@ -11,6 +11,16 @@ The crash will not trigger if Extended Collision is used on the dynamic collisio
 Example ID:  
 114561987
 
+## [2.207] Start Position 60hz
+
+Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.  
+While this seems intentional, an option to enable 240hz start positions would be nice to have.
+
+## [2.207] Incorrect trigger duration line length when teleporting
+
+The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.
+
+![image](https://github.com/user-attachments/assets/ae1e5fec-1326-49fa-8ad3-cd50ca69c448)
 
 ## [2.207] Regrouping objects with Group Parent IDs creates phantom groups
 
