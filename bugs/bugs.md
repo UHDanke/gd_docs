@@ -271,6 +271,14 @@ Counter labels only update if a Pickup or Item Edit trigger with the same ItemID
 IDs outside the 0-9999 range refer to ID 0 or 9999. If an ID outside this range is used, it will display the value of ID 0 (if below 0) or 9999 (if above 9999), but will not update when ID 0 / 9999 change values.
 Timers text labels update properly and are not affected by this bug.  
 
+## [2.207] Level is unlisted if it contains a Pickup with high count or negative item id
+
+The server unlists any level that contains a Pickup trigger with either high count (100k or more) or an item ID less than 0.
+
+Item Edit and Time triggers are not affected by either issue.
+
+
+
 # Area Triggers
 
 ## [2.207] Ease Out conflict
