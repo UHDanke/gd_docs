@@ -22,6 +22,12 @@ Pressing the F3 Preview Mode hotkey two times or more while editor playtesting i
 
 The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.
 
+## [2.207] Spider teleports through or into Extended Collision objects.
+
+Spider gamemode and Spider Orb teleports through or into an object with high scaling and extended collision instead of on it.
+
+Spider Pad is not affected by this issue.
+
 ## [2.207] Incorrect trigger duration line length when teleporting
 
 The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.
