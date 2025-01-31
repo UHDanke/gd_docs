@@ -1,6 +1,6 @@
 # Misc
 
-# Sequence "Ignore Toggled" option.
+### Sequence "Ignore Toggled" option.
 
 Allows Sequence to skip toggled groups.
 
