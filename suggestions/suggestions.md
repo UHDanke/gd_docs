@@ -2,11 +2,12 @@
 
 ## Sequence "Ignore Toggled" option.
 
-Allows Sequence to skip toggled groups.
+Sequence ignores toggled groups and skips to the next active group.
 
 ## Advanced Random "Ignore Toggled" option.
 
-Toggled groups have 0 weight with this option.
+Toggled groups have 0 weight with this option.  
+This would be useful for adding unique drops or actions that are removed from the loot table.
 
 ## Time Control "Clear" options
 
@@ -15,6 +16,10 @@ Stop triggers are able to clear timers by Group ID. "Clear" on Time Control woul
 This isn't new functionality but it is less awkward than spawning a timer with the given item ID then stopping it, if the group of the timer is unknown or cannot be referred to.
 
 Clearing is useful primarily for resetting the remaps of a timer.
+
+## Decimal Particle Emission
+
+Allow Emission variable inside Particle Objects to have decimals, to allow finer control over the particle spawn rate.
 
 ## More Player Events
 
