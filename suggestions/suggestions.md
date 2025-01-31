@@ -1,15 +1,15 @@
 # Misc
 
-## Sequence "Ignore Toggled" option.
+## Sequence "Ignore Toggled" option
 
 Sequence ignores toggled groups and skips to the next active group.
 
-## Advanced Random "Ignore Toggled" option.
+## Advanced Random "Ignore Toggled" option
 
 Toggled groups have 0 weight with this option.  
 This would be useful for adding unique drops or actions that are removed from the loot table.
 
-## Time Control "Clear" options
+## Time Control "Clear" option
 
 Stop triggers are able to clear timers by Group ID. "Clear" on Time Control would be able to clear a timer by item id.
 
@@ -23,17 +23,32 @@ Allow Emission variable inside Particle Objects to have decimals, to allow finer
 
 ## More Player Events
 
-### Grounded and Airborne
-
-Grounded and Airborne player events for platformers.
-
-The current landing and jump events are not sufficient to tell whether the player is grounded or in the air accurately.
-
-### Enter / Exit Practice Mode Event
-
+More events for the Event trigger:
+- Grounded and Airborne player events
+  - The current landing and jump events are not sufficient to tell whether the player is grounded or in the air accurately.
+- Enter / Exit Practice Mode event
+- Fall off platform (without jumping) event
+- Clip into platform event
+  - Would trigger when you jump into a hitbox and get pushed ontop of it.
+- Directional Player Movement events
+  - Player Move X Positive
+  - Player Move X Negative
+  - Player Move X Stop
+  - Player Move Y Positive
+  - Player Move Y Negative
+  - Player Move Y Stop
+ 
 ## Build Helper / Regroup Copy Paste
 
 Combined regroup + paste option to allow regrouping and pasting group ID parents.
+
+## Teleport Trigger P2 option
+
+Add P1/P2 options to the teleport trigger. The current workaround for this is to use teleport portals which also affect P1 and not just P2.
+
+## Teleport Trigger Force Mod X/Y only
+
+Add X/Y only option to teleport trigger as you are currently unable to completely negate velocity on one axis only (without blocks).
 
 # Area Triggers
 
