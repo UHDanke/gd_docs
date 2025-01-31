@@ -279,11 +279,13 @@ Timers text labels update properly and are not affected by this bug.
 
 ## [2.207] Level is unlisted if it contains a Pickup with high count or negative item id
 
-The server unlists any level that contains a Pickup trigger with either high count (100k or more) or an item ID less than 0.
+The server unlists any level that contains a Pickup, Count or Instant Count trigger with either high count (100k or more) or an item ID less than 0.
 
 Item Edit and Time triggers are not affected by either issue.
 
+## [2.207] Item Attempts value only returns 1
 
+Attemptz item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
 
 # Area Triggers
 
