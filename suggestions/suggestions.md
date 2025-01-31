@@ -46,9 +46,9 @@ Combined regroup + paste option to allow regrouping and pasting group ID parents
 
 Add P1/P2 options to the teleport trigger. The current workaround for this is to use teleport portals which also affect P1 and not just P2.
 
-## Teleport Trigger Force Mod X/Y only
+## Force Mod X/Y only
 
-Add X/Y only option to teleport trigger as you are currently unable to completely negate velocity on one axis only (without blocks).
+Add X/Y only option to player velocity mod options as you are currently unable to completely negate velocity on one axis only (without blocks).
 
 # Area Triggers
 
