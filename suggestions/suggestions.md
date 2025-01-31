@@ -51,7 +51,7 @@ Add P1/P2 options to the teleport trigger. The current workaround for this is to
 ![image](https://github.com/user-attachments/assets/f0f80691-e906-4259-b149-3e26f139f754)
 ![image](https://github.com/user-attachments/assets/6136dee5-279d-45ff-87e7-8ecde1321207)
 
-Add X/Y only option to Teleport trigger Rotate Force as as you are currently unable to completely negate velocity on one axis only (without blocks).
+Add X/Y only option to Teleport trigger Rotate Force as as you are currently unable to completely negate velocity on one axis only (without block collisions).
 
 # Area Triggers
 
