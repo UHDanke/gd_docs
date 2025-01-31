@@ -1,38 +1,61 @@
 # Misc
 
-## [2.207] Move Silent Collision crash
-
-If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will crash.  
-
-The dynamic collision object must be moved before it checks for collisions.
-
-The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to calculate the distance between the collision objects that were moved.
-
-Example ID:  
-114561987
-
 ## [2.207] Start Position 60hz
 
 Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.  
 While this seems intentional, an option to enable 240hz start positions would be nice to have.
+
+## [2.207] Move Trigger Target Dynamic ignores X and Y Only
+
+Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
+
+## [2.207] Move Trigger Camera Lock X axis bugs on level replay
+
+While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
+This only happens if the Move trigger is placed left or ontop of the level origin.
+
+## [2.207] Object Rotations are highly innacurate for slow speeds.
+
+The position of objects and their rotations get offset if rotations are slow (~30 degrees per second).  
+All rotation transformations are affected except Area Rotate.
+
+## [2.207] Rotate Aim / Follow infinite rotation
+
+When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.  
+If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
+
+[Video 1](https://youtu.be/uE5I8bRaMSg)  
+[Video 2](https://youtu.be/GkujxqE5pok)
+
+## [2.207] Relative Scale doesn't work with Scale 0.00
+
+This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
+Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
+Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
+In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
+
+## [2.207] Gradient doesn't account for screen rotation when loading the level
+
+Gradient triggers without any references use the screen's edges as reference instead.  
+These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
+
+Example:  
+![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
+
+## [2.207] Color resumes when respawning from a checkpoint if stopped
+
+If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint.  
+Pausing the Color trigger does not do this.
+
+
+
+# Editor
 
 ## [2.207] Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently
 
 Pressing the F3 Preview Mode hotkey two times or more while editor playtesting is paused moves objects permanently.
 
 The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.
-
-## [2.207] Spider teleports through or into Extended Collision objects.
-
-Spider gamemode and Spider Orb teleports through or into an object with high scaling and extended collision instead of on it.
-
-Spider Pad is not affected by this issue.
-
-## [2.207] Incorrect trigger duration line length when teleporting
-
-The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.
-
-![image](https://github.com/user-attachments/assets/ae1e5fec-1326-49fa-8ad3-cd50ca69c448)
 
 ## [2.207] Regrouping objects with Group Parent IDs creates phantom groups
 
@@ -77,33 +100,11 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.  
 Autobuild is affected by this.
 
-## [2.207] Object Rotations are highly innacurate for slow speeds.
-The position of objects and their rotations get offset if rotations are slow (~30 degrees per second).  
-All rotation transformations are affected except Area Rotate.
+## [2.207] Incorrect trigger duration line length when teleporting
 
-## [2.207] Move Trigger Target Dynamic ignores X and Y Only
+The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.
 
-Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
-
-## [2.207] Move Trigger Camera Lock X axis bugs on level replay
-
-While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
-This only happens if the Move trigger is placed left or ontop of the level origin.
-
-## [2.207] Relative Scale doesn't work with Scale 0.00
-
-This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
-Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
-Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
-In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
-
-## [2.207] Rotate Aim / Follow infinite rotation
-
-When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.  
-If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
-
-[Video 1](https://youtu.be/uE5I8bRaMSg)  
-[Video 2](https://youtu.be/GkujxqE5pok)
+![image](https://github.com/user-attachments/assets/ae1e5fec-1326-49fa-8ad3-cd50ca69c448)
 
 ## [2.207] On-load triggers have effect lines
 
@@ -113,18 +114,28 @@ On-load triggers like Link Visible and UI have effect lines when placed on the t
 ## [2.207] Duration lines of triggers with touch option are extended if placed before the origin
 ![image](https://github.com/user-attachments/assets/1656a857-9ed7-49e8-adf1-79428b37c828)
 
-## [2.207] Gradient doesn't account for screen rotation when loading the level
 
-Gradient triggers without any references use the screen's edges as reference instead.  
-These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
 
-Example:  
-![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
+# Collisions
 
-## [2.207] Color resumes when respawning from a checkpoint if stopped
+## [2.207] Move Silent Collision crash
 
-If a Color trigger is stopped with a Stop trigger, the color change will resume when you respawn from a checkpoint.  
-Pausing the Color trigger does not do this.
+If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will crash.  
+
+The dynamic collision object must be moved before it checks for collisions.
+
+The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to calculate the distance between the collision objects that were moved.
+
+Example ID:  
+114561987
+
+## [2.207] Spider teleports through or into Extended Collision objects.
+
+Spider gamemode and Spider Orb teleports through or into an object with high scaling and extended collision instead of on it.
+
+Spider Pad is not affected by this issue.
+
+
 
 # Events
 
@@ -139,6 +150,14 @@ If the player lands with close to 0 velocity or clips / teleports into an object
 
 On mobile devices, if you press Left while already pressing Right (and vice-versa), releasing Right after this will not trigger a Right Release (or Left Release) event.  
 This affects both player events.
+
+## [2.207] Input Release events do not trigger if game is paused
+
+If you pause the game while holding a player input and release it during the pause, the input release event will not trigger.
+
+Input release should trigger on unpausing if the player no longer holds the input.
+
+
 
 # Keyframes 
 
@@ -170,6 +189,9 @@ There are some cases where using only the X movement of a keyframe chain is requ
 
 Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.
 
+
+
+
 # Particles 
 
 ## [2.207] Toggling off or unloading a Particle Object does not clear particles in playtesting
@@ -195,6 +217,7 @@ Particles are not properly cleared when the level restarts if using the **Quick 
 A particle with the Uniform Color option that is spawned will use the color channel value at the time of spawning instead of syncing with the color channel continuously.
 
 
+
 # Enter Effects
 
 ## [2.207] Enter trigger crash
@@ -209,6 +232,7 @@ Using Enter trigger effects on portals and other objects composed of multiple ob
 
 Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.  
 Touch Trigger does work however.
+
 
 
 # Spawn Triggers
@@ -247,13 +271,15 @@ These triggers are not remappable:
 - _**Gradient (ID can get remapped but it always disables the gradient)**_
 - **Checkpoint**  
 - Legacy Enter Effect triggers (not spawnable)
+- Keyframe (trigger is remappable, groups inside keyframe objects are not)
 
 These triggers have IDs that are not remappable:
 - _**Pulse (Color ID)**_
 - Spawn (Original Group ID)
 - _**Area Triggers (Effect ID)**_
 - _**Area Tint, Enter Tint (Color Channel)**_
-- _**Keyframe (GroupID, SpawnGID)**_
+
+
 
 # Items and Timers
 
@@ -266,6 +292,8 @@ More information can be found in the count desync file.
 
 Multiplying large numbers using Pickup triggers has significant errors.
 This isn't the case for Item Edit triggers however.
+
+## [2.207] Item Comp 
 
 ## [2.207] Time **Ignore Timewarp** does nothing
 
@@ -285,7 +313,9 @@ Item Edit and Time triggers are not affected by either issue.
 
 ## [2.207] Item Attempts value only returns 1
 
-Attemptz item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
+Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
+
+
 
 # Area Triggers
 
@@ -314,12 +344,6 @@ With Area Scale and Area Move, this can crash your game.
 ### Scale / Rotate Bug
 Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
 This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
-
-## [Not Bug] Silent Move visual delay
-
-**EDIT**: Not a bug, but a side-effect of Silent Move being instant. If Silent is activated from the timeline (which is after moves are processed but before the frame is updated) the wrong position will be displayed until the next Area update.  
-~~When moving an object affected by Area Scale, Rotate or Move, the object will be rendered in the wrong position for one frame.~~
-~~The real position of the object is not affected, other triggers which use object position will not be affected.~~
 
 ## [2.207] DEAP has no effect when used on Area Tint or Area Fade
 The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.
