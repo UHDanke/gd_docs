@@ -1,3 +1,24 @@
+# Misc
+
+# Sequence "Ignore Toggled" option.
+
+Allows Sequence to skip toggled groups.
+
+### Advanced Random "Ignore Toggled" option.
+
+Toggled groups have 0 weight with this option.
+
+### Time Control "Clear" options
+
+Stop triggers are able to clear timers by Group ID. "Clear" on Time Control would be able to clear a timer by item id.
+
+This isn't new functionality but it is less awkward than spawning a timer with the given item ID then stopping it.
+
+### Grounded and Airborne player events
+
+Grounded and Airborne player events for platformers.
+
+
 # Area Triggers
 
 ### Edit Area use Control ID
@@ -20,3 +41,5 @@ These settings should be hidden while using those proximity options.
 
 Currently for Area triggers Pause has the same behavior as Stop and Resume has no effect.  
 Pause / Resume should freeze / unfreeze recalculations of Area effects, similar to how they already work for Advanced Follow.
+
+# Sequence
