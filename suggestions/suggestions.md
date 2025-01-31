@@ -12,11 +12,19 @@ Toggled groups have 0 weight with this option.
 
 Stop triggers are able to clear timers by Group ID. "Clear" on Time Control would be able to clear a timer by item id.
 
-This isn't new functionality but it is less awkward than spawning a timer with the given item ID then stopping it.
+This isn't new functionality but it is less awkward than spawning a timer with the given item ID then stopping it, if the group of the timer is unknown or cannot be referred to.
 
-### Grounded and Airborne player events
+Clearing is useful primarily for resetting the remaps of a timer.
+
+### More Player Events
+
+#### Grounded and Airborne
 
 Grounded and Airborne player events for platformers.
+
+The current landing and jump events are not sufficient to tell whether the player is grounded or in the air accurately.
+
+#### Enter / Exit Practice Mode Event
 
 ### Build Helper / Regroup Copy Paste
 
