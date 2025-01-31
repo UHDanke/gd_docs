@@ -18,6 +18,9 @@ This isn't new functionality but it is less awkward than spawning a timer with t
 
 Grounded and Airborne player events for platformers.
 
+### Build Helper / Regroup Copy Paste
+
+Combined regroup + paste option to allow regrouping and pasting group ID parents.
 
 # Area Triggers
 
