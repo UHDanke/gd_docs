@@ -216,7 +216,24 @@ Particles are not properly cleared when the level restarts if using the **Quick 
 
 A particle with the Uniform Color option that is spawned will use the color channel value at the time of spawning instead of syncing with the color channel continuously.
 
+## [2.207] Some Particle Objects can end up having erratic spin
 
+Particle objects can get bugged and end up having very erratic movement.  
+Level ID: 114681413
+
+[Video](https://youtu.be/5zb-JCvD5JY)
+
+## [2.207] FrictionS and FrictionR don't do anything
+
+FrictionS and FrictionR don't seem to do anything with any radial rotation or spin option, possibly nothing at all.
+
+Tested:
+- Spin
+- Angle
+- Dynamic Rotation
+- Start Rot is Dir
+- Radius Mode
+- AccelRad, AccelTan
 
 # Enter Effects
 
