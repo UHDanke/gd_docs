@@ -47,9 +47,8 @@ Combined regroup + paste option to allow regrouping and pasting group ID parents
 Add P1/P2 options to the teleport trigger. The current workaround for this is to use teleport portals which also affect P1 and not just P2.
 
 ## Rotate Force Mod X/Y only
-
-![image](https://github.com/user-attachments/assets/f0f80691-e906-4259-b149-3e26f139f754)
-![image](https://github.com/user-attachments/assets/6136dee5-279d-45ff-87e7-8ecde1321207)
+<img src="https://github.com/user-attachments/assets/f0f80691-e906-4259-b149-3e26f139f754" width="50%">
+<img src="https://github.com/user-attachments/assets/6136dee5-279d-45ff-87e7-8ecde1321207" width="50%">
 
 Add X/Y only option to Teleport trigger Rotate Force as as you are currently unable to completely negate velocity on one axis only (without block collisions).
 
