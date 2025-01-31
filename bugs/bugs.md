@@ -191,7 +191,6 @@ Keyframe scaling is relative to the Group Parent ID's rotation, which is not ref
 
 
 
-
 # Particles 
 
 ## [2.207] Toggling off or unloading a Particle Object does not clear particles in playtesting
@@ -225,7 +224,8 @@ Level ID: 114681413
 
 ## [2.207] FrictionS and FrictionR don't do anything
 
-FrictionS and FrictionR don't seem to do anything with any radial rotation or spin option, possibly nothing at all.
+FrictionS and FrictionR don't seem to do anything with any radial rotation or spin option, or any option at all.
+FrictionP is the only friction value that works.
 
 Tested:
 - Spin
@@ -234,6 +234,14 @@ Tested:
 - Start Rot is Dir
 - Radius Mode
 - AccelRad, AccelTan
+
+## [2.207] Particle sometimes fail to spawn when near the particle limit
+
+First particle in an particle loop will fail to spawn if the particle limit has been hit.
+
+This usually happens if $Emission \cdot Lifetime = MaxParticles$
+
+
 
 # Enter Effects
 
