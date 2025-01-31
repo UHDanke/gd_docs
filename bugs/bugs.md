@@ -293,7 +293,10 @@ More information can be found in the count desync file.
 Multiplying large numbers using Pickup triggers has significant errors.
 This isn't the case for Item Edit triggers however.
 
-## [2.207] Item Comp 
+## [2.207] Item Compare may be inaccurate when checking if an ItemID equals a value
+
+Item Compare can return false when comparing an integer Item ID to a value it is equal to (for example, 1).  
+This may be caused by Pickups, but i was not able to accurately figure out a cause for this.
 
 ## [2.207] Time **Ignore Timewarp** does nothing
 
