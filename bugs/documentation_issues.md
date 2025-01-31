@@ -1,10 +1,10 @@
 # Editor Issues
+
 ## [Page 64, 65] Target Mode and Distance Mode
 ![image](https://github.com/user-attachments/assets/cac9de43-9551-4466-b3c2-03a56ee5894a)
 ![image](https://github.com/user-attachments/assets/8f69b2fe-074c-4c39-92cc-992bf7cced94)
 
 None of the groups mentioned must contain a single object, if there are multiple objects one is picked at random for the movement. If there is a Group Parent ID it will always be used.
-
 
 ## [Page 66] Pausing
 ![image](https://github.com/user-attachments/assets/bbbf6929-b28c-431f-8e1c-a8ad8a52a0d8)
@@ -46,12 +46,97 @@ Advanced Follow Y has the same behavior as an Advanced Follow Mode 1 trigger, Sp
 To get the equivalent easing value, use this formula:  
 $Easing = 4/Speed$
 
+
 ## [Page 77] Max Speed
 
 ![image](https://github.com/user-attachments/assets/677a58fb-a506-41c8-821a-03ef9472f990)
 
 Not sure where this formula is from, as with Speed, Max Speed is almost equivalent to Advanced Follow's MaxSpeed, where:
 $Max Speed(AdvFollow) = MaxSpeed/4$
+
+## P1/P2/C (Pages 78, 85)
+
+![image](https://github.com/user-attachments/assets/6632f1de-3f88-41f5-ac7a-ee58d92176dc)
+![image](https://github.com/user-attachments/assets/276f3814-e8ee-41ec-9ad0-a58720809a22)
+
+**C** is the bottom-left corner of the screen, not the center.
+
+## Rotation Offset (Page 78)
+
+![image](https://github.com/user-attachments/assets/27dee7db-8dce-447b-8d24-1635c360a102) 
+
+Using *left* and *right* is understandable and gets the idea across (if you know the default direction) but not correct, should be replaced by *counter-clockwise* and *clockwise*.
+
+## Init (Page 78)
+![image](https://github.com/user-attachments/assets/80529fb5-9076-4480-908d-7949ca17f2bf)
+
+This definition is alright if you know that a target under no Advanced Follow has no velocity values, but it seems to imply that an object affected by Advanced Follow with 0 velocity will be set to StartSpeed when using Init, when that is not the case.
+
+## Set (Page 78)
+![image](https://github.com/user-attachments/assets/31547429-4c1b-4fca-809f-fa18909eaebc)
+
+Set will not override the current velocity if StartSpeed is equal to 0.
+
+## Delay  (Pages 79, 80)
+![image](https://github.com/user-attachments/assets/b5daa52a-a337-49d5-93a5-09b872d71f42)
+
+This definition is incomplete - the position of the follow center is also delayed.
+
+## MaxSpeed (Pages 79, 80)
+![image](https://github.com/user-attachments/assets/24593595-6893-4f2d-8c2b-b82d28312f52)
+
+Leaving MaxSpeed at 0 doesn't limit speed, it makes it unlimited.
+
+## MaxRange (Pages 79, 80)
+![image](https://github.com/user-attachments/assets/de58dcba-86f0-4257-9a13-eb2200af2eb9)
+
+Only mentioning start of movement implies the target will continue to follow when exiting MaxRange, which isn't the case - MaxRange is the radius in which the Advanced Follow effect is applied, exiting this range removes all target velocity.
+
+## Easing (Page 79)
+![image](https://github.com/user-attachments/assets/16a6e0b6-f46c-4a92-a06c-1c7839fa63a7)
+
+This definition is wrong, easing is applied at all times.  
+I don't have a good way to describe this easing outside of mentioning the velocity equation ($Velocity=Distance/Easing$).
+
+## NearFriction and NearAccel (Page 81)
+![image](https://github.com/user-attachments/assets/a3ae08a5-ea9d-41ad-97e2-b3ea498b4449)
+
+These definitions imply NearFriction and NearAccel replace Friction and Acceleration when inside NearDist but that is not the case - the values of acceleration and friction vary between normal and near values linearly, based on the distance of the target from the follow center divided by NearDist.
+
+## StartDir
+![image](https://github.com/user-attachments/assets/edb86c48-d543-4434-93b9-975d58f2683f)
+
+StartDir offsets the angle when using a direction reference ID.
+
+## Direction Reference (Pages 81, 83, 85)
+
+![image](https://github.com/user-attachments/assets/f1d001f1-4dad-41ae-8def-82a9faaf493c)
+
+StartSpeed is never a multiplier, it is a set value even when using a speed reference; only the movement direction is copied.
+
+## Target Dir (Page 83)
+
+![image](https://github.com/user-attachments/assets/7d64c91c-8588-4a04-a9ce-2c694abec8c4)
+
+The definition of Target Dir is filler and doesn't explain anything concrete. Target Dir makes the object accelerate towards the follow center (like in Mode 2), without it acceleration is done in the direction of movement.
+
+## Re-Target Advanced Follow Target GID
+![image](https://github.com/user-attachments/assets/242405cb-c5e5-48c4-960d-97347e3ba932)
+![image](https://github.com/user-attachments/assets/7e3a56d0-473b-43fe-927a-c0156cc50dc7)
+
+For Re-Target Advanced Follow, Target GID is the group ID of an Advanced Follow trigger, not the Target GID of Advanced Follow.
+
+## SteerForceLow/High
+![image](https://github.com/user-attachments/assets/4cd1f96b-a241-4759-bfb9-a24e41fe6374)
+
+This is straight up wrong, steerforce settings have nothing to do with MaxRange, the trigger doesn't even work on targets outside that range.  
+SteerForceLow / SteerForceHigh replaces SteerForce if the velocity of the object is strictly below / above SpeedRangeLow / SpeedRangeHigh.
+
+## BreakAngle
+![image](https://github.com/user-attachments/assets/b0238496-0fff-4a2e-b09c-91fbfb0754d7)
+
+This could use clarification as to what angle its talking about.  
+The target starts braking if the angle between the direction of movement and the direction towards the follow center (where the target goes and where it wants to go, to put it another way) is higher than BreakAngle - in other words its how much the target tolerates going in a different direction before its forced to brake and steer itself towards the center. 
 
 ## [Page 89] Reverse Order
 
@@ -121,7 +206,7 @@ Dont Reset is a recent option, but Loop isn't.
 
 This is one of the options i'm not able to tell what is actually supposed to do.  
 I notice some differences in how the sounds are pitched, but i cannot tell if this is placebo or actually real.  
-My assumption is that this option changes the pitch shift algorithm to one that uses FFT, but i honestly have no idea, so i think it's a good sign that more info is needed / the option needs to be explained better.
+My assumption is that this option changes the pitch shift algorithm to one that uses FFT, but i honestly have no idea, so i think it's a good sign that more info is needed / the option needs to be explained in a better way.
 
 ## [Page 129] UI Settings
 
