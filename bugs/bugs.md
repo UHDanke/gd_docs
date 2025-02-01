@@ -116,9 +116,6 @@ The length of the duration line is double what it should be if the trigger is pl
 On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite activating only when the level loads.
 ![image](https://github.com/user-attachments/assets/23007373-16ab-4cac-a4c7-66689abd4378)
 
-## [2.207] Duration lines of triggers with touch option are extended if placed before the origin
-![image](https://github.com/user-attachments/assets/1656a857-9ed7-49e8-adf1-79428b37c828)
-
 
 
 # Collisions
@@ -207,11 +204,6 @@ In playtesting, the particles are not cleared and become separate from the parti
 
 Deselecting the **Animate on Trigger** option deselects the option for all particle objects when the level is saved.  
 
-## [2.207] Once animated, a Particle Object will continue forever even if toggled off
-
-Toggling should make a Particle Object with Animate on Trigger require another animate activation when toggled back on.
-An **Animate Once** option would be nice to have for this situation, since using particle objects instead of Spawn Particle is better in some situations.
-
 ## [2.207] Particles with long lifespans linger after a level restart if **Quick Start** is selected
 
 Particles are not properly cleared when the level restarts if using the **Quick Start** option.
@@ -242,7 +234,7 @@ Tested:
 
 ## [2.207] Particle sometimes fail to spawn when near the particle limit
 
-First particle in an particle loop will fail to spawn if the particle limit has been hit.
+The first particle in an particle loop will fail to spawn if the particle limit has been hit already.
 
 This usually happens if $Emission \cdot Lifetime = MaxParticles$
 
@@ -375,10 +367,12 @@ All Area triggers are affected.
 With Area Scale and Area Move, this can crash your game.
 
 ### Scale / Rotate Bug
+
 Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
 This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
 
 ## [2.207] DEAP has no effect when used on Area Tint or Area Fade
+
 The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.
 
 ## [2.207] Area Tint ignores Base / Detail Color
@@ -421,9 +415,9 @@ Edit Area Tint and Edit Area Fade do not get paused when pausing the editor play
 
 [Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
 
-## [2.207] Stop and Area Stop do not properly clear Area triggers
+## [2.207] Area Memory Leak, Stop and Area Stop do not properly clear Area triggers
 
-Area triggers are not properly cleared by Stop or Area Stop triggers and accumulate targets overtime.  
+Area triggers are not properly cleared by Stop or Area Stop triggers and accumulate lag vertime.  
 The culprit seems to be the processAreaActions function but the details are not known.
 
 The only way to properly clear an Area trigger is by replacing it with another Area trigger by using an EffectID.
@@ -439,7 +433,7 @@ Targets move way faster than they should if there are multiple Advanced Follows 
 
 Rotation is also duplicated when using Mode 3.
 
-A solution to this bug would be for only the first Advanced Follow in a tick to move by the velocity value, and subsequent ones to move by the difference in velocity.
+A solution to this bug would be for only the first Advanced Follow in a tick to move by the current velocity value, and subsequent ones to move by the difference in velocity.
 
 ## [2.207] Rotation and Object Groups
 
