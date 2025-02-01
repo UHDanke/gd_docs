@@ -17,6 +17,10 @@ This isn't new functionality but it is less awkward than spawning a timer with t
 
 Clearing is useful primarily for resetting the remaps of a timer.
 
+## Follow Trigger "Y Copy X" / "X Copy Y" options
+
+These options would be useful for converting X movement into Y and vice-versa.
+
 ## Decimal Particle Emission
 
 Allow Emission variable inside Particle Objects to have decimals, to allow finer control over the particle spawn rate.
