@@ -4,7 +4,7 @@
 
 Sets the scale of Target GID using Center Group ID's current scale as reference.
 
-For example, if center scale on the x axis is 10 and the trigger's Scale X is 2, the r
+For example, if center scale on the x axis is 10 and the trigger's Scale X is 2, the
 trigger will scale the target group by 0.2 on X axis.
 
 ## Sequence "Ignore Toggled" option
