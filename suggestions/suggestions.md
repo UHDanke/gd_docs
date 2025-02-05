@@ -1,5 +1,11 @@
 # Misc
 
+## Item Edit "Power" and "Root" operations
+
+Add Power and Root as possible operations inside the Item Edit trigger.    
+
+Integer powers can be done with repeated item edits, but roots are a bit less intuitive and require approximation (newton's method) to obtain, which makes euclidian distance calculations more difficult than they have to be.
+
 ## Scale "Set Scale" option
 
 Sets the scale of Target GID using Center Group ID's current scale as reference.
