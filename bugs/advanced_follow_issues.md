@@ -159,6 +159,10 @@ This also affects Area triggers and Move (Lock Camera).
 
 When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1 or 2 is present on the other axis.  
 
+## [2.207] Edit Advanced Follow random is between 0/+ instead of -/+
+
+The random variables in Edit Advanced Follow are always picked in a range between 0 and the given value, unlike other random settings.
+
 # Suggestions & Additions
 
 ## AdvFollow Ignore Timewarp
