@@ -27,7 +27,7 @@ Stop triggers are able to clear timers by Group ID. "Clear" on Time Control woul
 
 This isn't new functionality but it is less awkward than spawning a timer with the given item ID then stopping it, if the group of the timer is unknown or cannot be referred to.
 
-Clearing is useful primarily for resetting the remaps of a timer.
+Clearing is useful primarily for removing timers completely and clearing their remaps.
 
 ## Follow Trigger "Y Copy X" / "X Copy Y" options
 
