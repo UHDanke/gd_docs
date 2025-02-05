@@ -10,8 +10,7 @@ Integer powers can be done with repeated item edits, but roots are a bit less in
 
 Sets the scale of Target GID using Center Group ID's current scale as reference.
 
-For example, if center scale on the x axis is 10 and the trigger's Scale X is 2, the
-trigger will scale the target group by 0.2 the on X axis.
+For example, if the center's x scale is 10.00 and the trigger's x scale is 2.00, the trigger will scale the target group by 0.20 on the X axis.
 
 ## Sequence "Ignore Toggled" option
 
@@ -63,11 +62,9 @@ Combined regroup + paste option to allow regrouping and pasting group ID parents
 
 Add P1/P2 options to the teleport trigger. The current workaround for this is to use teleport portals which also affect P1 and not just P2.
 
-## Rotate Force Mod X/Y only
-<img src="https://github.com/user-attachments/assets/f0f80691-e906-4259-b149-3e26f139f754" width="50%">
-<img src="https://github.com/user-attachments/assets/6136dee5-279d-45ff-87e7-8ecde1321207" width="50%">
+## Modifying player velocity X/Y only
 
-Add X/Y only option to Teleport trigger Rotate Force as as you are currently unable to completely negate velocity on one axis only (without block collisions).
+An option in either the Player Control or Teleport trigger that would allow you to change the velocity of an object on the X or Y axis only.
 
 # Area Triggers
 
