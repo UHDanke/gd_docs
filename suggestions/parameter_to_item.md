@@ -13,7 +13,7 @@ The options listed are examples made to give a general idea on the purpose of th
 
 UI could be similar to the event selection inside the Event trigger, but only one parameter can be chosen at a time.
 
-The main purpose of this trigger is to make measuring and calculating distances between objects and entities (players) easier, but it could also be used to measure a lot of other things which are currently difficult.
+The main purpose of this trigger is to make measuring and calculating distances between objects and entities (players) easier, but it could also be used to measure a lot of other things which are currently not possible.
 
 ## Object Parameter
 
