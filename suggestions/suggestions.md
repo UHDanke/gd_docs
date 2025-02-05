@@ -31,7 +31,9 @@ Clearing is useful primarily for resetting the remaps of a timer.
 
 ## Follow Trigger "Y Copy X" / "X Copy Y" options
 
-These options would be useful for converting X movement into Y and vice-versa.
+These options would be useful for turning X movement into Y movement and vice-versa.  
+
+The only way this can currently be achieved in some manner is with Area Move, but it is quite limited and inconvenient to do.
 
 ## Decimal Particle Emission
 
