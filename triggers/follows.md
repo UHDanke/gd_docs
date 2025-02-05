@@ -316,8 +316,10 @@ $Velocity = (CurrentVelocityX)*ModX+(CurrentVelocityY)*ModY+VelocityX+VelocityY$
 
 ## Random Values
 
-The values of Mod X/Y, Speed and Dir can be randomized in a range using the +- boxes respective to each setting.  
+The values of Mod X/Y, Speed and Dir can be randomized in a range using the -/+ boxes respective to each setting.  
+Contrary to what the option says, random values are picked in the 0/+ range, not -/+.
 The randomization is done individually per target everytime the trigger is activated.
+
 
 ## Target Control ID
 
