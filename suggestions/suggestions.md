@@ -71,7 +71,7 @@ An option in either the Player Control or Teleport trigger that would allow you 
 
 ## "Dynamic Reordering" Extra Object Option for triggers
 
-With this option, if the trigger is moved by a move trigger and spawned, the game would use the trigger's current position instead of its load position.
+With this option, if the trigger is moved by a move trigger and spawned, the game will use the trigger's current position instead of its load position.
 
 # Area Triggers
 
