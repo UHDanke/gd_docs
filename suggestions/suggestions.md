@@ -55,7 +55,8 @@ More events for the Event trigger:
   - Player Move Y Positive
   - Player Move Y Negative
   - Player Move Y Stop
- 
+- Game Unpaused event
+
 ## Build Helper / Regroup Copy Paste
 
 Combined regroup + paste option to allow regrouping and pasting group ID parents.
