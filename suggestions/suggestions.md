@@ -69,6 +69,10 @@ Add P1/P2 options to the teleport trigger. The current workaround for this is to
 
 An option in either the Player Control or Teleport trigger that would allow you to change the velocity of an object on the X or Y axis only.
 
+## "Dynamic Reordering" Extra Object Option for triggers
+
+With this option, if the trigger is moved by a move trigger and spawned, the game would use the trigger's current position instead of its load position.
+
 # Area Triggers
 
 ## Edit Area use Control ID
