@@ -10,6 +10,15 @@ The collision state is updated every tick after all scheduled moves are processe
 
 Collision checks are done even if there is no active Collision trigger and they are always active even if the objects are off-screen.  
 
+### Dynamic Order
+
+Collision checks are done sequentially one dynamic target at a time in the following order:
+- Player 1
+- Player 2
+    - Player-Player collisions are checked first
+- Dynamic collision objects
+  - Collisions are checked in the order the dynamic collision objects were placed
+ 
 ### Toggle
 
 If an object is inactive, the collision check is skipped.
@@ -24,6 +33,12 @@ Collisions near a dynamic target will be checked in a 3x3 grid centered on the c
 
 If the dynamic target's X position is less than 200, it will additionally check all chunks before X 200 regardless of Y position.
 
+#### Chunk Order
+
+Chunks are checked from bottom to top (towards Y positive), then left to right (towards X positive).
+
+Collision objects within a chunk are checked in the order they were placed.
+
 ### Extended Collision
 
 If a non-dynamic target uses Extended Collision, it will be checked by all dynamic targets regardless of chunk position.  
@@ -32,16 +47,11 @@ If the dynamic target uses Extended Collision, it will check all chunks.
 
 ### UI Trigger
 
-Collision objects on the UI layer will only check for collisions with other UI objects. Players are unable to collide with UI collisions.
+Collision objects on the UI layer will only check for collisions with other UI objects.  
+Players are unable to collide with UI collisions.
 
-UI collisions are not divided in chunks, dynamic collisions will check all other UI collisions regardless of position.
+UI collisions are not divided in chunks, dynamic UI collisions will check all other UI collisions regardless of position.
 
-### Dynamic Order
-
-Collision checks are done sequentially one dynamic target at a time in the following order:
-* Player 1
-* Player 2
-* Dynamic collision objects
 
 # Collision Trigger
 Toggles off a **Group ID** when collision blocks collide.  
