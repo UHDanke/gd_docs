@@ -138,12 +138,15 @@ Spawns **TargetID** when the timer given by **ItemID** reaches the **TargetTime*
 
 ## Activation
 
-Time Event triggers do not spawn groups on their own, they assign extra groups for timers to spawn at the specified target time.  
-
 Time Event requires an active timer to work, which can be created with a Time or Item Edit trigger.  
+
 Time Event can be initialized even if the timer isn't active, and will continue to be active when the timer is cleared by Stop.
 
-Unlike Time triggers, a Time Event will spawn its target even if it was initialized after the timer has reached or passed the **TargetTime**.  
+Time Event triggers do not spawn groups on their own, they assign extra groups for timers to spawn at the specified **TargetTime**.  
+
+If a Time Event is initialized on an active timer, it will spawn instantly (even if the timer is paused) if:
+- $(TimerMod > 0) \land (TargetTime > 0) \land (Time >= TargetTime)$
+- $(TimerMod < 0) \land (TargetTime < 0) \land (Time <= TargetTime)$
 
 ### Spawn Mechanics
 **ItemID** can be remapped.  
@@ -156,8 +159,12 @@ Since timers spawn the groups given by Time Event, the spawn behavior is not goi
 
 # Time Control
 
-Pauses or resumes a timer given by **ItemID**. Only works on active timers.  
+Pauses or resumes a timer given by **ItemID**.
+
+Only works on active timers.  
+
 Can be used on timers created by Item Edit triggers.  
+
 Can be remapped.
 
 # Item Edit
@@ -199,7 +206,8 @@ If the result is assigned to an integer variable like Item or Points, decimal va
 
 ### Timers
 Item Edit can initialize timers if there isn't one active already.  
-Timers created using this trigger are paused, use default settings and have no remaps.  
+Timers created using this trigger are paused, use default settings and have no remaps, groups or control IDs.  
+These timers can be cleared only with a Stop trigger using Control ID 0.  
 Item Edit can only update the value of an active timer.	
 
 # Item Compare
