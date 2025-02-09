@@ -238,7 +238,27 @@ The first particle in an particle loop will fail to spawn if the particle limit 
 
 This usually happens if $Emission \cdot Lifetime = MaxParticles$
 
+# [2.207] Spawn Particle Position Group ID is tied to game FPS
 
+The spawn position of particles with Spawn Particle is the position of the group at the last rendered frame, instead of the current position.  
+This can cause particles to spawn in the wrong position when dealing with high speed or instant movement when the game runs below 240 fps.  
+The bug only happens while playtesting and not in the editor.
+
+[Video: 200, 300, 60 and 120 fps](https://youtu.be/Co1UDLP2Ahk)  
+[Video: 120 fps vsync, mobile](https://youtu.be/wxT__dKYsr8?si=X3O1ywGwrP5fIucm)
+
+Setup attempts to spawn a particle every tick on a moving target.  
+ID: 114953438
+
+# [2.207] Spawn Particle fails to spawn on inactive targets
+
+Spawn Particle will not spawn if the target is inactive (position is off-screen).
+This only happens while playtesting and not in the editor.
+
+Link Visible can keep the target active as a potential workaround to this issue.  
+While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.
+
+[Video](https://youtu.be/Co1UDLP2Ahk)
 
 # Enter Effects
 
@@ -334,7 +354,10 @@ Timers text labels update properly and are not affected by this bug.
 
 The server unlists any level that contains a Pickup, Count or Instant Count trigger with either high count (100k or more) or an item ID less than 0.
 
+This is an intentional fix to the 2.1 ACE exploit which has remained in place as 2.1 clients are still able to download levels. 
+
 Item Edit and Time triggers are not affected by either issue.
+
 
 ## [2.207] Item Attempts value only returns 1
 
