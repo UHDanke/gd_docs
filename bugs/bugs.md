@@ -126,7 +126,7 @@ If you spawn a Move trigger with the Silent option from inside a Collision trigg
 
 The dynamic collision object must be moved before it checks for collisions.
 
-The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to calculate the distance between the collision objects that were moved.
+The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to check the chunks of the collision objects that were moved.
 
 Example ID:  
 114561987
