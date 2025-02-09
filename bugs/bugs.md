@@ -238,7 +238,7 @@ The first particle in an particle loop will fail to spawn if the particle limit 
 
 This usually happens if $Emission \cdot Lifetime = MaxParticles$
 
-# [2.207] Spawn Particle Position Group ID is tied to game FPS
+## [2.207] Spawn Particle Position Group ID is tied to game FPS
 
 The spawn position of particles with Spawn Particle is the position of the group at the last rendered frame, instead of the current position.  
 This can cause particles to spawn in the wrong position when dealing with high speed or instant movement when the game runs below 240 fps.  
@@ -250,7 +250,7 @@ The bug only happens while playtesting and not in the editor.
 Setup attempts to spawn a particle every tick on a moving target.  
 ID: 114953438
 
-# [2.207] Spawn Particle fails to spawn on inactive targets
+## [2.207] Spawn Particle fails to spawn on inactive targets
 
 Spawn Particle will not spawn if the target is inactive (position is off-screen).
 This only happens while playtesting and not in the editor.
