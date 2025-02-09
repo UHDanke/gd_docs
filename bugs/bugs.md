@@ -252,13 +252,15 @@ ID: 114953438
 
 ## [2.207] Spawn Particle fails to spawn on inactive targets
 
-Spawn Particle will not spawn if the target is inactive (position is off-screen).
+Spawn Particle will not spawn if the target is inactive (position is off-screen).  
 This only happens while playtesting and not in the editor.
 
 Link Visible can keep the target active as a potential workaround to this issue.  
 While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.
 
 [Video](https://youtu.be/Co1UDLP2Ahk)
+
+
 
 # Enter Effects
 
