@@ -449,6 +449,8 @@ The only way to properly clear an Area trigger is by replacing it with another A
 
 Known affected levels are 3Depth and Dead of Night, both implement the EffectID workaround to fix the issue.
 
+
+
 # Advanced Follow
 
 ## [2.207] Velocity Duplication
@@ -520,3 +522,17 @@ When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1
 ## [2.207] Edit Advanced Follow random is between 0/+ instead of -/+
 
 The random variables in Edit Advanced Follow are always picked in a range between 0 and the given value, unlike other random settings.
+
+## [2.207] Advanced Follow will not spawn if stopped then respawned in the same tick
+
+If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not spawn.
+
+This bug is caused by two mechanics:
+- Advanced Follow doesn't stop instantly, it is marked as stopped until the next scheduled movement where it gets cleared
+- Advanced Follow will not spawn if an instance of it is already active for the given remap
+
+A potential fix for this would be for Advanced Follow to replace the previous instance if its waiting to be stopped.
+
+[Video](https://youtu.be/MNh11dOnu4U)
+ID: 115061026
+
