@@ -533,6 +533,6 @@ This bug is caused by two mechanics:
 
 A potential fix for this would be for Advanced Follow to replace the previous instance if its waiting to be stopped.
 
-[Video](https://youtu.be/MNh11dOnu4U)
+[Video](https://youtu.be/MNh11dOnu4U)  
 ID: 115061026
 
