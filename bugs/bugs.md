@@ -116,6 +116,28 @@ The length of the duration line is double what it should be if the trigger is pl
 On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite activating only when the level loads.
 ![image](https://github.com/user-attachments/assets/23007373-16ab-4cac-a4c7-66689abd4378)
 
+## [2.207] Triggers that do not display their target ID
+
+The following triggers, mostly added in 2.2, do not display any target IDs even though they should: 
+- Re-Target Advanced Follow
+- Area (Move, Scale, Rotate, Tint, Fade)
+- Edit Area (Move, Scale, Rotate, Tint, Fade)
+- Area Stop
+- Time
+- Time Event
+- Time Control
+- Item Edit
+- Item Persist
+- Static Camera
+- Event
+- Toggle Block
+- Enter Effect (Move, Scale, Rotate, Tint, Fade)
+- Enter Stop
+
+The following triggers which spawn on either true or false only display one target ID, when they should display both true / false:
+- Item Compare
+- Instant Collision
+
 
 
 # Collisions
@@ -190,6 +212,58 @@ There are some cases where using only the X movement of a keyframe chain is requ
 ![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)
 
 Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.
+
+## [2.207] Rotation of Keyframe objects is not calculated properly
+
+The formula by which keyframe rotation is calculated is very badly implemented and makes no sense.
+
+The current rotation can be calculated using this formula:  
+$Rotation = RotDiff \cdot Mod + 360 \cdot (RotFull + Offset)$
+
+$RotDiff = Rotation2 - Rotation1$ 
+
+This formula was determined with the help of [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRI6_MKs2LkhxcaZf5eHm9yHjoKrrWYV_CYWWmqYX1WSStsrk2KzQ-aHuTIghjF926q-KHWq2UaC63k/pubhtml).
+
+Where: 
+
+*RotDiff* is the angle difference between the rotations of the first and second keyframe, going clockwise.  
+
+*Mod* is the Rotation Mod multiplier from the Keyframe trigger.  
+
+*RotFull* is the number of x360 rotations.   
+
+*Offset* is an additional x360 rotation that can be determined using this table:  
+| RotDiff | $RotDiff \cdot Mod$ | Direction | Offset |
+| :---: | :---: | :---: | :---: |
+| $>180$ | $>0$ | Any | \-1 |
+| $>180$ | $<0$ | Any | 1 |
+| $<=180$ | $>=360$ | None | \-1 |
+| $<=180$ | $<=-360$ | None | 1 |
+| $<=180$ | $>=360$ | CW | \-1 |
+| $<=180$ | $<0$ | CW | 1 |
+| $<=180$ | $>0$ | CCW | \-1 |
+| $<=180$ | $<=-360$ | CCW | 1 |
+
+The problems with this behavior are:
+- If the angle between the two keyframes is over 180, then CW and CCW do nothing
+- If the angle multiplied by Mod is more than a full rotation, CW and CCW do nothing
+- If rotation Mod is negative then CCW becomes CW and vice-versa
+- Mod multiplier doesn't work as expected with angles over 180, CW or CCW
+- x360 rotations are not multiplied by Mod
+
+Based on the above i propose this alternative formula to be used (possibly as a legacy option):
+
+$Rotation = (Angle + 360 \cdot RotFull ) \cdot Mod$
+
+Where Angle is:  
+| RotDiff  | Direction | Angle |
+| :---: | :---: | :---: |
+| $<=180$ | None | RotDiff |
+| $<=180$ |  CW  | RotDiff |
+| $<=180$ | CCW | -RotDiff |
+| $>180$ | None | -RotDiff |
+| $>180$ |  CW  | RotDiff |
+| $>180$ | CCW | -RotDiff |
 
 
 
