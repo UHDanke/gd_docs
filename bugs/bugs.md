@@ -133,6 +133,8 @@ The following triggers, mostly added in 2.2, do not display any target IDs even 
 - Toggle Block
 - Enter Effect (Move, Scale, Rotate, Tint, Fade)
 - Enter Stop
+- Link Visible
+- UI
 
 The following triggers which spawn on either true or false only display one target ID, when they should display both true / false:
 - Item Compare
