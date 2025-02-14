@@ -261,11 +261,11 @@ Where Angle is:
 | RotDiff  | Direction | Angle |
 | :---: | :---: | :---: |
 | $<=180$ | None | RotDiff |
-| $<=180$ |  CW  | RotDiff |
-| $<=180$ | CCW | -RotDiff |
-| $>180$ | None | -RotDiff |
+| $<=180$ |  CW  | Rotdiff |
+| $<=180$ | CCW | 360-RotDiff |
+| $>180$ | None | 360-RotDiff |
 | $>180$ |  CW  | RotDiff |
-| $>180$ | CCW | -RotDiff |
+| $>180$ | CCW | 360-RotDiff |
 
 
 
