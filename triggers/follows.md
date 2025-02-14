@@ -78,7 +78,7 @@ Multiple Advanced Follow effects can be applied on the same objects and on diffe
 
 Spawn remapping can create multiple instances of the same Advanced Follow trigger.
 
-Instances are unique for sets of **Target GID** and **Follow GID**, spawning a new instance with an already used combination of target and follow IDs will update the existing instance without replacing it.
+Advanced Follow instances are unique for sets of **Target GID**, **Follow GID** and Control ID, spawning a new instance with a set of remaps that was already used by the same trigger will not spawn a new one.
 
 ### Priority
 
