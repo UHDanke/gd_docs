@@ -52,6 +52,11 @@ Example:
 If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint.  
 Pausing the Color trigger does not do this.
 
+## [2.207] Negative scaled Teleport triggers apply force in the opposite direction
+
+Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
+
+Flipping the trigger with the editor tool does change the force direction.
 
 
 # Editor
