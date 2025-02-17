@@ -1,5 +1,31 @@
 # Misc
 
+## Reset trigger "Reset Trigger" option
+
+With this option, the reset trigger would be able to reset triggers without the "Multi Trigger" option that have already been activated
+
+## "Trigger limit persist between attempts" trigger object option
+
+With this object option, triggers without multi-trigger would only be able to activate once between attempts, similar to Item Persist.  
+
+## Reverse trigger inverts left/right controls of player
+
+Since it is fairly useless, the reverse trigger (or the options trigger) should be able to invert left/right controls in platformer mode.  
+This could be used to fix input issues in "circular" levels that use all 4 player direction modes.
+
+## Options trigger "Disable 2 Player" option
+
+Useful for having both symmetrical and assymetrical duals
+
+## Sequence trigger "Randopmize Sequence" option
+
+Groups of sequences are taken in random order with this option.  
+Randomization is separate per remap.
+
+## Mean / Gaussian Blur Shader
+
+Would be much better than radial blur for out of focus objects in the foreground.
+
 ## Item Edit "Power" and "Root" operations
 
 Add Power and Root as possible operations inside the Item Edit trigger.    
