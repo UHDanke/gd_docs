@@ -108,6 +108,10 @@ With this option, if the trigger is moved by a move trigger and spawned, the gam
 Option for Item IDs to persist between attempts.  
 Can be cleared from the level options menu.
 
+## Spawn trigger "Random Order" option
+
+Triggers spawned with this option will be sorted randomly.
+
 # Area Triggers
 
 ## Edit Area use Control ID
