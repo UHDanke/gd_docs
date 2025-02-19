@@ -1,5 +1,9 @@
 # Misc
 
+## Song trigger Spawn GID on Song Load
+
+Song trigger should be able to spawn a group ID when the song loads, either normally or with Prep.
+
 ## Reset trigger "Reset Trigger" option
 
 With this option, the reset trigger would be able to reset triggers without the "Multi Trigger" option that have already been activated
@@ -98,6 +102,11 @@ An option in either the Player Control or Teleport trigger that would allow you 
 ## "Dynamic Reordering" Extra Object Option for triggers
 
 With this option, if the trigger is moved by a move trigger and spawned, the game will use the trigger's current position instead of its load position.
+
+## ItemID persist between attempts
+
+Option for Item IDs to persist between attempts.  
+Can be cleared from the level options menu.
 
 # Area Triggers
 
