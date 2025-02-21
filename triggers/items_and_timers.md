@@ -104,7 +104,7 @@ If **TimeMod** is 0 then the timer is unable to spawn groups.
 
 **Start Paused** pauses the timer.
 
-With **Dont Override**, **StartTime** is ignored when updating the timer.
+With **Dont Override**, **StartTime** is ignored when updating the timer (but it is used as the start value when creating a timer).
 
 ## Timers
 Time triggers create global timer instances, which are shared by **Item ID**. Timers store all of the Time trigger's groups, properties and remap information.  
