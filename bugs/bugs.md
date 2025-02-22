@@ -300,18 +300,6 @@ Level ID: 114681413
 
 [Video](https://youtu.be/5zb-JCvD5JY)
 
-## [2.207] FrictionS and FrictionR don't do anything
-
-FrictionS and FrictionR don't seem to do anything with any radial rotation or spin option, or any option at all.
-FrictionP is the only friction value that works.
-
-Tested:
-- Spin
-- Angle
-- Dynamic Rotation
-- Start Rot is Dir
-- Radius Mode
-- AccelRad, AccelTan
 
 ## [2.207] Particle sometimes fail to spawn when near the particle limit
 
