@@ -103,7 +103,7 @@ An option in either the Player Control or Teleport trigger that would allow you 
 
 With this option, if the trigger is moved by a move trigger and spawned, the game will use the trigger's current position instead of its load position.
 
-## ItemID persist between attempts
+## ItemID persist when exiting the level
 
 Option for Item IDs to persist between attempts.  
 Can be cleared from the level options menu.
