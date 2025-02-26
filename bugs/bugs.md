@@ -620,7 +620,7 @@ The random variables in Edit Advanced Follow are always picked in a range betwee
 
 ## [2.207] Advanced Follow will not spawn if stopped then respawned in the same tick
 
-If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not spawn.
+If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not be active.
 
 This bug is caused by two mechanics:
 - Advanced Follow doesn't stop instantly, it is marked as stopped until the next scheduled movement where it gets cleared
