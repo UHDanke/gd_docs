@@ -418,6 +418,20 @@ Due to the spawn limit, this bug is only noticeable if the spawn trigger is rema
 
 You can use a Spawn trigger with a very high delay value to counteract this bug, as even if it's checked twice it will not spawn.
 
+## [2.207] Spawn triggers on the timeline have inconsistent spawn order and may be delayed or crash the game
+
+The spawn order of different Spawn triggers placed on the timeline does not follow normal spawn order rules.
+
+Some of the Spawn triggers can spawn only in a certain order, and will wait for certain other Spawn triggers to spawn, delaying them for an arbitrary amount of time.
+
+A bug related to this can also crash the game, deleting the triggers and undoing the deletion fixes the crash in most cases.
+
+Deleting and undoing the triggers does not change this order however.
+
+**Example ID**: 115526701  
+[Video](https://youtu.be/LbjoGxoutUg)
+
+
 
 
 # Items and Timers
