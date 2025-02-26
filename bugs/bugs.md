@@ -5,15 +5,6 @@
 Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.  
 While this seems intentional, an option to enable 240hz start positions would be nice to have.
 
-## [2.207] Move Trigger Target Dynamic ignores X and Y Only
-
-Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
-
-## [2.207] Move Trigger Camera Lock X axis bugs on level replay
-
-While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
-This only happens if the Move trigger is placed left or ontop of the level origin.
-
 ## [2.207] Camera position is updated after move
 
 The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
@@ -41,7 +32,7 @@ In order to decrease the scale by -1, Scale would have to be 0 which doesn't wor
 
 ## [2.207] Gradient doesn't account for screen rotation when loading the level
 
-Gradient triggers without any references use the screen's edges as reference instead.  
+Gradient triggers without any references (ID 0) use the screen's edges as reference instead.  
 These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
 
 Example:  
@@ -57,6 +48,7 @@ Pausing the Color trigger does not do this.
 Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
 
 Flipping the trigger with the editor tool does change the force direction.
+
 
 
 # Editor
@@ -128,6 +120,7 @@ The following triggers, mostly added in 2.2, do not display any target IDs even 
 - Area (Move, Scale, Rotate, Tint, Fade)
 - Edit Area (Move, Scale, Rotate, Tint, Fade)
 - Area Stop
+- Item Compare
 - Time
 - Time Event
 - Time Control
@@ -141,9 +134,32 @@ The following triggers, mostly added in 2.2, do not display any target IDs even 
 - Link Visible
 - UI
 
-The following triggers which spawn on either true or false only display one target ID, when they should display both true / false:
+The following triggers which spawn on either true or false only display one / no target ID, when they should display both true / false:
 - Item Compare
 - Instant Collision
+
+# Move Trigger
+
+## [2.207] Move Trigger Target Dynamic ignores X and Y Only
+
+Move (Target Mode) options X and Y Only are ignored when using dynamic movement. 
+
+## [2.207] Move Trigger Camera Lock X axis bugs on level replay
+
+While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
+This only happens if the Move trigger is placed left or ontop of the level origin.
+
+## [2.207] Pausing a Move trigger stops objects with a hitbox based on frames instead of ticks
+
+Pausing a Move trigger stops the movement of objects, but objects with a hitbox are stopped on the next visual frame instead of the next tick.
+
+This causes objects with a hitbox (spikes, solid blocks, collision objects) to offset from the position of objects without one (decoration, or using no touch).
+
+Resuming undoes the offset.
+
+Stopping does not create an offset, however stopping after pausing makes the offset permanent.
+
+All other triggers with move functionality (rotate, scale, keyframe, etc) do not share this issue.
 
 
 
@@ -151,7 +167,7 @@ The following triggers which spawn on either true or false only display one targ
 
 ## [2.207] Move Silent Collision crash
 
-If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will crash.  
+If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will sometimes crash.  
 
 The dynamic collision object must be moved before it checks for collisions.
 
@@ -392,13 +408,23 @@ These triggers have IDs that are not remappable:
 - _**Area Triggers (Effect ID)**_
 - _**Area Tint, Enter Tint (Color Channel)**_
 
+## [2.207] Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
+
+Stopping any Spawn trigger with delay while spawn delays are checked makes the game check the last Spawn delay trigger twice, which if it were to spawn in the same tick would activate twice.
+
+It doesn't matter if you stop a Spawn trigger that has already been activated in the current tick, one waiting to activate or you make the Spawn trigger stop itself.
+
+Due to the spawn limit, this bug is only noticeable if the spawn trigger is remapped. The first activation will be remapped while the second spawn activation will have no remaps.
+
+You can use a Spawn trigger with a very high delay value to counteract this bug, as even if it's checked twice it will not spawn.
+
 
 
 # Items and Timers
 
 ## [2.207] Count desync
 
-The values of Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.  
+The values stored inside Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.  
 More information can be found in the count desync file.
 
 ## [2.207] Pickup operations are innacurate
