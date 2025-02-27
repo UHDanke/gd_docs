@@ -1,4 +1,41 @@
 # WORK IN PROGRESS
+# Spawn Delays
+
+The activation of Spawn triggers can be delayed by a value defined in seconds, up to 0.1 miliseconds in accuracy.
+
+This value can be either positive or negative, and can also be randomized using the -/+ option, which randomizes the delay within the given offset.
+
+## Timings
+
+Delay is only applied if it is strictly bigger than 0, otherwise the Spawn trigger is instant.
+
+Spawn delays are processed at the beginning of the tick, in the order they were spawned in.
+
+If a Spawn delay (with positive value, not instant) is spawned by another Spawn delay, it will only be checked starting next tick. 
+
+## Stop, Pause & Resume
+
+Stopping a Spawn trigger with delay from inside another Spawn trigger with delay causes the last scheduled Spawn delay to be checked twice in the same tick. If this delay activates, the first activation uses the Spawn's remaps, while the second uses no remaps.
+
+Paused Spawn delays are ignored and will not tick down until resuming.	
+
+Delays can be resumed (or paused) and activate (or not activate) in the same tick as long as they haven't been checked yet.
+
+## Delay Inheritance
+
+If a Spawn trigger with delay is spawned by another Spawn trigger with delay, the new spawn will inherit any leftover negative delay from the previous one. This keeps chained delays and spawn loops accurate overtime.
+
+Negative delays are also inherited and reduce the timer of the spawned delays by the given amount.	
+Leftovers from randomized delays (-/+ option) are not inherited. 
+
+Leftover delays are not inherited by any other trigger except Spawn, so this leftover can also be cleared if a trigger like Random or Item Compare spawns the next delay.
+
+## Spawn Limit
+
+Spawn delays are placed between two spawn limit resets, one before Spawn delays and another right after.
+
+Triggers spawned in this interval will be able to spawn the same group once again in the same tick if it is spawned outside of the Spawn delay interval.
+
 # Spawn Order
 
 The activation order of triggers is the order they were spawned in, also known as the spawn order.  
