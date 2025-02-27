@@ -25,7 +25,7 @@ Delays can be resumed (or paused) and activate (or not activate) in the same tic
 
 If a Spawn trigger with delay is spawned by another Spawn trigger with delay, the new spawn will inherit any leftover negative delay from the previous one. This keeps chained delays and spawn loops accurate overtime.
 
-Negative delays are also inherited and reduce the timer of the spawned delays by the given amount.	
+Negative delays are also inherited and reduce the timer of the spawned delays by the given amount.  
 Leftovers from randomized delays (-/+ option) are not inherited. 
 
 Leftover delays are not inherited by any other trigger except Spawn, so this leftover can also be cleared if a trigger like Random or Item Compare spawns the next delay.
