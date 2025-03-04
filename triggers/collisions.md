@@ -66,10 +66,16 @@ Collision only activates when the collision state of the Block IDs changes.
 If placed before the level origin, Enter Collisions can activate when the level loads.
 
 ## Spawn Mechanics
+
 Collision triggers can be spawn remapped and have spawn inheritance.  
+
 The spawn order of Collision triggers depends on the order collisions are checked - which is affected by the Dynamic and Player options.  
+
 If multiple triggers share the same **Block IDs**, spawn order is used. The order of **Block IDs** does not matter, **Block ID 1** and **2** are interchangeable.   
+
 Collision triggers with the **PP** option activate after Player 1 and before Player 2 collisions.
+
+Spawning the same Collision trigger again from the same remap while it is already active will do nothing.
 
 ### Interactions with Silent Move and Toggle
 During collisions it is possible to prevent the activation another collision that is yet to be processed from inside a Collision trigger by using an instant trigger like Toggle or Move (with the Silent option).  
