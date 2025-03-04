@@ -1,6 +1,6 @@
 # Collision Objects
 Used by Collision and Instant Collision triggers to implement collisions.  
-Can be rotated, scaled or warped.  
+Can be rotated, scaled or warped, but not skewed.  
 **Block IDs** are limited between 0 and 9999.  
 The **Dynamic** option allows collision objects to check collisions with other collision objects.	
 
@@ -71,12 +71,35 @@ The spawn order of Collision triggers depends on the order collisions are checke
 If multiple triggers share the same **Block IDs**, spawn order is used. The order of **Block IDs** does not matter, **Block ID 1** and **2** are interchangeable.   
 Collision triggers with the **PP** option activate after Player 1 and before Player 2 collisions.
 
+### Interactions with Silent Move and Toggle
+During collisions it is possible to prevent the activation another collision that is yet to be processed from inside a Collision trigger by using an instant trigger like Toggle or Move (with the Silent option).  
+This is only possible for enter collisions, this is not possible during exit collisions.
+
+The toggle state of a dynamic collision object is checked only prior to its collision checks. As a result, toggling off the dynamic collision while it checks will not stop the Collision trigger from activating.
+
+### Collisions spawning other collisions
+
+Collision triggers spawned by other collision triggers can activate in the same tick as long as the collision state they are following hasn't been changed yet.
+
+A collision trigger spawned by another collision trigger of the same type (enter, exit) and with the same set of block IDs will spawn in the same tick.
+
+### Interactions with Stop
+
+The spawn list of collision triggers is dynamic and can be changed during trigger activation.    
+When the state of a set of collision IDs changes, all Collision triggers with the same set of IDs for the respective state (enter, exit) are scheduled to activate, those triggers are then iterated through and spawned by index.
+
+If you stop Collision triggers during that spawn, either by a Collision trigger stopping itself or another Collision trigger, the trigger list shrinks but the index is not updated.    
+This index mismatch can cause triggers that were not stopped and are yet to spawn to be skipped.
+
+Paused Collision triggers are skipped. Pausing does not cause other triggers to be skipped.
+
 # Instant Collision Trigger
 Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.
 
 Can be remapped, but resets remaps when spawning other groups.
 
-The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.
+The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.    
+Using Toggle or Silent Move with Instant Collision to do multiple checks per tick is not possible.
 
 # State Blocks
 
@@ -93,11 +116,9 @@ State Blocks spawn groups independently even if sharing the same group IDs. Howe
 * State (off)
 * Collision (exit)
 
-# Interactions with Silent Move and Toggle
-During collisions it is possible to prevent another collision that is yet to be processed from inside a Collision trigger by using an instant trigger like Toggle or Move (with the Silent option).  
-This is only possible for enter collisions, collisions are not checked again during exit collisions.
+# Spawn and Stop
 
-Using Toggle or Silent Move with Instant Collision to do multiple checks per tick is not possible.
+The list of Collision triggers is
 
 # Performance & Optimization
 
