@@ -157,6 +157,8 @@ Since timers spawn the groups given by Time Event, the spawn behavior is not goi
 * The timer's spawn limit is applied to all extra groups added by Time Event.
 * Time Events spawn after the corresponding timer, even if the Time Event was created before the timer.
 
+Time Event triggers react in the same tick to timer value changes spawned by Time or Time Event triggers previous to them.
+
 # Time Control
 
 Pauses or resumes a timer given by **ItemID**.
