@@ -214,7 +214,8 @@ Pulse's Color ID is the color channel affected by the trigger and Channel ID is 
 
 #### Spawn
 
-New Group ID can only be remapped from another Spawn trigger.
+Spawn ID and New Group ID can only be remapped from another Spawn trigger.  
+These IDs will also not be remapped if using Reset Remap.
 
 #### Edit Adv Follow
 
