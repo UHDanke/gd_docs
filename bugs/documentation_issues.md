@@ -238,3 +238,11 @@ Worth to add that you do not need the other collision to be dynamic if you are u
 ![image](https://github.com/user-attachments/assets/114ee390-879d-404b-97cb-c83a16cb4ee5)
 
 Can be more than one object, it picks one at random.
+
+## Disable Paste State Groups
+
+![image](https://github.com/user-attachments/assets/f576da02-1f42-40f2-ac98-48f114da12af)
+
+This option affects both Paste State AND the Paste button in the Edit Group menu, despite being noted as an exception.
+
+
