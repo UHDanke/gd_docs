@@ -138,6 +138,20 @@ The following triggers which spawn on either true or false only display one / no
 - Item Compare
 - Instant Collision
 
+## [2.207] **Disable Paste State Groups** prevents **Paste** from pasting groups
+
+![image](https://github.com/user-attachments/assets/db5a88af-c6a6-4a71-992b-38364ee565a8)
+
+**Disable Paste State Groups** affects both **Paste State** and the **Paste** button from the **Edit Groups** menu, despite being noted otherwise.
+
+## [2.207] Lighter on Base Color or an object with only Base or Detail Color crashes the game
+
+Using the Lighter option on the Base Color of an object or on an object with only Base or Detail Color will either crash the game when the object becomes visible or kick you out of the level on load.
+
+This bug does not occur inside the editor.
+
+
+
 # Move Trigger
 
 ## [2.207] Move Trigger Target Dynamic ignores X and Y Only
@@ -149,11 +163,11 @@ Move (Target Mode) options X and Y Only are ignored when using dynamic movement.
 While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.  
 This only happens if the Move trigger is placed left or ontop of the level origin.
 
-## [2.207] Pausing a Move trigger stops objects with a hitbox based on frames instead of ticks
+## [2.207] Pausing a Move trigger stops objects without a hitbox based on frames instead of ticks
 
-Pausing a Move trigger stops the movement of objects, but objects with a hitbox are stopped on the next visual frame instead of the next tick.
+Pausing a Move trigger stops the movement of objects, but objects without a hitbox are stopped on the next visual frame instead of the next tick.
 
-This causes objects with a hitbox (spikes, solid blocks, collision objects) to offset from the position of objects without one (decoration, or using no touch).
+This causes objects without a hitbox (spikes, solid blocks, collision objects) to offset from the position of objects with one (decoration, or using no touch).
 
 Resuming undoes the offset.
 
@@ -468,7 +482,6 @@ The server unlists any level that contains a Pickup, Count or Instant Count trig
 This is an intentional fix to the 2.1 ACE exploit which has remained in place as 2.1 clients are still able to download levels. 
 
 Item Edit and Time triggers are not affected by either issue.
-
 
 ## [2.207] Item Attempts value only returns 1
 
