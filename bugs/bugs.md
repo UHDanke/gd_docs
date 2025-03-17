@@ -150,7 +150,9 @@ Using the Lighter option on the Base Color of an object or on an object with onl
 
 This bug does not occur inside the editor.
 
+## [2.207] Paste + Color does not remap Pulse's Channel ID
 
+The Channel ID of a Pulse trigger cannot be remapped to a new value using Paste + Color.
 
 # Move Trigger
 
