@@ -49,7 +49,7 @@ Flipping a Teleport trigger by scaling it with a negative value does not change 
 
 Flipping the trigger with the editor tool does change the force direction.
 
-
+<br>
 
 # Editor
 
@@ -154,6 +154,8 @@ This bug does not occur inside the editor.
 
 The Channel ID of a Pulse trigger cannot be remapped to a new value using Paste + Color.
 
+<br>
+
 # Move Trigger
 
 ## [2.207] Move Trigger Target Dynamic ignores X and Y Only
@@ -177,7 +179,7 @@ Stopping does not create an offset, however stopping after pausing makes the off
 
 All other triggers with move functionality (rotate, scale, keyframe, etc) do not share this issue.
 
-
+<br>
 
 # Collisions
 
@@ -198,7 +200,7 @@ Spider gamemode and Spider Orb teleports through or into an object with high sca
 
 Spider Pad is not affected by this issue.
 
-
+<br>
 
 # Events
 
@@ -220,7 +222,7 @@ If you pause the game while holding a player input and release it during the pau
 
 Input release should trigger on unpausing if the player no longer holds the input.
 
-
+<br>
 
 # Keyframes 
 
@@ -304,7 +306,7 @@ Where Angle is:
 | $>180$ |  CW  | RotDiff |
 | $>180$ | CCW | 360-RotDiff |
 
-
+<br>
 
 # Particles 
 
@@ -361,7 +363,7 @@ While this might be intentional for performance reasons, there should be an opti
 
 [Video](https://youtu.be/Co1UDLP2Ahk)
 
-
+<br>
 
 # Enter Effects
 
@@ -378,7 +380,7 @@ Using Enter trigger effects on portals and other objects composed of multiple ob
 Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.  
 Touch Trigger does work however.
 
-
+<br>
 
 # Spawn Triggers
 
@@ -447,8 +449,7 @@ Deleting and undoing the triggers does not change this order however.
 **Example ID**: 115526701  
 [Video](https://youtu.be/LbjoGxoutUg)
 
-
-
+<br>
 
 # Items and Timers
 
@@ -489,7 +490,7 @@ Item Edit and Time triggers are not affected by either issue.
 
 Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
 
-
+<br>
 
 # Area Triggers
 
@@ -573,7 +574,7 @@ The only way to properly clear an Area trigger is by replacing it with another A
 
 Known affected levels are 3Depth and Dead of Night, both implement the EffectID workaround to fix the issue.
 
-
+<br>
 
 # Advanced Follow
 
