@@ -31,6 +31,8 @@ Calling a new instance will update the X / Y Mod values of the active one and re
 For compatibility with Scale, Rotate and Move which are delayed by one tick, Follow is active by an additional tick prior to stopping.  
 If Move Time is 0, then Follow will be active for 2 ticks.
 
+<br>
+
 # Advanced Follow Y
 
 This is a legacy trigger with most of its settings and features now found in Advanced Follow.
@@ -65,6 +67,7 @@ $MaxSpeed(AdvFollow) = MaxSpeed/4$
 
 **Move Time** and **Offset** are not found in Advanced Follow.
 
+<br>
 
 # Advanced Follow
 
@@ -276,6 +279,7 @@ This also applies to **Rotation**, which is more noticeable when using **Mode 3*
 Pausing disables the Advanced Follow instance temporarily. Delays are not paused and continue to tick down while the trigger is inactive.  
 The spawn order of the instance is kept when resuming.
 
+<br>
 
 # Edit Advanced Follow
 
@@ -338,6 +342,7 @@ The target must be under an active Advanced Follow effect in order for Edit Adva
 
 If an Advanced Follow has Delay, Edit Advanced Follow will not work if the Advanced Follow has not been active for at least the amount of Delay.
 
+<br>
 
 # Re-Target Advanced Follow
 
