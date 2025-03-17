@@ -101,7 +101,7 @@ IDs above 1101 can be assigned, but they are the same as 1101.
 - Color depends on the Background's brightness:
 	- If the BG's value (brightness) is more than 0.20, it copies the BG channel with +0.20 value.
 	- If the BG's value is 0.00, it copies the P1 channel.
-	- If the value is between 0.00 and 0.20, the resulting color is between the other two.
+	- If the value is between 0.00 and 0.20, the resulting color fades between the other two.
 - Black player colors are replaced by white.
 - Blends additively.
 
@@ -148,6 +148,14 @@ The **Blending** option makes objects and Middle Ground blend additively with ot
 
 **Player Color 1** and **Player Color 2** copy the player's colors.
 
+## Copy Paste
+
+The **Copy** button copies the RGB values from the color channel or Color / Pulse trigger.
+
+The **Paste** button pastes the copied RGB values into the current channel or trigger.
+
+The **Default** button copies the color channel's RGB and opacity values into the current Color / Pulse trigger . This button does nothing if used inside a color channel.
+
 ## Copy Color
 
 Color channels can copy the colors of other channels using this option.
@@ -158,7 +166,7 @@ Copy Color effects are not instant and count as active color changes.
 
 As color effects are done by frame, only on the next render frame will the color be copied.
 
-**Legacy HSV** doesn't seem to do anything at the moment and its intended behavior is undocumented.
+Custom color channels (1-999) cannot copy themselves, but special channels (BG, G, etc) can. You need a secondary custom color in order to make them copy themselves.
 
 ### Channel Options
 
@@ -177,7 +185,9 @@ P1 and P2 used to be copy color options prior to 2.2 alongside the separate **Pl
 
 **Player Color 1** and **2** are ignored if Copy Color is present.
 
-Custom color channels (1-999) cannot copy themselves, but special channels (BG, G, etc) can. You need a secondary custom color in order to make them copy themselves.
+The channel color can be further offset using the HSV sliders. Unlike the object HSV options, you can only use sliders and cannot modify the value directly.
+
+**Legacy HSV** doesn't seem to do anything at the moment and its intended behavior is undocumented.
 
 ### Other Properties
 
@@ -186,6 +196,8 @@ Blending is not copied.
 Opacity is not copied unless Copy Opacity is selected.
 
 Color changes done by Pulse triggers are not copied.
+
+
 
 # Color Sliders
 
@@ -196,6 +208,8 @@ This overlay pops up when clicking the HSV / Colors button found below Copy Valu
 For the color sliders, the current color and the initial color are previewed next to each other.
 
 The overlay does not get hidden during playtesting, which allows you to change values while playing the level in the editor.
+
+
 
 # Rendering Order
 
