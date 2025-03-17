@@ -40,7 +40,7 @@ Due to a bug, stopped color changes will resume when respawning from a checkpoin
 
 Control IDs do not work on Color triggers. Color cannot be stoped, paused or resumed by a Stop trigger using Control ID.
 
-
+<br>
 
 # Pulse
 
@@ -128,6 +128,7 @@ Paused pulses will be frozen at the current fade until resumed.
 
 Pulse triggers support Control IDs.
 
+<br>
 
 # Shake
 
@@ -153,6 +154,7 @@ The max values of a Shake trigger are Strength 100, Interval 0.20s and Duration 
 
 All shaking effects can be disabled using the "Disable Shake" level option.
 
+<br>
 
 # Toggle
 
@@ -183,6 +185,8 @@ Other triggers also toggle groups on or off, these are:
 * Toggle Orb / Block
 * On Death
 
+<br>
+
 # Alpha
 
 Modifies the opacity of the objects of a target Group ID.
@@ -209,12 +213,15 @@ The fade will continue if Resumed, as long as it hasn't been overriden by anothe
 
 Alpha supports Control IDs.
 
+<br>
+
 # Change Background 
 
 Changes the level's Background to a different preset. There are currently 59 BG presets.
 
 Only one Background change can be made per render frame. The first will trigger, while any other subsequent BG trigger is ignored until the next frame.
 
+<br>
 
 # Change Middleground
 
@@ -222,6 +229,7 @@ Changes the level's Middleground to a different preset. There are currently 3 MG
 
 Only one Middleground change can be made per render frame. The first will trigger, while any other subsequent MG trigger is ignored until the next frame.
 
+<br>
 
 # Change Ground
 
@@ -229,6 +237,7 @@ Changes the level's Ground or Line to a different preset. There are currently 22
 
 Only one Ground change can be made per render frame. The first will trigger, while any other subsequent G trigger is ignored until the next frame.
 
+<br>
 
 # Link Visible
 
@@ -255,3 +264,6 @@ Object Links and Group ID Parents are ignored by Link Visible.
 ### Invisible Objects
 
 Making the object invisible with Hide, Alpha, Opacity or Blending does not make them inactive.
+
+<br>
+
