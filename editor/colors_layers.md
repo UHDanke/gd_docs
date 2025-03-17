@@ -39,7 +39,7 @@ Saturation and Brightness are multiplicative, but can be made additive using the
 
 Current HSV settings can be cleared using the trash button.
 
-
+<br>
 
 # Color Channels
 
@@ -131,7 +131,7 @@ IDs above 1101 can be assigned, but they are the same as 1101.
 - Used as the secondary color of the middle ground.
 - Unlike the ground and background layers, middle ground DOES use blending and opacity.
 
-
+<br>
 
 # Select Color Menu
 
@@ -197,7 +197,7 @@ Opacity is not copied unless Copy Opacity is selected.
 
 Color changes done by Pulse triggers are not copied.
 
-
+<br>
 
 # Color Sliders
 
@@ -209,7 +209,7 @@ For the color sliders, the current color and the initial color are previewed nex
 
 The overlay does not get hidden during playtesting, which allows you to change values while playing the level in the editor.
 
-
+<br>
 
 # Rendering Order
 
@@ -272,7 +272,7 @@ Objects with a higher Z Order are rendered on top of those with lower Z Order.
 
 Objects placed last are rendered on top of those placed before.
 
-
+<br>
 
 # Other Color and Layering Options
 
