@@ -67,6 +67,8 @@ If an instance of Count is spawned then activated during the same spawn, the tar
 Count can be instantiated multiple times regardless of remaps.  
 If an instance of Count activates during the spawn of another instance of the same Count trigger, the new spawn will use the remaps of the first unfinished spawn.   
 
+<br>
+
 # Instant Count
 Toggles off a **Group ID** by comparing **Item ID** to **Target Count**.
 
@@ -76,6 +78,8 @@ The comparison options are:
 * **Larger**:  $Item\gt TargetCount$
 * **Smaller**:  $Item\lt TargetCount$
 
+<br>
+
 # Pickup
 
 Changes the value of an item given by **Item ID** by adding the value of **Count** to it.
@@ -83,6 +87,8 @@ Changes the value of an item given by **Item ID** by adding the value of **Count
 If **Multiply** or **Divide** is selected, **Modifier** multiplies or divides the item value.
 
 If **Override** is selected, the item is set to the value of **Count**. 
+
+<br>
 
 # Time
 
@@ -132,6 +138,8 @@ Updating the timer does not change the timer's spawn limit.
 Stop triggers stop, pause or resume a timer given by group or control ID.  
 Stopping the timer clears all settings, remaps and the current value is reset to 0.
 
+<br>
+
 # Time Event
 
 Spawns **TargetID** when the timer given by **ItemID** reaches the **TargetTime**.  
@@ -159,6 +167,8 @@ Since timers spawn the groups given by Time Event, the spawn behavior is not goi
 
 Time Event triggers react in the same tick to timer value changes spawned by Time or Time Event triggers previous to them.
 
+<br>
+
 # Time Control
 
 Pauses or resumes a timer given by **ItemID**.
@@ -168,6 +178,8 @@ Only works on active timers.
 Can be used on timers created by Item Edit triggers.  
 
 Can be remapped.
+
+<br>
 
 # Item Edit
 Updates the value of the target variable based on the values of the given parameters using mathematical functions.
@@ -212,6 +224,8 @@ Timers created using this trigger are paused, use default settings and have no r
 These timers can be cleared only with a Stop trigger using Control ID 0.  
 Item Edit can only update the value of an active timer.	
 
+<br>
+
 # Item Compare
 
 Spawns **TrueID** or **FalseID** based on the result of the comparison of two parameters.
@@ -246,6 +260,8 @@ Sign functions are applied after the respective rounding functions.
 ### Rounding Functions
 The two buttons change the functions applied on the results of the mod operations between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).  
 
+<br>
+
 # Item Persist
 Makes the item or timer given by **Item ID** persistent between attempts.
 
@@ -265,6 +281,8 @@ While timers are persistent, Time Event triggers are not.
 
 Special items are not affected by Item Persist - Main time and Attempts are persistent, Points are not.
 
+<br>
+
 # Counter Labels
 
 Displays the value of a given **ItemID** using a text label.  
@@ -279,6 +297,8 @@ Points will not be displayed by a counter label until the first point is obtaine
 
 Item labels will only be updated by a Pickup with the same ID, even if its outside the normal ID range.  
 ItemIDs outside the 0-9999 range refer to ID 0 or 9999 for both items and timers.
+
+<br>
 
 # Item ID Limits
 
