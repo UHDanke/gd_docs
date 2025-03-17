@@ -10,6 +10,13 @@ The collision state is updated every tick after all scheduled moves are processe
 
 Collision checks are done even if there is no active Collision trigger and they are always active even if the objects are off-screen.  
 
+### Collision Schedule
+* Collision (enter)
+* State (on)
+* Instant (Touch Trigger)
+* State (off)
+* Collision (exit)
+  
 ### Dynamic Order
 
 Collision checks are done sequentially one dynamic target at a time in the following order:
@@ -52,6 +59,7 @@ Players are unable to collide with UI collisions.
 
 UI collisions are not divided in chunks, dynamic UI collisions will check all other UI collisions regardless of position.
 
+<br>
 
 # Collision Trigger
 Toggles off a **Group ID** when collision blocks collide.  
@@ -99,6 +107,8 @@ This index mismatch can cause triggers that were not stopped and are yet to spaw
 
 Paused Collision triggers are skipped. Pausing does not cause other triggers to be skipped.
 
+<br>
+
 # Instant Collision Trigger
 Checks the current collision state of the given Block IDs and spawns True ID and False ID accordingly.
 
@@ -106,6 +116,8 @@ Can be remapped, but resets remaps when spawning other groups.
 
 The collision state is only updated once per tick, Instant Collision does not check collisions, it checks what the last recorded collision state was.    
 Using Toggle or Silent Move with Instant Collision to do multiple checks per tick is not possible.
+
+<br>
 
 # State Blocks
 
@@ -115,16 +127,7 @@ Collision checks are done individually per each object, as State Blocks do not u
 
 State Blocks spawn groups independently even if sharing the same group IDs. However, as State Blocks cannot be remapped, if the target group contains a spawn trigger it will only activate once due to the spawn limit.
 
-# Collision Schedule
-* Collision (enter)
-* State (on)
-* Instant (Touch Trigger)
-* State (off)
-* Collision (exit)
-
-# Spawn and Stop
-
-The list of Collision triggers is
+<br>
 
 # Performance & Optimization
 
