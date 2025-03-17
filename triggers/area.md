@@ -401,6 +401,8 @@ It is not possible to change random coefficients without restarting the level.
 With linked objects, the Group Parent's random coefficients are used.  
 Shared parameters, like **Length**, have the same random coefficient for all types of Area trigger. This also applies to **OffsetY** and **Offset**. 
 
+<br>
+
 # Edit Area Triggers
 
 Edits the parameters of an active Area Trigger.
@@ -474,11 +476,15 @@ Edit Area will override other active Edit Areas only if **Duration** is bigger t
 **Tint %** and **Set HSV** can be edited at the same time by one Edit Area Tint trigger.  
 There is no option to change the **From Opacity** setting of an Area Fade trigger.
 
+<br>
+
 # Area Stop
 
 Stops an active Area trigger using its **EffectID**.  
 **EffectID** can be remapped.  
 **EffectID** 0 will stop all Area triggers without an **EffectID**.
+
+<br>
 
 # Other Notable Interactions
 
