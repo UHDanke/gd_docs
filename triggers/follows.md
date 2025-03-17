@@ -358,4 +358,5 @@ The trigger has no effect if **Follow GID** is 0.
 
 Both **Target GID** and **Follow GID** can be remapped.
 
+<br>
 
