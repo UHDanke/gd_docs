@@ -18,9 +18,9 @@ Setting the color channel to a new value (not copy color) is instant.
 
 For fading color changes, the color will fade between the channel's current color and its new color. 
 
-If a color change is overriden by another color change (be it fade or copy), the current color value will be saved as the channel's color. This color value is static even if it resulted from a copy color.
+If a color change is overriden by another color change (be it fade or copy), the current color value will be saved as the channel's color. This color value is static even if it resulted from a copy color - as a result, a channel can copy only one other channel at a time. 
 
-In the case of Copy Color, a channel can copy only one channel at a time. If the channel fades towards a copy color, then the color value will fade between the channel's color and the copied channel's current color.
+Copy color fades are updated whenever the copied channel changes color. If the channel fades towards a copy color, then the color value will fade between the channel's color and the copied channel's current color. 
 
 Color fading behavior also applies to opacity. Color copy behavior only applies if using **Copy Opacity**.
 
