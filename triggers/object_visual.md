@@ -215,29 +215,6 @@ Alpha supports Control IDs.
 
 <br>
 
-# Change Background 
-
-Changes the level's Background to a different preset. There are currently 59 BG presets.
-
-Only one Background change can be made per render frame. The first will trigger, while any other subsequent BG trigger is ignored until the next frame.
-
-<br>
-
-# Change Middleground
-
-Changes the level's Middleground to a different preset. There are currently 3 MG presets.
-
-Only one Middleground change can be made per render frame. The first will trigger, while any other subsequent MG trigger is ignored until the next frame.
-
-<br>
-
-# Change Ground
-
-Changes the level's Ground or Line to a different preset. There are currently 22 G presets and 3 Line options.
-
-Only one Ground change can be made per render frame. The first will trigger, while any other subsequent G trigger is ignored until the next frame.
-
-<br>
 
 # Link Visible
 
@@ -266,4 +243,14 @@ Object Links and Group ID Parents are ignored by Link Visible.
 Making the object invisible with Hide, Alpha, Opacity or Blending does not make them inactive.
 
 <br>
+
+# UI
+
+<br>
+
+# Legacy Enter Effects
+
+<br>
+
+# Enter Effects
 
