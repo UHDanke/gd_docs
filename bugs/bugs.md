@@ -356,7 +356,8 @@ ID: 114953438
 ## [2.207] Spawn Particle fails to spawn on inactive targets
 
 Spawn Particle will not spawn if the target is inactive (position is off-screen).  
-This only happens while playtesting and not in the editor.
+This only happens while playtesting and not in the editor.  
+If the object was active on screen at least once before, the particle will spawn at its previous on-screen position.
 
 Link Visible can keep the target active as a potential workaround to this issue.  
 While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.
@@ -448,6 +449,16 @@ Deleting and undoing the triggers does not change this order however.
 
 **Example ID**: 115526701  
 [Video](https://youtu.be/LbjoGxoutUg)
+
+### Spawn Ordered
+
+This bug also affects Spawn Ordered, but only when spawning triggers that were moved.
+
+The spawn delay of triggers spawned by Spawn Ordered depends partly on their current position, which can be affected by move triggers.  
+
+Not every move is affected, movements caused by Area triggers are completely ignored.
+
+This behavior is inconsistent however, the game stops ignoring the new delays in some situations, and some spawns may be delayed until another spawns just like those placed on the timeline.
 
 <br>
 
