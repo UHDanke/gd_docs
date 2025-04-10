@@ -32,7 +32,7 @@ Displays FMOD debug stats, such as memory usage and latency.
 
 The default song used when playing the level, which can be changed from the level select menu. This will be displayed as the main song in any level select screen.
 
-It is always played on channel 0 and is pre-loaded together with the level.
+It is always played on song channel 0 and is pre-loaded together with the level.
 
 ## Song Selection
 
