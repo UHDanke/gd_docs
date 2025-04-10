@@ -4,6 +4,28 @@ https://www.fmod.com/docs/.
 
 This documentation is referenced or summarized partialy in this document as a rough guideline, please reference the FMOD docs instead if you need more in-depth information.
 
+## Game Audio Settings
+
+Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
+
+### Reduce Quality
+
+Reduces the audio sample rate from 44.1 kHz to 24 kHz.
+
+### Audio Fix 01
+
+Increases the audio buffer size. Only use this if the audio frequently cuts while playing.
+
+Makes latency worse as a side-effect.
+
+### Music Offset
+
+Offsets all song playback by a value given in milliseconds.
+
+### Debug
+
+Displays FMOD debug stats, such as memory usage and latency.
+
 <br>
 
 # Primary Song
@@ -86,6 +108,8 @@ Song guidelines are editor-only lines used as reference for syncing triggers and
 
 They can be toggled on or off using the Music Lines option in the editor pause screen, next to the Help button.
 
+Guidelines are only displayed vertically, so they will not show up in vertical gameplay sections.
+
 ## Guideline Creator
 
 Song guidelines can be created for custom levels using the Guideline Creator accessed from inside the Custom Song Selection menu.
@@ -102,9 +126,21 @@ Audio-scaled objects do not sync to the main level song, they use the guideline 
 
 <br>
 
-# BPM Guideline
+# BPM Guide
+
+Displays song lines synced to a beat given in **BPM** (bars per minute) multiplied by **BPB** (beats per bar) for a **Duration** given in seconds, relative to a given gameplay Speed.
+
+## Behavior
+
+Bars are colored yellow, beats are orange.
+
+Unlike song guidelines, BPM guidelines are not affected by any gameplay changes.
+
+It is not possible to orient BPM triggers in any direction other than left to right.
 
 ## Visibility
+
+Toggling off song guidelines does not toggle off BPM guidelines.
 
 BPM guidelines are not toggled off if the trigger is toggled off or has its alpha set to 0. 
 
