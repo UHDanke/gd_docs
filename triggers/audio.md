@@ -4,7 +4,27 @@ https://www.fmod.com/docs/.
 
 This documentation is referenced or summarized partialy in this document as a rough guideline, please reference the FMOD docs instead if you need more in-depth information.
 
-## Game Audio Settings
+## Pitch & Speed
+
+FMOD uses the FFT (Fast Fourier Transform) algorithm for pitch shifting (Pitch) and time stretching (Speed).  
+More info can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#fft).
+
+Speed modifies the audio's playback speed, Pitch changes the audio's pitch without affecting its speed.
+ 
+Pitch is measured in semi-tones, an increase by 12 semitones is an octave which is equal to a doubling (200%) of pitch, while a decrease by 12 semitones is equal to a halving (50%) of pitch.
+
+Pitch changes are limited between -12 (50%) and 12 (200%) by the audio engine.
+
+The exact pitch multiplier can be calculated using the formula:  
+$Multiplier = \sqrt[12]{2^{Pitch}}$
+
+Speed uses the same formula and value scaling as Pitch in order to make pitch corrections easier, pitch of speeded audio can be corrected by giving Pitch the opposite value of Speed.
+
+
+
+<br>
+
+# Game Audio Settings
 
 Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
 
@@ -148,7 +168,67 @@ The only ways to hide them is either with the Disable option or with the Hide ob
 
 <br>
 
-# Song
+# Song Trigger
+
+Starts a specific custom song with a given Volume and Speed in the selected Channel.
+
+## Channels
+
+Only one song can be played in a channel at a time. Audio will not cut when a song is replaced, as the track is replaced only when the new track finishes loading.
+
+There are in total 5 playback channels, between ID 0 and 4.
+
+Song triggers can be spawned, Channel is the only ID and it can be remapped.
+
+## Prep
+
+Songs need to be loaded into memory first before playing, this can take a variable amount of time depending on your system performance and file sizes which can result in playback being noticeably delayed.
+
+Prep and Prep Load can be used to load the song early and play it when needed without delay.
+
+Prep loads the track into the channel's memory without playing it, only one Prep can be active per channel, new activations replace previous ones. 
+
+Playing a new track without Prep removes any active Preps for that channel. The track loaded by Prep will not stop or interrupt the channel's current playback.
+
+Prep Load replaces the playback with the current Prep track, which also clears current the Prep track.
+
+Prep Load does nothing if activated with no Prep track, or after a non-Prep song activation.
+
+If Prep Load is activated while the Prep track is still loading, the track will play as soon as it is fully loaded.
+
+# Loop
+
+Makes the song continue looping instead of ending.
+
+Playing a new song or using Stop Loop are the only ways to stop the loop.
+
+## Dont Reset
+
+With Dont Reset, the track will not be reset and continue playing from the previous attempt when respawning from a checkpoint.
+
+The track will pause on death and resume on respawn if the Options trigger's Audio On Death option is Off (default).
+
+## Start and End
+
+Makes the song Start and End at a a given time in miliseconds.
+
+If looped, playback is looped between Start and End. However, if Stop Loop is used then End is ignored and the song continues playing past the end point.
+
+### Milisecond Offsets
+
+The Pause buttons next to Start and End can be used to get the milisecond offset of the song trigger's position from the start of the level.
+
+In classic mode, all gameplay changes which affect the Music Playback line are taken into account for the offset calculation.
+
+In platformer, all gameplay changes are ignored, including the level's default speed. The level is considered as having normal speed for the offset calculation. 
+
+## Fade In and Out
+
+Makes the song Fade In when starting and Fade out when ending. 
+
+Like Start and End, the time is given in miliseconds.
+
+Fade In is applied only when a loop starts, not when it repeats.
 
 <br>
 
@@ -157,6 +237,48 @@ The only ways to hide them is either with the Disable option or with the Hide ob
 <br>
 
 # SFX
+
+## Pitch
+
+The FFT option improves the quality of the pitch effect by increasing the FFT window size. Practically, this makes the sound effects less coarse with slightly more echo at the cost of performance.
+
+## Reverb
+
+Applies a reverb effect to the played SFX. Reverbs are used primarily to simulate an acoustic space (sound reflection, decay, reflection, etc).
+
+FMOD documentation on reverbs can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#sfx-reverb).
+
+Reverb parameters cannot be modified individually in-game, instead you are allowed to pick between the 21 default presets provided by FMOD:
+- Off
+- Generic
+- Padded Cell
+- Room
+- Bath room
+- Living room
+- Stone room
+- Auditorium
+- Concert Hall
+- Cave
+- Arena
+- Hangar
+- Stone Corridor
+- Alley
+- Forest
+- City
+- Mountains
+- Quarry
+- Plain
+- Parking Lot
+- Sewer Pipe
+- Under Water
+
+Preset parameters can be found [here](https://www.fmod.com/docs/2.03/api/core-api-system.html#fmod_reverb_presets).
+
+There is only one reverb channel used by all sound effects, as such there can be only one reverb preset active at a time.
+
+If Enable is selected, the SFX will replace the current reverb effect with its selected preset. 
+
+If it is not selected, then the SFX uses the current active reverb preset.
 
 <br>
 
