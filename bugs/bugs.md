@@ -196,7 +196,7 @@ Example ID:
 
 ## [2.207] Spider teleports through or into Extended Collision objects.
 
-Spider gamemode and Spider Orb teleports through or into an object with high scaling and extended collision instead of on it.
+Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.
 
 Spider Pad is not affected by this issue.
 
