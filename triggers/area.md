@@ -509,6 +509,8 @@ Follow does not copy Area movements.
 
 Gradients are not affected by Area Tint. 
 
+Gradient Rotation is not affected by Area Rotate outside of the editor.
+
 ### Enter
 
 Area triggers are not affected by movements caused by Enter triggers.
