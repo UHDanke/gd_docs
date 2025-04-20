@@ -337,7 +337,7 @@ Level ID: 114681413
 
 ## [2.207] Particle sometimes fail to spawn when near the particle limit
 
-The first particle in an particle loop will fail to spawn if the particle limit has been hit already.
+The first particle in a particle loop will fail to spawn if the particle limit has been hit already.
 
 This usually happens if $Emission \cdot Lifetime = MaxParticles$
 
