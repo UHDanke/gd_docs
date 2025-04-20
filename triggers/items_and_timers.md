@@ -60,7 +60,7 @@ If there is any interest in making this behavior less nonsensical, new Count spa
 
 With **Multi Activate**, **Target ID** inherits spawn remaps.  
 Without, **Target ID** does not inherit spawn remaps, instead it inherits the remaps of the oldest active instance of a subsequent Count trigger with the **Multi Activate** option using the same **Item ID**.  
-If an instance of Count is spawned then activated during the same spawn, the target of this activation will not inherit remaps.
+If an instance of Count is spawned then activated during a count update, the target of this activation will not inherit remaps.
 
 ### Multiple Instances
 
@@ -103,8 +103,8 @@ This option is ignored if the tickbox is unselected.
 The timer gets set to the stop value if it goes over the stop point.  
 The timer will not stop if it starts or is unpaused from or past the stop value.  
 
-**TimeMod** modifies the timer multiplier. The default multiplier is 1 per second.  
-If **TimeMod** is 0 then the timer is unable to spawn groups.
+**TimeMod** modifies the timer multiplier. The default multiplier is 1.00.  
+If **TimeMod** is 0.00 then the timer is unable to spawn groups.
 
 **Ignore Timewarp** is currently bugged and has no effect.
 
@@ -117,18 +117,17 @@ Time triggers create global timer instances, which are shared by **Item ID**. Ti
 Activating a Time trigger while there is an already active timer for the given Item ID updates the timer with the trigger's settings and groups.
 
 Timers update every tick, 240 times a second.  
-Only timers initialized before the first timer spawn will be updated. If a new timer is initialized during or after timer activation, it will be processed in the next update.
+Only timers initialized before the first timer spawn in the tick will be updated in the same titick. If a new timer is initialized during or after timer activation, it will be processed in the next update.
 
 **TargetID** for Time triggers can only spawn if the timer crosses the **StopTime**, using Item Edit for this purpose will not work. This does not apply to Time Event triggers.  
 The value of timers is checked prior to Time and Time Event trigger spawns.
 
-When updating, timers record the current timer value which is used to determine whether **Target ID** or Time Event triggers spawn.  
 Unlike Count which is bi-directional, timers are one-directional and this depends on the value of **TimeMod**:
 * For $TimeMod \gt 0$ **Target ID** is spawned if $previousValue \lt StopTime \le currentValue$.	
 * For $TimeMod \lt 0$ **Target ID** is spawned if $previousValue \gt StopTime \ge currentValue$.
 
 ### Spawn Mechanics
-Timers are processed in spawn order.  
+Timers are processed in reversed spawn order.  
 All IDs can be spawn remapped.  
 For remap inheritance, the timer instance stores the remaps.  
 Remaps can only be set when creating a timer instance, updating a timer will not update the remaps.  
@@ -136,7 +135,10 @@ Updating the timer does not change the timer's spawn limit.
 
 ## Stop, Pause and Resume
 Stop triggers stop, pause or resume a timer given by group or control ID.  
-Stopping the timer clears all settings, remaps and the current value is reset to 0.
+
+Resume will not resume a timer stopped by Time Control or Start Paused, and Time Control will not resume a timer stopped by Pause.
+
+Stopping the timer clears all settings, remaps and current value.
 
 <br>
 
@@ -151,6 +153,8 @@ Time Event requires an active timer to work, which can be created with a Time or
 Time Event can be initialized even if the timer isn't active, and will continue to be active when the timer is cleared by Stop.
 
 Time Event triggers do not spawn groups on their own, they assign extra groups for timers to spawn at the specified **TargetTime**.  
+
+Time Events store the timer's current value when checked. Unlike Count, pausing the Time Event does not prevent it from updating its value.
 
 If a Time Event is initialized on an active timer, it will spawn instantly (even if the timer is paused) if:
 - $(TimerMod > 0) \land (TargetTime > 0) \land (Time >= TargetTime)$
@@ -178,6 +182,8 @@ Only works on active timers.
 Can be used on timers created by Item Edit triggers.  
 
 Can be remapped.
+
+Timers paused by Time Control or Time cannot be resumed by the Resume trigger, and timers paused by the Pause trigger cannot be resumed by Time Control.
 
 <br>
 
