@@ -5,11 +5,17 @@
 $$EaseIn(x,\ easeRate) = 
   \begin{cases}
     0 & \text{for} & x \le 0\\
-    x^{easeRate} & \text{for}& 0 < x < 1 \\
+    x*0.01^{(1-easeRate)} & \text{for}& 0 < x \le 0.01 \\
+    x^{easeRate} & \text{for}& 0.01 < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
-  
-$$EaseOut(x,\ easeRate) = EaseIn(x,easeRate^{-1})$$
+
+  $$EaseOut(x,\ easeRate) = 
+  \begin{cases}
+    0 & \text{for} & x \le 0\\
+    x^{-easeRate} & \text{for}& 0 < x < 1 \\
+    1 & \text{for}& x \ge 1
+  \end{cases}$$
 
 $$EaseInOut(x,\ easeRate) = 
   \begin{cases}
@@ -17,6 +23,11 @@ $$EaseInOut(x,\ easeRate) =
     1-EaseIn(2-2\cdot x,\ easeRate)/2 & \text{for}&  x \ge 0.5
   \end{cases}$$
 
+### Notes
+
+Ease In values below 1% are linearly approximated.
+
+Ease rate is limited between 0.10 and 20.00.
 
 ## Elastic
 
@@ -35,6 +46,11 @@ $$ElasticInOut(x,\ easeRate) =
     1-2^{9}\cdot ElasticIn(2-2\cdot x,\ easeRate) & \text{for}& 0.5 \leq x < 1
   \end{cases}$$
 
+### Notes
+
+Trigonometric functions are approximated and linearly interpolated using a table of 101 points (every 1%). This is much more noticeable on elastic easings with very low ease rate.
+
+Ease rate is limited between 0.10 and 20.00.
 
 ## Bounce
 
@@ -89,6 +105,10 @@ $$SineInOut(x) =
     SineIn(x)/2 & \text{for}& x < 0.5 \\
     0.5+SineOut(x-0.5)/2 & \text{for}&  x \ge 0.5
   \end{cases}$$
+
+### Notes
+
+Trigonometric functions are approximated and linearly interpolated using a table of 101 points (every 1%). This is not noticeable in the case of sine easings.
 
 ## Back
 
