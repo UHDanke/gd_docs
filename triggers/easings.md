@@ -25,7 +25,7 @@ $$EaseInOut(x,\ easeRate) =
 
 ### Notes
 
-Ease In values below 1% are linearly approximated.
+Ease In values below 1% and Ease In Out values below 0.5% and above 99.5% are linearly approximated.
 
 Ease rate is limited between 0.10 and 20.00.
 
