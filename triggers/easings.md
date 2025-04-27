@@ -48,7 +48,7 @@ $$ElasticInOut(x,\ easeRate) =
 
 ### Notes
 
-Trigonometric functions are approximated and linearly interpolated using a table of 101 points (every 1%). This is much more noticeable on elastic easings with very low ease rate.
+Trigonometric functions are approximated and linearly interpolated using a table of 101 points (1% divisions). This is much more noticeable on elastic easings with very low ease rate.
 
 Ease rate is limited between 0.10 and 20.00.
 
@@ -108,7 +108,7 @@ $$SineInOut(x) =
 
 ### Notes
 
-Trigonometric functions are approximated and linearly interpolated using a table of 101 points (every 1%). This is not noticeable in the case of sine easings.
+Trigonometric functions are approximated and linearly interpolated using a table of 101 points (1% divisions). This is not noticeable in the case of sine easings.
 
 ## Back
 
