@@ -4,7 +4,9 @@ https://www.fmod.com/docs/.
 
 This documentation is referenced or summarized partialy in this document as a rough guideline, please reference the FMOD docs instead if you need more in-depth information.
 
-## Pitch & Speed
+<br>
+
+# Pitch & Speed
 
 FMOD uses the FFT (Fast Fourier Transform) algorithm for pitch shifting (Pitch) and time stretching (Speed).  
 More info can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#fft).
@@ -18,9 +20,75 @@ Pitch changes are limited between -12 (50%) and 12 (200%) by the audio engine.
 The exact pitch multiplier can be calculated using the formula:  
 $Multiplier = \sqrt[12]{2^{Pitch}}$
 
-Speed uses the same formula and value scaling as Pitch in order to make pitch corrections easier, pitch of speeded audio can be corrected by giving Pitch the opposite value of Speed.
+Speed uses the same formula and value scaling as Pitch in order to make pitch corrections easier. Pitch of speeded audio can be corrected by giving Pitch the opposite value of Speed.
 
+<br>
 
+# Volume Attenuation
+
+The volume of songs and SFX can be set to depend on the distance between a group of sound emitters referenced by Group ID 1 and a sound listener given by Group ID 2 or chosen between P1, P2 and Camera.
+
+Attenuation can be set or modified by Edit Song, SFX or Edit SFX.
+
+## Behavior
+
+### Persistence
+
+Attenuation set by Edit Song is saved per channel, and by Edit SFX per SFX Group.
+
+SFX triggers can set attenuation unique to the SFX. This has priority over the one set on SFX Group and cannot be edited in any way. 
+
+### Clearing & Overriding
+
+Attenuation remains permanently active on the song Channel or SFX Group until overriden.
+
+Attenuation can be removed if either GID 1 has no objects, GID 2 is equal to 0 or does not have one object. Otherwise the current attenuation settings are overriden.  
+If GID 1 is equal to 0 attenuation will not be cleared nor overriden.
+
+### Timing
+
+Modifying the attenuation of a Song or SFX with Edit Song / Edit SFX is instant regardless of Duration.
+
+### Emitters
+
+If GID 1 is made up of multiple objects, then the one closest to the listener is used to determine the volume.
+
+### Listeners
+
+If GID 2 has more than one object, then the attenuation settings are overriden.
+
+P1, P2 and Camera (center) override GID 2 as the listener. 
+
+Both P1 and P2 can be selected at the same time, and this is the only way to have more than one listener per attenuation at a time. In this case the closest distance between a sound emitter and one of the two players is used.
+
+### Thresholds
+
+The attenuated volume is calculated from the distance between listener and emitters, interpolated linearly based on three thresholds: Near, Medium and Far.
+
+For the bounds, if Distance is less than Near then VolNear is used, if it's more than Far then VolFar is used.
+
+Each threshold adds to the previous one, as follows:  
+$Near = MinDist$  
+$Medium = MinDist+Dist2$  
+$Far = MinDist+Dist2+Dist3$  
+
+All thresholds are in move units (10/block). 
+
+If the trigger is selected, the game renders the attenuation thresholds around each emitter.
+
+#### Distance
+
+How distance is calculated depends on the chosen proximity settings, similar to the ones found in Area triggers.
+
+| Image | No. | Area  | Distance |
+| :---: | :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/8d30a8f5-7813-49c6-b008-bee239b53811" width="50%"> | 1 | Circular | $\sqrt{(Y_{l}-Y_{e})^{2}+(X_{l}-X_{e})^{2}}$ |
+| <img src="https://github.com/user-attachments/assets/24f5af6d-f09b-476f-80bf-90269069104f" width="50%"> | 2 | Horizontal | $\|X_{l}-X_{e}\|$ |
+| <img src="https://github.com/user-attachments/assets/2611fd55-70df-41c8-b805-255950875928" width="50%"> | 3 | Horizontal | $X_{e}-X_{l}$ |
+| <img src="https://github.com/user-attachments/assets/3148644d-6f9a-4bc6-92b1-e3fb5a816ab0" width="50%"> | 4 | Horizontal | $X_{l}-X_{e}$ |
+| <img src="https://github.com/user-attachments/assets/ba9d01d7-066d-414f-bd5f-62c89ac6ec94" width="50%"> | 7 | Vertical | $\|Y_{l}-Y_{e}\|$ |
+| <img src="https://github.com/user-attachments/assets/d861d58b-622a-4bcf-b4c5-3fab9074c526" width="50%"> | 10 | Vertical | $Y_{l}-Y_{e}$ |
+| <img src="https://github.com/user-attachments/assets/78826a65-62d5-446c-b355-6325dca8a8e3" width="50%"> | 9 | Vertical | $Y_{e}-Y_{l}$ |
 
 <br>
 
@@ -28,21 +96,32 @@ Speed uses the same formula and value scaling as Pitch in order to make pitch co
 
 Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
 
-### Reduce Quality
+## Change Custom Songs Location
+
+Saves Custom songs in ``Geometry Dash\Resources\songs`` instead of ``AppData\Local\GeometryDash``.
+
+## Disable Song Alert
+
+Removes the *Missing Songs* alert when playing a level.
+
+## No Song Limit
+
+Removes the 50 song limit from the song folder. If unselected, the oldest 50th song is replaced when downloading a new song over the limit.
+
+## Reduce Quality
 
 Reduces the audio sample rate from 44.1 kHz to 24 kHz.
 
-### Audio Fix 01
+## Audio Fix 01
 
-Increases the audio buffer size. Only use this if the audio frequently cuts while playing.
-
+Increases the audio buffer size. Only use this if the audio frequently cuts while playing.  
 Makes latency worse as a side-effect.
 
-### Music Offset
+## Music Offset
 
 Offsets all song playback by a value given in milliseconds.
 
-### Debug
+## Debug
 
 Displays FMOD debug stats, such as memory usage and latency.
 
@@ -60,7 +139,7 @@ It is always played on song channel 0 and is pre-loaded together with the level.
 
 In the Normal category you can find all of the official, main-level songs for use in your custom levels.
 
-It is not possible to use main level songs inside Song triggers, they can only be used as primary songs.
+It is not possible to use main level songs inside Song triggers (they can only be used as primary songs), but non-cut versions of some of them can be found on Newgrounds.
 
 A list of all current songs (v2.207) in order:
 1. Stereo Madness
@@ -90,7 +169,7 @@ A list of all current songs (v2.207) in order:
 ### Custom Songs
 Custom songs can be chosen from two main sources - Newgrounds and the Audio Library.
 
-Newgrounds is a media-hosting website for user-generated content. While possible to use your own music in-game, you first need to be scouted in order to appear in the Audio Portal AND then whitelisted by RobTop.
+Newgrounds is a media-hosting website for user-generated content. While possible to use your own music in-game, you first need to be scouted in order to appear in the Audio Portal and then whitelisted by RobTop.
 
 The Audio Library hosts audio licensed for use inside Geometry Dash. This can be either on a per artist or per label basis, but not all songs from an artist or label can be featured as the usage rights can be owned by a different entity or exclusive to another game.
 
@@ -178,7 +257,17 @@ Only one song can be played in a channel at a time. Audio will not cut when a so
 
 There are in total 5 playback channels, between ID 0 and 4.
 
-Song triggers can be spawned, Channel is the only ID and it can be remapped.
+Channel ID can be remapped.
+
+## Custom Song ID
+
+Up to 21 unique Song IDs can be used per level, levels with more IDs will fail to upload unless whitelisted by RobTop.
+
+Surprisingly, Custom Song ID can be remapped. Custom Song ID will not remap if activated when loading the level.
+
+Remapped Song IDs are not displayed in the level's Songs & SFX list and do not count towards the level's song ID limit.
+
+Custom Song ID can be remapped to any integer ID. Any .mp3 file in your songs folder with said ID as its name will be played, including negative IDs which are normally unused - this makes this feature ideal for NONGS.
 
 ## Prep
 
@@ -234,10 +323,18 @@ Fade In is applied only when a loop starts, not when it repeats.
 
 # Edit Song
 
+Modifies the Speed and Volume of a song playing on the given Channel.
+
+Duration is the
+
+
+
+
 <br>
 
 # SFX
 
+Plays the selected SFX using the given Pitch, 
 ## Pitch
 
 The FFT option improves the quality of the pitch effect by increasing the FFT window size. Practically, this makes the sound effects less coarse with slightly more echo at the cost of performance.
