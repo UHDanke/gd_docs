@@ -24,11 +24,11 @@ Speed uses the same formula and value scaling as Pitch in order to make pitch co
 
 <br>
 
-# Proximity Volume
+# Volume Proximity
 
 The volume of songs and SFX can be set to depend on the distance between a group of sound emitters referenced by Group ID 1 and a sound listener given by Group ID 2 or chosen between P1, P2 and Camera. This is also known as Volume Attenuation.
 
-Volume attenuation can be set or modified by Edit Song, SFX or Edit SFX.
+It can be set or modified by Edit Song, SFX or Edit SFX.
 
 ## Behavior
 
@@ -78,9 +78,9 @@ If the trigger is selected, the game renders the attenuation thresholds around e
 
 #### Distance
 
-How distance is calculated depends on the chosen proximity settings, similar to the ones found in Area triggers.
+How distance is calculated depends on the chosen direction settings, similar to the ones found in Area triggers.
 
-| Image | No. | Area  | Distance |
+| Image | No. | Shape  | Distance |
 | :---: | :---: | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/8d30a8f5-7813-49c6-b008-bee239b53811" width="50%"> | 1 | Circular | $\sqrt{(Y_{l}-Y_{e})^{2}+(X_{l}-X_{e})^{2}}$ |
 | <img src="https://github.com/user-attachments/assets/24f5af6d-f09b-476f-80bf-90269069104f" width="50%"> | 2 | Horizontal | $\|X_{l}-X_{e}\|$ |
@@ -335,9 +335,9 @@ Modifies the Speed and Volume of a song playing on the given Channel.
 
 **Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
 
-## Proximity Volume
+## Volume Proximity
 
-**Proximity Volume** can be set per **Channel** from the options found on the 2nd page.
+**Volume Proximity ** can be set per **Channel** from the options found on the 2nd page.
 
 These settings do not reset when the song ends and remain permanently active until overriden or cleared by another Edit Song trigger.
 
@@ -354,12 +354,6 @@ New Edit Song calls override the previous **Speed** or **Volume** transition if 
 # SFX
 
 Plays the selected SFX using the given Pitch, Speed and Volume.
-
-## Misc
-
-Unique ID, SFX Group and the SFX's ID can be remapped.
-
-Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
 
 ## Options
 
@@ -446,10 +440,38 @@ This group cannot be used to change the SFX's **Speed** or **Volume**.
 
 By default, the SFX will not play if it's starting volume 0. If **Ignore Volume Test** is selected, the SFX will play regardless of it's starting volume. 
 
+### Volume Proximity
 
+**Volume Proximity** can be set per SFX trigger from the 4th settings page. This overrides the **SFX Group**'s proximity settings and cannot be edited by other triggers.
+
+## Misc
+
+Unique ID, SFX Group and the SFX's ID can be remapped.
+
+Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
 
 <br>
 
 # Edit SFX
 
+Modifies or stops the SFX by either Group ID, SFX Group or Unique ID.
 
+## Options
+
+**Stop**, **Stop Loop**, **Change Speed** and **Change Volume** affect all SFX with the given Group ID, SFX Group or Unique ID.
+
+**Stop** instantly stops all referenced SFX .
+
+**Stop Loop** makes all referenced SFX stop looping. Looping SFX will not stop at the End timestamp and instead continue until they end.
+
+**Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
+
+**Volume Proximity** can be set per SFX Group from the 2nd settings page. These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
+
+## Misc
+
+Unique ID, SFX Group and the SFX's ID can be remapped.
+
+Edit SFX cannot be stopped or paused by a Stop trigger.
+
+New Edit SFX calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
