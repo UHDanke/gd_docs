@@ -501,6 +501,10 @@ Item Edit and Time triggers are not affected by either issue.
 
 Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
 
+## [2.207] Timers reversed spawn order	
+
+Timers spawn from the oldest timer first to newest last on mobile (reversed), and from newest first to oldest last on PC.
+
 <br>
 
 # Area Triggers
@@ -672,3 +676,6 @@ A potential fix for this would be for Advanced Follow to replace the previous in
 [Video](https://youtu.be/MNh11dOnu4U)  
 ID: 115061026
 
+## [2.207] Advanced Follow reversed spawn order	
+
+Advanced follow processing order for triggers with the same Priority is reversed on mobile.
