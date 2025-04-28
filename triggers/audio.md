@@ -249,7 +249,7 @@ The only ways to hide them is either with the Disable option or with the Hide ob
 
 # Song Trigger
 
-Starts a specific custom song with a given Volume and Speed in the selected Channel.
+Starts a specific custom song with a given **Volume** and **Speed** in the selected **Channel**.
 
 ## Channels
 
@@ -353,11 +353,11 @@ These settings do not reset when the song ends and remain permanently active unt
 
 # SFX
 
-Plays the selected SFX using the given Pitch, Speed and Volume.
+Plays the selected SFX using the given **Pitch**, **Speed** and **Volume**.
 
 ## Misc
 
-Unique ID, SFX Group and the SFX's ID can be remapped.
+**Unique ID**, **SFX Group** and the SFX's ID can be remapped.
 
 Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
 
@@ -365,7 +365,7 @@ Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, e
 
 ### Reverb
 
-Applies a reverb effect to the played SFX. Reverbs are used primarily to simulate an acoustic space (sound reflection, decay, reflection, etc).
+Applies a reverb effect to the played SFX. Reverbs are used primarily to simulate an acoustic space (sound reflections, decay, etc).
 
 FMOD documentation on reverbs can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#sfx-reverb).
 
@@ -395,10 +395,8 @@ Reverb parameters cannot be modified individually in-game, instead you are allow
 
 Preset parameters can be found [here](https://www.fmod.com/docs/2.03/api/core-api-system.html#fmod_reverb_presets).
 
-There is only one reverb channel used by all sound effects, as such there can be only one reverb preset active at a time.
-
-If Enable is selected, the SFX will replace the current reverb effect with its selected preset. 
-
+There is only one reverb channel used by all sound effects, as such there can be only one reverb preset active at a time.  
+If **Enable** is selected, the SFX will replace the current reverb effect with its selected preset.  
 If it is not selected, then the SFX uses the current active reverb preset.
 
 ### FFT
@@ -415,22 +413,22 @@ Makes the SFX loop until stopped.
 
 ### Start and End
 
-Makes the SFX Start and End at a a given time in miliseconds.
+Makes the SFX **Start** and **End** at a a given time in miliseconds.
 
-If looped, playback is looped between Start and End. However, if Stop Loop is used then End is ignored and the SFX continues playing past the end point.
+If looped, playback is looped between **Start** and **End**. However, if Stop Loop is used then **End** is ignored and the SFX continues playing to the end.
 
 ### Fade In and Out
 
-Makes the SFX Fade In when starting and Fade out when ending. 
+Makes the SFX **Fade In** when starting and **Fade out** when ending. 
 
-Like Start and End, the time is given in miliseconds.
+Like **Start** and **End*, the time is given in miliseconds.
 
-Fade In is applied only when a SFX starts, not when it repeats.
+Fades are applied only when a SFX starts or ends, not when it repeats.
 
 ### Unique
 
 Makes the SFX unique if **Unique ID** is not 0 and **Is Unique** is selected.  
-Unique SFX can be referenced by their Unique ID by Edit SFX triggers.
+Unique SFX can be referenced by their **Unique ID** by Edit SFX triggers.
 
 Only one SFX per unique ID can be played at a time.  
 Without **Override**, the new SFX will not play if the previous SFX is still playing.  
@@ -442,11 +440,13 @@ Gives the SFX a **SFX Group** that can be referenced by Edit SFX triggers.
 
 ### Ignore Volume Test
 
-By default, the SFX will not play if it's starting volume 0. If **Ignore Volume Test** is selected, the SFX will play regardless of it's starting volume. 
+By default, the SFX will not play if it's starting volume 0.  
+If **Ignore Volume Test** is selected, the SFX will play regardless of it's starting volume. 
 
 ### Volume Proximity
 
-**Volume Proximity** can be set per SFX trigger from the 4th settings page. This overrides the **SFX Group**'s proximity settings and cannot be edited by other triggers.
+**Volume Proximity** can be set per SFX trigger from the 4th settings page.  
+This overrides the **SFX Group**'s proximity settings and cannot be edited by other triggers.
 
 <br>
 
@@ -456,15 +456,17 @@ Modifies or stops the SFX by either Group ID, SFX Group or Unique ID.
 
 ## Misc
 
-Unique ID, SFX Group and the SFX's ID can be remapped.
+**Group ID**, **SFX Group** and **Unique ID** can be remapped.
 
 Edit SFX cannot be stopped or paused by a Stop trigger.
 
 New Edit SFX calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
 
+The SFX's **Pitch** cannot be edited.
+
 ## Options
 
-**Stop**, **Stop Loop**, **Change Speed** and **Change Volume** affect all SFX with the given Group ID, SFX Group or Unique ID.
+**Stop**, **Stop Loop**, **Change Speed** and **Change Volume** affect all SFX with the given **Group ID**, **SFX Group** or **Unique ID**.
 
 **Stop** instantly stops all referenced SFX .
 
@@ -472,4 +474,5 @@ New Edit SFX calls override the previous **Speed** or **Volume** transition if *
 
 **Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
 
-**Volume Proximity** can be set per SFX Group from the 2nd settings page. These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
+**Volume Proximity** can be set per SFX Group from the 2nd settings page.  
+These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
