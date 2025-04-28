@@ -71,12 +71,18 @@ Ideally, the player should define the templates they need and let the tool handl
 ## Templating
 
 Templating supports only grid-locked smart blocks. Exceptions are treated as if they were grid-locked, but results will vary.  
+
 When templating, the maximum distance an object can be from the edges of the center tile and still be part of the template is 0.5 for other smart blocks and 1 for reference blocks.  
+
 If you define a non-required template and its default template is undefined, the default will be highlighted in green and the non-required template will substitute it.  
+
 Identical templates are merged into one single variation.  
+
 All object properties, such as groups, layers, z order, extra options are saved within templates.  
-Due to this it can sometimes be difficult to identify near identical templates in the variations browser.  
+Due to this it can sometimes be difficult to identify near identical templates in the variations browser.
+
 When using Create on a layer, the created objects will use the current layer instead. This does not apply for Editor L2 or on the "All" Layer.  
+
 All blocks, besides other smart blocks, can be part of a template \- including triggers.  
 It is not possible to template smart blocks, as they are ignored when using **Template**.  
 Since they are ignored, the object properties of smart blocks do not matter when templating.
@@ -124,9 +130,16 @@ Each step also does the following matches, in this order, if the corresponding o
 * Rotated (-90, \-180, \-270)  
 * Ignore Corners
 
-### Default Templates
+### Default Variations
 
 Below you can view a visual guide of all default templates and their variations.  
 Highlighted in white are the default templates for other templates that include any of the smart objects highlighted in red.  
 
-<img src="https://github.com/user-attachments/assets/3c867688-2381-41a9-9c15-ca77dd73e5d5" width="85%">
+<img src="https://github.com/user-attachments/assets/a641d129-8599-4753-a439-f49441386bc0" width="85%">
+
+### Least Variations
+
+The structures below cover all 47 required variations without repetition, unlike the structures created by **Paste Template** which repeat some templates and cover much more than needed.
+
+<img src="https://github.com/user-attachments/assets/ccdb72ab-f4d5-48f1-b0ae-82eaa80a811e" width="85%">
+
