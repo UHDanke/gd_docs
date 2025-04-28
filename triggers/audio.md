@@ -327,6 +327,14 @@ Fade In is applied only when a loop starts, not when it repeats.
 
 Modifies the Speed and Volume of a song playing on the given Channel.
 
+## Misc
+
+Channel can be remapped.
+
+Edit Song cannot be stopped or paused by a Stop trigger.
+
+New Edit Song calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
+
 ## Options
 
 **Stop** instantly stops the song playing on the given **Channel**. This will not clear the channel's Prep song.
@@ -341,19 +349,17 @@ Modifies the Speed and Volume of a song playing on the given Channel.
 
 These settings do not reset when the song ends and remain permanently active until overriden or cleared by another Edit Song trigger.
 
-## Misc
-
-Channel can be remapped.
-
-Edit Song cannot be stopped or paused by a Stop trigger.
-
-New Edit Song calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
-
 <br>
 
 # SFX
 
 Plays the selected SFX using the given Pitch, Speed and Volume.
+
+## Misc
+
+Unique ID, SFX Group and the SFX's ID can be remapped.
+
+Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
 
 ## Options
 
@@ -442,17 +448,19 @@ By default, the SFX will not play if it's starting volume 0. If **Ignore Volume 
 
 **Volume Proximity** can be set per SFX trigger from the 4th settings page. This overrides the **SFX Group**'s proximity settings and cannot be edited by other triggers.
 
-## Misc
-
-Unique ID, SFX Group and the SFX's ID can be remapped.
-
-Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
-
 <br>
 
 # Edit SFX
 
 Modifies or stops the SFX by either Group ID, SFX Group or Unique ID.
+
+## Misc
+
+Unique ID, SFX Group and the SFX's ID can be remapped.
+
+Edit SFX cannot be stopped or paused by a Stop trigger.
+
+New Edit SFX calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
 
 ## Options
 
@@ -465,11 +473,3 @@ Modifies or stops the SFX by either Group ID, SFX Group or Unique ID.
 **Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
 
 **Volume Proximity** can be set per SFX Group from the 2nd settings page. These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
-
-## Misc
-
-Unique ID, SFX Group and the SFX's ID can be remapped.
-
-Edit SFX cannot be stopped or paused by a Stop trigger.
-
-New Edit SFX calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
