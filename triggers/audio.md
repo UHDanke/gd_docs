@@ -11,7 +11,7 @@ Specific audio settings are found in the Options section of the Settings menu, u
 
 ## Change Custom Songs Location
 
-Saves Custom songs in the ``Geometry Dash\Resources\songs`` folder instead of ``AppData\Local\GeometryDash``.
+Saves custom songs in the ``Geometry Dash\Resources\songs`` folder instead of ``AppData\Local\GeometryDash``.
 
 ## Disable Song Alert
 
