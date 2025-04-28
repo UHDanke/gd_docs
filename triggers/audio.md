@@ -24,11 +24,11 @@ Speed uses the same formula and value scaling as Pitch in order to make pitch co
 
 <br>
 
-# Volume Attenuation
+# Proximity Volume
 
-The volume of songs and SFX can be set to depend on the distance between a group of sound emitters referenced by Group ID 1 and a sound listener given by Group ID 2 or chosen between P1, P2 and Camera.
+The volume of songs and SFX can be set to depend on the distance between a group of sound emitters referenced by Group ID 1 and a sound listener given by Group ID 2 or chosen between P1, P2 and Camera. This is also known as Volume Attenuation.
 
-Attenuation can be set or modified by Edit Song, SFX or Edit SFX.
+Volume attenuation can be set or modified by Edit Song, SFX or Edit SFX.
 
 ## Behavior
 
@@ -59,7 +59,7 @@ If GID 2 has more than one object, then the attenuation settings are overriden.
 
 P1, P2 and Camera (center) override GID 2 as the listener. 
 
-Both P1 and P2 can be selected at the same time, and this is the only way to have more than one listener per attenuation at a time. In this case the closest distance between a sound emitter and one of the two players is used.
+Both P1 and P2 can be selected at the same time, and this is the only way to have more than one listener per attenuation at once. In this case the closest distance between a sound emitter and one of the two players is used.
 
 ### Thresholds
 
@@ -98,11 +98,11 @@ Specific audio settings are found in the Options section of the Settings menu, u
 
 ## Change Custom Songs Location
 
-Saves Custom songs in ``Geometry Dash\Resources\songs`` instead of ``AppData\Local\GeometryDash``.
+Saves Custom songs in the ``Geometry Dash\Resources\songs`` folder instead of ``AppData\Local\GeometryDash``.
 
 ## Disable Song Alert
 
-Removes the *Missing Songs* alert when playing a level.
+Removes the alert when playing a level with missing song files.
 
 ## No Song Limit
 
@@ -263,7 +263,9 @@ Channel ID can be remapped.
 
 Up to 21 unique Song IDs can be used per level, levels with more IDs will fail to upload unless whitelisted by RobTop.
 
-Surprisingly, Custom Song ID can be remapped. Custom Song ID will not remap if activated when loading the level.
+Surprisingly, Custom Song ID can be remapped.  
+Custom Song ID will not remap if activated when loading the level.  
+Custom Song ID has ID 0 if no custom song is selected.
 
 Remapped Song IDs are not displayed in the level's Songs & SFX list and do not count towards the level's song ID limit.
 
@@ -325,21 +327,43 @@ Fade In is applied only when a loop starts, not when it repeats.
 
 Modifies the Speed and Volume of a song playing on the given Channel.
 
-Duration is the
+## Options
 
+**Stop** instantly stops the song playing on the given **Channel**. This will not clear the channel's Prep song.
 
+**Stop Loop** makes a looping song playing on the **Channel** no longer loop. A looping song will not stop at the End timestamp and instead continue until the end of the song.
 
+**Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
+
+## Proximity Volume
+
+**Proximity Volume** can be set per **Channel** from the options found on the 2nd page.
+
+These settings do not reset when the song ends and remain permanently active until overriden or cleared by another Edit Song trigger.
+
+## Misc
+
+Channel can be remapped.
+
+Edit Song cannot be stopped or paused by a Stop trigger.
+
+New Edit Song calls override the previous **Speed** or **Volume** transition if **Change Speed** or **Change Volume** is selected.
 
 <br>
 
 # SFX
 
-Plays the selected SFX using the given Pitch, 
-## Pitch
+Plays the selected SFX using the given Pitch, Speed and Volume.
 
-The FFT option improves the quality of the pitch effect by increasing the FFT window size. Practically, this makes the sound effects less coarse with slightly more echo at the cost of performance.
+## Misc
 
-## Reverb
+Unique ID, SFX Group and the SFX's ID can be remapped.
+
+Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
+
+## Options
+
+### Reverb
 
 Applies a reverb effect to the played SFX. Reverbs are used primarily to simulate an acoustic space (sound reflection, decay, reflection, etc).
 
@@ -376,6 +400,53 @@ There is only one reverb channel used by all sound effects, as such there can be
 If Enable is selected, the SFX will replace the current reverb effect with its selected preset. 
 
 If it is not selected, then the SFX uses the current active reverb preset.
+
+### FFT
+
+**FFT** improves the quality of the pitch effect by increasing the FFT window size. Practically, this makes the sound effects less coarse with slightly more echo at the cost of performance.
+
+### Pre-Load
+
+Loads the SFX in memory at the start of the level.
+
+### Loop
+
+Makes the SFX loop until stopped.
+
+### Start and End
+
+Makes the SFX Start and End at a a given time in miliseconds.
+
+If looped, playback is looped between Start and End. However, if Stop Loop is used then End is ignored and the SFX continues playing past the end point.
+
+### Fade In and Out
+
+Makes the SFX Fade In when starting and Fade out when ending. 
+
+Like Start and End, the time is given in miliseconds.
+
+Fade In is applied only when a SFX starts, not when it repeats.
+
+### Unique
+
+Makes the SFX unique if **Unique ID** is not 0 and **Is Unique** is selected.  
+Unique SFX can be referenced by their Unique ID by Edit SFX triggers.
+
+Only one SFX per unique ID can be played at a time.  
+Without **Override**, the new SFX will not play if the previous SFX is still playing.  
+With **Override**, the previous SFX gets replaced by the new one.
+
+### SFX Group
+
+Gives the SFX a **SFX Group** that can be referenced by Edit SFX triggers.
+
+This group cannot be used to change the SFX's **Speed** or **Volume**.
+
+### Ignore Volume Test
+
+By default, the SFX will not play if it's starting volume 0. If **Ignore Volume Test** is selected, the SFX will play regardless of it's starting volume. 
+
+
 
 <br>
 
