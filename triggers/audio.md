@@ -6,6 +6,41 @@ This documentation is referenced or summarized partialy in this document as a ro
 
 <br>
 
+# Game Audio Settings
+
+Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
+
+## Change Custom Songs Location
+
+Saves Custom songs in the ``Geometry Dash\Resources\songs`` folder instead of ``AppData\Local\GeometryDash``.
+
+## Disable Song Alert
+
+Removes the alert when playing a level with missing song files.
+
+## No Song Limit
+
+Removes the 50 song limit from the song folder. If unselected, the oldest 50th song is replaced when downloading a new song over the limit.
+
+## Reduce Quality
+
+Reduces the audio sample rate from 44.1 kHz to 24 kHz.
+
+## Audio Fix 01
+
+Increases the audio buffer size. Only use this if the audio frequently cuts while playing.  
+Makes latency worse as a side-effect.
+
+## Music Offset
+
+Offsets all song playback by a value given in milliseconds.
+
+## Debug
+
+Displays FMOD debug stats, such as memory usage and latency.
+
+<br>
+
 # Pitch & Speed
 
 FMOD uses the FFT (Fast Fourier Transform) algorithm for pitch shifting (Pitch) and time stretching (Speed).  
@@ -89,41 +124,6 @@ How distance is calculated depends on the chosen direction settings, similar to 
 | <img src="https://github.com/user-attachments/assets/ba9d01d7-066d-414f-bd5f-62c89ac6ec94" width="50%"> | 7 | Vertical | $\|Y_{l}-Y_{e}\|$ |
 | <img src="https://github.com/user-attachments/assets/d861d58b-622a-4bcf-b4c5-3fab9074c526" width="50%"> | 10 | Vertical | $Y_{l}-Y_{e}$ |
 | <img src="https://github.com/user-attachments/assets/78826a65-62d5-446c-b355-6325dca8a8e3" width="50%"> | 9 | Vertical | $Y_{e}-Y_{l}$ |
-
-<br>
-
-# Game Audio Settings
-
-Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
-
-## Change Custom Songs Location
-
-Saves Custom songs in the ``Geometry Dash\Resources\songs`` folder instead of ``AppData\Local\GeometryDash``.
-
-## Disable Song Alert
-
-Removes the alert when playing a level with missing song files.
-
-## No Song Limit
-
-Removes the 50 song limit from the song folder. If unselected, the oldest 50th song is replaced when downloading a new song over the limit.
-
-## Reduce Quality
-
-Reduces the audio sample rate from 44.1 kHz to 24 kHz.
-
-## Audio Fix 01
-
-Increases the audio buffer size. Only use this if the audio frequently cuts while playing.  
-Makes latency worse as a side-effect.
-
-## Music Offset
-
-Offsets all song playback by a value given in milliseconds.
-
-## Debug
-
-Displays FMOD debug stats, such as memory usage and latency.
 
 <br>
 
@@ -433,8 +433,6 @@ With **Override**, the previous SFX gets replaced by the new one.
 ### SFX Group
 
 Gives the SFX a **SFX Group** that can be referenced by Edit SFX triggers.
-
-This group cannot be used to change the SFX's **Speed** or **Volume**.
 
 ### Ignore Volume Test
 
