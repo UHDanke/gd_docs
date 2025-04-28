@@ -1,6 +1,5 @@
 # FMOD
-Geometry Dash uses the FMOD library as its primary audio engine, in-depth documentation for it can be found on 
-https://www.fmod.com/docs/.
+Geometry Dash uses the FMOD library as its primary audio engine, in-depth documentation for it can be found on https://www.fmod.com/docs/.
 
 This documentation is referenced or summarized partialy in this document as a rough guideline, please reference the FMOD docs instead if you need more in-depth information.
 
@@ -28,8 +27,7 @@ Reduces the audio sample rate from 44.1 kHz to 24 kHz.
 
 ## Audio Fix 01
 
-Increases the audio buffer size. Only use this if the audio frequently cuts while playing.  
-Makes latency worse as a side-effect.
+Increases the audio buffer size. Only use this if the audio frequently cuts while playing. Makes latency worse as a side-effect.
 
 ## Music Offset
 
@@ -43,8 +41,7 @@ Displays FMOD debug stats, such as memory usage and latency.
 
 # Pitch & Speed
 
-FMOD uses the FFT (Fast Fourier Transform) algorithm for pitch shifting (Pitch) and time stretching (Speed).  
-More info can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#fft).
+FMOD uses the FFT (Fast Fourier Transform) algorithm for pitch shifting (Pitch) and time stretching (Speed). More info can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#fft).
 
 Speed modifies the audio's playback speed, Pitch changes the audio's pitch without affecting its speed.
  
@@ -69,7 +66,7 @@ It can be set or modified by Edit Song, SFX or Edit SFX.
 
 ### Persistence
 
-Attenuation set by Edit Song is saved per channel, and by Edit SFX per SFX Group.
+Attenuation set by Edit Song is saved per **Channel**, and by Edit SFX per **SFX Group**.
 
 SFX triggers can set attenuation unique to the SFX. This has priority over the one set on SFX Group and cannot be edited in any way. 
 
@@ -77,8 +74,7 @@ SFX triggers can set attenuation unique to the SFX. This has priority over the o
 
 Attenuation remains permanently active on the song Channel or SFX Group until overriden.
 
-Attenuation can be removed if either GID 1 has no objects, GID 2 is equal to 0 or does not have one object. Otherwise the current attenuation settings are overriden.  
-If GID 1 is equal to 0 attenuation will not be cleared nor overriden.
+Attenuation can be removed if either **GID 1** has no objects, **GID 2** is equal to 0 or does not have one object. Otherwise the current attenuation settings are overriden. If **GID 1** is equal to 0 attenuation will not be cleared nor overriden.
 
 ### Timing
 
@@ -100,7 +96,7 @@ Both P1 and P2 can be selected at the same time, and this is the only way to hav
 
 The attenuated volume is calculated from the distance between listener and emitters, interpolated linearly based on three thresholds: Near, Medium and Far.
 
-For the bounds, if Distance is less than Near then VolNear is used, if it's more than Far then VolFar is used.
+For the bounds, if Distance is less than Near then **VolNear** is used, if it's more than Far then **VolFar** is used.
 
 Each threshold adds to the previous one, as follows:  
 $Near = MinDist$  
@@ -131,7 +127,7 @@ How distance is calculated depends on the chosen direction settings, similar to 
 
 The default song used when playing the level, which can be changed from the level select menu. This will be displayed as the main song in any level select screen.
 
-It is always played on song channel 0 and is pre-loaded together with the level.
+It is always played on **Channel** 0 and is loaded on level start.
 
 ## Song Selection
 
@@ -263,9 +259,7 @@ Channel ID can be remapped.
 
 Up to 21 unique Song IDs can be used per level, levels with more IDs will fail to upload unless whitelisted by RobTop.
 
-Surprisingly, Custom Song ID can be remapped.  
-Custom Song ID will not remap if activated when loading the level.  
-Custom Song ID has ID 0 if no custom song is selected.
+Surprisingly, Custom Song ID can be remapped. Custom Song ID will not remap if activated when loading the level, and it uses ID 0 if no custom song is selected.
 
 Remapped Song IDs are not displayed in the level's Songs & SFX list and do not count towards the level's song ID limit.
 
@@ -396,8 +390,8 @@ Reverb parameters cannot be modified individually in-game, instead you are allow
 Preset parameters can be found [here](https://www.fmod.com/docs/2.03/api/core-api-system.html#fmod_reverb_presets).
 
 There is only one reverb channel used by all sound effects, as such there can be only one reverb preset active at a time.  
-If **Enable** is selected, the SFX will replace the current reverb effect with its selected preset.  
-If it is not selected, then the SFX uses the current active reverb preset.
+
+If **Enable** is selected, the SFX will replace the current reverb effect with its selected preset. If it is not selected, then the SFX uses the current active reverb preset.
 
 ### FFT
 
@@ -474,5 +468,4 @@ The SFX's **Pitch** cannot be edited.
 
 **Duration** sets the time needed to transition **Speed** or **Volume** to their new values if **Change Speed** or **Change Volume** is selected.
 
-**Volume Proximity** can be set per SFX Group from the 2nd settings page.  
-These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
+**Volume Proximity** can be set per SFX Group from the 2nd settings page. These settings do not reset when the SFX ends and remain permanently active until overriden or cleared by another Edit SFX trigger.
