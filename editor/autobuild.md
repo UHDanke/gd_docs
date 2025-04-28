@@ -139,7 +139,7 @@ Highlighted in white are the default templates for other templates that include 
 
 ### Least Variations
 
-The structures below cover all 47 required variations without repetition, unlike the structures created by **Paste Template** which repeat some templates and cover much more than needed.
+The structures below cover all 47 required variations without repetition, unlike the structures created by **Paste Template** which repeat some variations and create much more than needed.
 
 <img src="https://github.com/user-attachments/assets/ccdb72ab-f4d5-48f1-b0ae-82eaa80a811e" width="85%">
 
