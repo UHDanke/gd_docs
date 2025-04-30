@@ -33,7 +33,7 @@ If Move Time is 0, then Follow will be active for 2 ticks.
 
 <br>
 
-# Advanced Follow Y
+# Follow Player Y
 
 This is a legacy trigger with most of its settings and features now found in Advanced Follow.
 
