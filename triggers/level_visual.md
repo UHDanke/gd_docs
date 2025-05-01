@@ -135,11 +135,13 @@ Follow behavior depends on the value of the offset - if the value is positive, t
 
 # Camera Mode
 
-Removes borders for certain gamemodes with **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
+Removes borders for certain gamemodes when **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
 
 These settings can also be set when switching gamemode using a portal, they have the exact same behavior as the trigger version.
 
-Padding determines the offset on the Y axis, this can be calculated by the formula $OffsetY = (15 - HeightY) \cdot Padding$.
+Borders can only be parallel to the ground, and will not rotate if Rotate Gameplay is used.
+
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = (15 - HeightY) \cdot Padding$, where the Y height includes zoom.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
