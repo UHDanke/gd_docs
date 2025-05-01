@@ -115,9 +115,11 @@ X and Y are the Player's X and Y, not the screen's. If the gameplay is rotated b
 
 # Gameplay Offset
 
-Changes the offset between the player and the camera's center applied on the X axis.
+Changes the offset between player 1 and the camera's center applied on the X axis.
 
 Currently the Y axis seems completely unaffected by this trigger.
+
+Follow behavior depends on the value of the offset - if the value is positive, the camera will be offset ahead of the player, if it's negative it will be offset behind it. When changing direction the camera will catch up or stay still in order to catch up to the offset for the new direction.
 
 **X** and **Y Only** override the gameplay offset only on the X, respectively Y axis.
 
@@ -132,6 +134,12 @@ Currently the Y axis seems completely unaffected by this trigger.
 <br>
 
 # Camera Mode
+
+Removes borders for certain gamemodes with **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
+
+These settings can also be set when switching gamemode using a portal.
+
+Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
 <br>
 
