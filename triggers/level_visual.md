@@ -137,9 +137,11 @@ Follow behavior depends on the value of the offset - if the value is positive, t
 
 Removes borders for certain gamemodes with **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
 
-These settings can also be set when switching gamemode using a portal.
+These settings can also be set when switching gamemode using a portal, they have the exact same behavior as the trigger version.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
+
+Y axis grid-snapping can be removed with **Disable Gridsnap**.
 
 <br>
 
