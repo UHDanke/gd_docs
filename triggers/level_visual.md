@@ -119,6 +119,9 @@ Changes the offset between the player and the camera's center applied on the X a
 
 Currently the Y axis seems completely unaffected by this trigger.
 
+**X** and **Y Only** override the gameplay offset only on the X, respectively Y axis.
+
+**Dont Zoom** makes the offset not scale with zoom. Without **Dont Zoom**, gameplay offsets are divided by the camera's current zoom value.
 
 # Rotate Camera
 
