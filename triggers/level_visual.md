@@ -91,7 +91,17 @@ Players are visible by default.
 <br>
 
 
-# Zoom
+# Default Camera Properties
+
+Default target is Player 1.
+
+Easing on X axis is 7.5, while on Y axis it is 10. Multiply these values by 4 to obtain the equivalent Advanced Follow easing.
+ 
+The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset. Y axis offset can be calculated by the formula $OffsetY=-1 \cdot HeightY \cdot Padding$ and can be controlled by Camera Mode.
+
+X and Y are the Player's X and Y, not the screen's. If the gameplay is rotated by 90 degrees using a Rotate Gameplay trigger, then the axes on which easing and max offset are applied will also be switched around.
+
+# Zoom Camera
 
 <br>
 
@@ -105,7 +115,10 @@ Players are visible by default.
 
 # Gameplay Offset
 
-<br>
+Changes the offset between the player and the camera's center applied on the X axis.
+
+Currently the Y axis seems completely unaffected by this trigger.
+
 
 # Rotate Camera
 
