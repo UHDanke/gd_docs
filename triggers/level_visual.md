@@ -97,7 +97,7 @@ Default target is Player 1.
 
 Easing on X axis is 7.5, while on Y axis it is 10. Multiply these values by 4 to obtain the equivalent Advanced Follow easing.
  
-The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset. Y axis offset can be calculated by the formula $OffsetY=-1 \cdot HeightY \cdot Padding$ and can be controlled by Camera Mode.
+The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset, while Y axis offset can be modified by Camera Mode.
 
 X and Y are the Player's X and Y, not the screen's. If the gameplay is rotated by 90 degrees using a Rotate Gameplay trigger, then the axes on which easing and max offset are applied will also be switched around.
 
@@ -138,6 +138,8 @@ Follow behavior depends on the value of the offset - if the value is positive, t
 Removes borders for certain gamemodes with **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
 
 These settings can also be set when switching gamemode using a portal, they have the exact same behavior as the trigger version.
+
+Padding determines the offset on the Y axis, this can be calculated by the formula $OffsetY = (15 - HeightY) \cdot Padding$.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
