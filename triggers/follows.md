@@ -324,7 +324,6 @@ The values of Mod X/Y, Speed and Dir can be randomized in a range using the -/+ 
 Contrary to what the option says, random values are picked in the 0/+ range, not -/+.
 The randomization is done individually per target everytime the trigger is activated.
 
-
 ## Target Control ID
 
 If Target Control ID is selected, Target GID references the Control ID of one or more Advanced Follow instances.  
@@ -338,7 +337,7 @@ All IDs, including the reference IDs, can be remapped.
 
 Edit Advanced Follow is instant, the reference values are taken at the time of spawning.  
 
-The target must be under an active Advanced Follow effect in order for Edit Advanced Follow to work. This happens after an Advanced Follow action, not when the Advanced Follow trigger is spawned.
+The target must have been under an active Advanced Follow effect during the previous tick in order for Edit Advanced Follow to work.
 
 If an Advanced Follow has Delay, Edit Advanced Follow will not work if the Advanced Follow has not been active for at least the amount of Delay.
 
