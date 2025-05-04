@@ -95,11 +95,27 @@ Players are visible by default.
 
 Default target is Player 1.
 
-Easing on X axis is 7.5, while on Y axis it is 10. Multiply these values by 4 to obtain the equivalent Advanced Follow easing.
- 
-The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset, while Y axis offset can be modified by Camera Mode.
+The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset.
+
+X axis easing is applied in platformer mode and is equal to 30 for all modes.
 
 X and Y are the Player's X and Y, not the screen's. If the gameplay is rotated by 90 degrees using a Rotate Gameplay trigger, then the axes on which easing and max offset are applied will also be switched around.
+
+## Non-Bordered Camera
+
+Cube and Robot use a non-bordered camera.
+
+Non-bordered camera pans towards the player
+
+## Bordered Camera
+
+Ship, Ball, UFO, Wave, Spider and Swing use a bordered camera.
+
+The Y axis offset can be modified and the border for these gamemodes can be removed using Camera Mode.
+
+Bordered camera snaps to grid on the Y axis, this can also be disabled using Camera Mode.
+
+Borders are parallel to the ground, and will not rotate if Rotate Gameplay is used.
 
 # Zoom Camera
 
@@ -139,15 +155,11 @@ Removes borders for certain gamemodes when **Free Mode** is selected and changes
 
 These settings can also be set when switching gamemode using a portal, they have the exact same behavior as the trigger version.
 
-Borders can only be parallel to the ground, and will not rotate if Rotate Gameplay is used.
-
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
-Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom.
 
-Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom. Cube and Robot pan the camera if they reach the top or bottom screen edge.
-
-Y axis grid-snapping can be removed with **Disable Gridsnap**. Cube and Robot do not snap camera to grid.
+Y axis grid-snapping can be removed with **Disable Gridsnap**.
 
 <br>
 
