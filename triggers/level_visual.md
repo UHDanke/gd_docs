@@ -141,11 +141,13 @@ These settings can also be set when switching gamemode using a portal, they have
 
 Borders can only be parallel to the ground, and will not rotate if Rotate Gameplay is used.
 
-Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom.
+Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
-Y axis grid-snapping can be removed with **Disable Gridsnap**.
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom. Cube and Robot pan the camera if they reach the top or bottom screen edge.
+
+Y axis grid-snapping can be removed with **Disable Gridsnap**. Cube and Robot do not snap camera to grid.
 
 <br>
 
