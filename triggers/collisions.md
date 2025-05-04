@@ -36,7 +36,7 @@ If a dynamic target is inactive, it will not check for collisions.
 
 The grid is split into 100x100 chunks, starting from (0,0).
 
-Collisions near a dynamic target will be checked in a 3x3 grid centered on the chunk that contains the dynamic target, collisions outside this area are ignored.
+Collisions near a dynamic target will be checked in a 3x3 chunk grid centered on the chunk that contains the dynamic target, collisions outside this area are ignored.
 
 If the dynamic target's X position is less than 200, it will additionally check all chunks before X 200 regardless of Y position.
 
