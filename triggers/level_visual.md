@@ -141,7 +141,7 @@ These settings can also be set when switching gamemode using a portal, they have
 
 Borders can only be parallel to the ground, and will not rotate if Rotate Gameplay is used.
 
-Padding determines the Y offset, this can be calculated by the formula $OffsetY = (15 - HeightY) \cdot Padding$, where the Y height includes zoom.
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
