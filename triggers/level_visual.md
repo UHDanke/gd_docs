@@ -95,27 +95,25 @@ Players are visible by default.
 
 Default target is Player 1.
 
-The default gameplay offset on X axis is 25 (75 units) and can be modified by Gameplay Offset.
+Camera movement based on player movement is done relative to the player, not the screen.
 
-X axis easing is applied in platformer mode and is equal to 30 for all modes.
+The default gameplay offset when moving left or right is 25 (75 units) and can be modified by Gameplay Offset.
 
-X and Y are the Player's X and Y, not the screen's. If the gameplay is rotated by 90 degrees using a Rotate Gameplay trigger, then the axes on which easing and max offset are applied will also be switched around.
+Easing is applied when moving left or right in platformer mode, and is equal to 30 for all modes.
 
 ## Non-Bordered Camera
 
 Cube and Robot use a non-bordered camera.
 
-Non-bordered camera pans towards the player
+The camera behavior when moving up or down depends on the offset between camera and player and the player's vertical velocity. The minimum offset for the camera to start following the player is 30 units, the maximum offset increases with player velocity, maxing out at 160 units regardless of zoom or aspect ratio, with an ease rate roughly equal to 90.
 
 ## Bordered Camera
 
 Ship, Ball, UFO, Wave, Spider and Swing use a bordered camera.
 
-The Y axis offset can be modified and the border for these gamemodes can be removed using Camera Mode.
-
-Bordered camera snaps to grid on the Y axis, this can also be disabled using Camera Mode.
-
 Borders are parallel to the ground, and will not rotate if Rotate Gameplay is used.
+
+Camera Mode allows modifying how the camera behaves when the player moves up or down, the default easing is 40 (noted as 10 in Camera Mode) and the gameplay offset for a padding of 0.5 is roughly equal to -75, but this varies with screen aspect ratio.
 
 # Zoom Camera
 
@@ -131,13 +129,14 @@ Borders are parallel to the ground, and will not rotate if Rotate Gameplay is us
 
 # Gameplay Offset
 
-Changes the offset between player 1 and the camera's center applied on the X axis.
+Changes the offset between player 1 and the camera's center applied when the player moves left or right.
 
+X and Y do not refer to the camera's X and Y, but rather to what axis the player is currently using - **Offset X** is applied when the player is on the X axis and **Offset Y** when the player is on the Y axis (with Rotate Gameplay)
 Currently the Y axis seems completely unaffected by this trigger.
 
 Follow behavior depends on the value of the offset - if the value is positive, the camera will be offset ahead of the player, if it's negative it will be offset behind it. When changing direction the camera will catch up or stay still in order to catch up to the offset for the new direction.
 
-**X** and **Y Only** override the gameplay offset only on the X, respectively Y axis.
+Both **Offset X** and **Offset Y** are applied unless either **X** and **Y Only** are used.
 
 **Dont Zoom** makes the offset not scale with zoom. Without **Dont Zoom**, gameplay offsets are divided by the camera's current zoom value.
 
@@ -151,15 +150,15 @@ Follow behavior depends on the value of the offset - if the value is positive, t
 
 # Camera Mode
 
-Removes borders for certain gamemodes when **Free Mode** is selected and changes the Y camera settings if **Edit Camera Settings** is used.
+Removes borders for certain gamemodes when **Free Mode** is selected and changes how the camera behaves when the player moves up or down if **Edit Camera Settings** is used.
 
 These settings can also be set when switching gamemode using a portal, they have the exact same behavior as the trigger version.
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
-Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY) \cdot Padding - 0.5$, where the Y height includes zoom.
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY/Zoom) \cdot Padding - 0.5$.
 
-Y axis grid-snapping can be removed with **Disable Gridsnap**.
+Gameplay borders snapping to the Y axis grid can be disabled with **Disable Gridsnap**.
 
 <br>
 
