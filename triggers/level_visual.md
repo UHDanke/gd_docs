@@ -80,13 +80,7 @@ Players are visible by default.
 
 <br>
 
-
-
 # Options 
-
-<br>
-
-# BPM Guide
 
 <br>
 
@@ -125,11 +119,16 @@ Camera Mode allows modifying how the camera behaves when the player moves up or 
 
 # Offset Camera
 
+Offsets the camera's position by **Offset X** or **Offset Y** overtime. Offset steps are equal to 3 units, or 1/10th of a block.
+
+Both **Offset X** and **Offset Y** are applied unless either **X** and **Y Only** are used.
+
+The transition rate can be controlled using **Duration** and **Easing**.
 <br>
 
 # Gameplay Offset
 
-Changes the offset between player 1 and the camera's center applied when the player moves left or right.
+Changes the offset between player 1 and the camera's center applied when the player moves left or right. Offset steps are equal to 3 units, or 1/10th of a block.
 
 X and Y do not refer to the camera's X and Y, but rather to what axis the player is currently using - **Offset X** is applied when the player is on the X axis and **Offset Y** when the player is on the Y axis (with Rotate Gameplay)
 Currently the Y axis seems completely unaffected by this trigger.
@@ -146,6 +145,32 @@ Both **Offset X** and **Offset Y** are applied unless either **X** and **Y Only*
 
 # Camera Edge
 
+Defines an object given by **Target ID** as one of the camera's **Left**, **Right**, **Up** or **Down** limit edge.
+
+Target ID must contain a single object or an ID parent.
+
+Edge triggers cannot be stopped, unlocking an edge can only be done by setting the group to an unused group, such as 0, or to a group with more than one target.
+
+The **Left** edge has priority over **Right**, and **Down** has priority over **Up**.
+
+Camera Edge follows the movement of a target object.
+
+## Default Edges
+
+Y = 0 is the lowest the camera's bottom edge can go and cannot be overriden. It has priority over all other Y axis edges.
+
+X = 30 is the furthest left the camera can go on the first attempt only. It has priority over all other X axis edges and cannot be overriden. On future attempts this edge is not applied.
+
+The end wall counts as a camera edge, but unlike the others it can be overriden by another **Left** edge, but not by a **Right** edge.
+
+## Player Camera
+
+Locking the edge moves the camera instantly to a valid position, while unlocking makes the camera ease back towards its normal position.
+
+## Static Camera
+
+Camera Edge also affects static cameras. When unlocking the camera, the movement will be instant if the Static Camera doesn't follow the target, otherwise it will use the follow's easing value.
+ 
 <br>
 
 # Camera Mode
