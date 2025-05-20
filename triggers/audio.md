@@ -5,6 +5,12 @@ This documentation is referenced or summarized partialy in this document as a ro
 
 <br>
 
+# Misc
+
+The audio engine runs separately from the main game loop and is not affected by Timewarp triggers.
+
+<br>
+
 # Game Audio Settings
 
 Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
@@ -267,19 +273,13 @@ Custom Song ID can be remapped to any integer ID. Any .mp3 file in your songs fo
 
 ## Prep
 
-Songs need to be loaded into memory first before playing, this can take a variable amount of time depending on your system performance and file sizes which can result in playback being noticeably delayed.
+Songs need to be loaded into memory first before playing, this can take a variable amount of time depending on your system performance and file sizes which can result in playback being noticeably delayed. Prep and Prep Load can be used to load the song early and play it when needed without delay.
 
-Prep and Prep Load can be used to load the song early and play it when needed without delay.
+Prep loads the track into the channel's memory without playing it, only one Prep can be active per channel, new activations replace previous ones. Playing a new track without Prep removes any active Preps for that channel. The track loaded by Prep will not stop or interrupt the channel's current playback.
 
-Prep loads the track into the channel's memory without playing it, only one Prep can be active per channel, new activations replace previous ones. 
+If Prep Load is activated while the Prep track is still loading, the track will play as soon as it is fully loaded. Prep Load does nothing if activated with no Prep track, or after a non-Prep song activation.
 
-Playing a new track without Prep removes any active Preps for that channel. The track loaded by Prep will not stop or interrupt the channel's current playback.
-
-Prep Load replaces the playback with the current Prep track, which also clears current the Prep track.
-
-Prep Load does nothing if activated with no Prep track, or after a non-Prep song activation.
-
-If Prep Load is activated while the Prep track is still loading, the track will play as soon as it is fully loaded.
+Preps are not cleared upon level restart, preps from a previous attempt can be played in the current one if the level was not restarted from a checkpoint or from the end screen, in which case the prep only stops the current track.
 
 # Loop
 
@@ -353,7 +353,10 @@ Plays the selected SFX using the given **Pitch**, **Speed** and **Volume**.
 
 **Unique ID**, **SFX Group** and the SFX's ID can be remapped.
 
-Playback behavior for remapped SFX IDs is similar to remapped Custom Song IDs, except the ID must be ``.ogg``, prefixed by ``s`` and found in the SFX data library, so adding custom SFX isn't as easy.
+Playback behavior for remapped SFX IDs has a few crucial differences compared to remapped Custom Song IDs:
+- The ID must be prefixed by ``s`` and of type ``.ogg``
+- The ID must be found in the SFX data library
+- Remappping SFX can be done once per trigger - the first activation sets what SFX will be used by the trigger until the player quits the level, further activations will play the same SFX regardless of remaps
 
 ## Options
 
@@ -431,6 +434,14 @@ With **Override**, the previous SFX gets replaced by the new one.
 ### SFX Group
 
 Gives the SFX a **SFX Group** that can be referenced by Edit SFX triggers.
+
+### MinInterval
+
+Adds a cooldown to the SFX trigger and, if the SFX is unique, to the **Unique ID**. SFX will not play if activated during the cooldown.
+
+In the case of unique SFX, the **MinInterval** of the current trigger is considered. If **Override** is selected then only the **MinInterval** cooldown is still applied.
+
+**MinInterval** is not affected by SFX **Speed**, but is affected by timewarping.
 
 ### Ignore Volume Test
 
