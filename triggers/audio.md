@@ -279,7 +279,7 @@ Prep loads the track into the channel's memory without playing it, only one Prep
 
 If Prep Load is activated while the Prep track is still loading, the track will play as soon as it is fully loaded. Prep Load does nothing if activated with no Prep track, or after a non-Prep song activation.
 
-Preps are not cleared upon level restart, preps from a previous attempt can be played in the current one if the level was not restarted from a checkpoint or from the end screen, in which case the prep only stops the current track.
+Preps are not cleared upon level restart, preps from a previous attempt can be played in the current one if the level was not restarted from a checkpoint or from the end screen, otherwise the prep only stops the current track without playing a new track.
 
 # Loop
 
