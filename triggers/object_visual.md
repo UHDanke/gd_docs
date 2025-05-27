@@ -26,6 +26,8 @@ Color fading behavior also applies to opacity. Color copy behavior only applies 
 
 Blending changes are instant and cannot be faded.
 
+**Legacy HSV** makes HSV changes apply instantly regardless of duration, colors still fade to the copied color as usual.
+
 ## Spawning
 
 Color can be spawned by other triggers, but cannot be remapped in any way.
@@ -54,19 +56,11 @@ Pulse triggers effects are temporary and are cleared once the Pulse trigger stop
 
 Additionally, color changes done by Pulse triggers cannot be copied by other color channels.
 
+HSV Pulses from Color ID 0 use the current Color Channel or Group as reference.
+
 ### Display Limits
 
-While multiple Pulse triggers can be active per channel, only the latest one will be displayed.
-
-Fade In and Fade Out pulses will always fade to and from the channel's color, even if other pulses are active.
-
-This limit applies to HSV pulses as well, not just color pulses.
-
-A similar limit applies to Pulse triggers that reference Group IDs as well, but this limit is per object not per group.
-
-These two limits are independent, a Pulse trigger that acts on channel and another that acts on a group can stack together as a result.
-
-Color trigger fades and object HSV settings will stack with HSV pulses.
+REDO
 
 ## Options
 
