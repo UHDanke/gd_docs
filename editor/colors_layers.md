@@ -187,7 +187,7 @@ P1 and P2 used to be copy color options prior to 2.2 alongside the separate **Pl
 
 The channel color can be further offset using the HSV sliders. Unlike the object HSV options, you can only use sliders and cannot modify the value directly.
 
-**Legacy HSV** doesn't seem to do anything at the moment and its intended behavior is undocumented.
+**Legacy HSV** cannot be disabled in the default color list.
 
 ### Other Properties
 
