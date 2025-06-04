@@ -16,7 +16,7 @@ Setting the color channel to a new value (not copy color) is instant.
 
 ### Color Changes
 
-For fading color changes, the color will fade between the channel's current color and its new color. 
+For fading color changes, the color will fade between the channel's current color and its new color.
 
 If a color change is overriden by another color change (be it fade or copy), the current color value will be saved as the channel's color. This color value is static even if it resulted from a copy color - as a result, a channel can copy only one other channel at a time. 
 
@@ -26,7 +26,7 @@ Color fading behavior also applies to opacity. Color copy behavior only applies 
 
 Blending changes are instant and cannot be faded.
 
-**Legacy HSV** makes HSV changes apply instantly regardless of duration, colors still fade to the copied color as usual.
+Color and HSV changes fade in linearly, **Legacy HSV** makes HSV changes apply instantly regardless of fade.
 
 ## Spawning
 
