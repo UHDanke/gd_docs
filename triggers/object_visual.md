@@ -54,19 +54,33 @@ Pulse triggers cannot change a channel's opacity or blending properties.
 
 Pulse triggers effects are temporary and are cleared once the Pulse trigger stops being active. 
 
-Additionally, color changes done by Pulse triggers cannot be copied by other color channels.
+Additionally, color changes done by Pulse triggers cannot be copied by other pulses, color triggers or color channels.
 
-HSV Pulses from Color ID 0 use the current Color Channel or Group as reference.
+### Rendering
 
-### Display Limits
+Pulses are applied after color changes, object HSV is applied after all pulses and color changes.
 
-REDO
+Pulses are rendered in the following order, from top to bottom:
+- Group (Color)
+- Group (Color ID + HSV)
+- Group (HSV)
+- Channel (Color ID + HSV)
+- Channel (Color)
+- Channel (HSV)
+
+### Stacking
+
+HSV pulses stack together, while pulses that copy or apply a color only combine while fading.
+
+Channel (Color ID + HSV) will disable any pulse below it while active.
 
 ## Options
 
 ### Fades
 
 Pulses can fade into the target color or HSV, hold that value then fade out over a period of time.
+
+Color changes fade in linearly, while HSV changes fade in using Ease In (2.00). **Static HSV** makes HSV changes fade in linearly as well.
 
 ### Copy Paste
 
