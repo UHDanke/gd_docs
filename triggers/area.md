@@ -261,15 +261,17 @@ Notations:
 
 ### Area Move
 
-#### Unique Settings
+<details>
+<summary>Unique Settings</summary>
 
-**MoveDist**  
-**MoveAngle**  
-**Relative**  
-**RFade**  
-**XY Mode**  
-**MoveX**  
-**MoveY**
+- **MoveDist**  
+- **MoveAngle**  
+- **Relative**  
+- **RFade**  
+- **XY Mode**  
+- **MoveX**  
+- **MoveY**
+</details>
 
 #### Behavior
 
@@ -308,7 +310,12 @@ $HorizontalOffset$ is **Offset** for radial and horizontal proximity.
 
 ### Area Rotate
 
-#### Unique Settings
+<details>
+<summary>Unique Settings</summary>
+
+- **Rotation**
+</details>
+
 
 **Rotation**
 
@@ -320,10 +327,12 @@ The hitbox of solid objects is always in line with the coordinate system. While 
 
 ### Area Scale
 
-#### Unique Settings
+<details>
+<summary>Unique Settings</summary>
 
-**ScaleX**  
-**ScaleY**
+- **ScaleX**  
+- **ScaleY**
+</details>
 
 #### Behavior
 
@@ -346,10 +355,12 @@ Move effects (except Area Move and Area Rotate) are also scaled.
 
 ### Area Fade
 
-#### Unique Settings
+<details>
+<summary>Unique Settings</summary>
 
-**From Opacity**  
-**To Opacity**
+- **From Opacity** 
+- **To Opacity**
+</details>
 
 #### Behavior
 
@@ -361,13 +372,15 @@ Due to a bug, Area Fade effects stop working for one frame after the game is unp
 
 ### Area Tint
 
-#### Unique Settings
+<details>
+<summary>Unique Settings</summary>
 
-**Color Channel**  
-**Tint**  
-**HSV**  
-**Main Only**  
-**Secondary Only**
+- **Color Channel**  
+- **Tint**  
+- **HSV**  
+- **Main Only**  
+- **Secondary Only**
+</details>
 
 #### Behavior
 
@@ -409,49 +422,59 @@ Edits the parameters of an active Area Trigger.
 
 ## Area Options
 
-### Base
+<details>
+<summary>Common</summary>
 
-**Offset**  
-**OffsetY**  
-**ModFront**  
-**ModBack (BK)**  
-**Deadzone**
+- **Duration**  
+- **Easing**  
+- **GroupID**  
+- **EffectID**  
+- **Use EffectID**
+- **Offset**  
+- **OffsetY**  
+- **ModFront**  
+- **ModBack (BK)**  
+- **Deadzone**
+</details>
 
-### Area Move
+<details>
+<summary>Area Move</summary>
 
-**MoveDist**  
-**MoveAngle**  
-**RFade**  
-**XY Mode**  
-**MoveX**  
-**MoveY**
+- **MoveDist**  
+- **MoveAngle**  
+- **RFade**  
+- **XY Mode**  
+- **MoveX**  
+- **MoveY**
+</details>
 
-### Area Rotate
+<details>
+<summary>Area Rotate</summary>
 
-**Rotation**
+- **Rotation**
+</details>
 
-### Area Scale
+<details>
+<summary>Area Scale</summary>
 
-**ScaleX**  
-**ScaleY**
+- **ScaleX**  
+- **ScaleY**
+</details>
 
-### Area Fade
+<details>
+<summary>Area Fade</summary>
 
-**(To) Opacity**
+- **(To) Opacity**
+</details>
 
-### Area Tint
+<details>
+<summary>Area Tint</summary>
 
-**Tint %**  
-**Edit HSV**  
-**Use HSV**
+- **Tint %**  
+- **Edit HSV**  
+- **Use HSV**
+</details>
 
-## Trigger Options
-
-**Duration**  
-**Easing**  
-**GroupID**  
-**EffectID**  
-**Use EffectID**
 
 ## Behavior
 
