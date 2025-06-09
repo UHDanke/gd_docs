@@ -63,7 +63,7 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 ## Remappable Triggers
 
 <details>
-<summary><b>Fully Remappable</b></summary>
+<summary>Fully Remappable</summary>
 
 * Move  
 * Stop  
@@ -119,7 +119,7 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 </details>
 
 <details>
-<summary><b>Not Remappable</b></summary>
+<summary>Not Remappable</summary>
 
 * Color  
 * Keyframes
@@ -130,7 +130,7 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 </details>
 
 <details>
-<summary><b>Partially Remappable</b></summary>
+<summary>Partially Remappable</summary>
 <br>
 
 Group Settings
@@ -209,7 +209,7 @@ It does not seem like you can spawn these triggers as of version 2.207.
 Triggers that spawn groups also pass on their remaps to the activated triggers. In other words, the spawn target inherits the spawn trigger's remaps.
 
 <details>
-<summary><b>Spawn triggers with remap inheritance</b></summary>
+<summary>Spawn triggers with remap inheritance</summary>
 
 * Instant Count  
 * Item Compare  
@@ -309,7 +309,7 @@ IDs with extended limits can be assigned beyond the usual 10000 ID limit.
 ID values outside 0-9999 cannot be assigned inside (most) triggers, but can be referenced via remapping.
 
 <details>
-<summary><b>IDs with extended limit</b></summary>
+<summary>IDs with extended limit</summary>
 
 * Control IDs  
 * Area Effect IDs  
@@ -368,7 +368,7 @@ If Priority is the same, spawn order is used.
 While some spawns activate instantly, most of them are scheduled and activate in a specific order throughout the game tick.
 
 <details>
-<summary><b>Instant spawns</b></summary>
+<summary>Instant spawns</summary>
 
 * Spawn  
 * Count  
@@ -382,7 +382,7 @@ While some spawns activate instantly, most of them are scheduled and activate in
 </details>
 
 <details>
-<summary><b>Scheduled spawns (in order)</b></summary>
+<summary>Scheduled spawns (in order)</summary>
 
 1. Spawn (delay)  
 2. Toggle Orb/Block  
@@ -438,7 +438,7 @@ Stops, pauses or resumes a set of triggers given by Group or Control ID.
 
 ## Valid Targets
 <details>
-<summary><b>Triggers affected by Stop</b></summary>
+<summary>Triggers affected by Stop</summary>
 
 - Color
 - Move (if not silent)
@@ -469,7 +469,7 @@ Stops, pauses or resumes a set of triggers given by Group or Control ID.
 ### Exceptions
 
 <details>
-<summary><b>Triggers not affected by Stop</b></summary>
+<summary>Triggers not affected by Stop</summary>
 
 - Shake
 - Edit Area Triggers
@@ -540,7 +540,7 @@ While not an active trigger, the item or timer's persistent flag can be reset us
 
 The effect of a Stop, Pause or Resume trigger on other triggers varies, but can be split into three main categories:
 <details>
-<summary><b>Effect is paused or stops applying</b></summary>
+<summary>Effect is paused or stops applying</summary>
 
 - Color
 - Move
@@ -557,7 +557,7 @@ The effect of a Stop, Pause or Resume trigger on other triggers varies, but can 
 </details>
 
 <details>
-<summary><b>Effect gets cleared or is undone</b></summary>
+<summary>Effect gets cleared or is undone</summary>
 
 - Pulse
 - Area Triggers
@@ -567,7 +567,7 @@ The effect of a Stop, Pause or Resume trigger on other triggers varies, but can 
 </details>
 
 <details>
-<summary><b>Activation is prevented</b></summary>
+<summary>Activation is prevented</summary>
 
 - Spawn
 - Touch
