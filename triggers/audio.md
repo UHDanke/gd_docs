@@ -5,12 +5,6 @@ This documentation is referenced or summarized partialy in this document as a ro
 
 <br>
 
-# Misc
-
-The audio engine runs separately from the main game loop and is not affected by Timewarp triggers.
-
-<br>
-
 # Game Audio Settings
 
 Specific audio settings are found in the Options section of the Settings menu, under the Audio Category.
@@ -59,6 +53,8 @@ The exact pitch multiplier can be calculated using the formula:
 $Multiplier = \sqrt[12]{2^{Pitch}}$
 
 Speed uses the same formula and value scaling as Pitch in order to make pitch corrections easier. Pitch of speeded audio can be corrected by giving Pitch the opposite value of Speed.
+
+The audio engine runs separately from the main game loop and is not affected by Timewarp triggers.
 
 <br>
 
@@ -143,7 +139,9 @@ In the Normal category you can find all of the official, main-level songs for us
 
 It is not possible to use main level songs inside Song triggers (they can only be used as primary songs), but non-cut versions of some of them can be found on Newgrounds.
 
-A list of all current songs (v2.207) in order:
+<details>
+<summary>[2.207] All primary songs </summary>
+
 1. Stereo Madness
 2. Back On Track
 3. Polargeist
@@ -167,6 +165,7 @@ A list of all current songs (v2.207) in order:
 21. Fingerdash
 22. Dash
 23. Explorers (Hidden)
+</details>
 
 ### Custom Songs
 Custom songs can be chosen from two main sources - Newgrounds and the Audio Library.
@@ -366,7 +365,11 @@ Applies a reverb effect to the played SFX. Reverbs are used primarily to simulat
 
 FMOD documentation on reverbs can be found [here](https://www.fmod.com/docs/2.03/api/effects-reference.html#sfx-reverb).
 
-Reverb parameters cannot be modified individually in-game, instead you are allowed to pick between the 21 default presets provided by FMOD:
+Reverb parameters cannot be modified individually in-game, instead you are allowed to pick between the 21 default presets provided by FMOD.
+
+<details>
+<summary>Reverb presets</summary>
+
 - Off
 - Generic
 - Padded Cell
@@ -389,6 +392,8 @@ Reverb parameters cannot be modified individually in-game, instead you are allow
 - Parking Lot
 - Sewer Pipe
 - Under Water
+</details>
+
 
 Preset parameters can be found [here](https://www.fmod.com/docs/2.03/api/core-api-system.html#fmod_reverb_presets).
 
