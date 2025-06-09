@@ -195,7 +195,7 @@ Editor only object which displays a reference outline for the camera's edges.
 
 The yellow line shows the Player's X position relative to the camera center.
 
-The green outline shows the camera's minimum guaranteed coverage.
+The green outline shows the camera's minimum guaranteed coverage, which at zoom 1.000 is 480 by 320 units (or 3:2) .
 
 The orange outline shows the camera's coverage for the current resolution.
 
