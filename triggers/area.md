@@ -198,8 +198,10 @@ $EffectStrength_{\ |⟹}=\frac{Distance-Length\cdot Deadzone}{Length\cdot(1-Dead
 $EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
 
 The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.  
-  
-Notations:
+
+<details>
+<summary>Notations</summary>
+
 * L = Length  
 * Dz = Deadzone  
 * Max - Distance value at max strength  
@@ -207,6 +209,7 @@ Notations:
 * Center - Strength value at distance 0  
 * Sign - The sign of distance (positive or negative) where the strength is greater than min  
 * Direction -  The direction (relative to the center) along which the strength value decreases  
+</details>
 
 #### Center ⟹ Edge
 
