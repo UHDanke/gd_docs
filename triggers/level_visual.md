@@ -161,7 +161,8 @@ Y = 0 is the lowest the camera's bottom edge can go and cannot be overriden. It 
 
 X = 30 is the furthest left the camera can go on the first attempt only. It has priority over all other X axis edges and cannot be overriden. On future attempts this edge is not applied.
 
-The end wall counts as a camera edge, but unlike the others it can be overriden by another **Left** edge, but not by a **Right** edge.
+The ceiling counts as a camera edge and can be overriden by a **Down** edge, but not by a **Top** edge. The ceiling is set 240 units above the topmost object.
+The end wall counts as a camera edge and can be overriden by another **Left** edge, but not by a **Right** edge. The end wall is set 355 units right of the rightmost object in classic mode, platformer has no end wall.
 
 ## Player Camera
 
