@@ -62,7 +62,8 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 
 ## Remappable Triggers
 
-### Fully Remappable
+<details>
+<summary><b>Fully Remappable</b></summary>
 
 * Move  
 * Stop  
@@ -115,8 +116,10 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 * Gray Scale  
 * Enter Triggers (except Enter Tint)
 * Enter Stop
+</details>
 
-### Not Remappable
+<details>
+<summary><b>Not Remappable</b></summary>
 
 * Color  
 * Keyframes
@@ -124,32 +127,33 @@ If a Spawn trigger with remaps is activated by another remapped trigger, it adds
 * Gradient  
 * Checkpoint  
 * Legacy Enter triggers (not spawnable)
+</details>
 
-### Partially Remappable
+<details>
+<summary><b>Partially Remappable</b></summary>
+<br>
 
-#### Group Settings
+Group Settings
+- [x]	Control ID  
+- [ ]	Group ID, Parent ID, ORD, CH, Material ID
 
-**Yes**	Control ID  
-**No**	Group ID, Parent ID, ORD, CH, Material ID
+Pulse
+- [x]	Channel ID, Group ID  
+- [ ]	Color ID
 
-#### Pulse
+Spawn
+- [x]	Group ID, New Group ID  
+- [ ]	Original Group ID
 
-**Yes**	Channel ID, Group ID  
-**No**	Color ID
+Area Triggers
+- [x]	Target Group ID, Center Group ID  
+- [ ]	Effect ID, Color Channel (Area Tint)
 
-#### Spawn
+Enter Tint Effect
+- [x]	Enter Channel, Effect ID
+- [ ]	Color Channel
+</details>
 
-**Yes**	Group ID, New Group ID  
-**No**	Original Group ID
-
-#### Area Triggers
-
-**Yes**	Target Group ID, Center Group ID  
-**No**	Effect ID, Color Channel (Area Tint)
-
-#### Enter Tint Effect
-**Yes**	Enter Channel, Effect ID
-**No**	Color Channel
 
 ### Notes
 
@@ -204,7 +208,8 @@ It does not seem like you can spawn these triggers as of version 2.207.
 
 Triggers that spawn groups also pass on their remaps to the activated triggers. In other words, the spawn target inherits the spawn trigger's remaps.
 
-The following triggers have some form of remap inheritance:
+<details>
+<summary><b>Spawn triggers with remap inheritance</b></summary>
 
 * Instant Count  
 * Item Compare  
@@ -220,6 +225,7 @@ The following triggers have some form of remap inheritance:
 * Count
 * Spawn
 * Time
+</details>
 
 ### Notes & Exceptions
 
@@ -302,7 +308,8 @@ Same as Group IDs.
 IDs with extended limits can be assigned beyond the usual 10000 ID limit.   
 ID values outside 0-9999 cannot be assigned inside (most) triggers, but can be referenced via remapping.
 
-The following IDs are:
+<details>
+<summary><b>IDs with extended limit</b></summary>
 
 * Control IDs  
 * Area Effect IDs  
@@ -312,6 +319,7 @@ The following IDs are:
 * Enter Channels (between −/+ 32767\)  
 * SFX IDs  
 * SFX Groups
+</details>
 
 <br>
 
@@ -357,7 +365,10 @@ If Priority is the same, spawn order is used.
 
 ## Spawn Schedule
 
-The following spawns are instant:
+While some spawns activate instantly, most of them are scheduled and activate in a specific order throughout the game tick.
+
+<details>
+<summary><b>Instant spawns</b></summary>
 
 * Spawn  
 * Count  
@@ -368,8 +379,10 @@ The following spawns are instant:
 * Advanced Random  
 * Sequence  
 * End
+</details>
 
-The remaining ones are scheduled, and will spawn in this order:
+<details>
+<summary><b>Scheduled spawns (in order)</b></summary>
 
 1. Spawn (delay)  
 2. Toggle Orb/Block  
@@ -384,6 +397,8 @@ The remaining ones are scheduled, and will spawn in this order:
 11. On Death  
 12. Instant (from timeline)   
 13. Collision (on exit)
+</details>
+
 
 <br>
 
@@ -422,8 +437,9 @@ Checkpoint and Instant Collision reset remaps.
 Stops, pauses or resumes a set of triggers given by Group or Control ID.
 
 ## Valid Targets
+<details>
+<summary><b>Triggers affected by Stop</b></summary>
 
-Most triggers that have a temporary or permanent effect can be stopped, the following triggers are affected:
 - Color
 - Move (if not silent)
 - Pulse
@@ -448,10 +464,13 @@ Most triggers that have a temporary or permanent effect can be stopped, the foll
 - Collision
 - On Death
 - Gradient
+</details>
 
 ### Exceptions
 
-The following triggers have an active effect which cannot be stopped with the Stop trigger:
+<details>
+<summary><b>Triggers not affected by Stop</b></summary>
+
 - Shake
 - Edit Area Triggers
 - Spawn Particle
@@ -465,6 +484,7 @@ The following triggers have an active effect which cannot be stopped with the St
 - Link Visible
 - Shader Triggers
 - Enter Triggers
+</details>
 
 ### Alternative Stops
 
@@ -519,34 +539,45 @@ While not an active trigger, the item or timer's persistent flag can be reset us
 ## Stop Effect
 
 The effect of a Stop, Pause or Resume trigger on other triggers varies, but can be split into three main categories:
-- Effect is paused or stops applying:
- - Color
- - Move
- - Alpha
- - Rotate
- - Scale
- - Follow
- - Keyframe Animation
- - Follow Player Y
- - Advanced Follow
- - Zoom Camera
- - Offset Camera
- - Rotate Camera
-- Effect gets cleared or is undone:
- - Pulse
- - Area Triggers
- - Time (settings reset)
- - SFX
- - Gradient
-- Activation is prevented:
- - Spawn
- - Touch
- - Count
- - Time
- - Time Event
- - Event
- - Collision
- - On Death
+<details>
+<summary><b>Effect is paused or stops applying</b></summary>
+
+- Color
+- Move
+- Alpha
+- Rotate
+- Scale
+- Follow
+- Keyframe Animation
+- Follow Player Y
+- Advanced Follow
+- Zoom Camera
+- Offset Camera
+- Rotate Camera
+</details>
+
+<details>
+<summary><b>Effect gets cleared or is undone</b></summary>
+
+- Pulse
+- Area Triggers
+- Time (settings reset)
+- SFX
+- Gradient
+</details>
+
+<details>
+<summary><b>Activation is prevented</b></summary>
+
+- Spawn
+- Touch
+- Count
+- Time
+- Time Event
+- Event
+- Collision
+- On Death
+</details>
 
 ### Notes
 
