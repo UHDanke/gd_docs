@@ -97,9 +97,11 @@ Easing is applied when moving left or right in platformer mode, and is equal to 
 
 ## Non-Bordered Camera
 
-Cube and Robot use a non-bordered camera.
+Cube and Robot use a non-bordered camera. Camera behavior depends on mode.
 
-The camera behavior when moving up or down depends on the offset between camera and player and the player's vertical velocity. The minimum offset for the camera to start following the player is 30 units, the maximum offset increases with player velocity, maxing out at 160 units regardless of zoom or aspect ratio, with an ease rate roughly equal to 90.
+In classic mode the camera has a padding of 40 units and an easing of 40.
+
+In platformer mode the camera has a minimum padding of 28 units, which increases based on the player's velocity up to 159 units.
 
 ## Bordered Camera
 
@@ -107,7 +109,7 @@ Ship, Ball, UFO, Wave, Spider and Swing use a bordered camera.
 
 Borders are parallel to the ground, and will not rotate if Rotate Gameplay is used.
 
-Camera Mode allows modifying how the camera behaves when the player moves up or down, the default easing is 40 (noted as 10 in Camera Mode) and the gameplay offset for a padding of 0.5 is roughly equal to -75, but this varies with screen aspect ratio.
+Camera Mode allows modifying how the camera behaves when the player moves up or down, the default easing is 40 (noted as 10 in Camera Mode) and the max camera-player offset for a padding of 0.5 is equal to -66.
 
 # Zoom Camera
 
@@ -182,7 +184,7 @@ These settings can also be set when switching gamemode using a portal, they have
 
 Gamemodes without borders like Cube and Robot are not affected by Camera Mode, not even by the camera settings.
 
-Padding determines the Y offset, this can be calculated by the formula $OffsetY = (10.5 - HeightY/Zoom) \cdot Padding - 0.5$.
+Padding determines the Y offset, this can be calculated by the formula $OffsetY = 130-128 \cdot Padding$
 
 Gameplay borders snapping to the Y axis grid can be disabled with **Disable Gridsnap**.
 
