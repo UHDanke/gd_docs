@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw
 from cv2 import inpaint, INPAINT_TELEA
 
 
+
 def _inpaint_rgba(pil_img: Image.Image, mask: Image.Image, radius=1, method=INPAINT_TELEA) -> Image.Image:
     """
     Inpaint both RGB and Alpha channels of a PIL RGBA image using OpenCV.
