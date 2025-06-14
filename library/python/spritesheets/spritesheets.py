@@ -4,37 +4,15 @@ import glob
 import json
 import plistlib
 import numpy as np
-from PIL import Image, ImageDraw
-from cv2 import inpaint, INPAINT_TELEA
+from PIL import Image
+import cv2
 
 
 
-def _inpaint_rgba(pil_img: Image.Image, mask: Image.Image, radius=1, method=INPAINT_TELEA) -> Image.Image:
-    """
-    Inpaint both RGB and Alpha channels of a PIL RGBA image using OpenCV.
-    """
-    assert pil_img.mode == "RGBA", "Image must be RGBA"
-    
+def _repl_edge(pil_img: Image.Image, pad=1) -> Image.Image:
     img_np = np.array(pil_img)
-    mask_np = np.array(mask)
-
-    # Split channels
-    rgb = img_np[:, :, :3]
-    alpha = img_np[:, :, 3]
-
-    # Ensure mask is single-channel uint8 (0/255)
-    if mask_np.ndim == 3:
-        mask_np = mask_np[:, :, 0]
-    mask_np = np.where(mask_np > 0, 255, 0).astype(np.uint8)
-
-    # Inpaint color and alpha
-    inpainted_rgb = inpaint(rgb, mask_np, radius, method)
-    inpainted_alpha = inpaint(alpha, mask_np, radius, method)
-
-    # Combine into RGBA
-    result = np.dstack((inpainted_rgb, inpainted_alpha))
-    return Image.fromarray(result, mode="RGBA")
-
+    img_np = cv2.copyMakeBorder(img_np, pad, pad, pad, pad, cv2.BORDER_REPLICATE)
+    return Image.fromarray(img_np, mode='RGBA')
 
 
 class Sprite:
@@ -102,18 +80,13 @@ class Sprite:
                 raise ValueError()
 
         if not is_padded and padding > 0:
-            blank = Image.new(image.mode, [x+2*padding for x in size_trim], None)
-            new_sprite = blank.copy()
-            new_sprite.paste(sprite,(padding, padding))
-            
             if generate_padding:
-                # create inplace mask
-                mask = blank.copy()
-                draw = ImageDraw.Draw(mask)
-                w,h = mask.size
-                draw.rectangle([(0, 0), (w-1,h-1)], outline="white", width=padding)
-                new_sprite = _inpaint_rgba(new_sprite, mask)
-
+                new_sprite = _repl_edge(sprite, pad=padding)
+            else:
+                blank = Image.new(image.mode, [x+2*padding for x in size_trim], None)
+                new_sprite = blank.copy()
+                new_sprite.paste(sprite,(padding, padding))
+                
             sprite = new_sprite
 
                 
@@ -303,6 +276,15 @@ class SpriteResources:
 
             sheet.unpack_all(output_path, include_metadata, include_padding)
     
+    def pack_atlas_all(self, input_dir, output_dir, partial=True, is_padded=False, generate_padding=True, padding=1):
+    
+        for sheet in self.sheets.values():
+            rel = os.path.relpath(sheet.plist_path, sheet.base_dir)
+            subdir, _ = os.path.splitext(rel)
+            img_path = os.path.join(input_dir, subdir)
+            out_dir = os.path.join(output_dir, os.path.dirname(rel))
+            sheet.pack_atlas(img_path, out_dir, partial, is_padded, generate_padding, padding)
+            
     
     def create_subdirs(self, output_dir):
         
@@ -311,4 +293,3 @@ class SpriteResources:
             output_path = os.path.join(output_dir, subdir)
             
             os.makedirs(output_path, exist_ok=True)
-        
