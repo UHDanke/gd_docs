@@ -9,13 +9,6 @@ import cv2
 
 
 
-def _repl_edge(pil_img: Image.Image, pad=1) -> Image.Image:
-    img_np = np.array(pil_img)
-    img_np = cv2.copyMakeBorder(img_np, pad, pad, pad, pad, cv2.BORDER_REPLICATE)
-    return Image.fromarray(img_np, mode='RGBA')
-
-
-
 class Sprite:
     """
         Simple container for cocos2d-x plist frames.
@@ -82,7 +75,9 @@ class Sprite:
 
         if not is_padded and padding > 0:
             if generate_padding:
-                new_sprite = _repl_edge(sprite, pad=padding)
+                img_np = np.array(sprite)
+                img_np = cv2.copyMakeBorder(img_np, padding, padding, padding, padding, cv2.BORDER_REPLICATE)
+                new_sprite = Image.fromarray(img_np, mode=sprite.mode)
             else:
                 blank = Image.new(image.mode, [x+2*padding for x in size_trim], None)
                 new_sprite = blank.copy()
@@ -90,7 +85,6 @@ class Sprite:
                 
             sprite = new_sprite
 
-                
         if self.is_rotated:
             sprite = sprite.transpose(image.ROTATE_90)
             
