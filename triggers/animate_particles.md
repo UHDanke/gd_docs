@@ -33,11 +33,12 @@ Invalid IDs play the default animation (ID 0).
 
 
 <details>
-<summary>Big Monster (918)</summary>
+<summary>Big (918)</summary>
 
 - 0: bite
 - 1: attack01
 - 2: attack01_end
+- 3: idle01
 </details>
 
 <details>
@@ -128,6 +129,7 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 
 ## [2.207] Animated Objects
 
+### Properties
 <details>
 <summary>All objects affected by Edit Animation</summary>
 
@@ -195,6 +197,175 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 - 4211, 4300
 </details>
 
+### Frame Delay
+
+Objects animated using scale, rotate, move or fade effects animate smoothly every frame. Monster animation transitions are also done smoothly.
+
+Most other animated objects are made up of multiple sequential frames with a set frame delay between each frame.
+
+#### Monsters
+
+<details>
+<summary>Big (918)</summary>
+
+- 0: 0.0250
+- 1: 0.0250
+- 2: 0.0250
+- 3: 0.0500
+</details>
+
+<details>
+<summary>Big Spiked (1327)</summary>
+
+- 0: 0.0600
+</details>
+
+<details>
+<summary>Small Spiked (1328)</summary>
+
+- 0: 0.0600
+</details>
+
+<details>
+<summary>Bat (1584)</summary>
+
+- 0: 0.0600
+- 1: 0.0600
+- 2: 0.0600
+- 3: 0.0600
+- 4: 0.0600
+- 5: 0.0600
+- 6: 0.0600
+- 7: 0.1000
+- 8: 0.0600
+- 9: 0.0500
+</details>
+
+<details>
+<summary>Spikeball (2012)</summary>
+
+- 0: 0.0600
+- 1: 0.0600
+- 2: 0.0450
+- 3: 0.0600
+- 4: 0.0600
+- 5: 0.0400
+- 6: 0.0400
+- 7: 0.0600
+- 8: 0.0500
+</details>
+
+#### Animated
+
+<details>
+<summary>Delay 0.0250</summary>
+
+- 2892
+</details>
+
+<details>
+<summary>Delay 0.0333</summary>
+
+- 2893
+</details>
+
+<details>
+<summary>Delay 0.0400</summary>
+
+- 2047
+</details>
+
+<details>
+<summary>Delay 0.0450</summary>
+
+- 1053
+- 1592
+</details>
+
+<details>
+<summary>Delay 0.0500</summary>
+
+- 1050, 1051, 1052,
+- 1516, 1518
+- 1618
+- 1860
+- 2020, 2021, 2022, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055
+- 2869, 2870, 2871, 2872, 2873, 2874, 2875, 2876, 2880, 2881, 2882, 2883, 2884, 2885, 2886, 2890, 2891, 2894
+- 3001, 3002
+</details>
+
+<details>
+<summary>Delay 0.0600</summary>
+
+- 1054
+- 1519
+- 1697, 1698, 1699
+- 1855, 1857
+- 2023
+- 2864, 2865, 2867, 2868, 2877, 2878, 2879, 2887, 2888, 2889
+</details>
+
+<details>
+<summary>Delay 0.0700</summary>
+
+- 1849, 1851, 1852, 1854, 1856
+- 1936, 1937, 1938, 1939
+</details>
+
+<details>
+<summary>Delay 0.0800</summary>
+
+- 920, 921, 923, 924,
+- 1583
+- 1853, 1858
+- 2034
+- 4300
+</details>
+
+<details>
+<summary>Delay 0.1000</summary>
+
+- 1850
+- 2223, 2246
+- 2605, 2629, 2630
+</details>
+
+<details>
+<summary>Delay 0.1150</summary>
+
+- 1329
+</details>
+
+<details>
+<summary>Delay 0.1200</summary>
+- 1591
+- 1614
+- 3303, 3304
+- 3482, 3483, 3484, 3492, 3493
+- 4211
+</details>
+
+<details>
+<summary>Delay 0.1300</summary>
+
+- 1591
+- 1593
+</details>
+
+<details>
+<summary>Delay 0.1600</summary>
+
+- 2694
+- 3119
+- 3120
+- 3121
+- 3219
+</details>
+
+<br>
+
 # Spawn Particle
+
+<br>
 
 # Particle Object
