@@ -15,6 +15,7 @@ def _repl_edge(pil_img: Image.Image, pad=1) -> Image.Image:
     return Image.fromarray(img_np, mode='RGBA')
 
 
+
 class Sprite:
     """
         Simple container for cocos2d-x plist frames.
@@ -56,12 +57,12 @@ class Sprite:
         return new_sprite
     
     
-    def pack(self, atlas, image, is_padded=False, generate_padding=True, padding=1):
-        img = self.from_image(image, is_padded, generate_padding, padding)
+    def repack(self, atlas, image, is_padded=False, generate_padding=True, padding=1):
+        img = self.format_img(image, is_padded, generate_padding, padding)
         atlas.paste(img, (self.x-padding, self.y-padding))
     
                     
-    def from_image(self, image, is_padded=False, generate_padding=True, padding=1):
+    def format_img(self, image, is_padded=False, generate_padding=True, padding=1):
         size_orig = (self.origW, self.origH)
         size_trim = (self.trimW, self.trimH)
 
@@ -156,7 +157,7 @@ class SpriteSheet:
             self.sprites[name] = Sprite(origin, size, offset, size_trim, size_orig, is_rotated)
 
 
-    def unpack_all(self, output_dir, include_metadata=False, include_padding=False):
+    def unpack(self, output_dir, include_metadata=False, include_padding=False):
         
         print(f'Unpacking spritesheet: {self.image_path}')
         # create sub-folder
@@ -175,7 +176,7 @@ class SpriteSheet:
         print('\n')
      
             
-    def pack_atlas(self, input_dir, output_dir, partial=True, is_padded=False, generate_padding=True, padding=1):
+    def repack(self, input_dir, output_dir, partial=True, is_padded=False, generate_padding=True, padding=1):
         
         image_paths = glob.glob(os.path.join(input_dir, "*.png"))
         image_names = [os.path.basename(img) for img in image_paths]
@@ -195,7 +196,7 @@ class SpriteSheet:
             if sprite is None: continue
             
             img = Image.open(os.path.join(input_dir, path))
-            sprite.pack(base, img, is_padded, generate_padding, padding)
+            sprite.repack(base, img, is_padded, generate_padding, padding)
         
         os.makedirs(output_dir, exist_ok=True)
         base.save(os.path.join(output_dir, os.path.basename(self.image_path)))
@@ -213,7 +214,7 @@ class SpriteResources:
     
     def _init(self, path):
         try:
-            self.add(path)
+            self.add_file(path)
         except:
             pass
         try:
@@ -228,7 +229,7 @@ class SpriteResources:
             self.base_dir = base_dir
             
             
-    def add(self, plist_path):
+    def add_file(self, plist_path):
         if not (os.path.exists(plist_path) and plist_path.endswith(".plist")):
             raise ValueError()
         
@@ -264,7 +265,7 @@ class SpriteResources:
                 print(f'File skipped due to error while loading: {e}')
 
        
-    def unpack_all(self, output_dir, use_subdirs=True, include_metadata=False, include_padding=False):
+    def unpack(self, output_dir, use_subdirs=True, include_metadata=False, include_padding=False):
         
         for sheet in self.sheets.values():
             subdir, _ = os.path.splitext(os.path.relpath(sheet.plist_path, sheet.base_dir))
@@ -274,16 +275,17 @@ class SpriteResources:
             else:
                 output_path = output_dir
 
-            sheet.unpack_all(output_path, include_metadata, include_padding)
+            sheet.unpack(output_path, include_metadata, include_padding)
+
     
-    def pack_atlas_all(self, input_dir, output_dir, partial=True, is_padded=False, generate_padding=True, padding=1):
+    def repack(self, input_dir, output_dir, partial=True, is_padded=False, generate_padding=True, padding=1):
     
         for sheet in self.sheets.values():
             rel = os.path.relpath(sheet.plist_path, sheet.base_dir)
             subdir, _ = os.path.splitext(rel)
             img_path = os.path.join(input_dir, subdir)
             out_dir = os.path.join(output_dir, os.path.dirname(rel))
-            sheet.pack_atlas(img_path, out_dir, partial, is_padded, generate_padding, padding)
+            sheet.repack(img_path, out_dir, partial, is_padded, generate_padding, padding)
             
     
     def create_subdirs(self, output_dir):
