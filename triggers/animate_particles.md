@@ -517,7 +517,7 @@ How the particle object's scaling and rotation affects the spawned particles is 
 - With **Grouped**, the particle object can be scaled, warped and rotated as any other object.
 - With **Free** & **Relative**, the game adds a special property to the particle object when you save the level which makes particles ignore the object's scale, warp and rotate; ignore rotations done by rotate triggers; if scaled by a trigger, scale the particles by either X or Y scale, whichever is smaller (but not equal to 1).
 
-This may appear inconsistent when testing in the editor, because the property is added or removed only when saving and entering the level.
+This may appear inconsistent when testing in the editor, because the property is added or removed only when saving and re-entering the level.
 
 #### Fade, Friction & Respawn
 
@@ -530,7 +530,10 @@ There are 3 unique friction values that each affect one of the particle's transf
 - **FrictionS** (scale)
 - **FrictionR** (rotation)
 
-All three friction settings can be approximated by an exponential decay function optimized for different frame rates: $Gradient = Gradient \cdot e^{-Friction \cdot FrameDelay}$. For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-StartScale)/Lifetime$ and for **FrictionR** gradient is $(EndSpin - StartSpin) / Lifetime. 
+All three friction settings can be approximated by an exponential decay function optimized for different frame rates:    
+$Gradient = Gradient \cdot e^{-Friction \cdot FrameDelay}$. 
+
+For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-StartScale)/Lifetime$ and for **FrictionR** gradient is $(EndSpin - StartSpin) / Lifetime. 
 
 **FrictionP** is only applied to gravity mode, **FrictionR** is only applied to spin and not **Dynamic Rotation**.
 
