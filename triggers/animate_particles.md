@@ -152,7 +152,7 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 </details>
 
 <details>
-<summary>Not Random or Delayed</summary>
+<summary>Not random or delayed</summary>
   
 - 1050, 1051, 1052, 1053, 1054, 1329, 1592, 1614
 - 2605, 2694
@@ -161,7 +161,7 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 </details>
 
 <details>
-<summary>Random Start</summary>
+<summary>Random start</summary>
   
 - 920, 921, 923, 924, 
 - 1516, 1518, 1519, 1583
@@ -179,7 +179,7 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 </details>
 
 <details>
-<summary>Delayed Loop</summary>
+<summary>Delayed loop</summary>
 
 - 921
 - 1519
@@ -390,33 +390,36 @@ The editor is split into 4 main tabs (Motion, Visual, Extra & Texture) with an i
 
 Most particle variables can be randomized in a range using a **+-** variable found next to the base one.
 
-Settings with random values
-- Lifetime +-
-- Angle +-
-- Speed +-
-- AccelRad +-
-- AccelTan +-
-- StartRad +-
-- EndRad +-
-- RotSec +-
-- StartSize +-
-- EndSize +-
-- StartSpin +-
-- EndSpin +-
-- Start_R +-
-- Start_G +-
-- Start_B +-
-- Start_A +-
-- End_R +-
-- End_G +-
-- End_B +-
-- End_A +-
-- Fade In +-
-- Fade Out +-
-- FrictionP +-
-- FrictionS +-
-- FrictionR +-
-- Respawn +-
+<details>
+<summary>Randomized settings</summary>
+
+- **Lifetime +-**
+- **Angle +-**
+- **Speed +-**
+- **AccelRad +-**
+- **AccelTan +-**
+- **StartRad +-**
+- **EndRad +-**
+- **RotSec +-**
+- **StartSize +-**
+- **EndSize +-**
+- **StartSpin +-**
+- **EndSpin +-**
+- **Start_R +-**
+- **Start_G +-**
+- **Start_B +-**
+- **Start_A +- **
+- **End_R +-**
+- **End_G +-**
+- **End_B +-**
+- **End_A +-**
+- **Fade In +-**
+- **Fade Out +-**
+- **FrictionP +-**
+- **FrictionS +-**
+- **FrictionR +-**
+- **Respawn +-**
+</details>
 
 ### Copy Paste
 
