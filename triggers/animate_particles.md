@@ -386,6 +386,8 @@ Particle properties can be edited from the Particle Editor accessible from Edit 
 
 The editor is split into 4 main tabs (Motion, Visual, Extra & Texture) with an interactible preview on the bottom left side of the menu.
 
+The Texture tab selects the particle's texture.
+
 ### Randomization
 
 Most particle variables can be randomized in a range using a **+-** variable found next to the base one.
@@ -540,3 +542,31 @@ For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-St
 **Respawn** is how long it takes for a particle object to respawn an emitter with a finite **Duration** after the current one expires.
 
 #### Misc Settings
+
+**Additive** makes particles blend.
+
+**Start Size = End** increases the particle's end size by its start size. This is particularly useful if **StartSize** is randomized and you want the particle to change or keep its end size relative to it.
+
+**Start Spin = End** does the same thing for spin (rotation) and **Start Rad = End** does the same for radius.
+
+**Start Rot is Dir** makes the particle's rotation match its start **Angle**.
+
+**Use Obj Color** makes the particle use the particle object's colors instead of the emitter's RGB values. These colors are set at the creation of each particle and do not update if the parent object changes color. Start RGB + alpha & End RGB (but not end alpha) are ignored, but the random color options are not ignored.
+
+**Uniform Obj Color** makes the particle copy the particle object's colors dynamically. All particle color options besides alpha are ignored.
+
+By default, if neither **Use Obj Color** or **Uniform Obj Color** is selected then particles are unaffected by the object's visual properties, except for the base color channel's opacity and the Alpha & Area Fade triggers. The detail color channel's opacity is not used by particles.
+
+**Dynamic Rotation** makes the particle rotate dynamically in the direction of movement. 
+
+**Animate On Trigger** allows activating the particle object with an Animate trigger. Animated particle objects start inactive until activated by Animate Trigger, any remaining particles still connected to the target object are also cleared.
+
+If **Duration** is infinite, the particles will continue to spawn indefinitely as long as they are active, otherwise they will spawn once without looping.
+
+Inactive particle objects are ignored if they have the **Only If Active** property.
+
+**Order Sensitive** makes newer particles from the same emitter layer above older ones, without this option the layering / render order is randomized.
+
+**StartRGB Var Sync** and **EndRGB Var Sync** replace Start and End RGB randomization with lightness randomization (brightness and saturation only are randomized) - the R channel **Start_R +-** and **End_R +-** options are used to randomize lightness, B and G random options are ignored.
+
+**Quick Start** makes the particle skip simulating the first 2 seconds when starting if **Duration** is infinite. A particle with **Quick Start** still connected to its parent object will persist to the next attempt, even if resetting all checkpoints.
