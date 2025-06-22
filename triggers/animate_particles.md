@@ -596,6 +596,6 @@ Notes:
   - **Use Obj Color** replaces $start$ with $base$ in all calculations.
   - $base$ is applied multiple times in some equations.
 - For a particle to count as blending either the base or detail color must be blending.
-  - If **Use Obj Color** or **Uniform Obj Color** are used with **Additive** but neither color channels blend, then the particle renders as both normal and additive fading between blending and solid.
+  - If **Use Obj Color** or **Uniform Obj Color** are used with **Additive** but neither color channels blend, then the particle renders as both normal and additive.
 - The resulting color for one particle is equal to: $BG\textunderscore RGB*(1-Solid\textunderscore Alpha)+Particle\textunderscore RGB*(Solid\textunderscore Alpha+Blending\textunderscore Alpha)$
 
