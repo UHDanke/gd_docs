@@ -372,14 +372,6 @@ Most other animated objects are made up of multiple sequential frames with a set
 
 Allows the creation of custom particle effects tied to objects. 
 
-## Behavior
-
-Particles animate by frame, not by tick. Visuals are going to differ between devices with different framerates - particles with very high emissions will not look as smooth on lower framerates and have more clumps if not randomized.
-
-Particles have a softcap of 100k particles active at once, if the softcap is hit any further particle objects that become active will not spawn particles until reloaded. The softcap can be passed by an emitter that goes over the limit. The total particle count is calculated based on the emitter's max particle property, not its current particle count, so avoid oversizing the value of max particle. The particle softcap is not used in the level editor.
-
-Particle objects do not unload correctly in normal mode, but they do in the editor. Emitters tied to particle objects are not cleared if the object is unloaded, and continue being active until they despawn on their own. These emitters are disconnected from the object that created them, so any particle setting that depends on the parent object will stop updating. When the particle object becomes active again, it will create a new emitter separate from the previous one.
-
 ## Particle Editor
 
 Particle properties can be edited from the Particle Editor accessible from Edit Special.
@@ -543,7 +535,7 @@ For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-St
 
 #### Misc Settings
 
-**Additive** makes particles blend.
+**Additive** makes particles blend. Also works for **Use Obj Color** and **Uniform Obj Color** in some cases, but changes how alpha is calculated in a non-intuitive way.
 
 **Start Size = End** increases the particle's end size by its start size. This is particularly useful if **StartSize** is randomized and you want the particle to change or keep its end size relative to it.
 
@@ -551,11 +543,9 @@ For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-St
 
 **Start Rot is Dir** makes the particle's rotation match its start **Angle**.
 
-**Use Obj Color** makes the particle use the particle object's colors instead of the emitter's RGB values. These colors are set at the creation of each particle and do not update if the parent object changes color. Start RGB + alpha & End RGB (but not end alpha) are ignored, but the random color options are not ignored.
+**Use Obj Color** makes the particle use the particle object's colors instead of the emitter's RGB values. These colors are set at the creation of each particle and do not update if the parent object changes color. Base RGB variables are ignored, but RGB can still be randomized using the **+-** options.
 
 **Uniform Obj Color** makes the particle copy the particle object's colors dynamically. All particle color options besides alpha are ignored.
-
-By default, if neither **Use Obj Color** or **Uniform Obj Color** is selected then particles are unaffected by the object's visual properties, except for the base color channel's opacity and the Alpha & Area Fade triggers. The detail color channel's opacity is not used by particles.
 
 **Dynamic Rotation** makes the particle rotate dynamically in the direction of movement. 
 
@@ -570,3 +560,42 @@ Inactive particle objects are ignored if they have the **Only If Active** proper
 **StartRGB Var Sync** and **EndRGB Var Sync** replace Start and End RGB randomization with lightness randomization (brightness and saturation only are randomized) - the R channel **Start_R +-** and **End_R +-** options are used to randomize lightness, B and G random options are ignored.
 
 **Quick Start** makes the particle skip simulating the first 2 seconds when starting if **Duration** is infinite. A particle with **Quick Start** still connected to its parent object will persist to the next attempt, even if resetting all checkpoints.
+
+## Misc Behavior
+
+Particles animate by frame, not by tick. Visuals are going to differ between devices with different framerates - particles with very high emissions will not look as smooth on lower framerates and have more clumps if not randomized.
+
+Particles have a softcap of 100k particles active at once, if the softcap is hit any further particle objects that become active will not spawn particles until reloaded. The softcap can be passed by an emitter that goes over the limit. The total particle count is calculated based on the emitter's max particle property, not its current particle count, so avoid oversizing the value of max particle. The particle softcap is not used in the level editor.
+
+Particle objects do not unload correctly in normal mode, but they do in the editor. Emitters tied to particle objects are not cleared if the object is unloaded, and continue being active until they despawn on their own. These emitters are disconnected from the object that created them, so any particle setting that depends on the parent object will stop updating. When the particle object becomes active again, it will create a new emitter separate from the previous one.
+
+### Alpha & Blending Behavior
+
+Alpha values are calculated differently depending on the options selected, below you can find a table approximating these calculations.
+
+| Additive | Obj Color | Uniform Color | Blending | Solid Alpha | Blending Alpha |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| No | No | No | Either | $(start \cdot (1-t)+end\*t) \cdot base$ | 0 |
+| No | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | 0 |
+| No | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | 0 |
+| No | Yes | No | No | $(base \cdot (1-t)+end \cdot t) \cdot base$ | 0 |
+| No | Yes | No | Yes | 0 | $(base^2 \cdot (1-t)+end \cdot t) \cdot base^2$ |
+| Either | No | Yes | Yes | 0 | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |
+| Yes | Yes | No | No | $(base \cdot (1-t)+end \cdot t) \cdot base$ | $((1-base) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |
+| Yes | Yes | No | Yes | 0 | $(base \cdot (1-t)+end \cdot t) \cdot base^2$ |
+| Yes | No | No | Either | 0 | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |
+| Yes | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |
+
+<br>
+
+Notes:
+- $start$ is the initial alpha, equal to: $Start\textunderscore A+Start\textunderscore A\textunderscore Rand$
+- $end$ is the final alpha, equal to: $End\textunderscore A+End\textunderscore A\textunderscore Rand$
+- $base$ is the alpha (opacity) of the base color channel.
+  - The detail color channel's opacity is not used by particles.
+  - **Use Obj Color** replaces $start$ with $base$ in all calculations.
+  - $base$ is applied multiple times in some equations.
+- For a particle to count as blending either the base or detail color must be blending.
+  - If **Use Obj Color** or **Uniform Obj Color** are used with **Additive** but neither color channels blend, then the particle renders as both normal and additive fading between blending and solid.
+- The resulting color for one particle is equal to: $BG\textunderscore RGB*(1-Solid\textunderscore Alpha)+Particle\textunderscore RGB*(Solid\textunderscore Alpha+Blending\textunderscore Alpha)$
+
