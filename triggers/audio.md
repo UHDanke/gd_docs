@@ -338,7 +338,7 @@ New Edit Song calls override the previous **Speed** or **Volume** transition if 
 
 ## Volume Proximity
 
-**Volume Proximity ** can be set per **Channel** from the options found on the 2nd page.
+**Volume Proximity** can be set per **Channel** from the options found on the 2nd page.
 
 These settings do not reset when the song ends and remain permanently active until overriden or cleared by another Edit Song trigger.
 
