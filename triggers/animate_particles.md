@@ -605,7 +605,7 @@ Spawn Particle only works on particle objects, it cannot spawn the particles of 
 
 ## Options
 
-**Offset X** / **Y** offset the particle's spawn position by a set amount on the X / Y axis.**OffVar X** / **Y** further offset the spawn position randomly in a +/- range. All offsets are given in units (1/30 block).
+**Offset X** / **Y** offset the particle's spawn position by a set amount on the X / Y axis. **OffVar X** / **Y** further offset the spawn position randomly in a +/- range. All offsets are given in units (1/30 block).
 
 **Rotation** offsets the rotation of spawned particles. 
 
