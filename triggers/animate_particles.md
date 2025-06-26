@@ -613,7 +613,7 @@ Spawn Particle only works on particle objects, it cannot spawn the particles of 
 
 **Match Rot** adds the target object's rotation to the spawned particles.
 
-**Rotation** and **Scale** can be randomized using the respective**+-** option.
+**Rotation** and **Scale** can be randomized using the respective **+-** option.
 
 ## Group ID Parents
 
