@@ -652,4 +652,6 @@ Alpha and blending behavior of emitters created by Spawn Particle is consistent 
 
 Spawn Particle uses the target's last active position, updated every frame (not tick) - this has two detrimental effects:
 - If the target moves very fast (or instantly) and the game runs at a framerate lower than 240Hz, particles can spawn "earlier" than they should
-- If the target becomes inactive by moving off screen, the particle will spawn on screen instead of at the target's current position 
+- If the target becomes inactive by moving off screen, the particle will spawn on screen instead of at the target's current position
+
+The second issue can be worked around by using a Link Visible trigger and keeping one object on screen at all times.
