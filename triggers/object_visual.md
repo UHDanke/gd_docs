@@ -264,7 +264,9 @@ UI effects do not stack and only one is applied per object, as a result only the
 
 While UI objects render above every other layer, objects part of UI do perserve their layering (layer, Z-order, tileset, blending, etc). It is not possible to differentiate between these sub-layers when using shaders or gradients, as they reference the entire UI layer.
 
-UI objects do not follow the camera's movement, their position is set on-load and will remain static unless affected by other triggers. When marked as UI, they are moved to the default camera position (the initial camera position when loading the level in classic mode) based on their position relative to **UI Target**, their alignment settings and your device's aspect ratio. 
+UI objects do not follow the camera's movement, their position is set on-load and will remain static unless affected by other triggers. When marked as UI, they are moved to the default camera position (the initial camera position when loading the level in classic mode) based on their position relative to **UI Target**, their alignment settings and your device's aspect ratio.
+
+Object part of UI can only collide with other UI objects. Hitboxes will no longer collide with the player and UI collision objects will only be able to collide with other UI collision objects. The chunk optimization is skipped by UI collisions, so all UI collisions will check all other UI collisions, just like when using Extended Collision.
 
 <br>
 
