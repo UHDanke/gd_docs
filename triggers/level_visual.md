@@ -1,4 +1,3 @@
-
 # Shake
 
 Applies a shaking effect to the screen.
@@ -193,7 +192,7 @@ Gameplay borders snapping to the Y axis grid can be disabled with **Disable Grid
 
 Editor only object which displays a reference outline for the camera's edges.
 
-## Color Guide
+## Guidelines
 
 The yellow line shows the Player's X position relative to the camera center.
 
