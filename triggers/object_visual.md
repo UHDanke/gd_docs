@@ -248,7 +248,7 @@ Alignments are split into XRef and YRef, only one alignment is applied at a time
 
 **Auto** makes UI objects align to the closest edge - **Left** or **Right** for XRef, **Top** or **Bottom** for YRef.
 
-**Center** applies no alignment, the objects keep their positions relative to the center.
+**Center** applies no alignment, the objects keep their positions relative to the center which is static for all aspect ratios.
 
 **Left**, **Right**, **Top** and **Bottom** align objects to the respective edge.
 
