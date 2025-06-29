@@ -58,7 +58,7 @@ The trail is disabled by default.
 
 # Show / Hide Player
 
-Makes the Players' visible or invisible.
+Makes the Players visible or invisible.
 
 The **Hide P1** / **P2** options from the Options trigger can be used to hide or show each player individually.
 
@@ -68,6 +68,10 @@ Players are visible by default.
 
 # BG Effect On / Off
 
+Enables / Disables the background particles 
+Starts / Stops the spawning of background particles 
+
+Enables / Disables the background particles
 <br>
 
 
