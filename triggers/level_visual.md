@@ -4,7 +4,7 @@ Applies a shaking effect to the screen.
 
 ## Behavior
 
-Shakes the screen by moving the view on both X and Y axes by a random offset multiplied by **Strength**. The view is offset every **Interval** until Duration runs out.
+Shakes the screen by moving the view on both X and Y axes by a random offset multiplied by **Strength**. The view is offset every **Interval** until **Duration** runs out.
 
 UI, Background and Middleground will not move at all. Ground will only move vertically.
 
@@ -12,15 +12,15 @@ Only one shake effect can be active at a time and new shakes override previous o
 
 ### Options
 
-Strength and Duration must both be bigger than 0 for the shake to trigger. 
+**Strength** and **Duration** must both be bigger than 0 for the shake to trigger. 
 
-If Interval is 0, the view will offset every render frame. 
+If **Interval** is 0, the view will offset every render frame. 
 
-The lowest value of Strength that can be used is 0.01, which is low enough to be imperceptible.
+The lowest value of **Strength** that can be used is 0.01, which is low enough to be imperceptible.
 
-The max values of a Shake trigger are Strength 100, Interval 0.20s and Duration 10.00s.
+The max values of a Shake trigger are **Strength** 100, **Interval** 0.20s and **Duration** 10.00s.
 
-All shaking effects can be disabled using the "Disable Shake" level option.
+All shaking effects can be disabled using the **Disable Shake** level option.
 
 <br>
 
@@ -68,22 +68,17 @@ Players are visible by default.
 
 # BG Effect On / Off
 
-Enables / Disables the background particles 
-Starts / Stops the spawning of background particles 
+Enables / Disables the background particles that appear when your current gamemode is Ship, UFO, Wave or Swing.
 
-Enables / Disables the background particles
+This trigger affects the spawning of particles not their visibility, particles will not disappear or reappear instantly.
+ 
 <br>
-
 
 # Gradient
 
 <br>
 
 # Shaders
-
-<br>
-
-# Options 
 
 <br>
 
@@ -115,6 +110,12 @@ Borders are parallel to the ground, and will not rotate if Rotate Gameplay is us
 Camera Mode allows modifying how the camera behaves when the player moves up or down, the default easing is 40 (noted as 10 in Camera Mode) and the max camera-player offset for a padding of 0.5 is equal to -66.
 
 # Zoom Camera
+
+Changes the camera's current **Zoom** over a **Duration** of time with an **Easing**.
+
+**Zoom** values higher than 1 zoom in, while values lower zoom out. Negative **Zoom** flips the camera on both axes.
+
+The default value of **Zoom** is 1.000 and it is limited between 0.400 (x2.5 times zoomed out) and 3.000 (x3 zoomed in). This does not affect the max zoom level that can be hit through easings like back or elastic.
 
 <br>
 
@@ -263,3 +264,7 @@ While UI objects render above every other layer, objects part of UI do perserve 
 UI objects do not follow the camera's movement, their position is set on-load and will remain static unless affected by other triggers. When marked as UI, they are moved to the default camera position (the initial camera position when loading the level in classic mode) based on their position relative to **UI Target**, their alignment settings and your device's aspect ratio.
 
 Object part of UI can only collide with other UI objects. Hitboxes will no longer collide with the player and UI collision objects will only be able to collide with other UI collision objects. The chunk optimization is skipped by UI collisions, so all UI collisions will check all other UI collisions, just like when using Extended Collision.
+
+<br>
+
+# Misc Options
