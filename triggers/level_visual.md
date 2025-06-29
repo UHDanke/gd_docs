@@ -117,6 +117,10 @@ Changes the camera's current **Zoom** over a **Duration** of time with an **Easi
 
 The default value of **Zoom** is 1.000 and it is limited between 0.400 (x2.5 times zoomed out) and 3.000 (x3 zoomed in). This does not affect the max zoom level that can be hit through easings like back or elastic.
 
+Only one Zoom change can be active globally, new activations overide previous ones.
+
+The C reference of an Advanced Follow trigger follows the bottom-left corner of the screen when zoomed or offset.
+
 <br>
 
 # Static Camera
@@ -145,6 +149,10 @@ Both **Offset X** and **Offset Y** are applied unless either **X** and **Y Only*
 **Dont Zoom** makes the offset not scale with zoom. Without **Dont Zoom**, gameplay offsets are divided by the camera's current zoom value.
 
 # Rotate Camera
+
+Rotates the 
+
+If the new rotation of **Add** 
 
 <br>
 
