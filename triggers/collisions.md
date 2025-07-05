@@ -21,8 +21,8 @@ Collision checks are done even if there is no active Collision trigger and they 
 
 Collision checks are done sequentially one dynamic target at a time in the following order:
 - Player 1
+- Between players
 - Player 2
-    - Player-Player collisions are checked first
 - Dynamic collision objects
   - Collisions are checked in the order the dynamic collision objects were placed
  
