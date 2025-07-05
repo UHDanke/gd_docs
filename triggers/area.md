@@ -56,9 +56,9 @@ Normally, spawning the same Area trigger while an instance of it is already acti
 Spawn order is unaffected by this.  
 Edit Area effects will be stopped and undone.  
 **EffectID** has no effect on this behavior.  
-With spawn remapping, it is possible to create additional instances of the same Area trigger for unique sets of target, center and control IDs.  
+With spawn remapping, it is possible to create additional instances of the same Area trigger for unique sets of target, center and control IDs (only if control ID is not 0).  
 The same target group can be affected by different centers and the same center can affect multiple different target groups.  
-As a result, it is not possible to use an Area trigger multiple times on the same set of target and center ID. Using **EffectID** to ensure only one instance of Area is active is unnecessary in most cases. Stopping the Area trigger before spawning is only necessary for refreshing active instances or changing spawn order.  
+As a result, it is not possible to use an Area trigger multiple times on the same set of groups. Using **EffectID** to ensure only one instance of Area is active is unnecessary in most cases. Stopping the Area trigger before spawning is only necessary for refreshing active instances or changing order.  
 Special centers like **P1**, **P2**, **C**, etc override the default **Center Group ID** \- which can still be remapped, so it is possible to apply the same Area effect multiple times on the same group without needing to use multiple center groups if using a special center.
 
 ## Spawn Remapping
