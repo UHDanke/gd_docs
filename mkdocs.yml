@@ -5,7 +5,9 @@ site_dir: site
 theme:
   name: mkdocs
   color_mode: auto
-
+  features:
+    - navigation.sections
+  
 markdown_extensions:
   - pymdownx.arithmatex
 
