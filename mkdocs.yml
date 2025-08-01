@@ -6,6 +6,10 @@ theme:
   name: mkdocs
   color_mode: auto
 
+plugins:
+  - search
+  - math
+  
 nav:
   - Home: README.md
   - Triggers:
