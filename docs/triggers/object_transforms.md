@@ -69,7 +69,15 @@ $NewPosition_i = Position_0 + (Position_i - Position_0) \cdot PositionMod$
 If **Position Y Mod** is 0.00, it will copy the value of **Position X Mod**.
 
 **Rotation Mod** multiplies keyframe rotations, where:
-$NewRotation_i = (R_{i+1} - R_i) \cdot RotationMod + FullRotations + \begin{cases} -360, & \text{if } (R_{i+1} - R_i) \cdot RotationMod > CW \cdot 180 \\ 360, & \text{if } (R_i - R_{i+1}) \cdot RotationMod > CCW \cdot 180 \\ 0, & \text{otherwise}\end{cases}$
+
+$$
+NewRotation_i = (R_{i+1} - R_i) \cdot RotationMod + FullRotations + 
+\begin{cases} 
+  -360, & \text{if } (R_{i+1} - R_i) \cdot RotationMod > CW \cdot 180 \\
+  360, & \text{if } (R_i - R_{i+1}) \cdot RotationMod > CCW \cdot 180 \\
+  0, & \text{otherwise}
+\end{cases}
+$$
 
 The calculation applies **Rotation Mod** incorrectly when determining how much the rotation should be offset:
 - Rotations should not be multiplied by mod when comparing to CW or CCW.
