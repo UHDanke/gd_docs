@@ -6,9 +6,6 @@ theme:
   name: mkdocs
   color_mode: auto
 
-plugins:
-  - search
-
 markdown_extensions:
   - pymdownx.arithmatex
 
