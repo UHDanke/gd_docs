@@ -1,4 +1,5 @@
 site_name: HDanke's GD Editor Documentation
+
 theme:
   name: material
 
@@ -25,7 +26,6 @@ nav:
       - Misc: suggestions/suggestions.md
       - Sequence Control: suggestions/sequence_control.md
       - Get Parameter: suggestions/parameter_to_item.md
-      - Links: null
-      - Resources: null
-      - Credits: null
-
+      - Links: links.md
+      - Resources: resources.md
+      - Credits: credits.md
