@@ -3,7 +3,7 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 permissions:
   contents: write
@@ -15,11 +15,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Print working directory and contents
-        run: |
-          pwd
-          ls -la
+        
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
