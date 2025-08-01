@@ -15,12 +15,12 @@ nav:
     - Spawning: spawn_stop.md
     - Items: triggers/items_and_timers.md
     - Collisions: collisions.md
-- Editor
+- Editor:
   - Colors & Layers: editor/colors_layers.md
   - Autobuild: editor/autobuild.md
 - Bugs: bugs/README.md
  - Misc: bugs/bugs.md
-- Other
+- Other:
   - Game Suggestions: suggestions/README.md
     - Misc: suggestions/suggestions.md
     - Sequence Control: suggestions/sequence_control.md
