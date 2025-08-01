@@ -6,6 +6,7 @@ theme:
   name: material
 
 nav:
+  - Home: README.md
   - Triggers:
       - Object Transform: triggers/object_transforms.md
       - Object Visual: triggers/object_visual.md
