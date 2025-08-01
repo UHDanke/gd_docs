@@ -1,5 +1,7 @@
 name: Deploy MkDocs to GitHub Pages
 
+docs_dir: .
+
 on:
   push:
     branches:
