@@ -6,20 +6,20 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
   pages: write
-  id-token: write  # required if using official pages deploy
+  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -32,11 +32,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
-      - name: Fix duplicate artifact issue
-        run: |
-          echo "Preventing multiple github-pages artifacts."
-        env:
-          ACTIONS_STEP_DEBUG: true
+      - name: Build the MkDocs site
+        run: mkdocs build --strict
 
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        id: deployment
+        uses: actions/deploy-pages@v4
