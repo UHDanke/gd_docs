@@ -1,5 +1,7 @@
 site_name: HDanke's GD Editor Documentation
 
+docs_dir: .
+
 theme:
   name: material
 
