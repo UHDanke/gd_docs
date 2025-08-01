@@ -15,10 +15,10 @@ nav:
       - Animated: triggers/animate.md
       - Audio: triggers/audio.md
       - Easings: triggers/easings.md
-      - Spawning: spawn.md
-      - Stopping: stop.md
+      - Spawning: triggers/spawn.md
+      - Stopping: triggers/stop.md
       - Items: triggers/items.md
-      - Collisions: collisions.md
+      - Collisions: triggers/collisions.md
   - Editor:
       - Colors & Layers: editor/colors_layers.md
       - Autobuild: editor/autobuild.md
