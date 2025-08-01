@@ -18,6 +18,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Print working directory and contents
+        run: |
+          pwd
+          ls -la
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
