@@ -1,6 +1,6 @@
 site_name: HDanke's GD Editor Documentation
 
-docs_dir: .
+docs_dir: docs
 site_dir: site
 
 theme:
@@ -13,11 +13,12 @@ nav:
       - Object Visual: triggers/object_visual.md
       - Follows: triggers/follows.md
       - Area: triggers/area.md
-      - Animated: triggers/animate_particles.md
+      - Animated: triggers/animate.md
       - Audio: triggers/audio.md
       - Easings: triggers/easings.md
-      - Spawning: spawn_stop.md
-      - Items: triggers/items_and_timers.md
+      - Spawning: spawn.md
+      - Stopping: stop.md
+      - Items: triggers/items.md
       - Collisions: collisions.md
   - Editor:
       - Colors & Layers: editor/colors_layers.md
@@ -29,6 +30,3 @@ nav:
       - Misc: suggestions/suggestions.md
       - Sequence Control: suggestions/sequence_control.md
       - Get Parameter: suggestions/parameter_to_item.md
-      - Links: links.md
-      - Resources: resources.md
-      - Credits: credits.md
