@@ -3,7 +3,8 @@ docs_dir: docs
 site_dir: site
 
 theme:
-  name: material
+  name: readthedocs
+  color_mode: auto
 
 nav:
   - Home: README.md
