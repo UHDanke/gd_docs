@@ -52,6 +52,10 @@ If a non-dynamic target uses Extended Collision, it will be checked by all dynam
 
 If the dynamic target uses Extended Collision, it will check all chunks.
 
+### Load Limit
+
+A chunk can contain at most 7998 objects when the level is loaded, the level fails to play otherwise.
+
 ### UI Trigger
 
 Collision objects on the UI layer will only check for collisions with other UI objects.  
