@@ -13,7 +13,7 @@ $$EaseIn(x,\ easeRate) =
   $$EaseOut(x,\ easeRate) = 
   \begin{cases}
     0 & \text{for} & x \le 0\\
-    x^{1/easeRate} & \text{for}& 0 < x < 1 \\
+    x^{easeRate^{-1}} & \text{for}& 0 < x < 1 \\
     1 & \text{for}& x \ge 1
   \end{cases}$$
 
