@@ -1,0 +1,6 @@
+[book]
+title = "HDanke's Geometry Dash Editor Documentation"
+
+[build]
+src = "docs"
+build-dir = "public"
