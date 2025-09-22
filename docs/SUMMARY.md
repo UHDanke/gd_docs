@@ -6,6 +6,6 @@
  - [Object Transform](triggers/object_transforms.md)
  - [Follows](triggers/follows.md)
  - [Area](triggers/area.md)
- - [Easings](triggers/easings.ms)
+ - [Easings](triggers/easings.md)
 - [Editor]()
 - [Bugs]()
