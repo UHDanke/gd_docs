@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -22,6 +25,9 @@ jobs:
       - run: mdbook build
         
       - name: Upload GitHub Pages artifact
+        id: deployment
+      
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
+          
