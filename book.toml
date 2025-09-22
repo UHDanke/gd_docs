@@ -1,6 +1,6 @@
 [book]
 title = "HDanke's Geometry Dash Editor Documentation"
+src = "docs"
 
 [build]
-src = "docs"
 build-dir = "site"
