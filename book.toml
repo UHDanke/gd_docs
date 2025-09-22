@@ -4,3 +4,6 @@ src = "docs"
 
 [build]
 build-dir = "site"
+
+[output.html]
+math = true
