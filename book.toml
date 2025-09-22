@@ -3,4 +3,4 @@ title = "HDanke's Geometry Dash Editor Documentation"
 
 [build]
 src = "docs"
-build-dir = "book"
+build-dir = "site"
