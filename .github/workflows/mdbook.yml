@@ -1,7 +1,3 @@
-# Sample workflow for building and deploying a mdBook site to GitHub Pages
-#
-# To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
-#
 name: Deploy mdBook site to Pages
 
 on:
@@ -24,7 +20,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -39,17 +34,22 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-		
+
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v2
         with:
           mdbook-version: 'latest'
+
       - run: mdbook build
-	  
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./book
+          path: ./site  # This should be the folder that `mdbook build` outputs to
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Specify the directory where the artifact was uploaded
+          publish_dir: ./site
