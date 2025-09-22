@@ -1,29 +1,26 @@
-name: Deploy mdBook to GitHub Pages
+name: github pages
 
 on:
   push:
     branches:
       - main
-  
-permissions:
-  contents: write
+  pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - uses: actions-rs/toolchain@v1
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v2
         with:
-          toolchain: stable
-          override: true
+          mdbook-version: '0.4.10'
+          # mdbook-version: 'latest'
 
-      - name: Install mdBook
-        run: cargo install mdbook --locked
-
-      - name: Build book
-        run: mdbook build
+      - run: mdbook build
         
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
