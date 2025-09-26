@@ -88,6 +88,8 @@ If **Multiply** or **Divide** is selected, **Modifier** multiplies or divides th
 
 If **Override** is selected, the item is set to the value of **Count**. 
 
+The result of multiplication or division is rounded to the nearest value.
+
 <br>
 
 # Time
