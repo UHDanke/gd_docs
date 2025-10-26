@@ -7,11 +7,6 @@ I made these notes for me to have a reference i can check anytime. I can underst
 
 Report any issues or suggestions by raising an issue on this repo.
 
-### Other Resources
-* The [Official Editor Guide](https://www.robtopgames.com/files/GDEditor.pdf) is aimed primarily towards beginners and is as close as you'll get to an official editor reference. I personally do not find it reliable due to how many inaccuracies it has and the lack of interest from the maintainers in keeping the information accurate and up to date.
-* Jeyzor's [Ultimate Trigger Guide](https://youtu.be/YOjDhceKBqU?si=IK8lrDB6zXw78syu) video series, good for beginners and fairly accurate.
-* [Easings Graphs & Tables](https://docs.google.com/spreadsheets/d/e/2PACX-1vRD8SRDrZWaDEqowrnnqCgJnp3mU2FC5mah8tCFuZOFX1KUnR1DrZNIfBwvmAdaO62NDBcMU4CV2e-p/pubhtml)
-
 ### Bugs
 
 In order to aid with debugging, i keep track of all bugs i find and figure out the cause of.  
