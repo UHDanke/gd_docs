@@ -379,24 +379,26 @@ While some spawns activate instantly, most of them are scheduled and activate in
 * Advanced Random  
 * Sequence  
 * End
+* Checkpoint (Spawn)
 </details>
 
 <details>
 <summary>Scheduled spawns (in order)</summary>
 
-1. Spawn (delay)  
-2. Toggle Orb/Block  
-3. Event  
-4. Touch  
-5. Timer & Time Event  
-6. Keyframe  
-7. Collision (on enter)  
-8. State (on enter)  
-9. Instant (touch triggered)  
-10. State (on exit)  
-11. On Death  
-12. Instant (from timeline)   
-13. Collision (on exit)
+1. Checkpoint (Respawn)
+2. Spawn (delay)  
+3. Toggle Orb/Block  
+4. Event  
+5. Touch  
+6. Timer & Time Event  
+7. Keyframe  
+8. Collision (on enter)  
+9. State (on enter)  
+10. Instant (touch triggered)  
+11. State (on exit)  
+12. On Death  
+13. Instant (from timeline)   
+14. Collision (on exit)
 </details>
 
 
