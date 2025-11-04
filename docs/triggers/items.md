@@ -271,10 +271,9 @@ The two buttons change the functions applied on the results of the mod operation
 # Item Persist
 Makes the item or timer given by **Item ID** persistent between attempts.
 
-**Persistent** makes the target persistent.  
+**Persistent** makes the target persistent if enabled and removes persistency if not. Targets continue to be persistent between attempts.
 
-**Reset** makes the target no longer persistent and resets its value to 0.  
-Targets continue to be persistent until **Reset** is used, even between attempts.
+**Reset** resets the value of the target to 0. It does not clear timers.
 
 **TargetAll** targets all persistent items or timers.
 
