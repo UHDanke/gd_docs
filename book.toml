@@ -7,3 +7,4 @@ build-dir = "site"
 
 [output.html]
 math = true
+no-section-label = true
