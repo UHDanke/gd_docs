@@ -5,9 +5,11 @@ src = "docs"
 [build]
 build-dir = "site"
 
+[output]
+
 [output.html]
 math = true
-section-label = false      # Replaces deprecated no-section-label
+section-label = false
 sidebar-header-nav = false
 git-repository-url = "https://github.com/UHDanke/gd_docs/"
 
