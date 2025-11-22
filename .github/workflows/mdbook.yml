@@ -1,44 +1,48 @@
-name: Build mdBook
+name: Deploy mdBook site to Pages
 
 on:
   push:
     branches: ["main"]
-  pull_request:
+  workflow_dispatch:
 
 permissions:
-  contents: write  # REQUIRED to push to gh-pages
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Cache mdBook
-        uses: actions/cache@v4
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v2
         with:
-          path: |
-            ~/.cargo/bin
-            target
-          key: mdbook-${{ runner.os }}-${{ hashFiles('**/book.toml') }}
-          restore-keys: |
-            mdbook-${{ runner.os }}-
+          mdbook-version: 'latest'
 
-      - name: Install mdBook
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: cargo install mdbook
+      - name: Build mdBook
+        run: |
+          mdbook clean
+          mdbook build
 
-      - name: Add Cargo bin to PATH
-        run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
 
-      - name: Build Documentation
-        run: mdbook build
-
-      # Deploy
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+        id: deployment
+        uses: actions/deploy-pages@v4
