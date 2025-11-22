@@ -1,18 +1,16 @@
 [book]
-title = "HDanke's Geometry Dash Editor Documentation"
+title = "HDanke's Geometry Dash Docs"
 src = "docs"
 
 [build]
 build-dir = "site"
 
-[output]
-
 [output.html]
 math = true
-no-section-label = true
+section-label = false      # Replaces deprecated no-section-label
 sidebar-header-nav = false
 git-repository-url = "https://github.com/UHDanke/gd_docs/"
 
 [output.html.fold]
 enable = true
-level = 0 
+level = 0
