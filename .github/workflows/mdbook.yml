@@ -39,8 +39,13 @@ jobs:
         uses: peaceiris/actions-mdbook@v2
         with:
           mdbook-version: 'latest'
-
-      - run: mdbook build
+          
+      - name: Install mdbook-mathjax
+        run: |
+          wget https://github.com/lzanini/mdbook-mathjax/releases/download/v0.1.0/mdbook-mathjax-x86_64-unknown-linux-gnu.tar.gz
+          tar -xzf mdbook-mathjax-x86_64-unknown-linux-gnu.tar.gz
+          sudo mv mdbook-mathjax /usr/local/bin/
+            - run: mdbook build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
