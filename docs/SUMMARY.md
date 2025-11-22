@@ -1,6 +1,6 @@
 # Summary
 
-- [Summary](SUMMARY.md)
+- [Summary](test/SUMMARY.md)
 
 - [Bugs]()
   - [Introduction](bugs/README.md)
