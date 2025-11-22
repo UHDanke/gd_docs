@@ -5,11 +5,10 @@ src = "docs"
 [build]
 build-dir = "site"
 
-[output]
-
 [output.html]
-math = true
-section-label = false
+smart-punctuation = true
+mathjax-support = true
+no-section-label = true
 sidebar-header-nav = false
 git-repository-url = "https://github.com/UHDanke/gd_docs/"
 
