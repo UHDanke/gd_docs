@@ -9,14 +9,14 @@ Except, if you use a Pickup trigger after resuming which doesn't cross the Targe
 
 This prompted me to go back to a bug i've encountered early august, where that "skipping" behavior i thought existed seemingly broke out of nowhere. In order to figure out the reason i've created a setup able to record the activation order of Count triggers, which took about 3 days of testing.
 
-With this i was able to map out the behavior of Count:  
-Count activates every time the value of the Item ID changes, even if the value remains the same.  
-When activating, the Count instances get ordered in a list based on their Target Count and spawn order. The game copies the item value at the time of activation and then goes through this list, checks whether the instances should spawn and updates the stored value to the copied item value.  
-Whether the index of the list is taken from the beginning or the end of the list depends on the last item change - If the item value decreased, then the index is taken from the end of the list. If the item value is updated during the activation of Count, then this order  can be changed despite the Count activation being unfinished.  
-If there is a new item change inside a Count, then the game goes through all respective Count instances before continuing with the previous Count activation.  
+With this i was able to map out the behavior of Count:
+Count activates every time the value of the Item ID changes, even if the value remains the same.
+When activating, the Count instances get ordered in a list based on their Target Count and spawn order. The game copies the item value at the time of activation and then goes through this list, checks whether the instances should spawn and updates the stored value to the copied item value.
+Whether the index of the list is taken from the beginning or the end of the list depends on the last item change - If the item value decreased, then the index is taken from the end of the list. If the item value is updated during the activation of Count, then this order  can be changed despite the Count activation being unfinished.
+If there is a new item change inside a Count, then the game goes through all respective Count instances before continuing with the previous Count activation.
 
 There are two issues with this behavior:
-* If you interrupt Count with another Count using the same item id, then the stored value will get updated to the new value, when continuing with the previous count the stored value gets updated to an old value, this causes the internal value to desync from the item value. 
+* If you interrupt Count with another Count using the same item id, then the stored value will get updated to the new value, when continuing with the previous count the stored value gets updated to an old value, this causes the internal value to desync from the item value.
 * If the first item increases the value and the second one decreases it, then the game processes the count list in descending order after the second item change. However, when continuing the first item change, the game will use descending order instead of ascending order, and because some count triggers have already been processed the list will start with an offset from the end of the list; This is the reason why some Count instances can be skipped.
 
 Below i've added the setup used and the recorded data, as well as some suggestions i have to this.
@@ -47,14 +47,14 @@ I have uploaded it to the GD servers with the ID **112533336**. The uploaded tes
 | 9 | 128765433 | 8 | 0 | 0 | 876541233 | 0 | 111111111 |
 | 10 | 128765433 | 0 | 0 | 0 | 876541233 | 0 | 111111111 |
 
-Order:  
+Order:
 $Pickup1 🡒 1, 2 | Pickup2 🡒 8, 7, 6, 5, 4, 1, 2, 3, 3 |, 8, 7, 6, 5, 4, 1, 2, 3, 3$
 
-## Suggestions 
-Resuming should update the item value without activating the Count trigger.  
-If you change an item value from inside a Count trigger with the same Item ID, the previous Count activation should be abandoned. 
+## Suggestions
+Resuming should update the item value without activating the Count trigger.
+If you change an item value from inside a Count trigger with the same Item ID, the previous Count activation should be abandoned.
 
 ## Comments
 
-While i would like to see this behavior changed, i have no way of predicting what such a change will do to existing levels. I don't think same item id changes with count are common so damage is likely to be minimal, but i have no way of knowing.  
+While i would like to see this behavior changed, i have no way of predicting what such a change will do to existing levels. I don't think same item id changes with count are common so damage is likely to be minimal, but i have no way of knowing.
 Personally, i would like to see these suggestions implemented as they would fix desync issues and add a way to skip or halt count activations early without having to use item comp to check the item value.

@@ -20,7 +20,7 @@ Things i think that need to be mentioned or added:
 ## [Page 72] Aim and Follow Mode
 ![image](https://github.com/user-attachments/assets/63f04efa-b068-44d6-938d-0cd6dc998f8a)
 
-Second page settings have no effect on follow, they are only used by aim mode to bound the position of the aim target.  
+Second page settings have no effect on follow, they are only used by aim mode to bound the position of the aim target.
 Additionally, none of the groups mentioned must contain a single object, if there are multiple objects one is picked at random for the movement unless there is a Group Parent ID.
 
 ![image](https://github.com/user-attachments/assets/8a7a126d-2753-4ba4-a50b-10de3acf9e6c)
@@ -42,10 +42,9 @@ For example, with a scale of 2 on an object scaled by 3, relative will scale the
 
 ![image](https://github.com/user-attachments/assets/da0a0c29-1119-4d92-bca1-b467bba75110)
 
-Advanced Follow Y has the same behavior as an Advanced Follow Mode 1 trigger, Speed in this case is the inverse of the easing of the movement.  
-To get the equivalent easing value, use this formula:  
+Advanced Follow Y has the same behavior as an Advanced Follow Mode 1 trigger, Speed in this case is the inverse of the easing of the movement.
+To get the equivalent easing value, use this formula:
 $Easing = 4/Speed$
-
 
 ## [Page 77] Max Speed
 
@@ -63,7 +62,7 @@ $Max Speed(AdvFollow) = MaxSpeed/4$
 
 ## Rotation Offset (Page 78)
 
-![image](https://github.com/user-attachments/assets/27dee7db-8dce-447b-8d24-1635c360a102) 
+![image](https://github.com/user-attachments/assets/27dee7db-8dce-447b-8d24-1635c360a102)
 
 Using *left* and *right* is understandable and gets the idea across (if you know the default direction) but not correct, should be replaced by *counter-clockwise* and *clockwise*.
 
@@ -95,7 +94,7 @@ Only mentioning start of movement implies the target will continue to follow whe
 ## Easing (Page 79)
 ![image](https://github.com/user-attachments/assets/16a6e0b6-f46c-4a92-a06c-1c7839fa63a7)
 
-This definition is wrong, easing is applied at all times.  
+This definition is wrong, easing is applied at all times.
 I don't have a good way to describe this easing outside of mentioning the velocity equation ($Velocity=Distance/Easing$).
 
 ## NearFriction and NearAccel (Page 81)
@@ -129,14 +128,14 @@ For Re-Target Advanced Follow, Target GID is the group ID of an Advanced Follow 
 ## SteerForceLow/High
 ![image](https://github.com/user-attachments/assets/4cd1f96b-a241-4759-bfb9-a24e41fe6374)
 
-This is straight up wrong, steerforce settings have nothing to do with MaxRange, the trigger doesn't even work on targets outside that range.  
+This is straight up wrong, steerforce settings have nothing to do with MaxRange, the trigger doesn't even work on targets outside that range.
 SteerForceLow / SteerForceHigh replaces SteerForce if the velocity of the object is strictly below / above SpeedRangeLow / SpeedRangeHigh.
 
 ## BreakAngle
 ![image](https://github.com/user-attachments/assets/b0238496-0fff-4a2e-b09c-91fbfb0754d7)
 
-This could use clarification as to what angle its talking about.  
-The target starts braking if the angle between the direction of movement and the direction towards the follow center (where the target goes and where it wants to go, to put it another way) is higher than BreakAngle - in other words its how much the target tolerates going in a different direction before its forced to brake and steer itself towards the center. 
+This could use clarification as to what angle its talking about.
+The target starts braking if the angle between the direction of movement and the direction towards the follow center (where the target goes and where it wants to go, to put it another way) is higher than BreakAngle - in other words its how much the target tolerates going in a different direction before its forced to brake and steer itself towards the center.
 
 ## [Page 89] Reverse Order
 
@@ -148,7 +147,7 @@ Reverse order doesn't invert the settings of the keyframe, it reverses the order
 
 ![image](https://github.com/user-attachments/assets/b1a6c887-31f0-4604-b7b2-c0d6532176e4)
 
-ModBack and ModFront are distance multipliers.	
+ModBack and ModFront are distance multipliers.
 ModBack is applied if the object is to the left / below of the center and ModFront is applied if the object is to the right / above the center.
 
 ## [Page 91,92] Easing
@@ -180,13 +179,13 @@ With Relative objects move away from the center.
 
 ![image](https://github.com/user-attachments/assets/352b2ed1-479c-4709-9c25-37650e4408fe)
 
-I somewhat understand what this refers to but the explanation is lacking.	
+I somewhat understand what this refers to but the explanation is lacking.
 With RFade, if the distance of the object is less than RFade (in small step units), MoveDist decreases linearly from 1 to 0 (when in the center).
 
 ## [Page 112] Sequence Unique Remap
 
-The explanation is completely missing.	
-Unique Remap makes the sequence trigger have a separate counter for each set of remaps.	
+The explanation is completely missing.
+Unique Remap makes the sequence trigger have a separate counter for each set of remaps.
 Worth mentioning that this behavior is per set of remaps, if two sets contain the same remaps they will still have separate counters.
 
 ## [Page 114] Reset
@@ -197,23 +196,23 @@ Also resets the electroman adventures destroyable blocks.
 
 ## [Page 119] Loop & Dont Reset
 
-Both options aren't explained under the Song trigger section.  
+Both options aren't explained under the Song trigger section.
 Dont Reset is a recent option, but Loop isn't.
 
 ## [Page 124] FFT
 
 ![image](https://github.com/user-attachments/assets/31a05066-38b2-4640-9926-e5df2eb6f38e)
 
-This is one of the options i'm not able to tell what is actually supposed to do.  
-I notice some differences in how the sounds are pitched, but i cannot tell if this is placebo or actually real.  
+This is one of the options i'm not able to tell what is actually supposed to do.
+I notice some differences in how the sounds are pitched, but i cannot tell if this is placebo or actually real.
 My assumption is that this option changes the pitch shift algorithm to one that uses FFT, but i honestly have no idea, so i think it's a good sign that more info is needed / the option needs to be explained in a better way.
 
 ## [Page 129] UI Settings
 
 ![image](https://github.com/user-attachments/assets/1f7d9871-edb7-4d03-b251-6a2e98b765ef)
 
-This explanation is a complete mess.  
-Auto aligns objects to the nearest screen edge. Left, Right, Top, Bottom aligns objects to the respective edge. Center has no alignment.  
+This explanation is a complete mess.
+Auto aligns objects to the nearest screen edge. Left, Right, Top, Bottom aligns objects to the respective edge. Center has no alignment.
 What alignment means in this case is the object is moved by the distance between the green (minimal) edge## and the orange (your screen) edge.
 
 ## Camera Guide
@@ -244,5 +243,3 @@ Can be more than one object, it picks one at random.
 ![image](https://github.com/user-attachments/assets/f576da02-1f42-40f2-ac98-48f114da12af)
 
 This option affects both Paste State AND the Paste button in the Edit Group menu, despite being noted as an exception.
-
-

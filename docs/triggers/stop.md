@@ -3,8 +3,8 @@
 Stops, pauses or resumes a set of triggers given by Group or Control ID.
 
 ## Valid Targets
-<details>
-<summary>Triggers affected by Stop</summary>
+
+Triggers affected by Stop
 
 - Color
 - Move (if not silent)
@@ -30,12 +30,10 @@ Stops, pauses or resumes a set of triggers given by Group or Control ID.
 - Collision
 - On Death
 - Gradient
-</details>
 
 ### Exceptions
 
-<details>
-<summary>Triggers not affected by Stop</summary>
+Triggers not affected by Stop
 
 - Shake
 - Edit Area Triggers
@@ -50,7 +48,6 @@ Stops, pauses or resumes a set of triggers given by Group or Control ID.
 - Link Visible
 - Shader Triggers
 - Enter Triggers
-</details>
 
 ### Alternative Stops
 
@@ -84,13 +81,13 @@ Can be stopped by Unique, SFX Group or Group ID with an Edit SFX trigger.
 
 #### Gradient
 
-Can be stopped by using the **Disable** option. 
+Can be stopped by using the **Disable** option.
 
-All active gradients can be cleared with the **Disable All** option. 
+All active gradients can be cleared with the **Disable All** option.
 
 #### Shader Triggers
 
-All shaders effects can be disabled using the Shader trigger's **Disable All** option. 
+All shaders effects can be disabled using the Shader trigger's **Disable All** option.
 
 Chroma Glitch shader can be disabled using the trigger's **Disable** option.
 
@@ -105,8 +102,8 @@ While not an active trigger, the item or timer's persistent flag can be reset us
 ## Stop Effect
 
 The effect of a Stop, Pause or Resume trigger on other triggers varies, but can be split into three main categories:
-<details>
-<summary>Effect is paused or stops applying</summary>
+
+Effect is paused or stops applying
 
 - Color
 - Move
@@ -120,20 +117,16 @@ The effect of a Stop, Pause or Resume trigger on other triggers varies, but can 
 - Zoom Camera
 - Offset Camera
 - Rotate Camera
-</details>
 
-<details>
-<summary>Effect gets cleared or is undone</summary>
+Effect gets cleared or is undone
 
 - Pulse
 - Area Triggers
 - Time (settings reset)
 - SFX
 - Gradient
-</details>
 
-<details>
-<summary>Activation is prevented</summary>
+Activation is prevented
 
 - Spawn
 - Touch
@@ -143,7 +136,6 @@ The effect of a Stop, Pause or Resume trigger on other triggers varies, but can 
 - Event
 - Collision
 - On Death
-</details>
 
 ### Notes
 
@@ -161,6 +153,6 @@ Stopping a Spawn trigger with delay from inside another Spawn trigger with delay
 
 If a Spawn Ordered trigger is stopped, it will stop spawning triggers. If its the last one, it will continue spawning without remaps from the stop point.
 
-Paused Spawn delays are ignored and will not tick down until resuming.	
+Paused Spawn delays are ignored and will not tick down until resuming.
 
 Delays can be resumed (or paused) and activate (or not activate) in the same tick as long as they haven't been checked yet.

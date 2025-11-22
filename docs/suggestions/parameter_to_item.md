@@ -2,7 +2,7 @@
 
 Copies the value of a selected variable into the given item ID (item, timer).
 
-Currently, measuring these parameters can be difficult or outright impossible. 
+Currently, measuring these parameters can be difficult or outright impossible.
 
 This functionality would be split into two to three categories (or menus):
 - Object Parameter

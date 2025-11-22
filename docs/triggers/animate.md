@@ -1,10 +1,8 @@
-
 ## Animate Trigger
 
 Animates monsters and other objects with the **Animate on Trigger** setting (animations, particles).
 
-<details>
-<summary>[2.207] All objects affected by Animate Trigger</summary>
+[2.207] All objects affected by Animate Trigger
 
 - 918, 920, 921, 923, 924
 - 1050, 1051, 1052, 1053, 1054
@@ -19,7 +17,6 @@ Animates monsters and other objects with the **Animate on Trigger** setting (ani
 - 2864, 2865, 2867, 2868, 2869, 2870, 2871, 2872, 2873, 2874, 2875, 2876, 2877, 2878, 2879, 2880, 2881, 2882, 2883, 2884, 2885, 2886, 2887, 2888, 2889, 2890, 2891, 2892, 2893, 2894
 - 3001, 3002, 3119, 3120, 3121, 3219, 3303, 3304, 3482, 3483, 3484, 3492, 3493
 - 4211, 4300
-</details>
 
 ### Behavior
 
@@ -31,18 +28,14 @@ The transition between animations is done smoothly over a period of 0.05 seconds
 
 Invalid IDs play the default animation (ID 0).
 
-
-<details>
-<summary>Big (918)</summary>
+Big (918)
 
 - 0: bite
 - 1: attack01
 - 2: attack01_end
 - 3: idle01
-</details>
 
-<details>
-<summary>Bat (1584)</summary>
+Bat (1584)
 
 - 0: idle01
 - 1: idle02
@@ -54,10 +47,8 @@ Invalid IDs play the default animation (ID 0).
 - 7: sleep_loop
 - 8: sleep_end
 - 9: attack02_loop
-</details>
 
-<details>
-<summary>Spikeball (2012)</summary>
+Spikeball (2012)
 
 - 0: idle01
 - 1: idle02
@@ -68,8 +59,6 @@ Invalid IDs play the default animation (ID 0).
 - 6: attack03
 - 7: idle03
 - 8: fromAttack03
-</details>
-
 
 #### Particles
 
@@ -81,15 +70,13 @@ Inactive particle objects are ignored if they have the **Only if Active** proper
 
 #### Animated Objects
 
-Animates objects with the **Animate on Trigger** property. The animation plays once from the start and does not loop. 
+Animates objects with the **Animate on Trigger** property. The animation plays once from the start and does not loop.
 
-Animated objects start invisible if on-screen but will be visible if reloaded, they will turn invisible once the animation ends. 
+Animated objects start invisible if on-screen but will be visible if reloaded, they will turn invisible once the animation ends.
 
 Inactive objects are ignored if they have the **Only if Active** property.
 
 **Single Frame** and **Offset Anim** properties are ignored when animating.
-
-<br>
 
 ## Edit Animation Settings
 
@@ -113,7 +100,7 @@ Allows editing the playback settings of animated objects, accessible from the Ed
 
 Monsters (918,1327,1328,1584,2012) and animated ground spikes (919) do not have an animation menu and cannot have these properties applied to them through save file editing.
 
-Checkpoint objects (2063) have their elements move overtime, but this does not count as an animation and like monsters they are not affected by animation settings. 
+Checkpoint objects (2063) have their elements move overtime, but this does not count as an animation and like monsters they are not affected by animation settings.
 
 The coin collectible object (1614) can be edited, but the menu is overriden by the Edit Pickup Settings menu and it is only accessible if you also select an animated object.
 
@@ -130,8 +117,8 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 ### [2.207] Animated Objects
 
 #### Properties
-<details>
-<summary>All objects affected by Edit Animation</summary>
+
+All objects affected by Edit Animation
 
 - 920, 921, 923, 924
 - 1050, 1051, 1052, 1053, 1054
@@ -149,21 +136,17 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 - 3303, 3304
 - 3482, 3483, 3484, 3492, 3493
 - 4211, 4300
-</details>
 
-<details>
-<summary>Not random or delayed</summary>
-  
+Not random or delayed
+
 - 1050, 1051, 1052, 1053, 1054, 1329, 1592, 1614
 - 2605, 2694
 - 3001, 3002
 - 4211
-</details>
 
-<details>
-<summary>Random start</summary>
-  
-- 920, 921, 923, 924, 
+Random start
+
+- 920, 921, 923, 924,
 - 1516, 1518, 1519, 1583
 - 1618, 1697, 1698, 1699
 - 1849, 1850, 1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1860
@@ -176,10 +159,8 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 - 3303, 3304
 - 3482, 3483, 3484, 3492, 3493
 - 4300
-</details>
 
-<details>
-<summary>Delayed loop</summary>
+Delayed loop
 
 - 921
 - 1519
@@ -187,15 +168,12 @@ The laser wall object (1697) has some of its frames randomized regardless of any
 - 1851, 1852, 1854, 1855, 1856, 1860
 - 2020, 2021, 2022, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2033, 2035, 2036, 2037, 2038, 2039, 2040, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055
 - 2867, 2868, 2869, 2870, 2871, 2872, 2875, 2876, 2877, 2878, 2880, 2882, 2883, 2885, 2886, 2887
-</details>
 
-<details>
-<summary>Pixelated</summary>
+Pixelated
 
 - 2223, 2246, 2605, 2629, 2630, 2694
 - 3119, 3120, 3121, 3219, 3303, 3304, 3482, 3483, 3484, 3492, 3493
 - 4211, 4300
-</details>
 
 #### Frame Delay
 
@@ -205,29 +183,22 @@ Most other animated objects are made up of multiple sequential frames with a set
 
 ##### Monsters
 
-<details>
-<summary>Big (918)</summary>
+Big (918)
 
 - 0: 0.0250
 - 1: 0.0250
 - 2: 0.0250
 - 3: 0.0500
-</details>
 
-<details>
-<summary>Big Spiked (1327)</summary>
+Big Spiked (1327)
 
 - 0: 0.0600
-</details>
 
-<details>
-<summary>Small Spiked (1328)</summary>
+Small Spiked (1328)
 
 - 0: 0.0600
-</details>
 
-<details>
-<summary>Bat (1584)</summary>
+Bat (1584)
 
 - 0: 0.0600
 - 1: 0.0600
@@ -239,10 +210,8 @@ Most other animated objects are made up of multiple sequential frames with a set
 - 7: 0.1000
 - 8: 0.0600
 - 9: 0.0500
-</details>
 
-<details>
-<summary>Spikeball (2012)</summary>
+Spikeball (2012)
 
 - 0: 0.0600
 - 1: 0.0600
@@ -253,37 +222,27 @@ Most other animated objects are made up of multiple sequential frames with a set
 - 6: 0.0400
 - 7: 0.0600
 - 8: 0.0500
-</details>
 
 ##### Animated
 
-<details>
-<summary>Delay 0.0250</summary>
+Delay 0.0250
 
 - 2892
-</details>
 
-<details>
-<summary>Delay 0.0333</summary>
+Delay 0.0333
 
 - 2893
-</details>
 
-<details>
-<summary>Delay 0.0400</summary>
+Delay 0.0400
 
 - 2047
-</details>
 
-<details>
-<summary>Delay 0.0450</summary>
+Delay 0.0450
 
 - 1053
 - 1592
-</details>
 
-<details>
-<summary>Delay 0.0500</summary>
+Delay 0.0500
 
 - 1050, 1051, 1052,
 - 1516, 1518
@@ -292,10 +251,8 @@ Most other animated objects are made up of multiple sequential frames with a set
 - 2020, 2021, 2022, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055
 - 2869, 2870, 2871, 2872, 2873, 2874, 2875, 2876, 2880, 2881, 2882, 2883, 2884, 2885, 2886, 2890, 2891, 2894
 - 3001, 3002
-</details>
 
-<details>
-<summary>Delay 0.0600</summary>
+Delay 0.0600
 
 - 1054
 - 1519
@@ -303,70 +260,53 @@ Most other animated objects are made up of multiple sequential frames with a set
 - 1855, 1857
 - 2023
 - 2864, 2865, 2867, 2868, 2877, 2878, 2879, 2887, 2888, 2889
-</details>
 
-<details>
-<summary>Delay 0.0700</summary>
+Delay 0.0700
 
 - 1849, 1851, 1852, 1854, 1856
 - 1936, 1937, 1938, 1939
-</details>
 
-<details>
-<summary>Delay 0.0800</summary>
+Delay 0.0800
 
 - 920, 921, 923, 924,
 - 1583
 - 1853, 1858
 - 2034
 - 4300
-</details>
 
-<details>
-<summary>Delay 0.1000</summary>
+Delay 0.1000
 
 - 1850
 - 2223, 2246
 - 2605, 2629, 2630
-</details>
 
-<details>
-<summary>Delay 0.1150</summary>
+Delay 0.1150
 
 - 1329
-</details>
 
-<details>
-<summary>Delay 0.1200</summary>
+Delay 0.1200
 - 1591
 - 1614
 - 3303, 3304
 - 3482, 3483, 3484, 3492, 3493
 - 4211
-</details>
 
-<details>
-<summary>Delay 0.1300</summary>
+Delay 0.1300
 
 - 1591
 - 1593
-</details>
 
-<details>
-<summary>Delay 0.1600</summary>
+Delay 0.1600
 
 - 2694
 - 3119
 - 3120
 - 3121
 - 3219
-</details>
-
-<br>
 
 ## Particle Object
 
-Allows the creation of custom particle effects tied to objects. 
+Allows the creation of custom particle effects tied to objects.
 
 ### Particle Editor
 
@@ -380,8 +320,7 @@ The Texture tab selects the particle's texture.
 
 Most particle variables can be randomized in a range using a **+-** variable found next to the base one.
 
-<details>
-<summary>Randomized settings</summary>
+Randomized settings
 
 - **Lifetime +-**
 - **Angle +-**
@@ -409,7 +348,6 @@ Most particle variables can be randomized in a range using a **+-** variable fou
 - **FrictionS +-**
 - **FrictionR +-**
 - **Respawn +-**
-</details>
 
 #### Copy Paste
 
@@ -424,7 +362,7 @@ Options 1, 2 and 3 change what settings are being edited by touching the preview
 Options edit different settings for Gravity and Radius modes, these are:
 
 Gravity
-- Option 1: PosVar X & PosVar Y (rendered as green rectangle) 
+- Option 1: PosVar X & PosVar Y (rendered as green rectangle)
 - Option 2:  Gravity X & Gravity Y (cyan line)
 -Option 3: Speed & Angle (yellow line, angle random is represented as a yellow semicircle but is not edited)
 
@@ -441,7 +379,7 @@ Particle settings that affect motion and emission behavior. Two motion modes are
 
 ##### Common
 
-**Max Particles** is the max amount of particles that can be active at once, any further particles will fail to spawn. 
+**Max Particles** is the max amount of particles that can be active at once, any further particles will fail to spawn.
 
 **Duration** is the amount of time the emitter spawns particles. The emitter spawns particles until **Duration** runs out, and once the lifetime of all remaining particles expires then the emitter despawns and is replaced by another emitter by the particle object. **Duration** is infinite if set to -1 so the emitter will not stop spawning particles unless the particle object is unloaded. If value is 0 particles will not spawn unless **Emission** is -1.
 
@@ -479,7 +417,7 @@ Particle settings that affect scaling, rotation and color (RGBA) values.
 
 **StartSize** is the particle's initial scale, while **EndSize** is its final scale. Scale 16 is equivalent to the scale of the object variant of the particle.
 
-**StartSpin** is the initial rotation of the particle texture, while **EndSpin** is its final rotation. This rotation offsets texture rotations done by **Start Rot is Dir** and **Dynamic Rotation**. 
+**StartSpin** is the initial rotation of the particle texture, while **EndSpin** is its final rotation. This rotation offsets texture rotations done by **Start Rot is Dir** and **Dynamic Rotation**.
 
 ##### Colors
 
@@ -490,7 +428,7 @@ Start and End RGB values for the particles can be set in two ways:
 The **<>** button next to the color selectors copies the main color to the secondary color. Changing the color from the color picker updates the RGB variables instantly, but changing the RGB variables updates the colors from the picker only when you reopen the particle editor.
 Particle objects store RGBA as normalized values with 1% accuracy, rounding to the nearest value when converted to 8-bit RGBA.
 
-Alpha cannot be set from the color picker, it can only be edited using the two **Start_A** and **End_A** variables. 
+Alpha cannot be set from the color picker, it can only be edited using the two **Start_A** and **End_A** variables.
 
 #### Extra
 
@@ -520,8 +458,8 @@ There are 3 unique friction values that each affect one of the particle's transf
 - **FrictionS** (scale)
 - **FrictionR** (rotation)
 
-All three friction settings can be approximated by an exponential decay function optimized for different frame rates:    
-$Gradient = Gradient \cdot exp(-Friction \cdot FrameDelay)$. 
+All three friction settings can be approximated by an exponential decay function optimized for different frame rates:
+$Gradient = Gradient \cdot exp(-Friction \cdot FrameDelay)$.
 
 For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-StartScale)/Lifetime$ and for **FrictionR** gradient is $(EndSpin - StartSpin) / Lifetime$. Frame delay is truncated to 4 decimals, since the friction required to match Advance Follow is ~2.44 to 1.00.
 
@@ -543,7 +481,7 @@ For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-St
 
 **Uniform Obj Color** makes the particle copy the particle object's colors dynamically. All particle color options besides alpha are ignored.
 
-**Dynamic Rotation** makes the particle rotate dynamically in the direction of movement. 
+**Dynamic Rotation** makes the particle rotate dynamically in the direction of movement.
 
 **Animate On Trigger** allows activating the particle object with an Animate trigger. Animated particle objects start inactive until activated by Animate Trigger, any remaining particles still connected to the target object are also cleared.
 
@@ -582,8 +520,6 @@ Alpha values are calculated differently depending on the options selected, below
 | Yes | No | No | Either | \- | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |
 | Yes | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |
 
-<br>
-
 Notes:
 - $start$ is the initial alpha, equal to: $Start\textunderscore A+Start\textunderscore A\textunderscore Rand$
 - $end$ is the final alpha, equal to: $End\textunderscore A+End\textunderscore A\textunderscore Rand$
@@ -595,8 +531,6 @@ Notes:
   - If **Use Obj Color** or **Uniform Obj Color** are used with **Additive** but neither color channels blend, then the particle renders as both normal and additive.
 - The resulting color for one particle is equal to: $BG\textunderscore RGB*(1-Solid\textunderscore Alpha)+Particle\textunderscore RGB*(Solid\textunderscore Alpha+Blending\textunderscore Alpha)$
 
-<br>
-
 ## Spawn Particle
 
 Spawns particles from particle objects in **Particle Group** at a target's position in **Position Group**.
@@ -607,7 +541,7 @@ Spawn Particle only works on particle objects, it cannot spawn the particles of 
 
 **Offset X** / **Y** offset the particle's spawn position by a set amount on the X / Y axis. **OffVar X** / **Y** further offset the spawn position randomly in a +/- range. All offsets are given in units (1/30 block).
 
-**Rotation** offsets the rotation of spawned particles. 
+**Rotation** offsets the rotation of spawned particles.
 
 **Scale** multiplies the scale of spawned particle.
 
@@ -624,7 +558,7 @@ If **Particle Group** has no GID Parent particles spawn individually at the targ
 For **Position Group** the GID Parent enforces an object as the target, without it the target is picked at random from all objects in the group.
 
 Group Parents, Area Parents and object links have no effect on spawned particles.
- 
+
 ### Differences from object particles
 
 Infinite **Duration** is set to 0.00, if **Emission** is not infinite then no particles will spawn.
@@ -638,7 +572,7 @@ Particle emitters created by Spawn Particle ignore most of the properties of the
 - scale (X and Y, but not warp skew)
 - position (if **Particle Group** has an ID Parent)
 - Z order & layer
-- if either **Use Obj Color** or **Uniform Obj Color** are used - the object's current base & detail colors (after all color changes, except Area Tint), but not alpha value (from color channel or triggers) or blending. 
+- if either **Use Obj Color** or **Uniform Obj Color** are used - the object's current base & detail colors (after all color changes, except Area Tint), but not alpha value (from color channel or triggers) or blending.
 
 Particle colors do not update dynamically with **Uniform Obj Color**,
  the behavior for Spawn Particle is identical to **Use Obj Color**.
