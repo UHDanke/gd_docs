@@ -24,6 +24,7 @@ Modifiers can be used to change the parameters of all animated keyframes.
 **Time Mod** multiplies all keyframe durations. Negative values multiply by 0.00 instead.
 
 **Position X** and **Y Mod** multiply the keyframe's distances on the X and Y axes, where:
+
 $NewPosition_i = Position_0 + (Position_i - Position_0) \cdot PositionMod$
 
 If **Position Y Mod** is 0.00, it will copy the value of **Position X Mod**.

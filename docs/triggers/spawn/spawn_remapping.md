@@ -225,6 +225,7 @@ Any value above 9999 refers to ID 9999.
 Trying to assign ID values outside 0-999 is not possible.
 Values below 1 do nothing.
 Values between 1000-1101 are reserved for special color channels.
+
 Any value above 1101 refers to ID 1101.
 
 #### Item IDs

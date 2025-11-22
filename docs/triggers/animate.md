@@ -459,6 +459,7 @@ There are 3 unique friction values that each affect one of the particle's transf
 - **FrictionR** (rotation)
 
 All three friction settings can be approximated by an exponential decay function optimized for different frame rates:
+
 $Gradient = Gradient \cdot exp(-Friction \cdot FrameDelay)$.
 
 For **FrictionP** gradient is speed, for **FrictionS** gradient is $(EndScale-StartScale)/Lifetime$ and for **FrictionR** gradient is $(EndSpin - StartSpin) / Lifetime$. Frame delay is truncated to 4 decimals, since the friction required to match Advance Follow is ~2.44 to 1.00.

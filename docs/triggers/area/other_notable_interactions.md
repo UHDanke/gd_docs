@@ -6,7 +6,9 @@ Stop works on Area triggers.
 Paused Area triggers do not apply their effect.
 
 Stop does not work on Edit Area.
+
 Stopping the Area trigger will undo and stop all active Area and Edit Area effects.
+
 Pausing the Area trigger itself pauses all of its active Edit Area effects.
 
 ### Toggle

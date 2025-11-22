@@ -1,0 +1,12 @@
+area/
+audio/
+collisions/
+follows/
+items/
+level_visual/
+object_transforms/
+object_visual/
+spawn/
+animate.md
+easings.md
+stop.md

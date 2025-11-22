@@ -38,9 +38,11 @@ A collision trigger spawned by another collision trigger of the same type (enter
 ### Interactions with Stop
 
 The spawn list of collision triggers is dynamic and can be changed during trigger activation.
+
 When the state of a set of collision IDs changes, all Collision triggers with the same set of IDs for the respective state (enter, exit) are scheduled to activate, those triggers are then iterated through and spawned by index.
 
 If you stop Collision triggers during that spawn, either by a Collision trigger stopping itself or another Collision trigger, the trigger list shrinks but the index is not updated.
+
 This index mismatch can cause triggers that were not stopped and are yet to spawn to be skipped.
 
 Paused Collision triggers are skipped. Pausing does not cause other triggers to be skipped.

@@ -60,6 +60,7 @@ Using DontBoostX/Y is not enough to fix this issue, the player will also be forc
 ## [2.207] Hitbox move delay
 
 Sometimes, the hitbox of the target object will be stuck in a previous position if Adv Follow movement is really fast.
+
 Stopping the Adv Follow trigger fixes the hitbox position.
 
 ## [2.207] Mode 3 X/Y Only cannot steer if other modes are present
