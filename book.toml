@@ -7,5 +7,3 @@ build-dir = "site"
 
 [output.html]
 math = true
-
-[preprocessor.mathjax]
