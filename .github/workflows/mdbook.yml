@@ -40,7 +40,8 @@ jobs:
         with:
           mdbook-version: 'latest'
           
-      - run: mdbook build
+      - run: mdbook clean
+             mdbook build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
