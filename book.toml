@@ -8,3 +8,5 @@ build-dir = "site"
 [output.html]
 math = true
 no-section-label = true
+sidebar-header-nav = false
+git-repository-url = "https://github.com/UHDanke/gd_docs/"
