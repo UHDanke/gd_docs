@@ -5,6 +5,8 @@ src = "docs"
 [build]
 build-dir = "site"
 
+[output]
+
 [output.html]
 math = true
 no-section-label = true
