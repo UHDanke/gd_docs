@@ -1,5 +1,7 @@
 # Summary
 
+[Introduction]()
+
 - [Editor]()
   - [Colors Layers]()
     - [Color Assignment](editor/colors_layers/color_assignment.md)
@@ -111,8 +113,7 @@
   - [Stop](triggers/stop.md)
 
 
-- [Bugs]()
-  - [Introduction](bugs/README.md)
+- [Bugs](bugs/README.md)
   - [Misc](bugs/misc.md)
   - [Editor](bugs/editor.md)
   - [Move Trigger](bugs/move_trigger.md)
@@ -128,8 +129,7 @@
   - [Count Desync](bugs/count_desync.md)
   - [Documentation Issues](bugs/documentation_issues.md)
 
-- [Suggestions]()
-  - [Introduction](suggestions/README.md)
+- [Suggestions](suggestions/README.md)
   - [Misc](suggestions/misc.md)
   - [Area Triggers](suggestions/area_triggers.md)
   - [Advanced Follow](suggestions/advanced_follow.md)
