@@ -40,12 +40,21 @@ jobs:
         with:
           mdbook-version: 'latest'
           
+      - name: Cache cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      
       - name: Install mdbook-mathjax
         run: |
-          wget https://github.com/lzanini/mdbook-mathjax/releases/download/v0.1.0/mdbook-mathjax-x86_64-unknown-linux-gnu.tar.gz
-          tar -xzf mdbook-mathjax-x86_64-unknown-linux-gnu.tar.gz
-          sudo mv mdbook-mathjax /usr/local/bin/
-            - run: mdbook build
+          cargo install mdbook-mathjax || true
+      
+      - run: mdbook build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
