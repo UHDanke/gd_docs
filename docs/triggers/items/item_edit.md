@@ -32,13 +32,11 @@ Sign functions are applied after the respective rounding functions.
 The first button changes the function applied on the result of the mod operation between NA (none), RN (Round to nearest), FL (Round down) and CE (Round up).
 The second button changes the function applied on the result of the assignment operation.
 
-## Result Assignment
-
-The result can be assigned to an item or timer given by ID, or to the Points variable.
-
-### Precision
+## Operation
 
 Item Edit operations are done at double precision.
+
+The result can be assigned to an item or timer given by ID, or to the Points variable.
 
 ### Items & Points
 
@@ -68,4 +66,4 @@ INF and -INF can be assigned to timers or items but they will be limited like an
 
 NAN cannot be assigned to items and it will be replaced by an integer value - on PC it is replaced by -2^31 while on mobile it is replaced by 0.
 
-NAN can be assigned to timers, but this will make the timer unusable - all operations including NAN have NAN asa result and all comparison operations including NAN return false.
+NAN can be assigned to timers, but this will make the timer unusable - all operations including NAN have NAN as a result and all comparisons with NAN return false.
