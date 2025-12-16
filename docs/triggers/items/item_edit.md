@@ -33,30 +33,34 @@ The first button changes the function applied on the result of the mod operation
 The second button changes the function applied on the result of the assignment operation.
 
 ## Result Assignment
+
 The result can be assigned to an item or timer given by ID, or to the Points variable.
-If the result is assigned to an integer variable like Item or Points, decimal values are truncated.
 
-### Timers
-Item Edit can initialize timers if there isn't one active already.
-Timers created using this trigger are paused, use default settings and have no remaps, groups or control IDs.
-These timers can be cleared only with a Stop trigger using Control ID 0.
-Item Edit can only update the value of an active timer.
-
-## Precision
+### Precision
 
 Item Edit operations are done at double precision.
 
-When cast to integer, the value is truncated to a whole number.
+### Items & Points
 
-## Limits
-
-Timer assignments are limited between -9999999.00 and 9999999.00.
+When assigned to an Item, the result is truncated to a whole number.
 
 Item assignments are limited between -2^31 and 2^31-1. Operations on items will not cause integer overflow since they are always done in floating point.
 
 Due to a bug, on the steam version of the game values above 2^31-1 instead are replaced by -2^31.
 
-## INF and NAN
+### Timers
+
+Timer assignments are limited between -9999999.00 and 9999999.00.
+
+Item Edit can initialize timers if there isn't one active already.
+
+Timers created using this trigger are paused, use default settings and have no remaps, groups or control IDs.
+
+These timers can be cleared only with a Stop trigger using Control ID 0.
+
+Item Edit will update only the value of a timer if it is already active.
+
+### INF and NAN
 
 INF and NAN can be used inside item edits through external editing.
 
@@ -65,8 +69,3 @@ INF and -INF can be assigned to timers or items but they will be limited like an
 NAN cannot be assigned to items and it will be replaced by an integer value - on PC it is replaced by -2^31 while on mobile it is replaced by 0.
 
 NAN can be assigned to timers, but this will make the timer unusable - all operations including NAN have NAN asa result and all comparison operations including NAN return false.
-
-
-
-
-Items will use the truncated value of the 
