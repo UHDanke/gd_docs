@@ -20,3 +20,7 @@ Resuming undoes the offset.
 Stopping does not create an offset, however stopping after pausing makes the offset permanent.
 
 All other triggers with move functionality (rotate, scale, keyframe, etc) do not share this issue.
+
+The reason this happens is that movements are optimized for decorative objects - they only move every frame rather than every tick. Pause fails to take this into account hence the offset.
+
+If the deco object is targeted by adv follow / rotate / scale / other triggers that work on obj then the deco object will no longer be optimized and move every tick instead. 
