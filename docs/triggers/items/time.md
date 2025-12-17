@@ -37,9 +37,11 @@ Unlike Count which is bi-directional, timers are one-directional and this depend
 
 Unlike Item Edit, timers are not limited between -9999999.00 and 9999999.00.
 
+INF and NAN can be assigned using external editing. Assigning NAN to the timer's value breaks most functionality involving the timer.
+
 ### Spawn Mechanics
 
-Timers are processed in reversed spawn order.
+Timers are processed in spawn order on PC but in reversed spawn order on mobile.
 
 All IDs can be spawn remapped. For remap inheritance, the timer instance stores the remaps.
 
