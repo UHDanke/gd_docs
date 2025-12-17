@@ -58,6 +58,10 @@ Timers spawn from the oldest timer first to newest last on mobile (reversed), an
 
 When assigning a value higher than 2^31-1 to an item with Item Edit or Pickup (using Multiply / Divide), the overflow value differs between pc and mobile - on pc the overflow is -2^31 while on mobile the overflow is 2^31-1. For values lower than -2^31 the overflow is -2^31 on both versions.
 
+## [2.207] [18/12/25] Assigning NAN to items returns a different value on PC and mobile
+
+Assigning NAN (through external editing of the trigger) to an item returns -2^31 on PC and 0 on mobile.
+
 ## [2.207] [18/12/25] Pickup Multiply / Divide is innacurate
 
 Multiply / Divide Pickup operations use single precision floats instead of double precision like in the case of Item Edit which introduces significant errors.
