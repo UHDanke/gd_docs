@@ -14,7 +14,19 @@ Count triggers do not update the stored item value if they are paused.
 
 ### Count activating its own Item ID
 
-If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, this will trigger a new check for all Count triggers of that Item ID. On this new check, Count triggers will update their stored value to the new Item ID value. However, if a previous Count check was interrupted by this new check, the game will resume the previous check when the new one is done. When the game updates the Count's stored value, it doesn't use the current Item ID value, it uses the value from when the check was initialized - this means the previous check will update the remaining Count triggers to an old value causing a desycn from the current Item.
+If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, this will trigger a new check for all Count triggers of that Item ID. 
+
+On this new check, Count triggers will update their stored value to the new Item ID value. However, if a previous Count check was interrupted by this new check, the game will resume the previous check when the new one is done. 
+
+When the game updates the Count's stored value, it doesn't use the current Item ID value, it uses the value from when the check was initialized - this means the previous check will update the remaining Count triggers to an old value causing a desycn from the current Item.
+
+## [2.207] [18/12/25] Count check can reverse order if interrupted by a new check
+
+Count trigger checks are ordered by Target Count, the order of activations depends on whether the item was added or subtracted.
+
+If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, but the operation subtracts instead of adding (or vice-versa), the order of checks for both the new AND any previous remaining checks for that item ID will be reversed.
+
+Count checks are done by looping over count instances mapped by Target Count using an index. This index will count from the start if adding and from the end if subtracting. If the order changes in a new item change, then that can cause the same Count triggers to be checked again.
 
 ## [2.207] [18/12/25] Time **Ignore Timewarp** does nothing
 
