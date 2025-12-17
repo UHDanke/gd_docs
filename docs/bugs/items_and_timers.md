@@ -3,7 +3,18 @@
 ## [2.207] [18/12/25] Count desync
 
 The values stored inside Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.
-More information can be found in the count desync file.
+
+### Persistent Items
+
+The value stored inside Count and the value of the item will no longer match when the player respawns, if the item is persistent and the value changes after the count was initialized.
+
+### Paused Counts
+
+Count triggers do not update the stored item value if they are paused.
+
+### Count activating its own Item ID
+
+If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, this will trigger a new check for all Count triggers of that Item ID. On this new check, Count triggers will update their stored value to the new Item ID value. However, if a previous Count check was interrupted by this new check, the game will resume the previous check when the new one is done. When the game updates the Count's stored value, it doesn't use the current Item ID value, it uses the value from when the check was initialized - this means the previous check will update the remaining Count triggers to an old value causing a desycn from the current Item.
 
 ## [2.207] [18/12/25] Time **Ignore Timewarp** does nothing
 
