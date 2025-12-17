@@ -83,7 +83,3 @@ A potential fix for this would be for Advanced Follow to replace the previous in
 
 [Video](https://youtu.be/MNh11dOnu4U)
 ID: 115061026
-
-## [2.207] [REDO] Advanced Follow reversed spawn order
-
-Advanced follow processing order for triggers with the same Priority is reversed on mobile.
