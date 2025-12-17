@@ -10,9 +10,10 @@ While this seems intentional, an option to enable 240hz start positions would be
 The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
 This also affects Area triggers and Move (Lock Camera).
 
-## [2.207] Object Rotations are highly innacurate for slow speeds.
+## [2.207] Object Rotation Offset
 
-The position of objects and their rotations get offset if rotations are slow (~30 degrees per second).
+The position of objects part of a group that is being rotated will get offset overtime.
+
 All rotation transformations are affected except Area Rotate.
 
 ## [2.207] Rotate Aim / Follow infinite rotation
