@@ -1,6 +1,6 @@
 # Collisions
 
-## [2.207] Move Silent Collision crash
+## [2.207] [18/12/25] Move Silent Collision crash
 
 If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will sometimes crash.
 
@@ -11,7 +11,7 @@ The crash will not trigger if Extended Collision is used on the dynamic collisio
 Example ID:
 114561987
 
-## [2.207] Spider teleports through or into Extended Collision objects.
+## [2.207] [18/12/25] Spider teleports through or into Extended Collision objects.
 
 Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.
 
