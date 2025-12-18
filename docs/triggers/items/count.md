@@ -30,7 +30,7 @@ If multiple Count triggers activate at the same time, they are spawned in order,
 
 #### Target Order
 
-Count instances are ordered by **Target Count** in ascending order if the new **Item ID** value is bigger or equal to the old one, and in descending order if the value is strictly lower.
+Count instances are mapped by **Target Count**, on activation **Target Count** is looped through in ascending order if the new **Item ID** value is bigger or equal to the old one, and in descending order if the value is strictly lower.
 Instances with the same **Target Count** use spawn order (from oldest to newest).
 
 #### Count Interrupt
@@ -48,8 +48,6 @@ When the initial Count update resumes, two issues arise if the **Item IDs** of b
 2. The item value used in the initial update is still the same, the initial Count update will update the stored value using an outdated item value.
 
 For example, If the first Pickup changes the item value from 0 to 1000, then the third Count instance activates another Pickup that changes the value from 1000 to 0, it will resume from the fourth last Count instance and continue in descending order. The stored value is updated to 1000 for the first 3 instances, then updated to 0 for all instances, then updated back to 1000 for all but the last 3 instances.
-
-If there is any interest in making this behavior less nonsensical, new Count spawns should discard any queued Count spawns using the same **Item ID**.
 
 ### Spawn Remapping
 
