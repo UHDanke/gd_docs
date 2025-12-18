@@ -126,8 +126,7 @@
   - [Items and Timers](bugs/items_and_timers.md)
   - [Area Triggers](bugs/area_triggers.md)
   - [Advanced Follow](bugs/advanced_follow.md)
-  - [Count Desync](bugs/count_desync.md)
-  - [Documentation Issues](bugs/documentation_issues.md)
+  - [Arrow Trigger](bugs/arrow.md)
 
 - [Suggestions](suggestions/README.md)
   - [Misc](suggestions/misc.md)
