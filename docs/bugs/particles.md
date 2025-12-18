@@ -19,7 +19,7 @@ A particle with the Uniform Color option that is spawned will use the color chan
 
 ## [2.207] [18/12/25] Weird transparency on particle objects
 
-Particle objects calculate transparency inconsistently depending on what settings you select, as show in the following table:
+Particle objects calculate transparency inconsistently depending on what settings you select, as shown in the following table:
 
 | Additive | Obj Color | Uniform Color | Blending | Solid Alpha | Blending Alpha |
 | :---: | :---: | :---: | :---: | :---: | :---: |
