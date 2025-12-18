@@ -1,30 +1,35 @@
 # Spawn Triggers
 
-## [2.207] Overwriting a spawn remap of ID 2 crashes the game
+## [2.207] [18/12/25] Internal Remap Instance IDs are remappable
 
-If you spawn remap group ID 2 to any ID, then call another spawn which remaps group ID 2 to any other non-zero ID, then call a trigger which uses group ID 2, the game will instantly crash when calling the first spawn.
-Only ID 2 is affected.
-Only Steam and Android exhibit this bug. Mac and IOS are not affected.
+Every Spawn trigger with remaps is assigned a Remap Instance ID on level load in the order they are loaded in. Spawn triggers without remaps are assigned ID 0.
 
-## [2.207] Instant Collision resets remaps
+This Remap Instance ID is remappable which has the following effects:
+- Spawn triggers may accidentally use the wrong set of remaps
+- The game will crash if the ID is remapped to a remap instance that does not exist
+
+Video Explanation: https://youtu.be/ZDzuKXkeM8g?si=mSGYaf9Lda75WfYV
+
+## [2.207] [18/12/25] Instant Collision resets remaps
 
 Groups spawned by a remapped Instant Collision do not inherit remaps.
 
-## [2.207] Checkpoint resets remaps
+## [2.207] [18/12/25] Checkpoint resets remaps
 
 Groups spawned by a remapped Checkpoint do not inherit remaps.
 
-## [2.207] Spamming restart (R key) skips spawn activation
+## [2.207] [18/12/25] Spamming restart (R key) skips spawn activation
 
-Spamming R quickly can skip the activation of spawns placed before the origin line.
+Spamming R quickly can skip the activation of spawns placed before the origin line in Platformer. This can also happen but only on the very first attempt in Classic.
+
 I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.
 
-## [2.207] Count spawn inheritance without Multi Activate
+## [2.207] [18/12/25] Count spawn inheritance without Multi Activate
 
 If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
 This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.
 
-## [2.207] Triggers that are not remappable or not fully remappable
+## [2.207] [18/12/25] Triggers that are not remappable or not fully remappable
 
 The following triggers cannot be remapped, or have some IDs that are not remappable. I have highlighted the ones that cause some issues or make things more difficult in certain situations.
 
@@ -42,7 +47,7 @@ These triggers have IDs that are not remappable:
 - _**Area Triggers (Effect ID)**_
 - _**Area Tint, Enter Tint (Color Channel)**_
 
-## [2.207] Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
+## [2.207] [18/12/25] Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
 
 Stopping any Spawn trigger with delay while spawn delays are checked makes the game check the last Spawn delay trigger twice, which if it were to spawn in the same tick would activate twice.
 
@@ -51,19 +56,6 @@ It doesn't matter if you stop a Spawn trigger that has already been activated in
 Due to the spawn limit, this bug is only noticeable if the spawn trigger is remapped. The first activation will be remapped while the second spawn activation will have no remaps.
 
 You can use a Spawn trigger with a very high delay value to counteract this bug, as even if it's checked twice it will not spawn.
-
-## [2.207] Spawn triggers on the timeline have inconsistent spawn order and may be delayed or crash the game
-
-The spawn order of different Spawn triggers placed on the timeline does not follow normal spawn order rules.
-
-Some of the Spawn triggers can spawn only in a certain order, and will wait for certain other Spawn triggers to spawn, delaying them for an arbitrary amount of time.
-
-A bug related to this can also crash the game, deleting the triggers and undoing the deletion fixes the crash in most cases.
-
-Deleting and undoing the triggers does not change this order however.
-
-**Example ID**: 115526701
-[Video](https://youtu.be/LbjoGxoutUg)
 
 ### Spawn Ordered
 
