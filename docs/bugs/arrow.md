@@ -1,5 +1,9 @@
 # Arrow Trigger
 
+## [2.207] [18/12/25] ORD doesn't work as intended
+
+Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.
+
 ## [2.207] [18/12/25] Arrow trigger & channel 0 triggers
 
 If you place an arrow trigger (without touch or spawn) that changes the trigger channel to 0 anywhere in the editor, the activation of all channel 0 triggers in the entire level will now depend on the position of the triggers relative to the arrow trigger.
