@@ -55,3 +55,9 @@ Flipping the trigger with the editor tool changes the directio, but:
 ## [2.207] [18/12/25] ORD doesn't work as intended
 
 Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.
+
+## [2.207] [18/12/25] Kerning is not used properly when splitting text	
+
+Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset.
+
+This also depends on the game's texture quality, with High quality having more significant offset than Low.
