@@ -64,3 +64,7 @@ Triggers that use ORD are delayed until the last (either the left-most or top-mo
 Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset.
 
 This also depends on the game's texture quality, with High quality having more significant offset than Low.
+
+## [2.207] [18/12/25] No Audio Scale Orbs scale more than they should if affected by a scaling trigger
+
+Orb objects with No Audio Scale that have been scaled up by an Area / Scale trigger will be much bigger visually than they should (roughly same size as when clicked), if they are not affected by any enter effect.
