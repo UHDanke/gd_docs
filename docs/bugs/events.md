@@ -1,8 +1,10 @@
 # Events
 
-## [2.207] [18/12/25] Player Reversed event only works on pads and orbs
+## [2.207] [18/12/25] Player Reversed event does not activate
 
-The Player Reversed event only works when activating a pad or orb with the Reverse option.
+Player Reversed event does not seem to activate when the player reverses direction in any circumstance.
+
+It used to activate only on pad / orb reversal but that no longer seems to be the case.
 
 ## [2.207] [18/12/25] Feather Landing event does not trigger if the player does not land with downward velocity
 If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.
