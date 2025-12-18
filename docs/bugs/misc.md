@@ -55,9 +55,6 @@ Flipping the trigger with the editor tool changes the direction, but:
 - If the teleport has target group 0, flipping will flip the direction force is applied in
 - If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj
 
-## [2.207] [18/12/25] ORD doesn't work as intended
-
-Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.
 
 ## [2.207] [18/12/25] Kerning is not used properly when splitting text	
 
