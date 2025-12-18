@@ -27,8 +27,11 @@ If Center Group ID contains multiple objects (and no Group ID Parent), it will s
 ## [2.207] [18/12/25] Relative Scale doesn't work with Scale 0.00
 
 This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
+
 Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
+
 Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
+
 In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
 
 ## [2.207] [18/12/25] Gradient doesn't account for screen rotation when loading the level
@@ -48,7 +51,7 @@ Pausing the Color trigger does not do this.
 
 Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
 
-Flipping the trigger with the editor tool changes the directio, but:
+Flipping the trigger with the editor tool changes the direction, but:
 - If the teleport has target group 0, flipping will flip the direction force is applied in
 - If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj
 
