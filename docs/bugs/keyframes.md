@@ -37,10 +37,10 @@ Keyframe scaling is relative to the Group Parent ID's rotation, which is not ref
 The formula by which keyframe rotation is calculated is very badly implemented and makes no sense.
 
 The current rotation can be calculated using this formula:
-rmod = (Rc-Rp)*mod
-rmod > CW*180 -> offset = -360
--rmod > CCW*180 -> offset = 360
-rotation = rmod + offset
+$rmod = (Rc-Rp)*mod$
+$rmod > CW*180 -> offset = -360$
+$-rmod > CCW*180 -> offset = 360$
+$rotation = rmod + offset$
 
 Where:
 Rc is the current key's rotation
@@ -51,15 +51,15 @@ rotation is the resulting rotation
 Where is the mistake? mod is not applied correctly - it should be applied on offset but not when comparing to CW or CCW
 
 How the formula should look to get correct behavior at any mod:
-Rc-Rp > CW*180 -> offset = -360
--(Rc-Rp) > CCW*180 -> offset = 360
+$Rc-Rp > CW*180 -> offset = -360$
+$-(Rc-Rp) > CCW*180 -> offset = 360$
 rotation = (Rc-Rp+offset)*mod
 
 Minimal modifications to robtop's equation (this is equivalent to above):
-rmod = (Rc-Rp)*mod
-rmod > CW*180*mod -> offset = -360
--rmod > CCW*180*mod -> offset = 360
-rotation = rmod + offset*mod
+$rmod = (Rc-Rp)*mod$
+$rmod > CW*180*mod -> offset = -360$
+$-rmod > CCW*180*mod -> offset = 360$
+$rotation = rmod + offset*mod$
 
 The problems with the current behavior are:
 - If the angle between the two keyframes is over 180, then CW and CCW do nothing
