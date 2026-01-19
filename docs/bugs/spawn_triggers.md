@@ -1,6 +1,6 @@
 # Spawn Triggers
 
-## [2.207] [18/12/25] Internal Remap Instance IDs are remappable
+## [FIXED 2.208] [19/1/26] Internal Remap Instance IDs are remappable
 
 Every Spawn trigger with remaps is assigned a Remap Instance ID on level load in the order they are loaded in. Spawn triggers without remaps are assigned ID 0.
 
@@ -10,15 +10,15 @@ This Remap Instance ID is remappable which has the following effects:
 
 Video Explanation: https://youtu.be/ZDzuKXkeM8g?si=mSGYaf9Lda75WfYV
 
-## [2.207] [18/12/25] Instant Collision resets remaps
+## [FIXED 2.208] [19/1/26] Instant Collision resets remaps
 
 Groups spawned by a remapped Instant Collision do not inherit remaps.
 
-## [2.207] [18/12/25] Checkpoint resets remaps
+## [2.208] [19/1/26]  Checkpoint resets remaps
 
 Groups spawned by a remapped Checkpoint do not inherit remaps.
 
-## [2.207] [18/12/25] Spamming restart (R key) skips spawn activation
+## [2.208] [19/1/26] Spamming restart (R key) skips spawn activation
 
 Spamming R quickly can skip the activation of spawns placed before the origin line in Platformer. This can also happen but only on the very first attempt in Classic.
 
@@ -29,7 +29,7 @@ I assume the reason this happens is because the level restarts before the spawn 
 If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
 This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.
 
-## [2.207] [18/12/25] Triggers that are not remappable or not fully remappable
+## [2.208] [19/1/26]  Triggers that are not remappable or not fully remappable
 
 The following triggers cannot be remapped, or have some IDs that are not remappable. I have highlighted the ones that cause some issues or make things more difficult in certain situations.
 
