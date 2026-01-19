@@ -24,7 +24,7 @@ Spamming R quickly can skip the activation of spawns placed before the origin li
 
 I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.
 
-## [2.207] [18/12/25] Count spawn inheritance without Multi Activate
+## [2.208] [19/1/26] Count spawn inheritance without Multi Activate
 
 If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
 This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.
@@ -47,7 +47,7 @@ These triggers have IDs that are not remappable:
 - _**Area Triggers (Effect ID)**_
 - _**Area Tint, Enter Tint (Color Channel)**_
 
-## [2.207] [18/12/25] Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
+## [2.208] [19/1/26] Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
 
 Stopping any Spawn trigger with delay while spawn delays are checked makes the game check the last Spawn delay trigger twice, which if it were to spawn in the same tick would activate twice.
 
