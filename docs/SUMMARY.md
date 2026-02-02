@@ -88,9 +88,6 @@
     - [Rotate](triggers/object_transforms/rotate.md)
     - [Keyframe](triggers/object_transforms/keyframe.md)
     - [Animate Keyframe](triggers/object_transforms/animate_keyframe.md)
-    - [Activation](triggers/object_transforms/activation.md)
-    - [Spawning](triggers/object_transforms/spawning.md)
-    - [Stop, Pause & Resume](triggers/object_transforms/stop_pause_resume.md)
     - [Object Transform Tick Phase](triggers/object_transforms/object_transform_tick_phase.md)
 
   - [Object Visual]()
