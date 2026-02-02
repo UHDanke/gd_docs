@@ -2,8 +2,8 @@
 
 [Introduction]()
 
-- [Editor]()
-  - [Colors Layers]()
+# Editor
+  - # Colors Layers
     - [Color Assignment](editor/colors_layers/color_assignment.md)
     - [Color Channels](editor/colors_layers/color_channels.md)
     - [Select Color Menu](editor/colors_layers/select_color_menu.md)
