@@ -129,6 +129,7 @@ Alpha cannot be set from the color picker, it can only be edited using the two *
 Miscellaneous particle settings and extra options that do not fit in other tabs.
 
 #### Free, Relative & Grouped
+
 **Free**, **Relative** and **Grouped** change what point of reference the particles are relative to (camera, world, object)
 
 - **Free** makes the particles copy the camera's movement and the opposite of the object's movement (particles appear relative to camera).
@@ -136,10 +137,12 @@ Miscellaneous particle settings and extra options that do not fit in other tabs.
 - **Grouped** is default and applies no extra movement (particles appear relative to emitter).
 
 How the particle object's scaling and rotation affects the spawned particles is different between **Free** / **Relative** and **Grouped**:
-- With **Grouped**, the particle object can be scaled, warped and rotated as any other object.
+- With **Grouped**, the particle object can be scaled and rotated like normal.
 - With **Free** & **Relative**, the game adds a special property to the particle object when you save the level which makes particles ignore the object's scale, warp and rotate; ignore rotations done by rotate triggers; if scaled by a trigger, scale the particles by either X or Y scale, whichever is smaller (but not equal to 1).
 
-This may appear inconsistent when testing in the editor, because the property is added or removed only when saving and re-entering the level.
+This may appear inconsistent when testing in the editor, because the particle is updated only when re-entering the editor.
+
+Particle objects can be warped and skewed and this will warp the emitter, but if the object was already warped before the emitter is created, then the emitter will not have the object's warping.
 
 #### Fade, Friction & Respawn
 
