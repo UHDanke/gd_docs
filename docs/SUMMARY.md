@@ -109,6 +109,8 @@
   - [Easings](triggers/easings.md)
   - [Stop](triggers/stop.md)
 
+  - [Misc]()
+    - [Durations](triggers/misc/durations.md)
 
 - [Bugs](bugs/README.md)
   - [Misc](bugs/misc.md)
