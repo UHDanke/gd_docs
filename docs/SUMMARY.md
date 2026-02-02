@@ -105,12 +105,20 @@
     - [Spawn Order](triggers/spawn/spawn_order.md)
     - [Activation Limits](triggers/spawn/activation_limits.md)
     - [Other Spawn Triggers](triggers/spawn/other_spawn_triggers.md)
-  - [Animate](triggers/animate.md)
-  - [Easings](triggers/easings.md)
+
+  - [Animate]()
+    - [Animate Trigger](triggers/animate/animate_trigger.md)
+    - [Animated Objects](triggers/animate/animated_objects.md)
+    - [Edit Animation](triggers/animate/edit_animation.md)
+    - [Particle Object](triggers/animate/particle_object.md)
+    - [Spawn Particle](triggers/animate/spawn_particle.md)
+
   - [Stop](triggers/stop.md)
 
   - [Misc]()
     - [Durations](triggers/misc/durations.md)
+    - [Easings](triggers/easings.md)
+    - [ID Limits](triggers/misc/id_limits.md)
 
 - [Bugs](bugs/README.md)
   - [Misc](bugs/misc.md)
