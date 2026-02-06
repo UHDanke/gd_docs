@@ -1,2 +1,0 @@
-# Legacy Enter Effects
-
