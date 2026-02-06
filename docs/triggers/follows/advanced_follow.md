@@ -267,5 +267,5 @@ Only one instance can be active on the same set of groups, trying to spawn addit
 
 Timewarps that speed up the game also speed up the game's tick rate, Advanced Follow behavior remains consistent at higher timewarp values.
 
-Timewarps that speed up the game do not reduce teh game's tick rate, they instead multiply the movements applied by Advanced Follow. This changes Advanced Follow behavior at lower timewarp values, instant movement and easing will apply differently when using timewarp.
+Timewarps that speed up the game do not reduce the game's tick rate, they instead multiply the movements applied by Advanced Follow. This changes Advanced Follow behavior at lower timewarp values, instant movement and easing will apply differently as a result, making all movements appear eased-in.
 
