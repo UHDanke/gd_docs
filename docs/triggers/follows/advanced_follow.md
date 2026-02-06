@@ -183,7 +183,7 @@ Having any **Mode 1** or **2** Advanced Follows active on the same target will o
 
 ## X and Y Only
 
-**X** and **Y Only** limit the movement action of Advanced Follow to the X or Y axis. This makes most Advanced Follow parameters to apply on one axis (1D) instead of both axes (2D).
+**X** and **Y Only** limit the movement action of Advanced Follow to the X or Y axis. This makes most Advanced Follow parameters apply on one axis (1D) instead of both axes (2D).
 
 For 1D movement, the target and the follow center's position will be considered to be on the same axis.
 
@@ -238,7 +238,7 @@ While Group Parents are also considered Area Parents if no Area Parent is presen
 
 ### Ignoring GID Parent / Linked Groups
 
-It is possible to make the Advanced Follow ignore Group ID Parents and Linked Groups by applying the respective properties on the trigger, but the options are not implemented in its menu so this is currently possible only by modifying the object using external tools.
+It is possible to make the Advanced Follow ignore Group ID Parents and Linked Groups by applying the respective properties on the trigger, but the options are not implemented in the menu so this is currently possible only by modifying the object using external tools.
 
 
 ## Other Interactions
@@ -253,7 +253,7 @@ Link Visible is not needed when using Advanced Follow.
 
 Stopping is not instant and schedules the Advanced Follow instance to stop at the next tick of movement. The instance still counts as being active even if it's scheduled to stop, so in some cases it can prevent other instances of the same trigger from activating until then.
 
-Pausing disables the Advanced Follow instance temporarily. **Delay** is not paused and continues to tick down while the trigger is paused.
+Pausing makes the Advanced Follow instance inactive until it is resumed or respawned,  **Delay** is not paused and continues to tick down while the trigger is paused.
 
 ### Remapping
 
@@ -265,7 +265,6 @@ Only one instance can be active on the same set of groups, trying to spawn addit
 
 ### Timewarp
 
-Timewarps that speed up the game also speed up the game's tick rate, Advanced Follow behavior remains consistent at higher timewarp values.
+Timewarp increases the tick rate at values higher than 1, for values lower than 1 the tick rate remains the same but movements are multiplied to match the slow-down.
 
-Timewarps that speed up the game do not reduce the game's tick rate, they instead multiply the movements applied by Advanced Follow. This changes Advanced Follow behavior at lower timewarp values, instant movement and easing will apply differently as a result, making all movements appear eased-in.
-
+Advanced Follow behavior remains consistent at higher game speed compared to default speed, but at lower game speed instant movement is reduced and all Advanced Follow effects that change velocity are no longer consistent with default speed.
