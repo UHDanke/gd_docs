@@ -3,8 +3,6 @@
 The activation order of triggers is the order they were spawned in, also known as the spawn order.
 By default, this is applied horizontally from left to right. If multiple triggers share the same horizontal position, they will activate in the order they were placed in.
 
-ORD can be used to enforce an activation order for triggers without the spawn or touch trigger option which activate in the same tick.
-
 The following triggers have additional ordering mechanisms which are applied before spawn order:
 
 ### Count
