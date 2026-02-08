@@ -1,11 +1,20 @@
 # Stop
 
-Stops, pauses or resumes a set of triggers given by Group or Control ID.
+Stops, pauses or resumes a set of triggers given by **Group ID**.
 
-## Valid Targets
+## Options
 
-Triggers affected by Stop
+The behavior of the trigger can be selected using the **Stop**, **Pause** and **Resume** selectors:
+- Stop: Stops a trigger
+- Pause: Pauses a trigger
+- Resume: Resumes a paused trigger
 
+
+ Control ID.
+
+## Stop Behavior
+
+Triggers affected by Stop:
 - Color
 - Move (if not silent)
 - Pulse
@@ -31,10 +40,7 @@ Triggers affected by Stop
 - On Death
 - Gradient
 
-### Exceptions
-
-Triggers not affected by Stop
-
+Triggers not affected by Stop:
 - Shake
 - Edit Area Triggers
 - Spawn Particle
@@ -101,10 +107,9 @@ While not an active trigger, the item or timer's persistent flag can be reset us
 
 ## Stop Effect
 
-The effect of a Stop, Pause or Resume trigger on other triggers varies, but can be split into three main categories:
+The effect of a stop or pause varies, but can be split into three main categories:
 
-Effect is paused or stops applying
-
+Animation is stopped but effect remains:
 - Color
 - Move
 - Alpha
@@ -118,16 +123,14 @@ Effect is paused or stops applying
 - Offset Camera
 - Rotate Camera
 
-Effect gets cleared or is undone
-
+Effect is cleared or undone:
 - Pulse
 - Area Triggers
-- Time (settings reset)
+- Time (resets settings)
 - SFX
 - Gradient
 
-Activation is prevented
-
+Effect is prevented:
 - Spawn
 - Touch
 - Count
@@ -137,17 +140,17 @@ Activation is prevented
 - Collision
 - On Death
 
-### Notes
+## Notes
 
-#### Color
+### Color
 
 The last stopped Color trigger on the channel before a checkpoint gets resumed when respawning.
 
-#### Keyframe Animation
+### Keyframe Animation
 
 Spawning in the same tick cannot be prevented with Stop.
 
-#### Spawn
+### Spawn
 
 Stopping a Spawn trigger with delay from inside another Spawn trigger with delay causes the last scheduled Spawn delay to be checked twice in the same tick. If this delay activates, the first activation uses the Spawn's remaps, while the second uses no remaps.
 
