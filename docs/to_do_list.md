@@ -18,6 +18,7 @@ The following are well-understood but need to be documented:
 - Options
 - Teleport
 - Checkpoint
+- Gameplay Objects
 
 The following require additional testing before documentation can start:
 - Shaders (application order, shader code, interactions)
@@ -27,5 +28,9 @@ The following require additional testing before documentation can start:
 - Timewarp: Behavior of other triggers while game is slown down.
 - Gradient: Shader interactions.
 - Camera: Behavior of camera in Cube / Robot platformer modes.
-- Level compatibility settings
-- Editor options & menus
+- Level Compatibility Settings
+- Editor Options & Menus
+
+The following need to be rewritten or reorganized:
+- Spawn
+- Spawn Remapping
