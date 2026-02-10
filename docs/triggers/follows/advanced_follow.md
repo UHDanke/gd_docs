@@ -34,7 +34,7 @@ This also applies to **Rotation**, which is more noticeable when using **Mode 3*
 
 ### Movement with Rotation
 
-Rotation affects the velocity of the target in some cases and can cause movement to duplicate or velocity to not apply properly if done from **Edit Advanced Follow.
+Rotation affects the velocity of the target in some cases and can cause movement to duplicate or velocity to not apply properly if done from Edit Advanced Follow.
 
 
 ## Movement Updates
