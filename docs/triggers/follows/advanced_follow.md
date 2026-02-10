@@ -34,7 +34,7 @@ This also applies to **Rotation**, which is more noticeable when using **Mode 3*
 
 ### Movement with Rotation
 
-Rotation affects the velocity of the target in some cases and can cause movement to duplicate or velocity to not apply properly if done from Edit Advanced Follow.
+Rotation affects the velocity of the target when using object groups and can cause movement to duplicate. Velocity to not apply properly if its edited from Edit Advanced Follow.
 
 
 ## Movement Updates
@@ -72,7 +72,7 @@ Available modes are:
 
 ### Universal Options
 
-**Delay** makes the target follow the position of the center group with a delay. This will also delay the start of the follow movement proportionally.
+**Delay** makes the target follow the position of the center group with a delay. This will also delay the start of the follow movement.
 
 **MaxRange** is the distance from center in (small step) units inside which the Advanced Follow effect is applied.
 
