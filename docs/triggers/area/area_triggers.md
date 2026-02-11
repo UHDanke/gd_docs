@@ -1,6 +1,6 @@
 # Area Triggers
 
-## Virtual Effects
+## Temporary Effects
 
 Unlike their non-Area versions, the effects of Area triggers are transient \- the effect is temporary and is undone when the trigger is stopped.
 Area effects are recalculated every game tick, 240 times per second.
