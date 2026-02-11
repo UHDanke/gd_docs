@@ -21,8 +21,8 @@ The following are well-understood but need to be documented:
 - Gameplay Objects
 
 The following require additional testing before documentation can start:
-- Shaders (application order, shader code, interactions)
-- Start Position (interactions)
+- Shader: Interactions
+- Start Position: interactions
 - Static Camera: Smooth Velocity & Modifier equation + behavior.
 - Event: Exact activation conditions for each event.
 - Timewarp: Behavior of other triggers while game is slown down.
