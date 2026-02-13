@@ -50,7 +50,7 @@ Toggled spawn triggers will not be spawned.
 
 ## On Load
 
-UI and Link Visible activate and apply their effect when the level loads the objects.
+Start Position, UI and Link Visible activate and apply their effect when the level loads the objects.
 
 The effect of On Load triggers cannot be stopped and is active for the remaining of the current attempt.
 
