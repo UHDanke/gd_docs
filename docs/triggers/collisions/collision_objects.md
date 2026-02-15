@@ -51,7 +51,7 @@ Collision objects within a chunk are checked in the order they were placed.
 
 If a non-dynamic target uses Extended Collision, it will be checked by all dynamic targets regardless of chunk position.
 
-If the dynamic target uses Extended Collision, it will check all chunks.
+If the dynamic target uses Extended Collision, it will check all chunks that touch its bounding box.
 
 ### Load Limit
 
