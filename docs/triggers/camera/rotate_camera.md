@@ -10,8 +10,6 @@ Can be animated using **Move Time** and **Easing**.
 
 With **Add** enabled **Degrees** are added to the current rotation instead.
 
-$Target = Current + Degrees$
-
 **Snap 360** snaps the target rotation to the nearest full 360 rotation, relative to the camera's current rotation. 
 
 The resulting rotation formulas are:
