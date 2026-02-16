@@ -14,7 +14,6 @@ The following are well-understood but need to be documented:
 - Keyframe Object
 - Touch
 - Rotate Camera
-- Gameplay Arrow
 - Options
 - Teleport
 - Checkpoint
@@ -25,9 +24,9 @@ The following require additional testing before documentation can start:
 - Start Position: interactions
 - Static Camera: Smooth Velocity & Modifier equation + behavior.
 - Event: Exact activation conditions for each event.
-- Timewarp: Behavior of other triggers while game is slown down.
 - Gradient: Shader interactions.
 - Camera: Behavior of camera in Cube / Robot platformer modes.
+- Fast Random
 
 The following need to be rewritten or reorganized:
 - Spawn
