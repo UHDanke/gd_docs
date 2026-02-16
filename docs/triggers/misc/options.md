@@ -72,6 +72,8 @@ Off by default.
 
 ## Audio On Death
 
+Off by default.
+
 ## No Death SFX
 
 Makes the on death SFX will not play when enabled.
