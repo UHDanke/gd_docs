@@ -17,11 +17,11 @@ The arrow trigger will not update its rotation settings dynamically if the arrow
 
 All direction settings can also be set individually from the level's start settings.
 
-### Rotation Axis
+### Rotation
 
 Controls whether the player travels along the X axis (horizontally) or along the Y axis (vertically). 
 
-### Reverse Direction
+### Reverse
 
 Controls whether the player's position increases or decreases horizontally as it travels in classic mode. The default direction is positive (X/Y coordinate increases) while the reversed direction is negative (X/Y coordinate decreases).
 
@@ -49,7 +49,7 @@ Both options do not take into account the player's gravity.
 
 Changes the player's current trigger channel to a new channel if selected, otherwise keeps the same channel.
 
-If **Channel Only** is selected the trigger will only change the makes 
+If **Channel Only** is selected the trigger will only change the player's current channel   and ignore rotation, reverse and gravity settings.
 
 ## Instant Offset
 
