@@ -13,7 +13,6 @@ The following are well-understood but need to be documented:
 - Scale
 - Keyframe Object
 - Touch
-- Options
 - Teleport
 - Checkpoint
 - Gameplay Objects
