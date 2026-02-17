@@ -72,6 +72,10 @@ Off by default.
 
 ## Audio On Death
 
+Makes audio not stop on player death when enabled.
+
+Songs with **Dont Reset** do not stop on player death and are not affected by this option.
+
 Off by default.
 
 ## No Death SFX
@@ -89,5 +93,9 @@ Off by default.
 **Respawn Time** is limited between 1.00 and 10.00 seconds, even if you are using an option that reduces respawn time like **Fast Respawn**
 
 ## Boost Slide
+
+Decreases the sideways friction the player has on blocks after force is applied when enabled.
+
+Friction is reduced by roughly 68% if the player's speed is above roughly ~0.10-0.14 blocks per second. 
 
 Off by default.
