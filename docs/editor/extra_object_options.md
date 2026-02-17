@@ -4,7 +4,7 @@ Miscellaneous options that enable or disable extra properties of an object.
 
 ## Dont Fade
 
-Disables fade from enter effects.
+Disables fade from enter effect presets and from Fade Enter.
 
 ## Dont Enter
 
@@ -130,7 +130,7 @@ This option is only visible when selecting a gameplay or trigger object.
 
 ## Center Effect
 
-Makes touch-triggered Gameplay Arrow, Teleport and Reverse triggers activate when the preview line passes through the center of the trigger instead of when the player would collide with the collision's hitbox.
+Makes touch-triggered Gameplay Arrow, Teleport (trigger & single portal) and Reverse triggers activate when the preview line passes through the center of the trigger instead of when the player would collide with their hitbox.
  
 Doesn't work on other triggers as they already have this behavior by default when touch-triggered.
 
