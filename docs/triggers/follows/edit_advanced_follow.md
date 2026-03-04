@@ -6,7 +6,7 @@ Modifies the speed and direction of an Advanced Follow target.
 
 Target GID is the group of the target. It does not have to be a group targeted by an Advanced Follow trigger, only a target that is under an Advanced Follow effect.
 
-The target must be a single object, the ID Parent of a group or the Area Parent of an object group.
+The target must be an object, the ID Parent of a group or the Area Parent of an object group.
 
 Edit Advanced Follow will not work on a Mode 1 Advanced Follow trigger, as Mode 1 overrides the current velocity.
 
@@ -15,11 +15,14 @@ Edit Advanced Follow will not work on a Mode 1 Advanced Follow trigger, as Mode 
 Mod X and Y multiply the current acceleration of the object on the respective axis prior to applying Speed.
 
 With **X Only** and **Y Only**, the trigger will only edit the velocity of the given axis.
+
 This is also the case if the target is affected by Advanced Follow on one axis only.
 
-## Speed and Dir
+## Speed and Direction
 
-**Speed** and **Dir** settings share the same behavior with **StartSpeed** and **StartDir**.
+**Speed** and **Dir** settings share the same behavior with **StartSpeed** and **StartDir**. 
+
+The reference IDs if given are used to determine the direction **Speed** will be applied towards, the **Speed** ID uses the reference's current movement direction, the **Dir** ID calculates the direction from the target to the reference's current position. **Dir** if specified offsets the direction's angle by the given value.
 
 Unlike **StartSpeed**, **Speed** is always additive and is not limited to one object per **Target GID**.
 
@@ -38,17 +41,20 @@ $Velocity = (CurrentVelocityX)*ModX+(CurrentVelocityY)*ModY+VelocityX+VelocityY$
 ## Random Values
 
 The values of Mod X/Y, Speed and Dir can be randomized in a range using the -/+ boxes respective to each setting.
+
 Contrary to what the option says, random values are picked in the 0/+ range, not -/+.
+
 The randomization is done individually per target everytime the trigger is activated.
 
 ## Target Control ID
 
 If Target Control ID is selected, Target GID references the Control ID of one or more Advanced Follow instances.
+
 Edit Advanced Follow acts on all targets that have at least one of the Advanced Follows' Target GIDs.
 
 ## Remapping
 
-All IDs, including the reference IDs, can be remapped.
+All IDs including the reference IDs can be remapped.
 
 ## Timings
 
