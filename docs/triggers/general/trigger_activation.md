@@ -38,13 +38,15 @@ If the player collides with multiple touch triggers the activation order depends
 
 Toggled off triggers will not check for collision.
 
+Triggers normally cannot be moved by most triggers, touch trigger allows them to be moved.
+
 ## Spawn
 
 Spawn triggers activate when spawned by another trigger by a given **Group ID**.
 
 Can only activate once if **Multi Trigger** is not selected.
 
-Spawn triggers within a group activate in order from left to right, if multiple triggers share the same horizontal position they activate in the order they are loaded.
+Spawn triggers within a group activate in order from left to right, if multiple triggers share the same horizontal position they activate in the order they are loaded. This order is initialized when the level starts and cannot be changed.
 
 Toggled spawn triggers will not be spawned.
 
@@ -53,7 +55,6 @@ Toggled spawn triggers will not be spawned.
 Start Position, UI and Link Visible activate and apply their effect when the level loads the objects.
 
 The effect of On Load triggers cannot be stopped and is active for the remaining of the current attempt.
-
 
 On load triggers have no additional effect if spawned, touched or activated by the timeline.
 
