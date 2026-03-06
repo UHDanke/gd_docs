@@ -14,4 +14,4 @@ The Main Time counter is not affected by timewarp.
 
 Audio is not affected by timewarp.
 
-Advanced Follow works with ticks and not time values, if the game is slown down then all movements done by Advanced Follow are reduced proportionally, this isn't consistent across different timewarp values which results.
+Advanced Follow works with ticks and not time values, if the game is slown down then all movements done by Advanced Follow are reduced proportionally but the resulting movement is not consistent across different tiemwarp values.
