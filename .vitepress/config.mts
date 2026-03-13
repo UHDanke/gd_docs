@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import sidebar from './sidebar.mts';
 
 export default defineConfig({
+  base: '/gd_docs/',
   srcDir: "docs",
   title: "HDanke's GD Docs",
   description: "HDanke's Editor Documentation",
