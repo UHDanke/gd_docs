@@ -4,6 +4,9 @@ import sidebar from './sidebar.mts';
 export default defineConfig({
   base: '/gd_docs/',
   srcDir: "docs",
+  markdown: {
+    math: true
+  },
   title: "HDanke's GD Docs",
   description: "HDanke's Editor Documentation",
   lang: 'en-US',
@@ -24,7 +27,13 @@ export default defineConfig({
       text: 'Edit this page on GitHub'
     },
     sidebar: sidebar,
-    lastUpdated: true,
+    lastUpdated: {
+      text: 'Last updated',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: undefined
+      }
+    },
     search: {
       provider: 'local'
     },
