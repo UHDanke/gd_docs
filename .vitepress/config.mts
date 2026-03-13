@@ -9,7 +9,11 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' }
+      { text: 'Home', link: '/' },
+      { text: 'Triggers', link: '/triggers/general/trigger_activation' },
+      { text: 'Editor', link: '/editor/autobuild' },
+      { text: 'Bugs', link: '/bugs/README' },
+      { text: 'Suggestions', link: '/suggestions/README' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/UHDanke/gd_docs' }

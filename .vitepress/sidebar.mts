@@ -1,620 +1,266 @@
-export default [
+const sidebar = [
   {
-    "text": "Changelog",
-    "link": "/changelog"
+    text: 'General',
+    items: [
+      { text: 'To Do List', link: '/to_do_list' },
+    ]
   },
   {
-    "text": "Credits",
-    "link": "/credits"
+    text: 'Editor',
+    collapsed: false,
+    items: [
+      { text: 'Autobuild', link: '/editor/autobuild' },
+      { text: 'Extra Object Options', link: '/editor/extra_object_options' },
+      {
+        text: 'Colors & Layers',
+        collapsed: true,
+        items: [
+          { text: 'Color Assignment', link: '/editor/colors_layers/color_assignment' },
+          { text: 'Color Channels', link: '/editor/colors_layers/color_channels' },
+          { text: 'Color Sliders', link: '/editor/colors_layers/color_sliders' },
+          { text: 'Other Color & Layering Options', link: '/editor/colors_layers/other_color_and_layering_options' },
+          { text: 'Rendering Order', link: '/editor/colors_layers/rendering_order' },
+          { text: 'Select Color Menu', link: '/editor/colors_layers/select_color_menu' },
+        ]
+      },
+    ]
   },
   {
-    "text": "Endpoints",
-    "items": [
+    text: 'Triggers',
+    collapsed: false,
+    items: [
       {
-        "text": "Sending Requests",
-        "link": "/endpoints/generic"
+        text: 'General',
+        collapsed: true,
+        items: [
+          { text: 'Durations', link: '/triggers/general/durations' },
+          { text: 'Easings', link: '/triggers/general/easings' },
+          { text: 'Game Loop', link: '/triggers/general/game_loop' },
+          { text: 'ID Limits', link: '/triggers/general/id_limits' },
+          { text: 'Target Behavior', link: '/triggers/general/target_behavior' },
+          { text: 'Trigger Activation', link: '/triggers/general/trigger_activation' },
+          { text: 'Trigger Channels', link: '/triggers/general/trigger_channels' },
+        ]
       },
       {
-        "text": "List of Endpoints",
-        "link": "/endpoints/"
+        text: 'Animate',
+        collapsed: true,
+        items: [
+          { text: 'Animated Objects', link: '/triggers/animate/animated_objects' },
+          { text: 'Animate Trigger', link: '/triggers/animate/animate_trigger' },
+          { text: 'Edit Animation', link: '/triggers/animate/edit_animation' },
+          { text: 'Particle Object', link: '/triggers/animate/particle_object' },
+          { text: 'Spawn Particle', link: '/triggers/animate/spawn_particle' },
+        ]
       },
       {
-        "text": "Accounts",
-        "items": [
-          {
-            "text": "backupGJAccountNew.php",
-            "link": "/endpoints/accounts/backupGJAccountNew"
-          },
-          {
-            "text": "loginGJAccount.php",
-            "link": "/endpoints/accounts/loginGJAccount"
-          },
-          {
-            "text": "registerGJAccount.php",
-            "link": "/endpoints/accounts/registerGJAccount"
-          },
-          {
-            "text": "syncGJAccountNew.php",
-            "link": "/endpoints/accounts/syncGJAccountNew"
-          },
-          {
-            "text": "updateGJAccSettings20.php",
-            "link": "/endpoints/accounts/updateGJAccSettings20"
-          }
-        ],
-        "collapsed": true
+        text: 'Area',
+        collapsed: true,
+        items: [
+          { text: 'Area Stop', link: '/triggers/area/area_stop' },
+          { text: 'Area Triggers', link: '/triggers/area/area_triggers' },
+          { text: 'Edit Area Triggers', link: '/triggers/area/edit_area_triggers' },
+          { text: 'Other Notable Interactions', link: '/triggers/area/other_notable_interactions' },
+        ]
       },
       {
-        "text": "Comments",
-        "items": [
-          {
-            "text": "deleteGJAccComment20.php",
-            "link": "/endpoints/comments/deleteGJAccComment20"
-          },
-          {
-            "text": "deleteGJComment20.php",
-            "link": "/endpoints/comments/deleteGJComment20"
-          },
-          {
-            "text": "getGJAccountComments20.php",
-            "link": "/endpoints/comments/getGJAccountComments20"
-          },
-          {
-            "text": "getGJCommentHistory.php",
-            "link": "/endpoints/comments/getGJCommentHistory"
-          },
-          {
-            "text": "getGJComments21.php",
-            "link": "/endpoints/comments/getGJComments21"
-          },
-          {
-            "text": "uploadGJAccComment20.php",
-            "link": "/endpoints/comments/uploadGJAccComment20"
-          },
-          {
-            "text": "uploadGJComment21.php",
-            "link": "/endpoints/comments/uploadGJComment21"
-          }
-        ],
-        "collapsed": true
+        text: 'Audio',
+        collapsed: true,
+        items: [
+          { text: 'BPM Guide', link: '/triggers/audio/bpm_guide' },
+          { text: 'Edit SFX', link: '/triggers/audio/edit_sfx' },
+          { text: 'Edit Song', link: '/triggers/audio/edit_song' },
+          { text: 'FMOD', link: '/triggers/audio/fmod' },
+          { text: 'Game Audio Settings', link: '/triggers/audio/game_audio_settings' },
+          { text: 'Loop', link: '/triggers/audio/loop' },
+          { text: 'Pitch & Speed', link: '/triggers/audio/pitch_speed' },
+          { text: 'Primary Song', link: '/triggers/audio/primary_song' },
+          { text: 'SFX', link: '/triggers/audio/sfx' },
+          { text: 'Song Guidelines', link: '/triggers/audio/song_guidelines' },
+          { text: 'Song Trigger', link: '/triggers/audio/song_trigger' },
+          { text: 'Volume Proximity', link: '/triggers/audio/volume_proximity' },
+        ]
       },
       {
-        "text": "Levels",
-        "items": [
-          {
-            "text": "deleteGJLevelUser20.php",
-            "link": "/endpoints/levels/deleteGJLevelUser20"
-          },
-          {
-            "text": "downloadGJLevel22.php",
-            "link": "/endpoints/levels/downloadGJLevel22"
-          },
-          {
-            "text": "getGJDailyLevel.php",
-            "link": "/endpoints/levels/getGJDailyLevel"
-          },
-          {
-            "text": "getGJGauntlets21.php",
-            "link": "/endpoints/levels/getGJGauntlets21"
-          },
-          {
-            "text": "getGJLevels21.php",
-            "link": "/endpoints/levels/getGJLevels21"
-          },
-          {
-            "text": "getGJLevelScores211.php",
-            "link": "/endpoints/levels/getGJLevelScores211"
-          },
-          {
-            "text": "getGJLevelScoresPlat.php",
-            "link": "/endpoints/levels/getGJLevelScoresPlat"
-          },
-          {
-            "text": "getGJMapPacks21.php",
-            "link": "/endpoints/levels/getGJMapPacks21"
-          },
-          {
-            "text": "rateGJDemon21.php",
-            "link": "/endpoints/levels/rateGJDemon21"
-          },
-          {
-            "text": "rateGJStars211.php",
-            "link": "/endpoints/levels/rateGJStars211"
-          },
-          {
-            "text": "reportGJLevel.php",
-            "link": "/endpoints/levels/reportGJLevel"
-          },
-          {
-            "text": "suggestGJStars20.php",
-            "link": "/endpoints/levels/suggestGJStars20"
-          },
-          {
-            "text": "updateGJDesc20.php",
-            "link": "/endpoints/levels/updateGJDesc20"
-          },
-          {
-            "text": "uploadGJLevel21.php",
-            "link": "/endpoints/levels/uploadGJLevel21"
-          }
-        ],
-        "collapsed": true
+        text: 'Camera',
+        collapsed: true,
+        items: [
+          { text: 'Camera Edge', link: '/triggers/camera/camera_edge' },
+          { text: 'Camera Guide', link: '/triggers/camera/camera_guide' },
+          { text: 'Camera Mode', link: '/triggers/camera/camera_mode' },
+          { text: 'Default Camera Properties', link: '/triggers/camera/default_camera_properties' },
+          { text: 'Gameplay Offset', link: '/triggers/camera/gameplay_offset' },
+          { text: 'Offset Camera', link: '/triggers/camera/offset_camera' },
+          { text: 'Rotate Camera', link: '/triggers/camera/rotate_camera' },
+          { text: 'Static Camera', link: '/triggers/camera/static_camera' },
+          { text: 'Zoom Camera', link: '/triggers/camera/zoom_camera' },
+        ]
       },
       {
-        "text": "Lists",
-        "items": [
-          {
-            "text": "deleteGJLevelList.php",
-            "link": "/endpoints/lists/deleteGJLevelList"
-          },
-          {
-            "text": "getGJLevelLists.php",
-            "link": "/endpoints/lists/getGJLevelLists"
-          },
-          {
-            "text": "uploadGJLevelList.php",
-            "link": "/endpoints/lists/uploadGJLevelList"
-          }
-        ],
-        "collapsed": true
+        text: 'Collisions',
+        collapsed: true,
+        items: [
+          { text: 'Collision Objects', link: '/triggers/collisions/collision_objects' },
+          { text: 'Collision Trigger', link: '/triggers/collisions/collision_trigger' },
+          { text: 'Instant Collision Trigger', link: '/triggers/collisions/instant_collision_trigger' },
+          { text: 'Performance Optimization', link: '/triggers/collisions/performance_optimization' },
+          { text: 'State Blocks', link: '/triggers/collisions/state_blocks' },
+        ]
       },
       {
-        "text": "Misc",
-        "items": [
-          {
-            "text": "getAccountURL.php",
-            "link": "/endpoints/misc/getAccountURL"
-          },
-          {
-            "text": "getSaveData.php",
-            "link": "/endpoints/misc/getSaveData"
-          },
-          {
-            "text": "getTop1000.php",
-            "link": "/endpoints/misc/getTop1000"
-          },
-          {
-            "text": "likeGJItem211.php",
-            "link": "/endpoints/misc/likeGJItem211"
-          },
-          {
-            "text": "requestUserAccess.php",
-            "link": "/endpoints/misc/requestUserAccess"
-          },
-          {
-            "text": "restoreGJItems.php",
-            "link": "/endpoints/misc/restoreGJItems"
-          }
-        ],
-        "collapsed": true
+        text: 'Follows',
+        collapsed: true,
+        items: [
+          { text: 'Advanced Follow', link: '/triggers/follows/advanced_follow' },
+          { text: 'Edit Advanced Follow', link: '/triggers/follows/edit_advanced_follow' },
+          { text: 'Follow', link: '/triggers/follows/follow' },
+          { text: 'Follow Player Y', link: '/triggers/follows/follow_player_y' },
+          { text: 'Retarget Advanced Follow', link: '/triggers/follows/retarget_advanced_follow' },
+        ]
       },
       {
-        "text": "Multiplayer",
-        "items": [
-          {
-            "text": "exitMPLobby.php",
-            "link": "/endpoints/multiplayer/exitMPLobby"
-          },
-          {
-            "text": "joinMPLobby.php",
-            "link": "/endpoints/multiplayer/joinMPLobby"
-          },
-          {
-            "text": "uploadMPComment.php",
-            "link": "/endpoints/multiplayer/uploadMPComment"
-          }
-        ],
-        "collapsed": true
+        text: 'Items',
+        collapsed: true,
+        items: [
+          { text: 'Count', link: '/triggers/items/count' },
+          { text: 'Counter Labels', link: '/triggers/items/counter_labels' },
+          { text: 'Instant Count', link: '/triggers/items/instant_count' },
+          { text: 'Item Compare', link: '/triggers/items/item_compare' },
+          { text: 'Item Edit', link: '/triggers/items/item_edit' },
+          { text: 'Item Persist', link: '/triggers/items/item_persist' },
+          { text: 'Pickup', link: '/triggers/items/pickup' },
+          { text: 'Time', link: '/triggers/items/time' },
+          { text: 'Time Control', link: '/triggers/items/time_control' },
+          { text: 'Time Event', link: '/triggers/items/time_event' },
+        ]
       },
       {
-        "text": "Rewards",
-        "items": [
-          {
-            "text": "getGJChallenges.php",
-            "link": "/endpoints/rewards/getGJChallenges"
-          },
-          {
-            "text": "getGJRewards.php",
-            "link": "/endpoints/rewards/getGJRewards"
-          },
-          {
-            "text": "getGJSecretReward.php",
-            "link": "/endpoints/rewards/getGJSecretReward"
-          }
-        ],
-        "collapsed": true
+        text: 'Level',
+        collapsed: true,
+        items: [
+          { text: 'BG Effect On/Off', link: '/triggers/level/bg_effect_on_off' },
+          { text: 'BG Speed', link: '/triggers/level/bg_speed' },
+          { text: 'Change Background', link: '/triggers/level/change_background' },
+          { text: 'Change Ground', link: '/triggers/level/change_ground' },
+          { text: 'Change Middleground', link: '/triggers/level/change_middleground' },
+          { text: 'MG Speed', link: '/triggers/level/mg_speed' },
+          { text: 'Offset MG Y', link: '/triggers/level/offset_mg_y' },
+        ]
       },
       {
-        "text": "Socials",
-        "items": [
-          {
-            "text": "acceptGJFriendRequest20.php",
-            "link": "/endpoints/socials/acceptGJFriendRequest20"
-          },
-          {
-            "text": "blockGJUser20.php",
-            "link": "/endpoints/socials/blockGJUser20"
-          },
-          {
-            "text": "deleteGJFriendRequests20.php",
-            "link": "/endpoints/socials/deleteGJFriendRequests20"
-          },
-          {
-            "text": "deleteGJMessages20.php",
-            "link": "/endpoints/socials/deleteGJMessages20"
-          },
-          {
-            "text": "downloadGJMessage20.php",
-            "link": "/endpoints/socials/downloadGJMessage20"
-          },
-          {
-            "text": "getGJFriendRequests20.php",
-            "link": "/endpoints/socials/getGJFriendRequests20"
-          },
-          {
-            "text": "getGJMessages20.php",
-            "link": "/endpoints/socials/getGJMessages20"
-          },
-          {
-            "text": "getGJUserList20.php",
-            "link": "/endpoints/socials/getGJUserList20"
-          },
-          {
-            "text": "readGJFriendRequest20.php",
-            "link": "/endpoints/socials/readGJFriendRequest20"
-          },
-          {
-            "text": "removeGJFriend20.php",
-            "link": "/endpoints/socials/removeGJFriend20"
-          },
-          {
-            "text": "unblockGJUser20.php",
-            "link": "/endpoints/socials/unblockGJUser20"
-          },
-          {
-            "text": "uploadFriendRequest20.php",
-            "link": "/endpoints/socials/uploadFriendRequest20"
-          },
-          {
-            "text": "uploadGJMessage20.php",
-            "link": "/endpoints/socials/uploadGJMessage20"
-          }
-        ],
-        "collapsed": true
+        text: 'Misc',
+        collapsed: true,
+        items: [
+          { text: 'Collectibles', link: '/triggers/misc/collectibles' },
+          { text: 'End', link: '/triggers/misc/end' },
+          { text: 'Event', link: '/triggers/misc/event' },
+          { text: 'On Death', link: '/triggers/misc/on_death' },
+          { text: 'Options', link: '/triggers/misc/options' },
+          { text: 'Reset', link: '/triggers/misc/reset' },
+          { text: 'Stop', link: '/triggers/misc/stop' },
+          { text: 'Timewarp', link: '/triggers/misc/timewarp' },
+          { text: 'Toggle', link: '/triggers/misc/toggle' },
+          { text: 'Toggle Object', link: '/triggers/misc/toggle_object' },
+        ]
       },
       {
-        "text": "Songs",
-        "items": [
-          {
-            "text": "getCustomContentURL.php",
-            "link": "/endpoints/songs/getCustomContentURL"
-          },
-          {
-            "text": "getGJSongInfo.php",
-            "link": "/endpoints/songs/getGJSongInfo"
-          },
-          {
-            "text": "getGJTopArtists.php",
-            "link": "/endpoints/songs/getGJTopArtists"
-          },
-          {
-            "text": "musiclibrary.dat",
-            "link": "/endpoints/songs/musiclibrary"
-          },
-          {
-            "text": "sfxlibrary.dat",
-            "link": "/endpoints/songs/sfxlibrary"
-          },
-          {
-            "text": "testSong.php",
-            "link": "/endpoints/songs/testSong"
-          }
-        ],
-        "collapsed": true
+        text: 'Player',
+        collapsed: true,
+        items: [
+          { text: 'Disable/Enable Player Trail', link: '/triggers/player/disable_enable_player_trail' },
+          { text: 'Gameplay Arrow', link: '/triggers/player/gameplay_arrow' },
+          { text: 'Gravity', link: '/triggers/player/gravity' },
+          { text: 'Player Control', link: '/triggers/player/player_control' },
+          { text: 'Reverse', link: '/triggers/player/reverse' },
+          { text: 'Show/Hide Player', link: '/triggers/player/show_hide_player' },
+        ]
       },
       {
-        "text": "Users",
-        "items": [
-          {
-            "text": "getGJScores20.php",
-            "link": "/endpoints/users/getGJScores20"
-          },
-          {
-            "text": "getGJUserInfo20.php",
-            "link": "/endpoints/users/getGJUserInfo20"
-          },
-          {
-            "text": "getGJUsers20.php",
-            "link": "/endpoints/users/getGJUsers20"
-          },
-          {
-            "text": "updateGJUserScore22.php",
-            "link": "/endpoints/users/updateGJUserScore22"
-          }
-        ],
-        "collapsed": true
-      }
-    ],
-    "collapsed": false
+        text: 'Shaders',
+        collapsed: true,
+        items: [
+          { text: 'Shaders', link: '/triggers/shaders/shaders' },
+        ]
+      },
+      {
+        text: 'Spawn',
+        collapsed: true,
+        items: [
+          { text: 'Activation Limits', link: '/triggers/spawn/activation_limits' },
+          { text: 'Adv Random', link: '/triggers/spawn/adv_random' },
+          { text: 'Random', link: '/triggers/spawn/random' },
+          { text: 'Sequence', link: '/triggers/spawn/sequence' },
+          { text: 'Spawn Remapping', link: '/triggers/spawn/spawn_remapping' },
+          { text: 'Spawn Trigger', link: '/triggers/spawn/spawn_trigger' },
+        ]
+      },
+      {
+        text: 'Transforms',
+        collapsed: true,
+        items: [
+          { text: 'Animate Keyframe', link: '/triggers/transforms/animate_keyframe' },
+          { text: 'Keyframe', link: '/triggers/transforms/keyframe' },
+          { text: 'Move', link: '/triggers/transforms/move' },
+          { text: 'Rotate', link: '/triggers/transforms/rotate' },
+          { text: 'Scale', link: '/triggers/transforms/scale' },
+        ]
+      },
+      {
+        text: 'Visual',
+        collapsed: true,
+        items: [
+          { text: 'Alpha', link: '/triggers/visual/alpha' },
+          { text: 'Color', link: '/triggers/visual/color' },
+          { text: 'Enter Effects', link: '/triggers/visual/enter_effects' },
+          { text: 'Gradient', link: '/triggers/visual/gradient' },
+          { text: 'Link Visible', link: '/triggers/visual/link_visible' },
+          { text: 'Pulse', link: '/triggers/visual/pulse' },
+          { text: 'Shake', link: '/triggers/visual/shake' },
+          { text: 'UI', link: '/triggers/visual/ui' },
+        ]
+      },
+      {
+        text: 'Todo',
+        collapsed: true,
+        items: [
+          { text: 'Object Transform Tick Phase', link: '/triggers/todo/object_transform_tick_phase' },
+        ]
+      },
+    ]
   },
   {
-    "text": "Reference",
-    "items": [
-      {
-        "text": "Keys",
-        "link": "/reference/keys"
-      },
-      {
-        "text": "Salts",
-        "link": "/reference/salts"
-      },
-      {
-        "text": "Secrets",
-        "link": "/reference/secrets"
-      },
-      {
-        "text": "Official Songs",
-        "link": "/reference/songs"
-      }
-    ],
-    "collapsed": false
+    text: 'Bugs',
+    collapsed: true,
+    items: [
+      { text: 'Overview', link: '/bugs/README' },
+      { text: 'Advanced Follow', link: '/bugs/advanced_follow' },
+      { text: 'Area Triggers', link: '/bugs/area_triggers' },
+      { text: 'Arrow', link: '/bugs/arrow' },
+      { text: 'Collisions', link: '/bugs/collisions' },
+      { text: 'Editor', link: '/bugs/editor' },
+      { text: 'Enter Effects', link: '/bugs/enter_effects' },
+      { text: 'Events', link: '/bugs/events' },
+      { text: 'Items & Timers', link: '/bugs/items_and_timers' },
+      { text: 'Keyframes', link: '/bugs/keyframes' },
+      { text: 'Misc', link: '/bugs/misc' },
+      { text: 'Move Trigger', link: '/bugs/move_trigger' },
+      { text: 'Particles', link: '/bugs/particles' },
+      { text: 'Spawn Triggers', link: '/bugs/spawn_triggers' },
+      { text: 'Todo', link: '/bugs/todo' },
+    ]
   },
   {
-    "text": "Resources",
-    "items": [
-      {
-        "text": "Client",
-        "items": [
-          {
-            "text": "Gamesave",
-            "items": [
-              {
-                "text": "Achievements",
-                "link": "/resources/client/gamesave/achievement"
-              },
-              {
-                "text": "Platformer UI",
-                "link": "/resources/client/gamesave/dpad"
-              },
-              {
-                "text": "Enumerations",
-                "link": "/resources/client/gamesave/enums"
-              },
-              {
-                "text": "GLM",
-                "link": "/resources/client/gamesave/GLM"
-              },
-              {
-                "text": "GS Value",
-                "link": "/resources/client/gamesave/GS_Value"
-              },
-              {
-                "text": "Game Variables",
-                "link": "/resources/client/gamesave/gv"
-              },
-              {
-                "text": "kCEK Encoder Keys",
-                "link": "/resources/client/gamesave/kCEK"
-              },
-              {
-                "text": "Client List Resource",
-                "link": "/resources/client/gamesave/list"
-              },
-              {
-                "text": "Client Quest Resources",
-                "link": "/resources/client/gamesave/quests"
-              },
-              {
-                "text": "Smart Templates",
-                "link": "/resources/client/gamesave/template"
-              },
-              {
-                "text": "ValueKeeper",
-                "link": "/resources/client/gamesave/valueKeeper"
-              }
-            ],
-            "collapsed": true
-          },
-          {
-            "text": "Level Components",
-            "items": [
-              {
-                "text": "Capacity String",
-                "link": "/resources/client/level-components/capacity-string"
-              },
-              {
-                "text": "Color String",
-                "link": "/resources/client/level-components/color-string"
-              },
-              {
-                "text": "Enumerations",
-                "link": "/resources/client/level-components/enumerations"
-              },
-              {
-                "text": "Guideline String",
-                "link": "/resources/client/level-components/guideline-string"
-              },
-              {
-                "text": "Level Colors",
-                "link": "/resources/client/level-components/level-colors"
-              },
-              {
-                "text": "Level Start String",
-                "link": "/resources/client/level-components/level-start"
-              },
-              {
-                "text": "Level String",
-                "link": "/resources/client/level-components/level-string"
-              },
-              {
-                "text": "Particle String",
-                "link": "/resources/client/level-components/particle-string"
-              }
-            ],
-            "collapsed": true
-          },
-          {
-            "text": "Gamesave",
-            "link": "/resources/client/gamesave"
-          },
-          {
-            "text": "Saved Level",
-            "link": "/resources/client/level"
-          },
-          {
-            "text": "Music Library Format",
-            "link": "/resources/client/musiclibrary"
-          },
-          {
-            "text": "SFX Library Format",
-            "link": "/resources/client/sfxlibrary"
-          }
-        ],
-        "collapsed": true
-      },
-      {
-        "text": "Server",
-        "items": [
-          {
-            "text": "Comment Object",
-            "link": "/resources/server/comment"
-          },
-          {
-            "text": "Friend Request Object",
-            "link": "/resources/server/friendrequest"
-          },
-          {
-            "text": "Gauntlet Object",
-            "link": "/resources/server/gauntlet"
-          },
-          {
-            "text": "Hashes",
-            "link": "/resources/server/hashes"
-          },
-          {
-            "text": "Leaderboard Score Object",
-            "link": "/resources/server/leaderboardscore"
-          },
-          {
-            "text": "Level Object",
-            "link": "/resources/server/level"
-          },
-          {
-            "text": "List Object",
-            "link": "/resources/server/list"
-          },
-          {
-            "text": "Map Pack Object",
-            "link": "/resources/server/mappack"
-          },
-          {
-            "text": "Message Object",
-            "link": "/resources/server/message"
-          },
-          {
-            "text": "Restore Object",
-            "link": "/resources/server/restore"
-          },
-          {
-            "text": "Song Object",
-            "link": "/resources/server/song"
-          },
-          {
-            "text": "User Object",
-            "link": "/resources/server/user"
-          }
-        ],
-        "collapsed": true
-      }
-    ],
-    "collapsed": false
+    text: 'Suggestions',
+    collapsed: true,
+    items: [
+      { text: 'Overview', link: '/suggestions/README' },
+      { text: 'Advanced Follow', link: '/suggestions/advanced_follow' },
+      { text: 'Area Triggers', link: '/suggestions/area_triggers' },
+      { text: 'Misc', link: '/suggestions/misc' },
+      { text: 'Parameter to Item', link: '/suggestions/parameter_to_item' },
+      { text: 'Sequence Control', link: '/suggestions/sequence_control' },
+    ]
   },
-  {
-    "text": "Topics",
-    "items": [
-      {
-        "text": "Encryption",
-        "items": [
-          {
-            "text": "AES",
-            "link": "/topics/encryption/AES"
-          },
-          {
-            "text": "Base64",
-            "link": "/topics/encryption/base64"
-          },
-          {
-            "text": "CHK",
-            "link": "/topics/encryption/chk"
-          },
-          {
-            "text": "Rewards CHK",
-            "link": "/topics/encryption/rewards_chk"
-          },
-          {
-            "text": "RS, UUID and UDID",
-            "link": "/topics/encryption/id"
-          },
-          {
-            "text": "The RobTop Cipher",
-            "link": "/topics/encryption/robtop-cipher"
-          },
-          {
-            "text": "XOR",
-            "link": "/topics/encryption/xor"
-          },
-          {
-            "text": "Zip",
-            "link": "/topics/encryption/zip"
-          }
-        ],
-        "collapsed": true
-      },
-      {
-        "text": "Account Management",
-        "link": "/topics/account_management"
-      },
-      {
-        "text": "CDN Tokens",
-        "link": "/topics/cdn_token"
-      },
-      {
-        "text": "GJP",
-        "link": "/topics/gjp"
-      },
-      {
-        "text": "Level Encoding/Decoding",
-        "link": "/topics/levelstring_encoding_decoding"
-      },
-      {
-        "text": "Level Passwords",
-        "link": "/topics/level_passwords"
-      },
-      {
-        "text": "Links",
-        "link": "/topics/links"
-      },
-      {
-        "text": "Game Files Encoding",
-        "link": "/topics/localfiles_encrypt_decrypt"
-      },
-      {
-        "text": "Shops",
-        "link": "/topics/shop"
-      },
-      {
-        "text": "Status Codes",
-        "link": "/topics/status_codes"
-      },
-      {
-        "text": "Tags",
-        "link": "/topics/tags"
-      },
-      {
-        "text": "Vault Codes",
-        "link": "/topics/vault_codes"
-      }
-    ],
-    "collapsed": false
-  }
 ];
+
+export default sidebar;
