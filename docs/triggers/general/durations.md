@@ -1,4 +1,4 @@
-## Durations
+# Durations
 
 Triggers with a set **Duration** calculate their effects using time values ($TimeElapsed / Duration$).
 
