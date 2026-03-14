@@ -4,7 +4,7 @@ populate_sidebar.py
 Scans a docs folder for Markdown files and syncs them into the sidebar CSV.
 
 - Existing rows are preserved as-is (including their Exclude value).
-- New entries not already in the CSV are appended with Exclude=x.
+- New entries not already in the CSV are appended with Exclude=TRUE.
 - Rows in the CSV whose link no longer exists on disk are left untouched
   (so you can decide whether to remove them manually).
 
@@ -116,8 +116,8 @@ def main():
     # Mark rows whose file no longer exists as excluded
     deleted = 0
     for link, row in rows_by_link.items():
-        if link not in doc_links and not row["Exclude"]:
-            row["Exclude"] = "x"
+        if link not in doc_links and row["Exclude"].strip().upper() != "TRUE":
+            row["Exclude"] = "TRUE"
             deleted += 1
 
     # Append new entries
@@ -129,7 +129,7 @@ def main():
                 "Subsection": subsection,
                 "Text":       text,
                 "Link":       link,
-                "Exclude":    "x",   # new entries excluded by default
+                "Exclude":    "TRUE",   # new entries excluded by default
             }
             ordered_links.append(link)
             added += 1
