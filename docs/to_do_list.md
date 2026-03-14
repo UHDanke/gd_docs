@@ -12,7 +12,6 @@ The following are well-understood but need to be documented:
 - Rotate
 - Scale
 - Keyframe Object
-- Touch
 - Teleport
 - Checkpoint
 - Gameplay Objects
