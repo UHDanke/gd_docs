@@ -3684,10 +3684,6 @@ export default [
             link: '/triggers/camera/rotate_camera'
           },
           {
-            text: 'Static Camera',
-            link: '/triggers/camera/static_camera'
-          },
-          {
             text: 'Zoom Camera',
             link: '/triggers/camera/zoom_camera'
           }
@@ -3906,16 +3902,6 @@ export default [
         ]
       },
       {
-        text: 'Shaders',
-        collapsed: true,
-        items: [
-          {
-            text: 'Shaders',
-            link: '/triggers/shaders/shaders'
-          }
-        ]
-      },
-      {
         text: 'Spawn',
         collapsed: true,
         items: [
@@ -3952,22 +3938,6 @@ export default [
           {
             text: 'Animate Keyframe',
             link: '/triggers/transforms/animate_keyframe'
-          },
-          {
-            text: 'Keyframe',
-            link: '/triggers/transforms/keyframe'
-          },
-          {
-            text: 'Move',
-            link: '/triggers/transforms/move'
-          },
-          {
-            text: 'Rotate',
-            link: '/triggers/transforms/rotate'
-          },
-          {
-            text: 'Scale',
-            link: '/triggers/transforms/scale'
           }
         ]
       },
@@ -3982,14 +3952,6 @@ export default [
           {
             text: 'Color',
             link: '/triggers/visual/color'
-          },
-          {
-            text: 'Enter Effects',
-            link: '/triggers/visual/enter_effects'
-          },
-          {
-            text: 'Gradient',
-            link: '/triggers/visual/gradient'
           },
           {
             text: 'Link Visible',
