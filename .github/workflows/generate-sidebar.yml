@@ -1,0 +1,30 @@
+name: Generate Sidebar
+
+on:
+  push:
+    paths:
+      - .data/sidebar.csv
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate sidebar
+        run: python scripts/generate_sidebar.py .data/sidebar.csv > .vitepress/sidebar.mts
+
+      - name: Commit sidebar
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: regenerate sidebar from CSV"
+          file_pattern: .vitepress/sidebar.mts
