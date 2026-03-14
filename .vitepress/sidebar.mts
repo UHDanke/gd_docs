@@ -4,17 +4,3473 @@ export default [
     link: '/to_do_list'
   },
   {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
+    text: '',
+    link: ''
+  },
+  {
     text: 'Editor',
     collapsed: false,
     items: [
-      {
-        text: 'Autobuild',
-        link: '/editor/autobuild'
-      },
-      {
-        text: 'Extra Object Options',
-        link: '/editor/extra_object_options'
-      },
       {
         text: 'Colors & Layers',
         collapsed: true,
@@ -44,6 +3500,14 @@ export default [
             link: '/editor/colors_layers/select_color_menu'
           }
         ]
+      },
+      {
+        text: 'Autobuild',
+        link: '/editor/autobuild'
+      },
+      {
+        text: 'Extra Object Options',
+        link: '/editor/extra_object_options'
       }
     ]
   },
@@ -56,12 +3520,16 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Durations',
-            link: '/triggers/general/durations'
+            text: 'Trigger Activation',
+            link: '/triggers/general/trigger_activation'
           },
           {
-            text: 'Easings',
-            link: '/triggers/general/easings'
+            text: 'Trigger Channels',
+            link: '/triggers/general/trigger_channels'
+          },
+          {
+            text: 'Target Behavior',
+            link: '/triggers/general/target_behavior'
           },
           {
             text: 'Game Loop',
@@ -72,16 +3540,12 @@ export default [
             link: '/triggers/general/id_limits'
           },
           {
-            text: 'Target Behavior',
-            link: '/triggers/general/target_behavior'
+            text: 'Durations',
+            link: '/triggers/general/durations'
           },
           {
-            text: 'Trigger Activation',
-            link: '/triggers/general/trigger_activation'
-          },
-          {
-            text: 'Trigger Channels',
-            link: '/triggers/general/trigger_channels'
+            text: 'Easings',
+            link: '/triggers/general/easings'
           }
         ]
       },
@@ -116,16 +3580,16 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Area Stop',
-            link: '/triggers/area/area_stop'
-          },
-          {
             text: 'Area Triggers',
             link: '/triggers/area/area_triggers'
           },
           {
             text: 'Edit Area Triggers',
             link: '/triggers/area/edit_area_triggers'
+          },
+          {
+            text: 'Area Stop',
+            link: '/triggers/area/area_stop'
           },
           {
             text: 'Other Notable Interactions',
@@ -138,52 +3602,52 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'BPM Guide',
-            link: '/triggers/audio/bpm_guide'
-          },
-          {
-            text: 'Edit SFX',
-            link: '/triggers/audio/edit_sfx'
-          },
-          {
-            text: 'Edit Song',
-            link: '/triggers/audio/edit_song'
+            text: 'Game Audio Settings',
+            link: '/triggers/audio/game_audio_settings'
           },
           {
             text: 'FMOD',
             link: '/triggers/audio/fmod'
           },
           {
-            text: 'Game Audio Settings',
-            link: '/triggers/audio/game_audio_settings'
-          },
-          {
-            text: 'Loop',
-            link: '/triggers/audio/loop'
+            text: 'Primary Song',
+            link: '/triggers/audio/primary_song'
           },
           {
             text: 'Pitch & Speed',
             link: '/triggers/audio/pitch_speed'
           },
           {
-            text: 'Primary Song',
-            link: '/triggers/audio/primary_song'
+            text: 'Song',
+            link: '/triggers/audio/song_trigger'
           },
           {
-            text: 'SFX',
-            link: '/triggers/audio/sfx'
+            text: 'Edit Song',
+            link: '/triggers/audio/edit_song'
           },
           {
             text: 'Song Guidelines',
             link: '/triggers/audio/song_guidelines'
           },
           {
-            text: 'Song Trigger',
-            link: '/triggers/audio/song_trigger'
+            text: 'SFX',
+            link: '/triggers/audio/sfx'
+          },
+          {
+            text: 'Edit SFX',
+            link: '/triggers/audio/edit_sfx'
+          },
+          {
+            text: 'Loop',
+            link: '/triggers/audio/loop'
           },
           {
             text: 'Volume Proximity',
             link: '/triggers/audio/volume_proximity'
+          },
+          {
+            text: 'BPM Guide',
+            link: '/triggers/audio/bpm_guide'
           }
         ]
       },
@@ -404,6 +3868,10 @@ export default [
           {
             text: 'Toggle Object',
             link: '/triggers/misc/toggle_object'
+          },
+          {
+            text: 'Touch',
+            link: '/triggers/misc/touch'
           }
         ]
       },
