@@ -540,16 +540,6 @@ const sidebar = [
             link: '/triggers/visual/ui'
           }
         ]
-      },
-      {
-        text: 'Todo',
-        collapsed: true,
-        items: [
-          {
-            text: 'Object Transform Tick Phase',
-            link: '/triggers/todo/object_transform_tick_phase'
-          }
-        ]
       }
     ]
   },
