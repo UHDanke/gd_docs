@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - .data/sidebar.csv
+      - scripts/generate_sidebar.py
   workflow_dispatch:
 
 jobs:
