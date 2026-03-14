@@ -1,4 +1,4 @@
-const sidebar = [
+export default [
   {
     text: 'To Do List',
     link: '/to_do_list'
