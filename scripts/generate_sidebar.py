@@ -87,7 +87,7 @@ def main():
     csv_path = sys.argv[1] if len(sys.argv) > 1 else ".data/sidebar.csv"
 
     sidebar = generate_sidebar(csv_path)
-    js = f"const sidebar = {to_js(sidebar)};\n"
+    js = f"export default {to_js(sidebar)};\n"
     print(js)
 
 
