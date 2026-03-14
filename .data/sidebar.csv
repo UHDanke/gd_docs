@@ -108,7 +108,7 @@ Triggers,Visual,Link Visible,/triggers/visual/link_visible,
 Triggers,Visual,Pulse,/triggers/visual/pulse,
 Triggers,Visual,Shake,/triggers/visual/shake,
 Triggers,Visual,UI,/triggers/visual/ui,
-Triggers,Todo,Object Transform Tick Phase,/triggers/todo/object_transform_tick_phase,
+Triggers,Todo,Object Transform Tick Phase,/triggers/todo/object_transform_tick_phase,x
 Bugs,,Overview,/bugs/README,
 Bugs,,Advanced Follow,/bugs/advanced_follow,
 Bugs,,Area Triggers,/bugs/area_triggers,
@@ -130,3 +130,5 @@ Suggestions,,Area Triggers,/suggestions/area_triggers,
 Suggestions,,Misc,/suggestions/misc,
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,
 Suggestions,,Sequence Control,/suggestions/sequence_control,
+,,Index,/index,x
+Triggers,Misc,Touch,/triggers/misc/touch,x
