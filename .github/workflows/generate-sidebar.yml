@@ -26,5 +26,5 @@ jobs:
       - name: Commit sidebar
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: regenerate sidebar from CSV"
+          commit_message: "regenerate sidebar from CSV"
           file_pattern: .vitepress/sidebar.mts
