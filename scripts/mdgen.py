@@ -7,8 +7,9 @@ Supported tags:
     <!-- @end -->
 
 Usage:
-    python mdgen.py file.md          # process a single file
     python mdgen.py                  # process all .md files in current dir
+    python mdgen.py docs/            # process all .md files under docs/ recursively
+    python mdgen.py file.md          # process a single file
 """
 
 import csv
@@ -127,7 +128,15 @@ def process_file(md_path: Path) -> None:
 def main() -> None:
     args = sys.argv[1:]
 
-    if args:
+    # If the first argument is an existing directory, recurse into it.
+    # Otherwise treat all arguments as explicit file paths.
+    if args and Path(args[0]).is_dir():
+        root = Path(args[0])
+        files = sorted(root.glob("**/*.md"))
+        if not files:
+            print(f"No .md files found under {root}")
+            return
+    elif args:
         files = [Path(a) for a in args]
         for f in files:
             if not f.exists():
