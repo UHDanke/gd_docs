@@ -26,4 +26,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "updated bugs from csv to markdown"
-          file_pattern: docs/bugs/*.md
+          file_pattern: docs/bugs/**
