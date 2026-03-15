@@ -86,8 +86,9 @@ def parse_md(md_path):
             field = field_map.get(current_section)
             if field:
                 existing = current_entry.get(field, "")
-                new_val = normalize(stripped)
-                current_entry[field] = (existing + " " + new_val).strip() if existing else new_val
+                # Strip trailing spaces (MD line break marker) and join lines with \n
+                new_val = stripped.rstrip()
+                current_entry[field] = (existing + "\n" + new_val) if existing else new_val
 
     if current_entry:
         entries.append(current_entry)

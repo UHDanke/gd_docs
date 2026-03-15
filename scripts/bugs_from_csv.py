@@ -57,34 +57,38 @@ def entry_to_lines(entry):
             lines.append(f"**{field}:** {val}  ")
     lines.append("")
 
+    def to_md_lines(val):
+        """Convert CSV newlines to Markdown trailing-space line breaks."""
+        return val.replace("\n", "  \n")
+
     long_desc = entry["Long Description"]
     if long_desc:
         lines.append("### Description")
-        lines.append(long_desc)
+        lines.append(to_md_lines(long_desc))
         lines.append("")
 
     examples = entry["Examples"]
     if examples:
         lines.append("### Examples")
-        lines.append(examples)
+        lines.append(to_md_lines(examples))
         lines.append("")
 
     suggestions = entry["Suggestions"]
     if suggestions:
         lines.append("### Suggestions")
-        lines.append(suggestions)
+        lines.append(to_md_lines(suggestions))
         lines.append("")
 
     workarounds = entry["Workarounds"]
     if workarounds:
         lines.append("### Workarounds")
-        lines.append(workarounds)
+        lines.append(to_md_lines(workarounds))
         lines.append("")
 
     video = entry["Video"]
     if video:
         lines.append("### Video")
-        lines.append(video)
+        lines.append(to_md_lines(video))
         lines.append("")
 
     return lines
