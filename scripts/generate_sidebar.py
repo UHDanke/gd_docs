@@ -50,7 +50,7 @@ def generate_sidebar(csv_path: str) -> list:
 
         sidebar.append({
             "text": section,
-            "collapsed": False,
+            "collapsed": True,
             "items": items,
         })
 
