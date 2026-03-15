@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.data/tables/**'
+  workflow_dispatch:
  
 jobs:
   mdgen:
