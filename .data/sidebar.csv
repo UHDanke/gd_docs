@@ -1,0 +1,134 @@
+Section,Subsection,Text,Link,Exclude
+Bugs,,Readme,/bugs/README,TRUE
+Bugs,,Advanced Follow,/bugs/advanced_follow,TRUE
+Bugs,,Area Triggers,/bugs/area_triggers,TRUE
+Bugs,,Arrow Trigger,/bugs/arrow_trigger,TRUE
+Bugs,,Collisions,/bugs/collisions,TRUE
+Bugs,,Editor,/bugs/editor,TRUE
+Bugs,,Enter Effects,/bugs/enter_effects,TRUE
+Bugs,,Events,/bugs/events,TRUE
+Bugs,,Gradient,/bugs/gradient,TRUE
+Bugs,,Items And Timers,/bugs/items_and_timers,TRUE
+Bugs,,Keyframes,/bugs/keyframes,TRUE
+Bugs,,Misc,/bugs/misc,TRUE
+Bugs,,Move Trigger,/bugs/move_trigger,TRUE
+Bugs,,Particles,/bugs/particles,TRUE
+Bugs,,Spawn Triggers,/bugs/spawn_triggers,TRUE
+Bugs,,Uncategorized,/bugs/uncategorized,TRUE
+Editor,,Autobuild,/editor/autobuild,TRUE
+Editor,Colors Layers,Color Assignment,/editor/colors_layers/color_assignment,TRUE
+Editor,Colors Layers,Color Channels,/editor/colors_layers/color_channels,TRUE
+Editor,Colors Layers,Color Sliders,/editor/colors_layers/color_sliders,TRUE
+Editor,Colors Layers,Other Color And Layering Options,/editor/colors_layers/other_color_and_layering_options,TRUE
+Editor,Colors Layers,Rendering Order,/editor/colors_layers/rendering_order,TRUE
+Editor,Colors Layers,Select Color Menu,/editor/colors_layers/select_color_menu,TRUE
+Editor,,Extra Object Options,/editor/extra_object_options,TRUE
+,,Index,/index,TRUE
+Suggestions,,Readme,/suggestions/README,TRUE
+Suggestions,,Advanced Follow,/suggestions/advanced_follow,TRUE
+Suggestions,,Area Triggers,/suggestions/area_triggers,TRUE
+Suggestions,,Misc,/suggestions/misc,TRUE
+Suggestions,,Parameter To Item,/suggestions/parameter_to_item,TRUE
+Suggestions,,Sequence Control,/suggestions/sequence_control,TRUE
+,,To Do List,/to_do_list,TRUE
+Triggers,Animate,Animate Trigger,/triggers/animate/animate_trigger,TRUE
+Triggers,Animate,Animated Objects,/triggers/animate/animated_objects,TRUE
+Triggers,Animate,Edit Animation,/triggers/animate/edit_animation,TRUE
+Triggers,Animate,Particle Object,/triggers/animate/particle_object,TRUE
+Triggers,Animate,Spawn Particle,/triggers/animate/spawn_particle,TRUE
+Triggers,Area,Area Stop,/triggers/area/area_stop,TRUE
+Triggers,Area,Area Triggers,/triggers/area/area_triggers,TRUE
+Triggers,Area,Edit Area Triggers,/triggers/area/edit_area_triggers,TRUE
+Triggers,Area,Other Notable Interactions,/triggers/area/other_notable_interactions,TRUE
+Triggers,Audio,Bpm Guide,/triggers/audio/bpm_guide,TRUE
+Triggers,Audio,Edit Sfx,/triggers/audio/edit_sfx,TRUE
+Triggers,Audio,Edit Song,/triggers/audio/edit_song,TRUE
+Triggers,Audio,Fmod,/triggers/audio/fmod,TRUE
+Triggers,Audio,Game Audio Settings,/triggers/audio/game_audio_settings,TRUE
+Triggers,Audio,Loop,/triggers/audio/loop,TRUE
+Triggers,Audio,Pitch Speed,/triggers/audio/pitch_speed,TRUE
+Triggers,Audio,Primary Song,/triggers/audio/primary_song,TRUE
+Triggers,Audio,Sfx,/triggers/audio/sfx,TRUE
+Triggers,Audio,Song Guidelines,/triggers/audio/song_guidelines,TRUE
+Triggers,Audio,Song Trigger,/triggers/audio/song_trigger,TRUE
+Triggers,Audio,Volume Proximity,/triggers/audio/volume_proximity,TRUE
+Triggers,Camera,Camera Edge,/triggers/camera/camera_edge,TRUE
+Triggers,Camera,Camera Guide,/triggers/camera/camera_guide,TRUE
+Triggers,Camera,Camera Mode,/triggers/camera/camera_mode,TRUE
+Triggers,Camera,Default Camera Properties,/triggers/camera/default_camera_properties,TRUE
+Triggers,Camera,Gameplay Offset,/triggers/camera/gameplay_offset,TRUE
+Triggers,Camera,Offset Camera,/triggers/camera/offset_camera,TRUE
+Triggers,Camera,Rotate Camera,/triggers/camera/rotate_camera,TRUE
+Triggers,Camera,Static Camera,/triggers/camera/static_camera,TRUE
+Triggers,Camera,Zoom Camera,/triggers/camera/zoom_camera,TRUE
+Triggers,Collisions,Collision Objects,/triggers/collisions/collision_objects,TRUE
+Triggers,Collisions,Collision Trigger,/triggers/collisions/collision_trigger,TRUE
+Triggers,Collisions,Instant Collision Trigger,/triggers/collisions/instant_collision_trigger,TRUE
+Triggers,Collisions,Performance Optimization,/triggers/collisions/performance_optimization,TRUE
+Triggers,Collisions,State Blocks,/triggers/collisions/state_blocks,TRUE
+Triggers,Follows,Advanced Follow,/triggers/follows/advanced_follow,TRUE
+Triggers,Follows,Edit Advanced Follow,/triggers/follows/edit_advanced_follow,TRUE
+Triggers,Follows,Follow,/triggers/follows/follow,TRUE
+Triggers,Follows,Follow Player Y,/triggers/follows/follow_player_y,TRUE
+Triggers,Follows,Retarget Advanced Follow,/triggers/follows/retarget_advanced_follow,TRUE
+Triggers,General,Durations,/triggers/general/durations,TRUE
+Triggers,General,Easings,/triggers/general/easings,TRUE
+Triggers,General,Game Loop,/triggers/general/game_loop,TRUE
+Triggers,General,Id Limits,/triggers/general/id_limits,TRUE
+Triggers,General,Target Behavior,/triggers/general/target_behavior,TRUE
+Triggers,General,Trigger Activation,/triggers/general/trigger_activation,TRUE
+Triggers,General,Trigger Channels,/triggers/general/trigger_channels,TRUE
+Triggers,Items,Count,/triggers/items/count,TRUE
+Triggers,Items,Counter Labels,/triggers/items/counter_labels,TRUE
+Triggers,Items,Instant Count,/triggers/items/instant_count,TRUE
+Triggers,Items,Item Compare,/triggers/items/item_compare,TRUE
+Triggers,Items,Item Edit,/triggers/items/item_edit,TRUE
+Triggers,Items,Item Persist,/triggers/items/item_persist,TRUE
+Triggers,Items,Pickup,/triggers/items/pickup,TRUE
+Triggers,Items,Time,/triggers/items/time,TRUE
+Triggers,Items,Time Control,/triggers/items/time_control,TRUE
+Triggers,Items,Time Event,/triggers/items/time_event,TRUE
+Triggers,Level,Bg Effect On Off,/triggers/level/bg_effect_on_off,TRUE
+Triggers,Level,Bg Speed,/triggers/level/bg_speed,TRUE
+Triggers,Level,Change Background,/triggers/level/change_background,TRUE
+Triggers,Level,Change Ground,/triggers/level/change_ground,TRUE
+Triggers,Level,Change Middleground,/triggers/level/change_middleground,TRUE
+Triggers,Level,Mg Speed,/triggers/level/mg_speed,TRUE
+Triggers,Level,Offset Mg Y,/triggers/level/offset_mg_y,TRUE
+Triggers,Misc,Collectibles,/triggers/misc/collectibles,TRUE
+Triggers,Misc,End,/triggers/misc/end,TRUE
+Triggers,Misc,Event,/triggers/misc/event,TRUE
+Triggers,Misc,On Death,/triggers/misc/on_death,TRUE
+Triggers,Misc,Options,/triggers/misc/options,TRUE
+Triggers,Misc,Reset,/triggers/misc/reset,TRUE
+Triggers,Misc,Stop,/triggers/misc/stop,TRUE
+Triggers,Misc,Timewarp,/triggers/misc/timewarp,TRUE
+Triggers,Misc,Toggle,/triggers/misc/toggle,TRUE
+Triggers,Misc,Toggle Object,/triggers/misc/toggle_object,TRUE
+Triggers,Misc,Touch,/triggers/misc/touch,TRUE
+Triggers,Player,Disable Enable Player Trail,/triggers/player/disable_enable_player_trail,TRUE
+Triggers,Player,Gameplay Arrow,/triggers/player/gameplay_arrow,TRUE
+Triggers,Player,Gravity,/triggers/player/gravity,TRUE
+Triggers,Player,Player Control,/triggers/player/player_control,TRUE
+Triggers,Player,Reverse,/triggers/player/reverse,TRUE
+Triggers,Player,Show Hide Player,/triggers/player/show_hide_player,TRUE
+Triggers,Shaders,Shaders,/triggers/shaders/shaders,TRUE
+Triggers,Spawn,Activation Limits,/triggers/spawn/activation_limits,TRUE
+Triggers,Spawn,Adv Random,/triggers/spawn/adv_random,TRUE
+Triggers,Spawn,Random,/triggers/spawn/random,TRUE
+Triggers,Spawn,Sequence,/triggers/spawn/sequence,TRUE
+Triggers,Spawn,Spawn Remapping,/triggers/spawn/spawn_remapping,TRUE
+Triggers,Spawn,Spawn Trigger,/triggers/spawn/spawn_trigger,TRUE
+Triggers,Transforms,Animate Keyframe,/triggers/transforms/animate_keyframe,TRUE
+Triggers,Transforms,Keyframe,/triggers/transforms/keyframe,TRUE
+Triggers,Transforms,Move,/triggers/transforms/move,TRUE
+Triggers,Transforms,Rotate,/triggers/transforms/rotate,TRUE
+Triggers,Transforms,Scale,/triggers/transforms/scale,TRUE
+Triggers,Visual,Alpha,/triggers/visual/alpha,TRUE
+Triggers,Visual,Color,/triggers/visual/color,TRUE
+Triggers,Visual,Enter Effects,/triggers/visual/enter_effects,TRUE
+Triggers,Visual,Gradient,/triggers/visual/gradient,TRUE
+Triggers,Visual,Link Visible,/triggers/visual/link_visible,TRUE
+Triggers,Visual,Pulse,/triggers/visual/pulse,TRUE
+Triggers,Visual,Shake,/triggers/visual/shake,TRUE
+Triggers,Visual,Ui,/triggers/visual/ui,TRUE
