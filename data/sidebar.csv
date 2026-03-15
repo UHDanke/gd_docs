@@ -112,7 +112,7 @@ Triggers,Visual,UI,/triggers/visual/ui,
 Bugs,,Overview,/bugs/README,
 Bugs,,Advanced Follow,/bugs/advanced_follow,
 Bugs,,Area Triggers,/bugs/area_triggers,
-Bugs,,Arrow,/bugs/arrow,
+Bugs,,Arrow,/bugs/arrow,TRUE
 Bugs,,Collisions,/bugs/collisions,
 Bugs,,Editor,/bugs/editor,
 Bugs,,Enter Effects,/bugs/enter_effects,
@@ -131,3 +131,6 @@ Suggestions,,Misc,/suggestions/misc,true
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,true
 Suggestions,,Sequence Control,/suggestions/sequence_control,true
 ,,About,/index,
+Bugs,,Arrow Trigger,/bugs/arrow_trigger,TRUE
+Bugs,,Gradient,/bugs/gradient,TRUE
+Bugs,,Uncategorized,/bugs/uncategorized,TRUE
