@@ -101,7 +101,11 @@ def csv_to_md(csv_path, output_dir):
 
     cleaned = []
     for row in rows:
-        cleaned.append({k: normalize(row.get(k, "")) for k in COLUMNS})
+        MULTILINE = {"Long Description", "Examples", "Suggestions", "Workarounds", "Video"}
+        cleaned.append({
+            k: row.get(k, "").strip() if k in MULTILINE else normalize(row.get(k, ""))
+            for k in COLUMNS
+        })
 
     # Group by category
     categories = {}
