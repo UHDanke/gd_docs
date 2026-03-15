@@ -204,7 +204,7 @@ Particle objects do not unload correctly in normal mode, but they do in the edit
 ### Alpha & Blending Behavior
 
 Alpha values are calculated differently depending on the options selected, below you can find a table approximating these calculations.
-<!-- @csv: .data/tables/blending.csv -->
+<!-- @csv: data/tables/blending.csv -->
 | **Additive** | **Obj Color** | **Uniform Color** | **Blending** |                **Solid Alpha**                |                  **Blending Alpha**                  |
 | :----------: | :-----------: | :---------------: | :----------: | :-------------------------------------------: | :--------------------------------------------------: |
 |      No      |       No      |         No        |    Either    | $(start \cdot (1-t)+end \cdot t)) \cdot base$ |                          -                           |
