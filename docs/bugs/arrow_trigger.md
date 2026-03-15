@@ -1,0 +1,49 @@
+# Arrow Trigger
+
+## ORD doesn't work as intended
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.
+
+## Arrow trigger & channel 0 triggers
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+If you place an arrow trigger (without touch or spawn) that changes the trigger channel to 0 anywhere in the editor, the activation of all channel 0 triggers in the entire level will now depend on the position of the triggers relative to the arrow trigger. If the triggers are placed after the arrow trigger, depending on the direction the arrow points towards, their activation is completely ignored. This happens even if the arrow trigger hasn't been reached yet or if any other arrow triggers (without channel 0) are placed before it.
+
+## Arrow trigger activation delay
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+The activation of arrow triggers (without spawn or touch) is delayed until all triggers on the same channel that are placed before the arrow trigger (relative to where the arrow points) are activated.
+
+## Arrow and Music Line mismatch
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+The music line uses the arrow trigger as the origin when gameplay rotates, but trigger activation depends mostly on the player's position, which is inconsistent and can be affected by variations in the player's position.
+
+## Music Line Y 0
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+The music line cannot go below Y 0. The behavior depends on the position and direction of the arrow trigger: - Position below Y 0 and pointing up: the music line will start from Y 0 - Position below Y 0 and pointing down: the music line freezes in place before rotating - Position above Y 0 and pointing down: the music line freezes upon hitting Y 0
+
+## Strange Vel Mod behavior
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+Edit velocity behavior of arrow trigger is unintuitive: - Velmod X and Y do nothing if the player only reverses direction - When gameplay is rotated, the player's vertical velocity is set to the player's previous horizontal velocity multiplied by Velmod Y - Velmod X does nothing in classic mode, in platformer when gameplay is rotated, the player's horizontal velocity is set to the player's previous vertical velocity multiplied by Velmod X - If using Override Velocity then the vertical velocity is set to Velmod Y and the horizontal velocity is set to Velmod X (this works as intended) - Neither Velmod X or Y take into account whether the arrow trigger inverts gravity

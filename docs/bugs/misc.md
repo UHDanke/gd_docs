@@ -1,67 +1,81 @@
 # Misc
 
-## [2.207] [18/12/25] Start Position 60hz
+## Start Position 60hz
 
-Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.
-While this seems intentional, an option to enable 240hz start positions would be nice to have.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] Camera position is updated after move
+### Description
+Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz. While this seems intentional, an option to enable 240hz start positions would be nice to have.
 
-The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
-This also affects Area triggers and Move (Lock Camera).
+## Camera position is updated after move
 
-## [2.207] [18/12/25] Object Rotation Offset
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-The position of objects part of a group that is being rotated will get offset overtime.
+### Description
+The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed. This also affects Area triggers and Move (Lock Camera).
 
-All rotation transformations are affected except Area Rotate.
+## Object Rotation Offset
 
-## [2.207] [18/12/25] Rotate Aim / Follow infinite rotation
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.
-If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
+### Description
+The position of objects part of a group that is being rotated will get offset overtime. All rotation transformations are affected except Area Rotate.
 
-[Video 1](https://youtu.be/uE5I8bRaMSg)
-[Video 2](https://youtu.be/GkujxqE5pok)
+## Rotate Aim / Follow infinite rotation
 
-## [2.207] [18/12/25] Relative Scale doesn't work with Scale 0.00
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
+### Description
+When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly. If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster. [Video 1](https://youtu.be/uE5I8bRaMSg) [Video 2](https://youtu.be/GkujxqE5pok)
 
-Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
+## Relative Scale doesn't work with Scale 0.00
 
-Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
+### Description
+This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1. Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale. Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2. In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.
 
-## [2.207] [18/12/25] Gradient doesn't account for screen rotation when loading the level
+## Color resumes when respawning from a checkpoint if stopped
 
-Gradient triggers without any references (ID 0) use the screen's edges as reference instead.
-These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-Example:
-![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
+### Description
+If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint. Pausing the Color trigger does not do this.
 
-## [2.207] [18/12/25] Color resumes when respawning from a checkpoint if stopped
+## Negative scaled Teleport triggers apply force in the opposite direction
 
-If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint.
-Pausing the Color trigger does not do this.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] Negative scaled Teleport triggers apply force in the opposite direction
+### Description
+Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards. Flipping the trigger with the editor tool changes the direction, but: - If the teleport has target group 0, flipping will flip the direction force is applied in - If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj
 
-Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
+## Kerning is not used properly when splitting text
 
-Flipping the trigger with the editor tool changes the direction, but:
-- If the teleport has target group 0, flipping will flip the direction force is applied in
-- If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
+### Description
+Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset. This also depends on the game's texture quality, with High quality having more significant offset than Low.
 
-## [2.207] [18/12/25] Kerning is not used properly when splitting text	
+## No Audio Scale Orbs scale more than they should if affected by a scaling trigger
 
-Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-This also depends on the game's texture quality, with High quality having more significant offset than Low.
-
-## [2.207] [18/12/25] No Audio Scale Orbs scale more than they should if affected by a scaling trigger
-
+### Description
 Orb objects with No Audio Scale that have been scaled up by an Area / Scale trigger will be much bigger visually than they should (roughly same size as when clicked), if they are not affected by any enter effect.
+
+## Out of bounds crash
+
+**Version:** 2.208
+**Date:** Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+If an object moves out of bounds and cannot be added to a section, the game crashes.

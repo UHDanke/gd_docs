@@ -1,85 +1,129 @@
 # Advanced Follow
 
-## [2.207] [18/12/25] Velocity Duplication
-Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger.
+## Velocity Duplication
 
-[Example Video](https://youtu.be/obZ-G22lizU)
+**Version:** 2.208
+**Date:** Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-Rotation is also duplicated when using Mode 3.
+### Description
+Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger. Rotation is also duplicated when using Mode 3.
 
+### Suggestions
 A solution to this bug would be for only the first Advanced Follow in a tick to move by the current velocity value, and subsequent ones to move by the difference in velocity.
 
-## [2.207] [18/12/25] Rotation and Object Groups
+### Video
+https://youtu.be/obZ-G22lizU
 
+## Rotation and Object Groups
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
 Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.
 
-[Example Video](https://youtu.be/KJJ2YNqvOO8)
+### Video
+https://youtu.be/KJJ2YNqvOO8
 
-## [2.207] [18/12/25] Timewarp and instant movement
+## Timewarp Movement
 
-### Instant Movement reduction
-Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0.
+### Description
+Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1. The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0. This behavior makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down. This also affects Mode 2 movement that relies on moving objects for a single tick very fast with high speed and limited MaxRange or 100 Friction.
 
-This behavior makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down.
-This also affects Mode 2 movement that relies on moving objects for a single tick very fast with high speed and limited MaxRange or 100 Friction.
+## Speedup when using high Friction values
 
-### Max Rotation Speed
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-The max rotation speed of the Rotate option does not scale with timewarp.
-
-## [2.207] [18/12/25] Speedup when using high Friction values
-
+### Description
 Friction values over 100 can reverse the speed of an object, and if above 200 friction this speed will increase exponentially until the game crashes.
 
-## [2.207] [18/12/25] StartSpeed and Speed are not multipliers
+## StartSpeed and Speed are not multipliers
 
-StartSpeed and Speed are not multipliers when using a speed reference ID.
-It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] Options that do nothing
+### Description
+StartSpeed and Speed are not multipliers when using a speed reference ID. It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.
 
-The following options do nothing:
-- MaxRange Reference ID
-- Redirect Dir (Edit AdvFollow)
-- SlowDist and SlowAccel (Mode 3)
+## Options that do nothing
 
-While a MaxRange reference ID has limited applications, one such example is with Mode 1 with 0 easing - this would allow you to move a singular object from a group to a target position (like a target move for objects), which is very useful.
+**Version:** 2.208
+**Date:** Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] StartSpeed works on one target
+### Description
+The following options do nothing: - MaxRange Reference ID - Redirect Dir (Edit AdvFollow) - SlowDist and SlowAccel (Mode 3)
 
+## StartSpeed works on one target
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
 If there are multiple targets inside Target GID, StartSpeed applies on one target only.
 
-## [2.207] [18/12/25] Physics issues when outside MaxRange
+## Physics issues when stopping instantly
 
-Even if an Advanced Follow target loses all velocity by leaving the MaxRange of the effect, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.
-Without DontBoostX/Y, the player's jump will be boosted everytime the player jumps off the target.
-Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.
+**Version:** 2.208
+**Date:** Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] Hitbox move delay
+### Description
+When an Advanced Follow target loses all velocity instantly, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped. Without DontBoostX/Y, the player's jump will be boosted everytime the player jumps off the target. Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.
 
-Sometimes, the hitbox of the target object will be stuck in a previous position if Adv Follow movement is really fast.
+## Hitbox move delay
 
-Stopping the Adv Follow trigger fixes the hitbox position.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 
-## [2.207] [18/12/25] Mode 3 X/Y Only cannot steer if other modes are present
+### Description
+Sometimes, the hitbox of the target object will be stuck in a previous position if Adv Follow movement is really fast. Stopping the Adv Follow trigger fixes the hitbox position.
 
+## Mode 3 X/Y Only cannot steer if other modes are present
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
 When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1 or 2 is present on the other axis.
 
-## [2.207] [18/12/25] Edit Advanced Follow random is between 0/+ instead of -/+
+## Edit Advanced Follow random is between 0/+ instead of -/+
 
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
 The random variables in Edit Advanced Follow are always picked in a range between 0 and the given value, unlike other random settings.
 
-## [2.207] [18/12/25] Advanced Follow will not spawn if stopped then respawned in the same tick
+## Advanced Follow will not spawn if stopped then respawned in the same tick
 
-If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not be active.
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+**Level ID:** 115061026
 
-This bug is caused by two mechanics:
-- Advanced Follow doesn't stop instantly, it is marked as stopped until the next scheduled movement where it gets cleared
-- Advanced Follow will not spawn if an instance of it is already active for the given remap
+### Description
+If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not be active. This bug is caused by two mechanics: - Advanced Follow doesn't stop instantly, it is marked as stopped until the next scheduled movement where it gets cleared - Advanced Follow will not spawn if an instance of it is already active for the given remap
 
+### Suggestions
 A potential fix for this would be for Advanced Follow to replace the previous instance if its waiting to be stopped.
 
-[Video](https://youtu.be/MNh11dOnu4U)
-ID: 115061026
+### Video
+https://youtu.be/MNh11dOnu4U
+
+## Timewarp Rotation
+
+**Version:** 2.207
+**Date:** Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+The max rotation speed of the Rotate option does not scale with timewarp.
+
+## Near Dist slider
+
+**Version:** 2.208
+**Date:** Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time)
+
+### Description
+Adv follow near dist slider has 0 to 1.00 range despite being a distance value like max range
