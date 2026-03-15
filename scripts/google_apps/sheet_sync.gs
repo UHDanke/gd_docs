@@ -1,5 +1,5 @@
 // =============================================================================
-// Sheet sync front-facing scripts
+// Spreadsheet sync scripts
 //
 // Config sheet: "config.sheets"
 // Columns: Sheet | Source Sheet | Public Sheet ID | Enabled | Last Download | Last Upload
@@ -41,7 +41,7 @@ function getSsSheetMap_() {
 }
 
 // ---------------------------------------------------------------------------
-// FRONT-FACING BUTTONS
+// Buttons
 // ---------------------------------------------------------------------------
 
 function pushAll() {
@@ -114,11 +114,11 @@ function reloadSsConfig() {
 
 function initSheetsMenu_(ui) {
   ui.createMenu("Sheets Sync")
-    .addItem("Pull Current",  "pullCurrent")
-    .addItem("Push Current",  "pushCurrent")
+    .addItem("Pull Sheet",  "pullCurrent")
+    .addItem("Push Sheet",  "pushCurrent")
     .addSeparator()
-    .addItem("Pull All",      "pullAll")
-    .addItem("Push All",      "pushAll")
+    .addItem("Pull All Sheets",      "pullAll")
+    .addItem("Push All Sheets",      "pushAll")
     .addSeparator()
     .addItem("Reload Config", "reloadSsConfig")
     .addToUi();
