@@ -1,5 +1,5 @@
 Object ID,Alias,Not Editable,Disable AnimShine,Smooth Animation,Randomize Start,Random Speed,Random Frames,Random Animations,Delayed Loop,Frame Delay
-918,,Yes,,,,,,,,0.025 / 0.025 / 0.025 / 0.05
+918,,Yes,,,,,,,,0.025 - 0.05
 919,,Yes,,,,,,,,
 920,,,,,Yes,Yes,,,Yes,0.08
 921,,,,,Yes,Yes,,,,0.08
@@ -17,8 +17,8 @@ Object ID,Alias,Not Editable,Disable AnimShine,Smooth Animation,Randomize Start,
 1518,,,,,Yes,Yes,,,Yes,0.05
 1519,,,,,Yes,Yes,,,,0.06
 1583,,,,,Yes,Yes,,,Yes,0.08
-1584,,Yes,,,,,,,,0.06 / 0.06 / 0.06 / 0.06 / 0.06 / 0.06 / 0.06 / 0.1 / 0.06 / 0.05
-1591,,,,,,,,Yes,,0.12 / 0.13
+1584,,Yes,,,,,,,,0.06 - 0.1 
+1591,,,,,,,,Yes,,0.12 - 0.13
 1592,,,,,,,,,,0.045
 1593,,,,,,,,,,0.13
 1614,,,,,,,,,,0.12
@@ -45,7 +45,7 @@ Object ID,Alias,Not Editable,Disable AnimShine,Smooth Animation,Randomize Start,
 1937,,,,,Yes,Yes,,,Yes,0.07
 1938,,,,,Yes,Yes,,,Yes,0.07
 1939,,,,,Yes,Yes,,,Yes,0.07
-2012,,Yes,,,,,,,,0.06 / 0.06 / 0.045 / 0.06 / 0.06 / 0.04 / 0.04 / 0.06 / 0.05
+2012,,Yes,,,,,,,,0.04 - 0.06
 2020,,,,,Yes,Yes,,,,0.05
 2021,,,,,Yes,Yes,,,,0.05
 2022,,,,,Yes,Yes,,,,0.05
