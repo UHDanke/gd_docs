@@ -3,7 +3,8 @@ name: Reformat Markdown Files
 on:
   push:
     paths:
-      - '.data/tables/**'
+      - .data/tables/**
+      - docs/**
   workflow_dispatch:
  
 jobs:
