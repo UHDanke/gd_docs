@@ -55,7 +55,7 @@ def entry_to_lines(entry):
         if field == "Date":
             val = format_date(val)
         if val:
-            lines.append(f"**{field}:** {val}\\")
+            lines.append(f"**{field}:** {val}  ")
     lines.append("")
 
     long_desc = entry["Long Description"]
