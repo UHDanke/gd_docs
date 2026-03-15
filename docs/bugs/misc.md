@@ -1,5 +1,14 @@
 # Misc
 
+## High Scale / Rotate
+
+**Version:** 2.208  
+**Date:** 30/01/2026  
+
+### Description
+Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
+This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
+
 ## Start Position 60hz
 
 **Version:** 2.207  
@@ -35,10 +44,11 @@ All rotation transformations are affected except Area Rotate.
 
 ### Description
 When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.  
-If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.  
-  
-[Video 1](https://youtu.be/uE5I8bRaMSg)  
-[Video 2](https://youtu.be/GkujxqE5pok)
+If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
+
+### Video
+https://youtu.be/uE5I8bRaMSg  
+https://youtu.be/GkujxqE5pok
 
 ## Relative Scale doesn't work with Scale 0.00
 

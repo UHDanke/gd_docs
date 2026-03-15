@@ -42,12 +42,7 @@ Unpausing the game undoes the effect of Area Fade for one frame.
 Area effects are accumulated for every calculation when starting from a Start Position.  
 Only the first tick is affected, the effect is properly applied on the second one.  
 All Area triggers are affected.  
-With Area Scale and Area Move, this can crash your game.  
-  
- Scale / Rotate Bug  
-  
-Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
-This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
+With Area Scale and Area Move, this can crash your game.
 
 ## DEAP has no effect when used on Area Tint or Area Fade
 
@@ -90,18 +85,12 @@ I am not sure if this is unimplemented or a side effect of how Edit Area was imp
 ### Description
 If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.  
   
- Multiple Areas  
-  
-Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description.  
-  
- Flickering  
-  
 Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick.  
-Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).  
-  
- Rendering  
   
 Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
+
+### Video
+https://www.youtube.com/watch?v=JgN_ClrC5yk
 
 ## Toggle Inconsistencies
 
@@ -109,7 +98,9 @@ Objects with a hitbox that stop being visible once brought off-screen do not ren
 **Date:** 18/12/2025  
 
 ### Description
-Toggle disables Area effects on the object only in very particular cases depending on the area settings.  
+Toggle disables Area effects on the object only in very particular cases depending on the area settings.
+
+### Suggestions
 This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.
 
 ## Edit Area Tint / Fade doesn't pause in editor
@@ -118,9 +109,10 @@ This should be replaced by a dedicated **Ignore Disabled** feature as there is n
 **Date:** 18/12/2025  
 
 ### Description
-Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.  
-  
-[Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
+Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.
+
+### Video
+https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
 
 ## Scale sliders
 

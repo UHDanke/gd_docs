@@ -22,10 +22,14 @@ If a Keyframe Parent ID has different X & Y Scale and Rotation at the same time,
 **Date:** 18/12/2025  
 
 ### Description
-Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.  
-  
-** [2.207]** Keyframes merge when copying to another level  
-  
+Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.
+
+## Keyframes merge when copying to another level
+
+**Version:** 2.207  
+**Date:** 18/12/2025  
+
+### Description
 Keyframes have a hidden unique ID which is used to determine what keyframe objects are connected.  
 The ID is kept even when copying to another level which results in the copied keyframes combining with existing ones.  
 This makes merging parts of a level that use keyframes difficult, as you cannot manually select the unique ID of the keyframe.
@@ -53,9 +57,10 @@ There are some cases where using only the X movement of a keyframe chain is requ
 **Date:** 18/12/2025  
 
 ### Description
-![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)  
-  
 Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.
+
+### Examples
+![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)
 
 ## Rotation of Keyframe objects is not calculated properly
 
@@ -96,10 +101,15 @@ The problems with the current behavior are:
 - If the angle multiplied by Mod is more than a full rotation, CW and CCW do nothing  
 - If rotation Mod is negative then CCW becomes CW and vice-versa  
 - Mod multiplier doesn't work as expected with angles over 180, CW or CCW  
-- x360 rotations are not multiplied by Mod  
-  
- Curve Keyframes with 0 duration break keyframe movement  
-  
-Keyframes using Curve mode with very low duration like 0 result in very exaggerated movement that can send objects out of bounds, crashing the game.  
-  
+- x360 rotations are not multiplied by Mod
+
+## Curve Keyframes with 0 duration break keyframe movement
+
+**Version:** 2.207  
+**Date:** 18/12/2025  
+
+### Description
+Keyframes using Curve mode with very low duration like 0 result in very exaggerated movement that can send objects out of bounds, crashing the game.
+
+### Suggestions
 Duration 0 should instead disable curve mode on the affected keyframe.

@@ -41,19 +41,20 @@ A particle with the Uniform Color option that is spawned will use the color chan
 
 ### Description
 Particle objects calculate transparency inconsistently depending on what settings you select, as shown in the following table:  
-  
-| Additive | Obj Color | Uniform Color | Blending | Solid Alpha | Blending Alpha |  
-| :---: | :---: | :---: | :---: | :---: | :---: |  
-| No | No | No | Either | $(start \cdot (1-t)+end \cdot t)) \cdot base$ | \- |  
-| No | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | \- |  
-| No | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | \- |  
-| No | Yes | No | No | $(base \cdot (1-t)+end \cdot t) \cdot base$ | \- |  
-| No | Yes | No | Yes | \- | $(base^2 \cdot (1-t)+end \cdot t) \cdot base^2$ |  
-| Either | No | Yes | Yes | \- | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |  
-| Yes | Yes | No | No | $(base \cdot (1-t)+end \cdot t) \cdot base$ | $((1-base) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |  
-| Yes | Yes | No | Yes | \- | $(base \cdot (1-t)+end \cdot t) \cdot base^2$ |  
-| Yes | No | No | Either | \- | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |  
-| Yes | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |  
+<!-- @csv: data/tables/blending.csv -->  
+| **Additive** | **Obj Color** | **Uniform Color** | **Blending** |                **Solid Alpha**                |                  **Blending Alpha**                  |  
+| :----------: | :-----------: | :---------------: | :----------: | :-------------------------------------------: | :--------------------------------------------------: |  
+|      No      |       No      |         No        |    Either    | $(start \cdot (1-t)+end \cdot t)) \cdot base$ |                          -                           |  
+|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |  
+|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |  
+|      No      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  |                          -                           |  
+|      No      |      Yes      |         No        |     Yes      |                       -                       |   $(base^2 \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|    Either    |       No      |        Yes        |     Yes      |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|     Yes      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  | $((1-base) \cdot (1-t)+(1-end) \cdot t) \cdot base$  |  
+|     Yes      |      Yes      |         No        |     Yes      |                       -                       |    $(base \cdot (1-t)+end \cdot t) \cdot base^2$     |  
+|     Yes      |       No      |         No        |    Either    |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|     Yes      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |  
+<!-- @end -->  
   
 Notes:  
 - $start$ is the initial alpha, equal to: $Start\textunderscore A+Start\textunderscore A\textunderscore Rand$  
@@ -70,12 +71,13 @@ Notes:
 
 **Version:** 2.207  
 **Date:** 18/12/2025  
+**Level ID:** 114681413  
 
 ### Description
-Particle objects can get bugged and end up having very erratic movement.  
-Level ID: 114681413  
-  
-[Video](https://youtu.be/5zb-JCvD5JY)
+Particle objects can get bugged and end up having very erratic movement.
+
+### Video
+https://youtu.be/5zb-JCvD5JY
 
 ## Particle sometimes fail to spawn when near the particle limit
 
@@ -91,17 +93,16 @@ This usually happens if $Emission \cdot Lifetime = MaxParticles$
 
 **Version:** 2.207  
 **Date:** 18/12/2025  
+**Level ID:** 114953438  
 
 ### Description
 The spawn position of particles with Spawn Particle is the position of the group at the last rendered frame, instead of the current position.  
 This can cause particles to spawn in the wrong position when dealing with high speed or instant movement when the game runs below 240 fps.  
-The bug only happens while playtesting and not in the editor.  
-  
+The bug only happens while playtesting and not in the editor.
+
+### Video
 [Video: 200, 300, 60 and 120 fps](https://youtu.be/Co1UDLP2Ahk)  
-[Video: 120 fps vsync, mobile](https://youtu.be/wxT__dKYsr8?si=X3O1ywGwrP5fIucm)  
-  
-Setup attempts to spawn a particle every tick on a moving target.  
-ID: 114953438
+[Video: 120 fps vsync, mobile](https://youtu.be/wxT__dKYsr8?si=X3O1ywGwrP5fIucm)
 
 ## Spawn Particle fails to spawn on inactive targets
 
@@ -111,12 +112,16 @@ ID: 114953438
 ### Description
 Spawn Particle will not spawn if the target is inactive (position is off-screen).  
 This only happens while playtesting and not in the editor.  
-If the object was active on screen at least once before, the particle will spawn at its previous on-screen position.  
-  
-Link Visible can keep the target active as a potential workaround to this issue.  
-While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.  
-  
-[Video](https://youtu.be/Co1UDLP2Ahk)
+If the object was active on screen at least once before, the particle will spawn at its previous on-screen position.
+
+### Suggestions
+While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.
+
+### Workarounds
+Link Visible can keep the target active as a potential workaround to this issue.
+
+### Video
+https://youtu.be/Co1UDLP2Ahk
 
 ## Particles ignore Skew X/Y when spawning
 

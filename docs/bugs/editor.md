@@ -122,8 +122,6 @@ The following triggers which spawn on either true or false only display one / no
 **Date:** 18/12/2025  
 
 ### Description
-![image](https://github.com/user-attachments/assets/db5a88af-c6a6-4a71-992b-38364ee565a8)  
-  
 **Disable Paste State Groups** affects both **Paste State** and the **Paste** button from the **Edit Groups** menu, despite being noted otherwise.
 
 ## Lighter on Base Color or an object with only Base or Detail Color crashes the game

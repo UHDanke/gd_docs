@@ -7,9 +7,9 @@
 
 ### Description
 Gradient triggers without any references (ID 0) use the screen's edges as reference instead.  
-These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.  
-  
-Example:  
+These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
+
+### Examples
 ![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)
 
 ## UI Gradient doesn't work

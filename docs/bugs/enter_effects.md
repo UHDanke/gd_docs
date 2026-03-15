@@ -31,8 +31,9 @@ Touch Trigger does work however.
 **Date:** 19/12/2025  
 
 ### Description
-There seems to be no difference between Enter and Area Scale & Rotate.  
-  
+There seems to be no difference between Enter and Area Scale & Rotate.
+
+### Examples
 Examples of things affected by this bug:  
 - Keyframe objects get scaled / rotated which can cause keyframes to apply scaling & rotation wrongly  
 - Rotate Follow will copy the rotation of an object affected by Enter Rotate
