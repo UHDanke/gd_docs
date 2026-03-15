@@ -1,14 +1,15 @@
 import csv
+import os
 import sys
 
 
 COLUMNS = [
-    "Category", "Fixed", "Excluded", "Version", "Date", "Platform",
-    "Short Description", "Long Description", "Suggestions", "Workarounds",
+    "Category", "Fixed", "Exclude", "Version", "Date", "Platform",
+    "Short Description", "Long Description", "Examples", "Suggestions", "Workarounds",
     "Video", "Level ID"
 ]
 
-META_FIELDS = {"Version", "Date", "Platform", "Level ID"}
+META_FIELDS = {"Fixed", "Version", "Date", "Platform", "Level ID"}
 
 
 def normalize(val):
@@ -38,18 +39,18 @@ def parse_md(md_path):
             if current_entry:
                 entries.append(current_entry)
             title = normalize(stripped[3:])
-            fixed = "TRUE" if title.startswith("[FIXED]") else "FALSE"
-            excluded = "TRUE" if title.endswith("~~EXCLUDED~~") else "FALSE"
+            # Strip visual-only tags to get the clean short description
             short_desc = title.replace("[FIXED]", "").replace("~~EXCLUDED~~", "").strip()
             current_entry = {
                 "Category": current_category or "",
-                "Fixed": fixed,
-                "Excluded": excluded,
+                "Fixed": "FALSE",    # overwritten by **Fixed:** meta field
+                "Exclude": "FALSE",  # overwritten by **Exclude:** meta field
                 "Version": "",
                 "Date": "",
                 "Platform": "",
                 "Short Description": short_desc,
                 "Long Description": "",
+                "Examples": "",
                 "Suggestions": "",
                 "Workarounds": "",
                 "Video": "",
@@ -76,6 +77,7 @@ def parse_md(md_path):
         elif current_entry and current_section and stripped:
             field_map = {
                 "Description": "Long Description",
+                "Examples": "Examples",
                 "Suggestions": "Suggestions",
                 "Workarounds": "Workarounds",
                 "Video": "Video",
@@ -92,17 +94,44 @@ def parse_md(md_path):
     return entries
 
 
+def load_csv(csv_path):
+    """Return existing rows keyed by (Category, Short Description)."""
+    existing = {}
+    if not os.path.exists(csv_path):
+        return existing
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            key = (normalize(row.get("Category", "")), normalize(row.get("Short Description", "")))
+            existing[key] = row
+    return existing
+
+
 def md_to_csv(md_path, csv_path):
     entries = parse_md(md_path)
+    existing = load_csv(csv_path)
+
+    merged = []
+    added = 0
+    for entry in entries:
+        key = (entry["Category"], entry["Short Description"])
+        if key in existing:
+            # Preserve only Exclude from the existing CSV; re-derive everything else from MD
+            entry["Exclude"] = normalize(existing[key].get("Exclude", "FALSE"))
+        else:
+            # New entries (not previously in CSV) default to excluded
+            entry["Exclude"] = "TRUE"
+            added += 1
+        merged.append(entry)
 
     with open(csv_path, "w", newline="\n", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=COLUMNS, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(entries)
+        writer.writerows(merged)
 
-    included = sum(1 for e in entries if e["Excluded"].upper() != "TRUE")
-    excluded_count = len(entries) - included
-    print(f"Converted '{md_path}' → '{csv_path}' ({included} included, {excluded_count} excluded)")
+    dropped = len(existing) - (len(merged) - added)
+    included = sum(1 for e in merged if e["Exclude"].upper() != "TRUE")
+    excluded_count = len(merged) - included
+    print(f"Converted '{md_path}' → '{csv_path}' ({added} added, {dropped} dropped, {included} included, {excluded_count} excluded)")
 
 
 if __name__ == "__main__":

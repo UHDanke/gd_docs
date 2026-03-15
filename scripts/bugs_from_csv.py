@@ -6,12 +6,12 @@ from datetime import datetime
 
 
 COLUMNS = [
-    "Category", "Fixed", "Excluded", "Version", "Date", "Platform",
-    "Short Description", "Long Description", "Suggestions", "Workarounds",
+    "Category", "Fixed", "Exclude", "Version", "Date", "Platform",
+    "Short Description", "Long Description", "Examples", "Suggestions", "Workarounds",
     "Video", "Level ID"
 ]
 
-META_FIELDS = ["Version", "Date", "Platform", "Level ID"]
+META_FIELDS = ["Fixed", "Version", "Date", "Platform", "Level ID"]
 
 
 def normalize(val):
@@ -41,7 +41,7 @@ def format_date(val):
 
 def entry_to_lines(entry):
     lines = []
-    excluded = entry["Excluded"].upper() == "TRUE"
+    excluded = entry["Exclude"].upper() == "TRUE"
     fixed = entry["Fixed"].upper() == "TRUE"
     short_desc = entry["Short Description"]
 
@@ -54,7 +54,10 @@ def entry_to_lines(entry):
         val = entry[field]
         if field == "Date":
             val = format_date(val)
-        if val:
+        if field == "Fixed":
+            # Always emit Fixed so it survives roundtrip; heading tag is visual-only
+            lines.append(f"**{field}:** {val}  ")
+        elif val:
             lines.append(f"**{field}:** {val}  ")
     lines.append("")
 
@@ -62,6 +65,12 @@ def entry_to_lines(entry):
     if long_desc:
         lines.append("### Description")
         lines.append(long_desc)
+        lines.append("")
+
+    examples = entry["Examples"]
+    if examples:
+        lines.append("### Examples")
+        lines.append(examples)
         lines.append("")
 
     suggestions = entry["Suggestions"]
@@ -108,9 +117,11 @@ def csv_to_md(csv_path, output_dir):
         if fname.endswith(".md") and fname.lower() != "readme.md":
             os.remove(os.path.join(output_dir, fname))
 
-    # Write one file per category
+    # Write one file per category (excluded entries omitted from MD)
     for cat in sorted(categories.keys()):
-        entries = categories[cat]
+        entries = [e for e in categories[cat] if e["Exclude"].upper() != "TRUE"]
+        if not entries:
+            continue
         lines = [f"# {cat}", ""]
         for entry in entries:
             lines.extend(entry_to_lines(entry))
@@ -120,7 +131,7 @@ def csv_to_md(csv_path, output_dir):
         with open(os.path.join(output_dir, fname), "w", encoding="utf-8", newline="\n") as f:
             f.write(output)
 
-    included = sum(1 for r in cleaned if r["Excluded"].upper() != "TRUE")
+    included = sum(1 for r in cleaned if r["Exclude"].upper() != "TRUE")
     excluded_count = len(cleaned) - included
     print(f"Converted '{csv_path}' → '{output_dir}/' ({len(categories)} files, {included} included, {excluded_count} excluded)")
 
