@@ -30,6 +30,6 @@ jobs:
       - name: Commit updated markdown
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Reformatted markdown files [skip ci]"
+          commit_message: "reformatted markdown files"
           file_pattern: .
  
