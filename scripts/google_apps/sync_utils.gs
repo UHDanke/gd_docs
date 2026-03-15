@@ -30,7 +30,7 @@ function downloadReplace(csvUrl, sheetName, token) {
  * @param {string} sheetName  - Sheet tab to read from.
  * @param {string} repoOwner  - GitHub username or org.
  * @param {string} repoName   - Repository name.
- * @param {string} filePath   - Path inside the repo (e.g. ".data/sidebar.csv").
+ * @param {string} filePath   - Path inside the repo (e.g. "data/sidebar.csv").
  * @param {string} token      - GitHub personal access token (needs contents: write).
  * @param {string} [branch]   - Branch to commit to (default: "main").
  * @param {string} [message]  - Commit message (default: auto-generated).
