@@ -1,41 +1,41 @@
-Category,Fixed,Version,Date,Platform,Short Description,Long Description,Suggestions,Workarounds,Video,Level ID,Excluded
-Advanced Follow,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Velocity Duplication,"Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger.
+Category,Fixed,Version,Date,Platform,Short Description,Long Description,Examples,Suggestions,Workarounds,Video,Level ID,Exclude
+Advanced Follow,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Velocity Duplication,"Targets move way faster than they should if there are multiple Advanced Follows active, because the velocity movement is mistakenly applied again by every trigger.
 
-Rotation is also duplicated when using Mode 3.","A solution to this bug would be for only the first Advanced Follow in a tick to move by the current velocity value, and subsequent ones to move by the difference in velocity.",,https://youtu.be/obZ-G22lizU,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotation and Object Groups,Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.,,,https://youtu.be/KJJ2YNqvOO8,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timewarp Movement,"Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1.
+Rotation is also duplicated when using Mode 3.",,"A solution to this bug would be for only the first Advanced Follow in a tick to move by the current velocity value, and subsequent ones to move by the difference in velocity.",,https://youtu.be/obZ-G22lizU,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotation and Object Groups,Advanced Follow movement breaks when using Rotation on targets part of linked objects or groups.,,,,https://youtu.be/KJJ2YNqvOO8,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timewarp Movement,"Mode 1 Advanced Follow triggers with no easing follow the target using easing if timewarp is less than 1.
 
 The motion of Advanced Follow is inversely proportional with timewarp values less than 1. Due to how Mode 1 works, this multiplies the easing value of Mode 1 triggers, even if easing is equal to 0.
 
 This behavior makes it impossible to perfectly match an object's movement with Advanced Follow while time is slown down.
-This also affects Mode 2 movement that relies on moving objects for a single tick very fast with high speed and limited MaxRange or 100 Friction.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Speedup when using high Friction values,"Friction values over 100 can reverse the speed of an object, and if above 200 friction this speed will increase exponentially until the game crashes.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,StartSpeed and Speed are not multipliers,"StartSpeed and Speed are not multipliers when using a speed reference ID.
-It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.",,,,,
-Advanced Follow,false,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Options that do nothing,"The following options do nothing:
+This also affects Mode 2 movement that relies on moving objects for a single tick very fast with high speed and limited MaxRange or 100 Friction.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Speedup when using high Friction values,"Friction values over 100 can reverse the speed of an object, and if above 200 friction this speed will increase exponentially until the game crashes.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,StartSpeed and Speed are not multipliers,"StartSpeed and Speed are not multipliers when using a speed reference ID.
+It is not clear to me whether this is intentional or a bug, as the only place where the multiplier is mentioned is on the editor guide.",,,,,,
+Advanced Follow,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Options that do nothing,"The following options do nothing:
 - MaxRange Reference ID
 - Redirect Dir (Edit AdvFollow)
-- SlowDist and SlowAccel (Mode 3)",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,StartSpeed works on one target,"If there are multiple targets inside Target GID, StartSpeed applies on one target only.",,,,,
-Advanced Follow,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Physics issues when stopping instantly,"When an Advanced Follow target loses all velocity instantly, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.
+- SlowDist and SlowAccel (Mode 3)",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,StartSpeed works on one target,"If there are multiple targets inside Target GID, StartSpeed applies on one target only.",,,,,,
+Advanced Follow,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Physics issues when stopping instantly,"When an Advanced Follow target loses all velocity instantly, if the player clips into the target's hitbox it will boost the player. This behavior continues until the trigger is stopped.
 Without DontBoostX/Y, the player's jump will be boosted everytime the player jumps off the target.
-Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Hitbox move delay,"Sometimes, the hitbox of the target object will be stuck in a previous position if Adv Follow movement is really fast.
+Using DontBoostX/Y is not enough to fix this issue, the player will also be forcibly teleported to the top of the object if clipped inside or hit from below.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Hitbox move delay,"Sometimes, the hitbox of the target object will be stuck in a previous position if Adv Follow movement is really fast.
 
-Stopping the Adv Follow trigger fixes the hitbox position.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Mode 3 X/Y Only cannot steer if other modes are present,"When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1 or 2 is present on the other axis.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Advanced Follow random is between 0/+ instead of -/+,"The random variables in Edit Advanced Follow are always picked in a range between 0 and the given value, unlike other random settings.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Advanced Follow will not spawn if stopped then respawned in the same tick,"If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not be active.
+Stopping the Adv Follow trigger fixes the hitbox position.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Mode 3 X/Y Only cannot steer if other modes are present,"When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1 or 2 is present on the other axis.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Advanced Follow random is between 0/+ instead of -/+,"The random variables in Edit Advanced Follow are always picked in a range between 0 and the given value, unlike other random settings.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Advanced Follow will not spawn if stopped then respawned in the same tick,"If an Advanced Follow instance is stopped, then it is spawned again before the next Advanced Follow movement, it will not be active.
 
 This bug is caused by two mechanics:
 - Advanced Follow doesn't stop instantly, it is marked as stopped until the next scheduled movement where it gets cleared
-- Advanced Follow will not spawn if an instance of it is already active for the given remap",A potential fix for this would be for Advanced Follow to replace the previous instance if its waiting to be stopped.,,https://youtu.be/MNh11dOnu4U,115061026,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Ease Out conflict,"Ease Out is currently bugged and does not apply the effect properly to the radial proximity options.
-If the two easings differ they will both apply and conflict \- the game will pick and apply one of them. This is most obvious with opposing easings.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,ModBack / ModFront do nothing for the radial options,ModBack / ModFront are still displayed when used on the radial options despite doing nothing.,,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Thin solid hitboxes when scale is negative,"When a solid object is scaled by a negative value, hitboxes become very thin and buggy. Spikes and other non-solid hitboxes are not affected.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Fade stops working for a short duration after the game is unpaused,Unpausing the game undoes the effect of Area Fade for one frame.,,,,,
-Area Triggers,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Start Position multiplies Area effect,"Area effects are accumulated for every calculation when starting from a Start Position.
+- Advanced Follow will not spawn if an instance of it is already active for the given remap",,A potential fix for this would be for Advanced Follow to replace the previous instance if its waiting to be stopped.,,https://youtu.be/MNh11dOnu4U,115061026,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Ease Out conflict,"Ease Out is currently bugged and does not apply the effect properly to the radial proximity options.
+If the two easings differ they will both apply and conflict \- the game will pick and apply one of them. This is most obvious with opposing easings.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,ModBack / ModFront do nothing for the radial options,ModBack / ModFront are still displayed when used on the radial options despite doing nothing.,,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Thin solid hitboxes when scale is negative,"When a solid object is scaled by a negative value, hitboxes become very thin and buggy. Spikes and other non-solid hitboxes are not affected.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Fade stops working for a short duration after the game is unpaused,Unpausing the game undoes the effect of Area Fade for one frame.,,,,,,
+Area Triggers,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Start Position multiplies Area effect,"Area effects are accumulated for every calculation when starting from a Start Position.
 Only the first tick is affected, the effect is properly applied on the second one.
 All Area triggers are affected.
 With Area Scale and Area Move, this can crash your game.
@@ -43,13 +43,13 @@ With Area Scale and Area Move, this can crash your game.
 ### Scale / Rotate Bug
 
 Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.
-This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,DEAP has no effect when used on Area Tint or Area Fade,"The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Tint ignores Base / Detail Color,Area Tint ignores the Base / Detail Color setting of single-color objects.,,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Area with Duration 0 does not override an active Edit Area,Edit Area will override other active Edit Areas only if **Duration** \> 0\.,,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Stop has no effect on Edit Area,"Stop does not work on Edit Area.
-I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Scale / Rotate / Move visibility issues,"If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.
+This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,DEAP has no effect when used on Area Tint or Area Fade,"The center group is affected by Area Tint and Area Fade even with **DEAP** selected, **DEAP** effectively does nothing for these two triggers.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Tint ignores Base / Detail Color,Area Tint ignores the Base / Detail Color setting of single-color objects.,,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Area with Duration 0 does not override an active Edit Area,Edit Area will override other active Edit Areas only if **Duration** \> 0\.,,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Stop has no effect on Edit Area,"Stop does not work on Edit Area.
+I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Scale / Rotate / Move visibility issues,"If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.
 
 ### Multiple Areas
 
@@ -62,45 +62,45 @@ Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 
 ### Rendering
 
-Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Toggle Inconsistencies,"Toggle disables Area effects on the object only in very particular cases depending on the area settings.
-This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.",,,,,
-Area Triggers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Area Tint / Fade doesn't pause in editor,"Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.
+Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Toggle Inconsistencies,"Toggle disables Area effects on the object only in very particular cases depending on the area settings.
+This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.",,,,,,
+Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Edit Area Tint / Fade doesn't pause in editor,"Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.
 
-[Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)",,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,ORD doesn't work as intended,"Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.",,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow trigger & channel 0 triggers,"If you place an arrow trigger (without touch or spawn) that changes the trigger channel to 0 anywhere in the editor, the activation of all channel 0 triggers in the entire level will now depend on the position of the triggers relative to the arrow trigger.
+[Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)",,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,ORD doesn't work as intended,"Triggers that use ORD are delayed until the last (either the left-most or top-most, if gameplay is rotated) trigger with a lower ORD in the same channel is activated.",,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow trigger & channel 0 triggers,"If you place an arrow trigger (without touch or spawn) that changes the trigger channel to 0 anywhere in the editor, the activation of all channel 0 triggers in the entire level will now depend on the position of the triggers relative to the arrow trigger.
 
 If the triggers are placed after the arrow trigger, depending on the direction the arrow points towards, their activation is completely ignored.
 
-This happens even if the arrow trigger hasn't been reached yet or if any other arrow triggers (without channel 0) are placed before it.",,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow trigger activation delay,The activation of arrow triggers (without spawn or touch) is delayed until all triggers on the same channel that are placed before the arrow trigger (relative to where the arrow points) are activated.,,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow and Music Line mismatch,"The music line uses the arrow trigger as the origin when gameplay rotates, but trigger activation depends mostly on the player's position, which is inconsistent and can be affected by variations in the player's position.",,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Music Line Y 0,"The music line cannot go below Y 0. The behavior depends on the position and direction of the arrow trigger:
+This happens even if the arrow trigger hasn't been reached yet or if any other arrow triggers (without channel 0) are placed before it.",,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow trigger activation delay,The activation of arrow triggers (without spawn or touch) is delayed until all triggers on the same channel that are placed before the arrow trigger (relative to where the arrow points) are activated.,,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Arrow and Music Line mismatch,"The music line uses the arrow trigger as the origin when gameplay rotates, but trigger activation depends mostly on the player's position, which is inconsistent and can be affected by variations in the player's position.",,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Music Line Y 0,"The music line cannot go below Y 0. The behavior depends on the position and direction of the arrow trigger:
 - Position below Y 0 and pointing up: the music line will start from Y 0
 - Position below Y 0 and pointing down: the music line freezes in place before rotating
-- Position above Y 0 and pointing down: the music line freezes upon hitting Y 0",,,,,
-Arrow Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Strange Vel Mod behavior,"Edit velocity behavior of arrow trigger is unintuitive:
+- Position above Y 0 and pointing down: the music line freezes upon hitting Y 0",,,,,,
+Arrow Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Strange Vel Mod behavior,"Edit velocity behavior of arrow trigger is unintuitive:
 - Velmod X and Y do nothing if the player only reverses direction
 - When gameplay is rotated, the player's vertical velocity is set to the player's previous horizontal velocity multiplied by Velmod Y
 - Velmod X does nothing in classic mode, in platformer when gameplay is rotated, the player's horizontal velocity is set to the player's previous vertical velocity multiplied by Velmod X
 - If using Override Velocity then the vertical velocity is set to Velmod Y and the horizontal velocity is set to Velmod X (this works as intended)
-- Neither Velmod X or Y take into account whether the arrow trigger inverts gravity",,,,,
-Collisions,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Silent Collision crash,"If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will sometimes crash.
+- Neither Velmod X or Y take into account whether the arrow trigger inverts gravity",,,,,,
+Collisions,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Silent Collision crash,"If you spawn a Move trigger with the Silent option from inside a Collision trigger that moves two or more collision objects (at least one being dynamic) the game will sometimes crash.
 
 The dynamic collision object must be moved before it checks for collisions.
 
-The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to check the chunks of the collision objects that were moved.",,,,114561987,
-Collisions,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Spider teleports through or into Extended Collision objects.,"Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.
+The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to check the chunks of the collision objects that were moved.",,,,,114561987,
+Collisions,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Spider teleports through or into Extended Collision objects.,"Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.
 
-Spider Pad is not affected by this issue.",,,,114561987,
-Editor,false,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently,"Pressing the F3 Preview Mode hotkey two times or more while editor playtesting is paused moves objects permanently.
+Spider Pad is not affected by this issue.",,,,,114561987,
+Editor,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently,"Pressing the F3 Preview Mode hotkey two times or more while editor playtesting is paused moves objects permanently.
 
-The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.",,,,,
-Editor,false,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Regrouping objects with Group Parent IDs creates phantom groups,"Groups are remapped by Regroup and Build Helper, but Group Parent IDs are not.
+The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.",,,,,,
+Editor,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Regrouping objects with Group Parent IDs creates phantom groups,"Groups are remapped by Regroup and Build Helper, but Group Parent IDs are not.
 The object remains the Group Parent ID for the old group despite said group no longer being in the group list.
-This can cause issues by introducing phantom groups \- the group is technically unused and not visible in the group list of the affected object, so it'll be available for Regroup and Build Helper, but the object is still the Group Parent ID for said group, so if a trigger relies on Group Parent IDs like Area or Advanced Follow, then said object will be used as the center, causing issues.",,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,IDs that are not affected by Build Helper or Regroup,"This is a list of all IDs that are not affected by Build Helper or Regroup. While i do not know which ones are on purpose, i'll highlight the ones that cause issues or look like oversights:
+This can cause issues by introducing phantom groups \- the group is technically unused and not visible in the group list of the affected object, so it'll be available for Regroup and Build Helper, but the object is still the Group Parent ID for said group, so if a trigger relies on Group Parent IDs like Area or Advanced Follow, then said object will be used as the center, causing issues.",,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,IDs that are not affected by Build Helper or Regroup,"This is a list of all IDs that are not affected by Build Helper or Regroup. While i do not know which ones are on purpose, i'll highlight the ones that cause issues or look like oversights:
 - _**Group Parent ID**_
 - Enter Channel ID
 - _**Control ID**_
@@ -124,15 +124,15 @@ Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard 
 - Color Channel (Area Tint, Enter Tint Effect)
 - Enter Channel (Legacy Enter Effect)
 - Enter Channel, EffectID (Enter Effect triggers, Stop Enter Effect)
-- _**RespawnID (Checkpoint)**_",,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Cannot create new Group Parent IDs if the trigger has 10 groups already,"Group Parent IDs cannot be applied to an object with 10 existing groups, even if the object has that group already.",,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Hitbox does not update properly after rotating a slope object,"Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.
-Autobuild is affected by this.",,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Incorrect trigger duration line length when teleporting,The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.,,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,On-load triggers have effect lines,"On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite having an effect only when the level loads.
+- _**RespawnID (Checkpoint)**_",,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Cannot create new Group Parent IDs if the trigger has 10 groups already,"Group Parent IDs cannot be applied to an object with 10 existing groups, even if the object has that group already.",,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Hitbox does not update properly after rotating a slope object,"Rotating a slope object does not update its orientation in the editor unless you move the object or quit the editor.
+Autobuild is affected by this.",,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Incorrect trigger duration line length when teleporting,The length of the duration line is double what it should be if the trigger is placed in a part of the level skipped by a teleport trigger.,,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,On-load triggers have effect lines,"On-load triggers like Link Visible and UI have effect lines when placed on the timeline, despite having an effect only when the level loads.
 
-These triggers do still count as if they were placed on the timeline however even if they do nothing when reached.",,,,,
-Editor,false,2.207,Sun Feb 01 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Triggers that do not display their target ID,"The following triggers, mostly added in 2.2, do not display any target IDs even though they should:
+These triggers do still count as if they were placed on the timeline however even if they do nothing when reached.",,,,,,
+Editor,,2.207,Sun Feb 01 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Triggers that do not display their target ID,"The following triggers, mostly added in 2.2, do not display any target IDs even though they should:
 - Re-Target Advanced Follow
 - Area (Move, Scale, Rotate, Tint, Fade)
 - Edit Area (Move, Scale, Rotate, Tint, Fade)
@@ -153,33 +153,33 @@ Editor,false,2.207,Sun Feb 01 2026 00:00:00 GMT+0200 (Eastern European Standard 
 
 The following triggers which spawn on either true or false only display one / no target ID, when they should display both true / false:
 - Item Compare
-- Instant Collision",,,,,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,**Disable Paste State Groups** prevents **Paste** from pasting groups,"![image](https://github.com/user-attachments/assets/db5a88af-c6a6-4a71-992b-38364ee565a8)
+- Instant Collision",,,,,,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,**Disable Paste State Groups** prevents **Paste** from pasting groups,"![image](https://github.com/user-attachments/assets/db5a88af-c6a6-4a71-992b-38364ee565a8)
 
-**Disable Paste State Groups** affects both **Paste State** and the **Paste** button from the **Edit Groups** menu, despite being noted otherwise.",,,,,
-Editor,false,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Lighter on Base Color or an object with only Base or Detail Color crashes the game,"Using the Lighter option on the Base Color of an object or on an object with only Base or Detail Color will either crash the game when the object becomes visible or kick you out of the level on load.
+**Disable Paste State Groups** affects both **Paste State** and the **Paste** button from the **Edit Groups** menu, despite being noted otherwise.",,,,,,
+Editor,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Lighter on Base Color or an object with only Base or Detail Color crashes the game,"Using the Lighter option on the Base Color of an object or on an object with only Base or Detail Color will either crash the game when the object becomes visible or kick you out of the level on load.
 
-This bug does not occur inside the editor.",,,,132526309,
-Editor,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Paste + Color does not remap Pulse's Channel ID,The Channel ID of a Pulse trigger cannot be remapped to a new value using Paste + Color.,,,,,
-Enter Effects,true,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter trigger crash,"If you try to call 2 different Enter triggers with the same Enter Channel and Effect IDs but different values for the same variables, the game will crash in playtesting.",,,,,
-Enter Effects,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter trigger portals,Using Enter trigger effects on portals and other objects composed of multiple objects only affects the foreground layer of portal objects.,,,,,
-Enter Effects,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Legacy Enter triggers cannot be spawned,"Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.
-Touch Trigger does work however.",,,,,
-Enter Effects,false,2.207,Fri Dec 19 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter Scale & Rotate apply real scaling and rotation on target objects,"There seems to be no difference between Enter and Area Scale & Rotate.
+This bug does not occur inside the editor.",,,,,132526309,
+Editor,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Paste + Color does not remap Pulse's Channel ID,The Channel ID of a Pulse trigger cannot be remapped to a new value using Paste + Color.,,,,,,
+Enter Effects,true,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter trigger crash,"If you try to call 2 different Enter triggers with the same Enter Channel and Effect IDs but different values for the same variables, the game will crash in playtesting.",,,,,,
+Enter Effects,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter trigger portals,Using Enter trigger effects on portals and other objects composed of multiple objects only affects the foreground layer of portal objects.,,,,,,
+Enter Effects,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Legacy Enter triggers cannot be spawned,"Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.
+Touch Trigger does work however.",,,,,,
+Enter Effects,,2.207,Fri Dec 19 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Enter Scale & Rotate apply real scaling and rotation on target objects,"There seems to be no difference between Enter and Area Scale & Rotate.
 
 Examples of things affected by this bug:
 - Keyframe objects get scaled / rotated which can cause keyframes to apply scaling & rotation wrongly
-- Rotate Follow will copy the rotation of an object affected by Enter Rotate",,,,,
-Events,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Player Reversed event does not activate,"Player Reversed event does not seem to activate when the player reverses direction in any circumstance.
+- Rotate Follow will copy the rotation of an object affected by Enter Rotate",,,,,,
+Events,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Player Reversed event does not activate,"Player Reversed event does not seem to activate when the player reverses direction in any circumstance.
 
-It used to activate only on pad / orb reversal but that no longer seems to be the case.",,,,,
-Events,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Feather Landing event does not trigger if the player does not land with downward velocity,If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.,,,,,
-Events,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Left/Right Release events do not trigger if interrupted by the other direction on mobile,"On mobile devices, if you press Left while already pressing Right (and vice-versa), releasing Right after this will not trigger a Right Release (or Left Release) event.
-This affects both player events.",,,,,
-Events,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Input Release events do not trigger if game is paused,"If you pause the game while holding a player input and release it during the pause, the input release event will not trigger.
+It used to activate only on pad / orb reversal but that no longer seems to be the case.",,,,,,
+Events,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Feather Landing event does not trigger if the player does not land with downward velocity,If the player lands with close to 0 velocity or clips / teleports into an object while traveling upwards none of the landing events will trigger.,,,,,,
+Events,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Left/Right Release events do not trigger if interrupted by the other direction on mobile,"On mobile devices, if you press Left while already pressing Right (and vice-versa), releasing Right after this will not trigger a Right Release (or Left Release) event.
+This affects both player events.",,,,,,
+Events,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Input Release events do not trigger if game is paused,"If you pause the game while holding a player input and release it during the pause, the input release event will not trigger.
 
-Input release should trigger on unpausing if the player no longer holds the input.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Count desync,"The values stored inside Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.
+Input release should trigger on unpausing if the player no longer holds the input.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Count desync,"The values stored inside Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.
 
 ### Persistent Items
 
@@ -195,42 +195,42 @@ If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID
 
 On this new check, Count triggers will update their stored value to the new Item ID value. However, if a previous Count check was interrupted by this new check, the game will resume the previous check when the new one is done.
 
-When the game updates the Count's stored value, it doesn't use the current Item ID value, it uses the value from when the check was initialized - this means the previous check will update the remaining Count triggers to an old value causing a desycn from the current Item.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Count check can reverse order if interrupted by a new check,"Count trigger checks are ordered by Target Count, the order of activations depends on whether the item was added or subtracted.
+When the game updates the Count's stored value, it doesn't use the current Item ID value, it uses the value from when the check was initialized - this means the previous check will update the remaining Count triggers to an old value causing a desycn from the current Item.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Count check can reverse order if interrupted by a new check,"Count trigger checks are ordered by Target Count, the order of activations depends on whether the item was added or subtracted.
 
 If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, but the operation subtracts instead of adding (or vice-versa), the order of checks for both the new AND any previous remaining checks for that item ID will be reversed.
 
-Count checks are done by looping over count instances mapped by Target Count using an index. This index will count from the start if adding and from the end if subtracting. If the order changes in a new item change, then that can cause the same Count triggers to be checked again.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Time **Ignore Timewarp** does nothing,Timer is still slowed down or sped up by timewarp with the option selected.,,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Counter labels do not update properly with items outside the 0-9999 range,"Counter labels only update if a Pickup or Item Edit trigger with the same ItemID is used.
+Count checks are done by looping over count instances mapped by Target Count using an index. This index will count from the start if adding and from the end if subtracting. If the order changes in a new item change, then that can cause the same Count triggers to be checked again.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Time **Ignore Timewarp** does nothing,Timer is still slowed down or sped up by timewarp with the option selected.,,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Counter labels do not update properly with items outside the 0-9999 range,"Counter labels only update if a Pickup or Item Edit trigger with the same ItemID is used.
 IDs outside the 0-9999 range refer to ID 0 or 9999. If an ID outside this range is used, it will display the value of ID 0 (if below 0) or 9999 (if above 9999), but will not update when ID 0 / 9999 change values.
-Timers text labels update properly and are not affected by this bug.",,,,,
+Timers text labels update properly and are not affected by this bug.",,,,,,
 Items and Timers,true,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Level is unlisted if it contains a Pickup with high count or negative item id,"The server unlists any level that contains a Pickup, Count or Instant Count trigger with either high count (100k or more) or an item ID less than 0.
 
 This is an intentional fix to the 2.1 ACE exploit which has remained in place as 2.1 clients are still able to download levels.
 
-Item Edit and Time triggers are not affected by either issue.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Item Attempts value only returns 1,Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.,,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timers reversed spawn order,"Timers spawn from the oldest timer first to newest last on mobile (reversed), and from newest first to oldest last on PC.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Float Operations return a different value on PC and mobile,"When assigning a value higher than 2^31-1 to an item with Item Edit or Pickup (using Multiply / Divide), the overflow value differs between pc and mobile - on pc the overflow is -2^31 while on mobile the overflow is 2^31-1. For values lower than -2^31 the overflow is -2^31 on both versions.",,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Assigning NAN to items returns a different value on PC and mobile,Assigning NAN (through external editing of the trigger) to an item returns -2^31 on PC and 0 on mobile.,,,,,
-Items and Timers,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Pickup Multiply / Divide is innacurate,Multiply / Divide Pickup operations use single precision floats instead of double precision like in the case of Item Edit which introduces significant errors.,,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale of Keyframe Parent ID is always positive,"The scaling applied on keyframes by the Keyframe Parent ID is always positive, even if the scale is negative.",,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale of Keyframe Parent ID is not relative to rotation and is applied after it,"If a Keyframe Parent ID has different X & Y Scale and Rotation at the same time, rotation is always applied first then Scale X / Y is applied along the level's X / Y axis, not relative to the object's rotation.",,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Warp Skew of keyframes is ignored when animating the keyframe.,"Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.
+Item Edit and Time triggers are not affected by either issue.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Item Attempts value only returns 1,Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.,,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timers reversed spawn order,"Timers spawn from the oldest timer first to newest last on mobile (reversed), and from newest first to oldest last on PC.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Float Operations return a different value on PC and mobile,"When assigning a value higher than 2^31-1 to an item with Item Edit or Pickup (using Multiply / Divide), the overflow value differs between pc and mobile - on pc the overflow is -2^31 while on mobile the overflow is 2^31-1. For values lower than -2^31 the overflow is -2^31 on both versions.",,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Assigning NAN to items returns a different value on PC and mobile,Assigning NAN (through external editing of the trigger) to an item returns -2^31 on PC and 0 on mobile.,,,,,,
+Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Pickup Multiply / Divide is innacurate,Multiply / Divide Pickup operations use single precision floats instead of double precision like in the case of Item Edit which introduces significant errors.,,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale of Keyframe Parent ID is always positive,"The scaling applied on keyframes by the Keyframe Parent ID is always positive, even if the scale is negative.",,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale of Keyframe Parent ID is not relative to rotation and is applied after it,"If a Keyframe Parent ID has different X & Y Scale and Rotation at the same time, rotation is always applied first then Scale X / Y is applied along the level's X / Y axis, not relative to the object's rotation.",,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Warp Skew of keyframes is ignored when animating the keyframe.,"Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.
 
 **## [2.207]** Keyframes merge when copying to another level
 
 Keyframes have a hidden unique ID which is used to determine what keyframe objects are connected.
 The ID is kept even when copying to another level which results in the copied keyframes combining with existing ones.
-This makes merging parts of a level that use keyframes difficult, as you cannot manually select the unique ID of the keyframe.",,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Keyframe lines are not visible until reloading the level if pasted in a new level.,Keyframes copied to another level will not display the connecting lines until reloading the editor.,,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Animate Keyframe Position Y Mod cannot be 0 if Position X Mod is different than 0,"If the value of Position Y Mod is equal to 0 when exiting the editor it will automatically copy the value of Position X Mod.
-There are some cases where using only the X movement of a keyframe chain is required which is currently not possible to do outside of the editor.",,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Keyframe Preview does not match scaling,"![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)
+This makes merging parts of a level that use keyframes difficult, as you cannot manually select the unique ID of the keyframe.",,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Keyframe lines are not visible until reloading the level if pasted in a new level.,Keyframes copied to another level will not display the connecting lines until reloading the editor.,,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Animate Keyframe Position Y Mod cannot be 0 if Position X Mod is different than 0,"If the value of Position Y Mod is equal to 0 when exiting the editor it will automatically copy the value of Position X Mod.
+There are some cases where using only the X movement of a keyframe chain is required which is currently not possible to do outside of the editor.",,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Keyframe Preview does not match scaling,"![image](https://github.com/user-attachments/assets/327217c9-e1fe-49f9-b0d2-ce96e51e3f39)
 
-Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.",,,,,
-Keyframes,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotation of Keyframe objects is not calculated properly,"The formula by which keyframe rotation is calculated is very badly implemented and makes no sense.
+Keyframe scaling is relative to the Group Parent ID's rotation, which is not reflected in the preview where it is relative to the keyframe's rotation.",,,,,,
+Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotation of Keyframe objects is not calculated properly,"The formula by which keyframe rotation is calculated is very badly implemented and makes no sense.
 
 The current rotation can be calculated using this formula:
 $rmod = (Rc-Rp)*mod$
@@ -269,46 +269,46 @@ The problems with the current behavior are:
 
 Keyframes using Curve mode with very low duration like 0 result in very exaggerated movement that can send objects out of bounds, crashing the game.
 
-Duration 0 should instead disable curve mode on the affected keyframe.",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Start Position 60hz,"Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.
-While this seems intentional, an option to enable 240hz start positions would be nice to have.",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Camera position is updated after move,"The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
-This also affects Area triggers and Move (Lock Camera).",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Object Rotation Offset,"The position of objects part of a group that is being rotated will get offset overtime.
+Duration 0 should instead disable curve mode on the affected keyframe.",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Start Position 60hz,"Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 240hz.
+While this seems intentional, an option to enable 240hz start positions would be nice to have.",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Camera position is updated after move,"The movement of an Advanced Follow with the C option will be delayed by one tick from the position of the camera, as the camera position is updated after all moves are processed.
+This also affects Area triggers and Move (Lock Camera).",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Object Rotation Offset,"The position of objects part of a group that is being rotated will get offset overtime.
 
-All rotation transformations are affected except Area Rotate.",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotate Aim / Follow infinite rotation,"When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.
+All rotation transformations are affected except Area Rotate.",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Rotate Aim / Follow infinite rotation,"When using Dynamic Mode with Aim or Follow options, on a Target Group ID without a Group ID Parent and a Center Group ID that is either 0 or made up of multiple objects, the target objects will spin rapidly.
 If Center Group ID contains multiple objects (and no Group ID Parent), it will spin even faster.
 
 [Video 1](https://youtu.be/uE5I8bRaMSg)
-[Video 2](https://youtu.be/GkujxqE5pok)",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Relative Scale doesn't work with Scale 0.00,"This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
+[Video 2](https://youtu.be/GkujxqE5pok)",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Relative Scale doesn't work with Scale 0.00,"This isn't so much a bug as it is an oversight, Scale trigger will not work if scale is either 0 or 1.
 
 Relative Scale lets you mimic additive scaling (increasing scale by an amount relative to current amount) if target and center have the same scale.
 
 Due to the formula offseting scale by -1 ($RelativeScale=1+(Scale-1)/CenterScale$), increasing the scale by 1 needs a scale factor of 2.
 
-In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.",,,,,
-Gradient,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Gradient doesn't account for screen rotation when loading the level,"Gradient triggers without any references (ID 0) use the screen's edges as reference instead.
+In order to decrease the scale by -1, Scale would have to be 0 which doesn't work.",,,,,,
+Gradient,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Gradient doesn't account for screen rotation when loading the level,"Gradient triggers without any references (ID 0) use the screen's edges as reference instead.
 These edges are initialized when the level loads, however, if the camera trigger is placed before the origin camera rotation isn't taken into account.
 
 Example:
-![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Color resumes when respawning from a checkpoint if stopped,"If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint.
-Pausing the Color trigger does not do this.",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Negative scaled Teleport triggers apply force in the opposite direction,"Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
+![image](https://github.com/user-attachments/assets/e2baf11d-2f0b-45e5-bbc9-e15dc3fd271e)",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Color resumes when respawning from a checkpoint if stopped,"If a Color trigger is stopped with a Stop trigger before the color change finishes, the color change will resume when you respawn from a checkpoint.
+Pausing the Color trigger does not do this.",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Negative scaled Teleport triggers apply force in the opposite direction,"Flipping a Teleport trigger by scaling it with a negative value does not change the direction force will be applied towards.
 
 Flipping the trigger with the editor tool changes the direction, but:
 - If the teleport has target group 0, flipping will flip the direction force is applied in
-- If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Kerning is not used properly when splitting text,"Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset.
+- If the teleport has a target group, the target group's rotation is used as reference for force, flipping does nothing even if you flip the tp or the target obj",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Kerning is not used properly when splitting text,"Using the split feature of text objects does not take kerning into account properly, with certain letters getting more offset.
 
-This also depends on the game's texture quality, with High quality having more significant offset than Low.",,,,,
-Misc,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,No Audio Scale Orbs scale more than they should if affected by a scaling trigger,"Orb objects with No Audio Scale that have been scaled up by an Area / Scale trigger will be much bigger visually than they should (roughly same size as when clicked), if they are not affected by any enter effect.",,,,,
-Move Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Trigger Target Dynamic ignores X and Y Only,Move (Target Mode) options X and Y Only are ignored when using dynamic movement.,,,,,
-Move Trigger,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Trigger Camera Lock X axis bugs on level replay,"While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.
-This only happens if the Move trigger is placed left or ontop of the level origin.",,,,,
-Move Trigger,false,2.208,Fri Feb 06 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Pausing a Move trigger stops objects without a hitbox based on frames instead of ticks,"Pausing a Move trigger stops the movement of objects, but objects without a hitbox are stopped on the next visual frame instead of the next tick.
+This also depends on the game's texture quality, with High quality having more significant offset than Low.",,,,,,
+Misc,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,No Audio Scale Orbs scale more than they should if affected by a scaling trigger,"Orb objects with No Audio Scale that have been scaled up by an Area / Scale trigger will be much bigger visually than they should (roughly same size as when clicked), if they are not affected by any enter effect.",,,,,,
+Move Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Trigger Target Dynamic ignores X and Y Only,Move (Target Mode) options X and Y Only are ignored when using dynamic movement.,,,,,,
+Move Trigger,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Move Trigger Camera Lock X axis bugs on level replay,"While the checkpoint / practice bug was fixed, restarting after completing a classic level places the camera locked group in the wrong position for that attempt.
+This only happens if the Move trigger is placed left or ontop of the level origin.",,,,,,
+Move Trigger,,2.208,Fri Feb 06 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Pausing a Move trigger stops objects without a hitbox based on frames instead of ticks,"Pausing a Move trigger stops the movement of objects, but objects without a hitbox are stopped on the next visual frame instead of the next tick.
 
 This causes objects without a hitbox (spikes, solid blocks, collision objects) to offset from the position of objects with one (decoration, or using no touch).
 
@@ -320,14 +320,14 @@ All other triggers with move functionality (rotate, scale, keyframe, etc) do not
 
 The reason this happens is that movements are optimized for decorative objects - they only move every frame rather than every tick. Pause fails to take this into account hence the offset.
 
-If the deco object is targeted by adv follow / rotate / scale / other triggers that work on obj then the deco object will no longer be optimized and move every tick instead.",,,,,
-Particles,false,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Toggling off or unloading a Particle Object does not clear particles in normal mode,"In editor, toggling off or unloading a Particle Object disables and clears all particles created by it.
+If the deco object is targeted by adv follow / rotate / scale / other triggers that work on obj then the deco object will no longer be optimized and move every tick instead.",,,,,,
+Particles,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Toggling off or unloading a Particle Object does not clear particles in normal mode,"In editor, toggling off or unloading a Particle Object disables and clears all particles created by it.
 In playtesting, the particles are not cleared and become separate from the particle object - any changes to the main object no longer affect the disconnected particles which continue to linger until they despawn.
-This can cause lag by duplicating particle emitters.",,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles with Duration -1 may lose **Animate on Trigger** randomly,Particles with infinite (-1) Duration can lose both animate settings on when loading the editor.,,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles with long lifespans linger after a level restart if **Quick Start** is selected,Particles are not properly cleared when the level restarts if using the **Quick Start** option.,,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Uniform Color particles spawned by Spawn Particle are not uniform,A particle with the Uniform Color option that is spawned will use the color channel value at the time of spawning instead of syncing with the color channel continuously.,,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Weird transparency on particle objects,"Particle objects calculate transparency inconsistently depending on what settings you select, as shown in the following table:
+This can cause lag by duplicating particle emitters.",,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles with Duration -1 may lose **Animate on Trigger** randomly,Particles with infinite (-1) Duration can lose both animate settings on when loading the editor.,,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles with long lifespans linger after a level restart if **Quick Start** is selected,Particles are not properly cleared when the level restarts if using the **Quick Start** option.,,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Uniform Color particles spawned by Spawn Particle are not uniform,A particle with the Uniform Color option that is spawned will use the color channel value at the time of spawning instead of syncing with the color channel continuously.,,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Weird transparency on particle objects,"Particle objects calculate transparency inconsistently depending on what settings you select, as shown in the following table:
 
 | Additive | Obj Color | Uniform Color | Blending | Solid Alpha | Blending Alpha |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -351,15 +351,15 @@ Notes:
   - $base$ is applied multiple times in some equations.
 - For a particle to count as blending either the base or detail color must be blending.
   - If **Use Obj Color** or **Uniform Obj Color** are used with **Additive** but neither color channels blend, then the particle renders as both normal and additive.
-- The resulting color for one particle is equal to: $BG\textunderscore RGB*(1-Solid\textunderscore Alpha)+Particle\textunderscore RGB*(Solid\textunderscore Alpha+Blending\textunderscore Alpha)$",,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Some Particle Objects can end up having erratic spin,"Particle objects can get bugged and end up having very erratic movement.
+- The resulting color for one particle is equal to: $BG\textunderscore RGB*(1-Solid\textunderscore Alpha)+Particle\textunderscore RGB*(Solid\textunderscore Alpha+Blending\textunderscore Alpha)$",,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Some Particle Objects can end up having erratic spin,"Particle objects can get bugged and end up having very erratic movement.
 Level ID: 114681413
 
-[Video](https://youtu.be/5zb-JCvD5JY)",,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particle sometimes fail to spawn when near the particle limit,"The first particle in a particle loop will fail to spawn if the particle limit has been hit already.
+[Video](https://youtu.be/5zb-JCvD5JY)",,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Particle sometimes fail to spawn when near the particle limit,"The first particle in a particle loop will fail to spawn if the particle limit has been hit already.
 
-This usually happens if $Emission \cdot Lifetime = MaxParticles$",,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Spawn Particle Position Group ID is tied to game FPS,"The spawn position of particles with Spawn Particle is the position of the group at the last rendered frame, instead of the current position.
+This usually happens if $Emission \cdot Lifetime = MaxParticles$",,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Spawn Particle Position Group ID is tied to game FPS,"The spawn position of particles with Spawn Particle is the position of the group at the last rendered frame, instead of the current position.
 This can cause particles to spawn in the wrong position when dealing with high speed or instant movement when the game runs below 240 fps.
 The bug only happens while playtesting and not in the editor.
 
@@ -367,28 +367,28 @@ The bug only happens while playtesting and not in the editor.
 [Video: 120 fps vsync, mobile](https://youtu.be/wxT__dKYsr8?si=X3O1ywGwrP5fIucm)
 
 Setup attempts to spawn a particle every tick on a moving target.
-ID: 114953438",,,,,
-Particles,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Spawn Particle fails to spawn on inactive targets,"Spawn Particle will not spawn if the target is inactive (position is off-screen).
+ID: 114953438",,,,,,
+Particles,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Spawn Particle fails to spawn on inactive targets,"Spawn Particle will not spawn if the target is inactive (position is off-screen).
 This only happens while playtesting and not in the editor.
 If the object was active on screen at least once before, the particle will spawn at its previous on-screen position.
 
 Link Visible can keep the target active as a potential workaround to this issue.
 While this might be intentional for performance reasons, there should be an option to allow the particle to spawn regardless of whether the target is active or not.
 
-[Video](https://youtu.be/Co1UDLP2Ahk)",,,,,
+[Video](https://youtu.be/Co1UDLP2Ahk)",,,,,,
 Spawn Triggers,true,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Internal Remap Instance IDs are remappable,"Every Spawn trigger with remaps is assigned a Remap Instance ID on level load in the order they are loaded in. Spawn triggers without remaps are assigned ID 0.
 
 This Remap Instance ID is remappable which has the following effects:
 - Spawn triggers may accidentally use the wrong set of remaps
-- The game will crash if the ID is remapped to a remap instance that does not exist",,,https://youtu.be/ZDzuKXkeM8g?si=mSGYaf9Lda75WfYV,,
-Spawn Triggers,true,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Instant Collision resets remaps,Groups spawned by a remapped Instant Collision do not inherit remaps.,,,,,
-Spawn Triggers,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Checkpoint resets remaps,Groups spawned by a remapped Checkpoint do not inherit remaps.,,,,,
-Spawn Triggers,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Spamming restart (R key) skips spawn activation,"Spamming R quickly can skip the activation of spawns placed before the origin line in Platformer. This can also happen but only on the very first attempt in Classic.
+- The game will crash if the ID is remapped to a remap instance that does not exist",,,,https://youtu.be/ZDzuKXkeM8g?si=mSGYaf9Lda75WfYV,,
+Spawn Triggers,true,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Instant Collision resets remaps,Groups spawned by a remapped Instant Collision do not inherit remaps.,,,,,,
+Spawn Triggers,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Checkpoint resets remaps,Groups spawned by a remapped Checkpoint do not inherit remaps.,,,,,,
+Spawn Triggers,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Spamming restart (R key) skips spawn activation,"Spamming R quickly can skip the activation of spawns placed before the origin line in Platformer. This can also happen but only on the very first attempt in Classic.
 
-I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.",,,,,
-Spawn Triggers,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Count spawn inheritance without Multi Activate,"If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
-This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.",,,,,
-Spawn Triggers,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Triggers that are not remappable or not fully remappable,"The following triggers cannot be remapped, or have some IDs that are not remappable. I have highlighted the ones that cause some issues or make things more difficult in certain situations.
+I assume the reason this happens is because the level restarts before the spawn limit is reset, so the triggers are spawn limited on the next restart.",,,,,,
+Spawn Triggers,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Count spawn inheritance without Multi Activate,"If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.
+This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.",,,,,,
+Spawn Triggers,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Triggers that are not remappable or not fully remappable,"The following triggers cannot be remapped, or have some IDs that are not remappable. I have highlighted the ones that cause some issues or make things more difficult in certain situations.
 
 These triggers are not remappable:
 - _**Color**_
@@ -402,8 +402,8 @@ These triggers have IDs that are not remappable:
 - _**Pulse (Color ID)**_
 - Spawn (Original Group ID)
 - _**Area Triggers (Effect ID)**_
-- _**Area Tint, Enter Tint (Color Channel)**_",,,,,
-Spawn Triggers,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps,"Stopping any Spawn trigger with delay while spawn delays are checked makes the game check the last Spawn delay trigger twice, which if it were to spawn in the same tick would activate twice.
+- _**Area Tint, Enter Tint (Color Channel)**_",,,,,,
+Spawn Triggers,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps,"Stopping any Spawn trigger with delay while spawn delays are checked makes the game check the last Spawn delay trigger twice, which if it were to spawn in the same tick would activate twice.
 
 It doesn't matter if you stop a Spawn trigger that has already been activated in the current tick, one waiting to activate or you make the Spawn trigger stop itself.
 
@@ -419,23 +419,23 @@ The spawn delay of triggers spawned by Spawn Ordered depends partly on their cur
 
 Not every move is affected, movements caused by Area triggers are completely ignored.
 
-This behavior is inconsistent however, the game stops ignoring the new delays in some situations, and some spawns may be delayed until another spawns just like those placed on the timeline.",,,,,
-Advanced Follow,false,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timewarp Rotation,The max rotation speed of the Rotate option does not scale with timewarp.,,,,,
-Gradient,false,2.207,,,UI Gradient doesn't work,"Gradients on UI layer and above do not follow the screen.
-An unused layer ID exists where gradients do follow the screen, BUT it renders above BG layer.",,,,,
-Misc,false,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Out of bounds crash,"If an object moves out of bounds and cannot be added to a section, the game crashes.",,,,,
-Particles,false,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles ignore Skew X/Y when spawning,"If a particle spawns after an object is warped / scaled, it will ignore skew Y value and only scale and rotate on X/Y",,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Float save precision,"Float properties are rounded to 6 significant digits when objects are copied or the level is saved.
+This behavior is inconsistent however, the game stops ignoring the new delays in some situations, and some spawns may be delayed until another spawns just like those placed on the timeline.",,,,,,
+Advanced Follow,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Timewarp Rotation,The max rotation speed of the Rotate option does not scale with timewarp.,,,,,,
+Gradient,,2.207,,,UI Gradient doesn't work,"Gradients on UI layer and above do not follow the screen.
+An unused layer ID exists where gradients do follow the screen, BUT it renders above BG layer.",,,,,,
+Misc,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Out of bounds crash,"If an object moves out of bounds and cannot be added to a section, the game crashes.",,,,,,
+Particles,,2.208,Mon Jan 19 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Particles ignore Skew X/Y when spawning,"If a particle spawns after an object is warped / scaled, it will ignore skew Y value and only scale and rotate on X/Y",,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Float save precision,"Float properties are rounded to 6 significant digits when objects are copied or the level is saved.
 This causes lots of precision issues with many float properties that can have high values like object positions.
-It is NOT a float precision issue, this is caused by the save function using the format %g when casting floats to string.",,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Mirror Mode does not do anything in level options.,,,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Player 2 does not copy Player 1's gameplay rotation,When entering a dual portal while the first player is travelling on vertically the 2nd player will travel horizontally instead,,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Player 2 does not copy Player 1's gravity,When entering a dual portal while the first player has non-default gravity the 2nd player will always have default gravity,,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Negative object rotations get offset upon reloading,"If an object has negative rotation or skew x/y and has a decimal part it offsets until it reaches a whole number value.
-For example, -32.555 will round to -32.55, then -32.54 then -32.54 and so on until reaching -32.00. ",,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Collectibles cannot be recollected in classic mode after they are reset by Reset trigger,"Reset Trigger does not work for collectables in Classic mode. It will make them reappear, but without their collisions (non-recollectable).",,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Animated shaders remain active permanently once the animation ends,"Some shaders like the shockwave are designed to play briefly and then end. While the main effect (the expanding wave) disappears as expected, a grainy or noise overlay remains active. This happens because the shader itself is still enabled even after the visible animation finishes, so the residual grain layer persists until the shader is explicitly turned off.",,,,,
-Advanced Follow,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Near Dist slider,Adv follow near dist slider has 0 to 1.00 range despite being a distance value like max range,,,,,
-Area Triggers,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale sliders,"In the Edit Area Scale trigger, the Scale X and Scale Y sliders appear to be directly copied from the Edit Area Move trigger, resulting in absurdly high limits (100 for Scale X and 200 for Scale Y). ",,,,,
-,false,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Reverse Sync does not work as intended,Reverse sync does not make the player go any faster or slower depending on how late/early you press an orb/pad which is set as reverse,,,,,
-,false,2.208,Tue Feb 17 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Music Line jumps when touching teleports with no target,"If the music line touches a teleport trigger or portal with target group ID 0, instead of ignoring the the teleport object the music line skips to the center of it.",,Use Center Effect on the problem object.,,,
+It is NOT a float precision issue, this is caused by the save function using the format %g when casting floats to string.",,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Mirror Mode does not do anything in level options.,,,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Player 2 does not copy Player 1's gameplay rotation,When entering a dual portal while the first player is travelling on vertically the 2nd player will travel horizontally instead,,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Player 2 does not copy Player 1's gravity,When entering a dual portal while the first player has non-default gravity the 2nd player will always have default gravity,,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Negative object rotations get offset upon reloading,"If an object has negative rotation or skew x/y and has a decimal part it offsets until it reaches a whole number value.
+For example, -32.555 will round to -32.55, then -32.54 then -32.54 and so on until reaching -32.00. ",,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Collectibles cannot be recollected in classic mode after they are reset by Reset trigger,"Reset Trigger does not work for collectables in Classic mode. It will make them reappear, but without their collisions (non-recollectable).",,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Animated shaders remain active permanently once the animation ends,"Some shaders like the shockwave are designed to play briefly and then end. While the main effect (the expanding wave) disappears as expected, a grainy or noise overlay remains active. This happens because the shader itself is still enabled even after the visible animation finishes, so the residual grain layer persists until the shader is explicitly turned off.",,,,,,
+Advanced Follow,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Near Dist slider,Adv follow near dist slider has 0 to 1.00 range despite being a distance value like max range,,,,,,
+Area Triggers,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale sliders,"In the Edit Area Scale trigger, the Scale X and Scale Y sliders appear to be directly copied from the Edit Area Move trigger, resulting in absurdly high limits (100 for Scale X and 200 for Scale Y). ",,,,,,
+,,2.208,Fri Jan 02 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Reverse Sync does not work as intended,Reverse sync does not make the player go any faster or slower depending on how late/early you press an orb/pad which is set as reverse,,,,,,
+,,2.208,Tue Feb 17 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Music Line jumps when touching teleports with no target,"If the music line touches a teleport trigger or portal with target group ID 0, instead of ignoring the the teleport object the music line skips to the center of it.",,,Use Center Effect on the problem object.,,,
