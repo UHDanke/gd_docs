@@ -2,7 +2,6 @@
 
 ## Player Reversed event does not activate
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -11,7 +10,6 @@ Player Reversed event does not seem to activate when the player reverses directi
 
 ## Feather Landing event does not trigger if the player does not land with downward velocity
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -20,7 +18,6 @@ If the player lands with close to 0 velocity or clips / teleports into an object
 
 ## Left/Right Release events do not trigger if interrupted by the other direction on mobile
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -29,7 +26,6 @@ On mobile devices, if you press Left while already pressing Right (and vice-vers
 
 ## Input Release events do not trigger if game is paused
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 

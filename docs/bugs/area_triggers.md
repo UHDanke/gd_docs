@@ -2,7 +2,6 @@
 
 ## Ease Out conflict
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -11,7 +10,6 @@ Ease Out is currently bugged and does not apply the effect properly to the radia
 
 ## ModBack / ModFront do nothing for the radial options
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -20,7 +18,6 @@ ModBack / ModFront are still displayed when used on the radial options despite d
 
 ## Thin solid hitboxes when scale is negative
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -29,7 +26,6 @@ When a solid object is scaled by a negative value, hitboxes become very thin and
 
 ## Area Fade stops working for a short duration after the game is unpaused
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -38,7 +34,6 @@ Unpausing the game undoes the effect of Area Fade for one frame.
 
 ## Start Position multiplies Area effect
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 
@@ -47,7 +42,6 @@ Area effects are accumulated for every calculation when starting from a Start Po
 
 ## DEAP has no effect when used on Area Tint or Area Fade
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -56,7 +50,6 @@ The center group is affected by Area Tint and Area Fade even with **DEAP** selec
 
 ## Area Tint ignores Base / Detail Color
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -65,7 +58,6 @@ Area Tint ignores the Base / Detail Color setting of single-color objects.
 
 ## Edit Area with Duration 0 does not override an active Edit Area
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -74,7 +66,6 @@ Edit Area will override other active Edit Areas only if **Duration** \> 0\.
 
 ## Stop has no effect on Edit Area
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -83,7 +74,6 @@ Stop does not work on Edit Area. I am not sure if this is unimplemented or a sid
 
 ## Area Scale / Rotate / Move visibility issues
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -92,7 +82,6 @@ If an object stops being visible, Area Scale / Rotate / Move will stop applying 
 
 ## Toggle Inconsistencies
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -101,7 +90,6 @@ Toggle disables Area effects on the object only in very particular cases dependi
 
 ## Edit Area Tint / Fade doesn't pause in editor
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -110,7 +98,6 @@ Edit Area Tint and Edit Area Fade do not get paused when pausing the editor play
 
 ## Scale sliders
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 

@@ -2,7 +2,6 @@
 
 ## Move Silent Collision crash
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 **Level ID:** 114561987  
@@ -12,7 +11,6 @@ If you spawn a Move trigger with the Silent option from inside a Collision trigg
 
 ## Spider teleports through or into Extended Collision objects.
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 **Level ID:** 114561987  

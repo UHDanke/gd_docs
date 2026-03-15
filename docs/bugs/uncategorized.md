@@ -2,7 +2,6 @@
 
 ## Float save precision
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -11,13 +10,11 @@ Float properties are rounded to 6 significant digits when objects are copied or 
 
 ## Mirror Mode does not do anything in level options.
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
 ## Player 2 does not copy Player 1's gameplay rotation
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -26,7 +23,6 @@ When entering a dual portal while the first player is travelling on vertically t
 
 ## Player 2 does not copy Player 1's gravity
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -35,7 +31,6 @@ When entering a dual portal while the first player has non-default gravity the 2
 
 ## Negative object rotations get offset upon reloading
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -44,7 +39,6 @@ If an object has negative rotation or skew x/y and has a decimal part it offsets
 
 ## Collectibles cannot be recollected in classic mode after they are reset by Reset trigger
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -53,7 +47,6 @@ Reset Trigger does not work for collectables in Classic mode. It will make them 
 
 ## Animated shaders remain active permanently once the animation ends
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -62,7 +55,6 @@ Some shaders like the shockwave are designed to play briefly and then end. While
 
 ## Reverse Sync does not work as intended
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 
@@ -71,7 +63,6 @@ Reverse sync does not make the player go any faster or slower depending on how l
 
 ## Music Line jumps when touching teleports with no target
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 17/02/2026  
 

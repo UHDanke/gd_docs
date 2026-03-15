@@ -2,7 +2,6 @@
 
 ## Gradient doesn't account for screen rotation when loading the level
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -11,7 +10,6 @@ Gradient triggers without any references (ID 0) use the screen's edges as refere
 
 ## UI Gradient doesn't work
 
-**Fixed:**   
 **Version:** 2.207  
 
 ### Description

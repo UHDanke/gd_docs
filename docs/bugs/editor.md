@@ -2,7 +2,6 @@
 
 ## Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -11,7 +10,6 @@ Pressing the F3 Preview Mode hotkey two times or more while editor playtesting i
 
 ## Regrouping objects with Group Parent IDs creates phantom groups
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -20,7 +18,6 @@ Groups are remapped by Regroup and Build Helper, but Group Parent IDs are not. T
 
 ## IDs that are not affected by Build Helper or Regroup
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -29,7 +26,6 @@ This is a list of all IDs that are not affected by Build Helper or Regroup. Whil
 
 ## Cannot create new Group Parent IDs if the trigger has 10 groups already
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -38,7 +34,6 @@ Group Parent IDs cannot be applied to an object with 10 existing groups, even if
 
 ## Hitbox does not update properly after rotating a slope object
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -47,7 +42,6 @@ Rotating a slope object does not update its orientation in the editor unless you
 
 ## Incorrect trigger duration line length when teleporting
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -56,7 +50,6 @@ The length of the duration line is double what it should be if the trigger is pl
 
 ## On-load triggers have effect lines
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -65,7 +58,6 @@ On-load triggers like Link Visible and UI have effect lines when placed on the t
 
 ## Triggers that do not display their target ID
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 01/02/2026  
 
@@ -74,7 +66,6 @@ The following triggers, mostly added in 2.2, do not display any target IDs even 
 
 ## **Disable Paste State Groups** prevents **Paste** from pasting groups
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -83,7 +74,6 @@ The following triggers, mostly added in 2.2, do not display any target IDs even 
 
 ## Lighter on Base Color or an object with only Base or Detail Color crashes the game
 
-**Fixed:**   
 **Version:** 2.208  
 **Date:** 31/01/2026  
 **Level ID:** 132526309  
@@ -93,7 +83,6 @@ Using the Lighter option on the Base Color of an object or on an object with onl
 
 ## Paste + Color does not remap Pulse's Channel ID
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 

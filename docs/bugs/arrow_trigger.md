@@ -2,7 +2,6 @@
 
 ## ORD doesn't work as intended
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -11,7 +10,6 @@ Triggers that use ORD are delayed until the last (either the left-most or top-mo
 
 ## Arrow trigger & channel 0 triggers
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -20,7 +18,6 @@ If you place an arrow trigger (without touch or spawn) that changes the trigger 
 
 ## Arrow trigger activation delay
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -29,7 +26,6 @@ The activation of arrow triggers (without spawn or touch) is delayed until all t
 
 ## Arrow and Music Line mismatch
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -38,7 +34,6 @@ The music line uses the arrow trigger as the origin when gameplay rotates, but t
 
 ## Music Line Y 0
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -47,7 +42,6 @@ The music line cannot go below Y 0. The behavior depends on the position and dir
 
 ## Strange Vel Mod behavior
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 

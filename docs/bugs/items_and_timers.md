@@ -2,7 +2,6 @@
 
 ## Count desync
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -11,7 +10,6 @@ The values stored inside Count triggers can be updated improperly or not at all 
 
 ## Count check can reverse order if interrupted by a new check
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -20,7 +18,6 @@ Count trigger checks are ordered by Target Count, the order of activations depen
 
 ## Time **Ignore Timewarp** does nothing
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -29,7 +26,6 @@ Timer is still slowed down or sped up by timewarp with the option selected.
 
 ## Counter labels do not update properly with items outside the 0-9999 range
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -38,7 +34,6 @@ Counter labels only update if a Pickup or Item Edit trigger with the same ItemID
 
 ## [FIXED] Level is unlisted if it contains a Pickup with high count or negative item id
 
-**Fixed:** true  
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -47,7 +42,6 @@ The server unlists any level that contains a Pickup, Count or Instant Count trig
 
 ## Item Attempts value only returns 1
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -56,7 +50,6 @@ Attempts item is not updated on new attempts and always returns value 1 when use
 
 ## Timers reversed spawn order
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -65,7 +58,6 @@ Timers spawn from the oldest timer first to newest last on mobile (reversed), an
 
 ## Float Operations return a different value on PC and mobile
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -74,7 +66,6 @@ When assigning a value higher than 2^31-1 to an item with Item Edit or Pickup (u
 
 ## Assigning NAN to items returns a different value on PC and mobile
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -83,7 +74,6 @@ Assigning NAN (through external editing of the trigger) to an item returns -2^31
 
 ## Pickup Multiply / Divide is innacurate
 
-**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
