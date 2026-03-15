@@ -3,7 +3,7 @@ name: Generate Sidebar
 on:
   push:
     paths:
-      - .data/sidebar.csv
+      - data/sidebar.csv
       - scripts/generate_sidebar.py
   workflow_dispatch:
 
