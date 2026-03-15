@@ -55,11 +55,7 @@ def csv_to_markdown(csv_path: str) -> str:
         parts = [cells[i].center(col_widths[i]) for i in range(n)]
         return "| " + " | ".join(parts) + " |"
 
-    # Separator: ---: for right-aligned numeric, :--- for left
-    sep_parts = [
-        ("---:" if numeric[i] else (":" + "-" * (col_widths[i] - 2) + ":"))
-        for i in range(n)
-    ]
+    sep_parts = [":" + "-" * (col_widths[i] - 2) + ":" for i in range(n)]
     separator = "| " + " | ".join(sep_parts) + " |"
 
     lines = [fmt_row(bold_headers), separator] + [fmt_row(row) for row in data]
