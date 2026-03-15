@@ -1,4 +1,4 @@
-name: Markdown → CSV
+name: Bugs Markdown to CSV
 
 on:
   push:
