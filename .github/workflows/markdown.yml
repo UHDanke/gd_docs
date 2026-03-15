@@ -5,6 +5,7 @@ on:
     paths:
       - .data/tables/**
       - docs/**
+      - scripts/mdgen.py
   workflow_dispatch:
  
 jobs:
