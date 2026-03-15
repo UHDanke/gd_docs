@@ -38,7 +38,7 @@ Unpausing the game undoes the effect of Area Fade for one frame.
 **Date:** 30/01/2026  
 
 ### Description
-Area effects are accumulated for every calculation when starting from a Start Position. Only the first tick is affected, the effect is properly applied on the second one. All Area triggers are affected. With Area Scale and Area Move, this can crash your game. ### Scale / Rotate Bug Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor. This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
+Area effects are accumulated for every calculation when starting from a Start Position. Only the first tick is affected, the effect is properly applied on the second one. All Area triggers are affected. With Area Scale and Area Move, this can crash your game. Scale / Rotate Bug Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor. This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
 
 ## DEAP has no effect when used on Area Tint or Area Fade
 
@@ -78,7 +78,7 @@ Stop does not work on Edit Area. I am not sure if this is unimplemented or a sid
 **Date:** 18/12/2025  
 
 ### Description
-If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation. ### Multiple Areas Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description. ### Flickering Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick. Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk). ### Rendering Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
+If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation. Multiple Areas Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description. Flickering Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick. Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk). Rendering Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
 
 ## Toggle Inconsistencies
 
