@@ -11,7 +11,7 @@ COLUMNS = [
     "Video", "Level ID"
 ]
 
-META_FIELDS = ["Fixed", "Version", "Date", "Platform", "Level ID"]
+META_FIELDS = ["Version", "Date", "Platform", "Level ID"]
 
 
 def normalize(val):
@@ -46,18 +46,14 @@ def entry_to_lines(entry):
     short_desc = entry["Short Description"]
 
     prefix = "[FIXED] " if fixed else ""
-    excluded_tag = " ~~EXCLUDED~~" if excluded else ""
-    lines.append(f"## {prefix}{short_desc}{excluded_tag}")
+    lines.append(f"## {prefix}{short_desc}")
     lines.append("")
 
     for field in META_FIELDS:
         val = entry[field]
         if field == "Date":
             val = format_date(val)
-        if field == "Fixed":
-            # Always emit Fixed so it survives roundtrip; heading tag is visual-only
-            lines.append(f"**{field}:** {val}  ")
-        elif val:
+        if val:
             lines.append(f"**{field}:** {val}  ")
     lines.append("")
 

@@ -9,7 +9,7 @@ COLUMNS = [
     "Video", "Level ID"
 ]
 
-META_FIELDS = {"Fixed", "Version", "Date", "Platform", "Level ID"}
+META_FIELDS = {"Version", "Date", "Platform", "Level ID"}
 
 
 def normalize(val):
@@ -40,11 +40,12 @@ def parse_md(md_path):
                 entries.append(current_entry)
             title = normalize(stripped[3:])
             # Strip visual-only tags to get the clean short description
-            short_desc = title.replace("[FIXED]", "").replace("~~EXCLUDED~~", "").strip()
+            fixed = "TRUE" if "[FIXED]" in title else "FALSE"
+            short_desc = title.replace("[FIXED]", "").strip()
             current_entry = {
                 "Category": current_category or "",
-                "Fixed": "FALSE",    # overwritten by **Fixed:** meta field
-                "Exclude": "FALSE",  # overwritten by **Exclude:** meta field
+                "Fixed": fixed,      # derived from [FIXED] heading tag
+                "Exclude": "FALSE",  # overwritten by in-place merge
                 "Version": "",
                 "Date": "",
                 "Platform": "",
