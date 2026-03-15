@@ -15,7 +15,7 @@ const GITHUB_CONFIG_SHEET = "config.github";
 
 // Fallback map used when no config sheet is present.
 const SHEET_MAP = {
-  "sidebar": ".data/sidebar.csv"
+  "sidebar": "data/sidebar.csv"
 };
 
 let _sheetMap = null;
