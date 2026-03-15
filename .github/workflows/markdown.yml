@@ -3,7 +3,7 @@ name: Reformat Markdown Files
 on:
   push:
     paths:
-      - .data/tables/**
+      - data/tables/**
       - docs/**
       - scripts/mdgen.py
   workflow_dispatch:
