@@ -93,7 +93,7 @@ The dynamic collision object must be moved before it checks for collisions.
 The crash will not trigger if Extended Collision is used on the dynamic collisions, it is likely the crash happens when the game tries to check the chunks of the collision objects that were moved.",,,,,114561987,
 Collisions,,2.208,Fri Jan 30 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Spider teleports through or into Extended Collision objects.,"Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.
 
-Spider Pad is not affected by this issue.",,,,,114561987,
+Spider Pad is not affected by this issue.",,,,,,
 Editor,,2.208,Sat Jan 31 2026 00:00:00 GMT+0200 (Eastern European Standard Time),,Using editor Preview Mode hotkey at least twice while playtest is paused resets object position permanently,"Pressing the F3 Preview Mode hotkey two times or more while editor playtesting is paused moves objects permanently.
 
 The first use resets object positions to default, the second use reverts the position back to where it was in playtesting. The second move will not be undone when playtesting is stopped.",,,,,,
