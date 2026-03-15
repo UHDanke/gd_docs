@@ -102,7 +102,7 @@ def md_to_csv(md_path, csv_path):
 
     included = sum(1 for e in entries if e["Excluded"].upper() != "TRUE")
     excluded_count = len(entries) - included
-    print(f"✅ Converted '{md_path}' → '{csv_path}' ({included} included, {excluded_count} excluded)")
+    print(f"Converted '{md_path}' → '{csv_path}' ({included} included, {excluded_count} excluded)")
 
 
 if __name__ == "__main__":
