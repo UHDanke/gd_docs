@@ -3,9 +3,9 @@ name: Reformat Markdown Files
 on:
   push:
     paths:
-      - data/tables/**
-      - docs/**
-      - scripts/mdgen.py
+      - "data/tables/**"
+      - "docs/**"
+      - "scripts/mdgen.py"
   workflow_dispatch:
  
 jobs:
@@ -31,5 +31,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "reformatted markdown files"
-          file_pattern: .
+          file_pattern: "docs/**"
  
