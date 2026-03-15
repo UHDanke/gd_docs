@@ -2,6 +2,7 @@
 
 ## Scale of Keyframe Parent ID is always positive
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -10,6 +11,7 @@ The scaling applied on keyframes by the Keyframe Parent ID is always positive, e
 
 ## Scale of Keyframe Parent ID is not relative to rotation and is applied after it
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -18,6 +20,7 @@ If a Keyframe Parent ID has different X & Y Scale and Rotation at the same time,
 
 ## Warp Skew of keyframes is ignored when animating the keyframe.
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -26,6 +29,7 @@ Only the X and Y scale of the keyframe is used for warping the target objects, s
 
 ## Keyframe lines are not visible until reloading the level if pasted in a new level.
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -34,6 +38,7 @@ Keyframes copied to another level will not display the connecting lines until re
 
 ## Animate Keyframe Position Y Mod cannot be 0 if Position X Mod is different than 0
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -42,6 +47,7 @@ If the value of Position Y Mod is equal to 0 when exiting the editor it will aut
 
 ## Keyframe Preview does not match scaling
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -50,6 +56,7 @@ If the value of Position Y Mod is equal to 0 when exiting the editor it will aut
 
 ## Rotation of Keyframe objects is not calculated properly
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 

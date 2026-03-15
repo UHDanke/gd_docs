@@ -2,6 +2,7 @@
 
 ## Toggling off or unloading a Particle Object does not clear particles in normal mode
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -10,6 +11,7 @@ In editor, toggling off or unloading a Particle Object disables and clears all p
 
 ## Particles with Duration -1 may lose **Animate on Trigger** randomly
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -18,6 +20,7 @@ Particles with infinite (-1) Duration can lose both animate settings on when loa
 
 ## Particles with long lifespans linger after a level restart if **Quick Start** is selected
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -26,6 +29,7 @@ Particles are not properly cleared when the level restarts if using the **Quick 
 
 ## Uniform Color particles spawned by Spawn Particle are not uniform
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -34,6 +38,7 @@ A particle with the Uniform Color option that is spawned will use the color chan
 
 ## Weird transparency on particle objects
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -42,6 +47,7 @@ Particle objects calculate transparency inconsistently depending on what setting
 
 ## Some Particle Objects can end up having erratic spin
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -50,6 +56,7 @@ Particle objects can get bugged and end up having very erratic movement. Level I
 
 ## Particle sometimes fail to spawn when near the particle limit
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -58,6 +65,7 @@ The first particle in a particle loop will fail to spawn if the particle limit h
 
 ## Spawn Particle Position Group ID is tied to game FPS
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -66,6 +74,7 @@ The spawn position of particles with Spawn Particle is the position of the group
 
 ## Spawn Particle fails to spawn on inactive targets
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -74,6 +83,7 @@ Spawn Particle will not spawn if the target is inactive (position is off-screen)
 
 ## Particles ignore Skew X/Y when spawning
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 

@@ -2,6 +2,7 @@
 
 ## [FIXED] Enter trigger crash
 
+**Fixed:** true  
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -10,6 +11,7 @@ If you try to call 2 different Enter triggers with the same Enter Channel and Ef
 
 ## Enter trigger portals
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -18,6 +20,7 @@ Using Enter trigger effects on portals and other objects composed of multiple ob
 
 ## Legacy Enter triggers cannot be spawned
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -26,6 +29,7 @@ Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.
 
 ## Enter Scale & Rotate apply real scaling and rotation on target objects
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 19/12/2025  
 

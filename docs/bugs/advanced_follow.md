@@ -2,6 +2,7 @@
 
 ## Velocity Duplication
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 
@@ -16,6 +17,7 @@ https://youtu.be/obZ-G22lizU
 
 ## Rotation and Object Groups
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -27,6 +29,7 @@ https://youtu.be/KJJ2YNqvOO8
 
 ## Timewarp Movement
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -35,6 +38,7 @@ Mode 1 Advanced Follow triggers with no easing follow the target using easing if
 
 ## Speedup when using high Friction values
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -43,6 +47,7 @@ Friction values over 100 can reverse the speed of an object, and if above 200 fr
 
 ## StartSpeed and Speed are not multipliers
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -51,6 +56,7 @@ StartSpeed and Speed are not multipliers when using a speed reference ID. It is 
 
 ## Options that do nothing
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 31/01/2026  
 
@@ -59,6 +65,7 @@ The following options do nothing: - MaxRange Reference ID - Redirect Dir (Edit A
 
 ## StartSpeed works on one target
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -67,6 +74,7 @@ If there are multiple targets inside Target GID, StartSpeed applies on one targe
 
 ## Physics issues when stopping instantly
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 
@@ -75,6 +83,7 @@ When an Advanced Follow target loses all velocity instantly, if the player clips
 
 ## Hitbox move delay
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -83,6 +92,7 @@ Sometimes, the hitbox of the target object will be stuck in a previous position 
 
 ## Mode 3 X/Y Only cannot steer if other modes are present
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -91,6 +101,7 @@ When using X/Y Only on a Mode 3 trigger, the target is unable to steer if Mode 1
 
 ## Edit Advanced Follow random is between 0/+ instead of -/+
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -99,6 +110,7 @@ The random variables in Edit Advanced Follow are always picked in a range betwee
 
 ## Advanced Follow will not spawn if stopped then respawned in the same tick
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 **Level ID:** 115061026  
@@ -114,6 +126,7 @@ https://youtu.be/MNh11dOnu4U
 
 ## Timewarp Rotation
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -122,6 +135,7 @@ The max rotation speed of the Rotate option does not scale with timewarp.
 
 ## Near Dist slider
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 02/01/2026  
 

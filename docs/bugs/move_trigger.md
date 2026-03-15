@@ -2,6 +2,7 @@
 
 ## Move Trigger Target Dynamic ignores X and Y Only
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -10,6 +11,7 @@ Move (Target Mode) options X and Y Only are ignored when using dynamic movement.
 
 ## Move Trigger Camera Lock X axis bugs on level replay
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -18,6 +20,7 @@ While the checkpoint / practice bug was fixed, restarting after completing a cla
 
 ## Pausing a Move trigger stops objects without a hitbox based on frames instead of ticks
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 06/02/2026  
 

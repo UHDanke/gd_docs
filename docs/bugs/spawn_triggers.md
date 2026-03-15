@@ -2,6 +2,7 @@
 
 ## [FIXED] Internal Remap Instance IDs are remappable
 
+**Fixed:** true  
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -13,6 +14,7 @@ https://youtu.be/ZDzuKXkeM8g?si=mSGYaf9Lda75WfYV
 
 ## [FIXED] Instant Collision resets remaps
 
+**Fixed:** true  
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -21,6 +23,7 @@ Groups spawned by a remapped Instant Collision do not inherit remaps.
 
 ## Checkpoint resets remaps
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -29,6 +32,7 @@ Groups spawned by a remapped Checkpoint do not inherit remaps.
 
 ## Spamming restart (R key) skips spawn activation
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -37,6 +41,7 @@ Spamming R quickly can skip the activation of spawns placed before the origin li
 
 ## Count spawn inheritance without Multi Activate
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -45,6 +50,7 @@ If Multi Activate is not selected, the Count's spawn target uses the remaps of t
 
 ## Triggers that are not remappable or not fully remappable
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 
@@ -53,6 +59,7 @@ The following triggers cannot be remapped, or have some IDs that are not remappa
 
 ## Stopping a spawn trigger with delay from another Spawn trigger with delay makes the last Spawn delay spawn again without remaps
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 19/01/2026  
 

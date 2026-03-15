@@ -2,6 +2,7 @@
 
 ## Start Position 60hz
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -10,6 +11,7 @@ Start Positions simulate the game at only 60hz, while the tick rate in 2.2 is 24
 
 ## Camera position is updated after move
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -18,6 +20,7 @@ The movement of an Advanced Follow with the C option will be delayed by one tick
 
 ## Object Rotation Offset
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -26,6 +29,7 @@ The position of objects part of a group that is being rotated will get offset ov
 
 ## Rotate Aim / Follow infinite rotation
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -34,6 +38,7 @@ When using Dynamic Mode with Aim or Follow options, on a Target Group ID without
 
 ## Relative Scale doesn't work with Scale 0.00
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -42,6 +47,7 @@ This isn't so much a bug as it is an oversight, Scale trigger will not work if s
 
 ## Color resumes when respawning from a checkpoint if stopped
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -50,6 +56,7 @@ If a Color trigger is stopped with a Stop trigger before the color change finish
 
 ## Negative scaled Teleport triggers apply force in the opposite direction
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -58,6 +65,7 @@ Flipping a Teleport trigger by scaling it with a negative value does not change 
 
 ## Kerning is not used properly when splitting text
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -66,6 +74,7 @@ Using the split feature of text objects does not take kerning into account prope
 
 ## No Audio Scale Orbs scale more than they should if affected by a scaling trigger
 
+**Fixed:**   
 **Version:** 2.207  
 **Date:** 18/12/2025  
 
@@ -74,6 +83,7 @@ Orb objects with No Audio Scale that have been scaled up by an Area / Scale trig
 
 ## Out of bounds crash
 
+**Fixed:**   
 **Version:** 2.208  
 **Date:** 30/01/2026  
 
