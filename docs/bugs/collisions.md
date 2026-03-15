@@ -17,7 +17,6 @@ The crash will not trigger if Extended Collision is used on the dynamic collisio
 
 **Version:** 2.208  
 **Date:** 30/01/2026  
-**Level ID:** 114561987  
 
 ### Description
 Spider gamemode and Spider Orb teleports through or into an object with extended collision instead of on it.  
