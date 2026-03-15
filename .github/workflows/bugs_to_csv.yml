@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - docs/bugs/*.md
-      - '!docs/bugs/README.md'
       - scripts/bugs_to_csv.py
   workflow_dispatch:
 
