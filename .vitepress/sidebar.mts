@@ -9,7 +9,7 @@ export default [
   },
   {
     text: 'Editor',
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Colors & Layers',
@@ -53,7 +53,7 @@ export default [
   },
   {
     text: 'Triggers',
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'General',
@@ -515,7 +515,7 @@ export default [
   },
   {
     text: 'Bugs',
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Overview',
