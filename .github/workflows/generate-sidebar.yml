@@ -22,7 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Generate sidebar
-        run: python scripts/generate_sidebar.py .data/sidebar.csv > .vitepress/sidebar.mts
+        run: python scripts/generate_sidebar.py data/sidebar.csv > .vitepress/sidebar.mts
 
       - name: Commit sidebar
         uses: stefanzweifel/git-auto-commit-action@v7
