@@ -1,5 +1,5 @@
 // =============================================================================
-// GitHub sync front-facing scripts
+// GitHub sync scripts
 //
 // Script Properties:
 //   GITHUB_TOKEN  - personal access token
@@ -41,7 +41,7 @@ function getSheetMap_() {
 }
 
 // ---------------------------------------------------------------------------
-// FRONT-FACING BUTTONS
+// Buttons
 // ---------------------------------------------------------------------------
 
 function downloadAll() {
@@ -113,11 +113,11 @@ function reloadConfig() {
 
 function initGithubMenu_(ui) {
   ui.createMenu("GitHub")
-    .addItem("Download Current", "downloadCurrent")
-    .addItem("Upload Current",   "uploadCurrent")
+    .addItem("Pull Sheet", "downloadCurrent")
+    .addItem("Push Sheet",   "uploadCurrent")
     .addSeparator()
-    .addItem("Download All",     "downloadAll")
-    .addItem("Upload All",       "uploadAll")
+    .addItem("Pull All Sheets",     "downloadAll")
+    .addItem("Push All Sheets",       "uploadAll")
     .addSeparator()
     .addItem("Reload Config",    "reloadConfig")
     .addToUi();
