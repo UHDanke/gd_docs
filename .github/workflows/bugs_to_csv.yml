@@ -20,7 +20,7 @@ jobs:
           python-version: "3.12"
 
       - name: Convert Markdown to CSV
-        run: python scripts/bugs_to_csv.py docs/bugs/ data/bug_list.csv
+        run: python scripts/bugs_to_csv.py docs/bugs data/bug_list.csv
 
       - name: Commit updated CSV
         uses: stefanzweifel/git-auto-commit-action@v7
