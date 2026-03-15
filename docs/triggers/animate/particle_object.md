@@ -204,7 +204,7 @@ Particle objects do not unload correctly in normal mode, but they do in the edit
 ### Alpha & Blending Behavior
 
 Alpha values are calculated differently depending on the options selected, below you can find a table approximating these calculations.
-<!-- @csv: .data/tables/animate.csv -->
+<!-- @csv: .data/tables/blending.csv -->
 | **Object ID** | **Not Editable** | **Disable AnimShine** | **Smooth Animation** | **Randomize Start** | **Random Speed** | **Random Frames** | **Random Animations** | **Delayed Loop** | **Frame Delay** |
 | :-----------: | :--------------: | :-------------------: | :------------------: | :-----------------: | :--------------: | :---------------: | :-------------------: | :--------------: | :-------------: |
 |      918      |       Yes        |                       |                      |                     |                  |                   |                       |                  |   0.025 - 0.05  |
