@@ -1,11 +1,11 @@
 export default [
   {
-    text: 'To Do List',
-    link: '/to_do_list'
-  },
-  {
     text: 'About',
     link: '/index'
+  },
+  {
+    text: 'To Do List',
+    link: '/to_do_list'
   },
   {
     text: 'Editor',
