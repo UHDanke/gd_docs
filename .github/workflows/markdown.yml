@@ -1,32 +1,33 @@
 name: Reformat Markdown Files 
-
+ 
 on:
   push:
     paths:
       - '.data/tables/**'
   workflow_dispatch:
-
+ 
 jobs:
   mdgen:
     runs-on: ubuntu-latest
-
+ 
     permissions:
       contents: write
-
+ 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+ 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
+ 
       - name: Run mdgen
         run: python scripts/mdgen.py
-
+ 
       - name: Commit updated markdown
-        run: |
-          git add '**/*.md'
-          git diff --cached --quiet && echo "No changes to commit" || \
-            git commit -m "Reformatted markdown tables [skip ci]" && git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Reformatted markdown files [skip ci]"
+          file_pattern: "**/*.md"
+ 
