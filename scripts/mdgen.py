@@ -33,19 +33,36 @@ def csv_to_markdown(csv_path: str) -> str:
     if not rows:
         return ""
 
+    # Trim all cells
+    rows = [[cell.strip() for cell in row] for row in rows]
+
     headers = rows[0]
-    col_widths = [len(h) for h in headers]
-    for row in rows[1:]:
+    data = rows[1:]
+    n = len(headers)
+
+    # Pad or trim every data row to exactly n columns
+    data = [(row + [""] * n)[:n] for row in data]
+
+    # Bold headers
+    bold_headers = [f"**{h}**" if h else "" for h in headers]
+
+    col_widths = [len(bh) for bh in bold_headers]
+    for row in data:
         for i, cell in enumerate(row):
-            if i < len(col_widths):
-                col_widths[i] = max(col_widths[i], len(cell))
+            col_widths[i] = max(col_widths[i], len(cell))
 
     def fmt_row(cells):
-        padded = list(cells) + [""] * (len(headers) - len(cells))
-        return "| " + " | ".join(padded[i].ljust(col_widths[i]) for i in range(len(headers))) + " |"
+        parts = [cells[i].center(col_widths[i]) for i in range(n)]
+        return "| " + " | ".join(parts) + " |"
 
-    separator = "| " + " | ".join("-" * w for w in col_widths) + " |"
-    lines = [fmt_row(headers), separator] + [fmt_row(r) for r in rows[1:]]
+    # Separator: ---: for right-aligned numeric, :--- for left
+    sep_parts = [
+        ("---:" if numeric[i] else (":" + "-" * (col_widths[i] - 2) + ":"))
+        for i in range(n)
+    ]
+    separator = "| " + " | ".join(sep_parts) + " |"
+
+    lines = [fmt_row(bold_headers), separator] + [fmt_row(row) for row in data]
     return "\n".join(lines)
 
 
@@ -75,7 +92,6 @@ def process_text(text: str) -> tuple[str, int]:
     errors = []
 
     def replace(m: re.Match) -> str:
-        noncount = count  # captured by closure below
         open_tag, tag, arg, _old_content, close_tag = m.groups()
 
         if tag not in GENERATORS:
