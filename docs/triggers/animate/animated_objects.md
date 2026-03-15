@@ -17,7 +17,7 @@ The laser wall object has some of its frames randomized regardless of any settin
 Objects animated using scale, rotate, move or fade effects animate smoothly every frame. Monster animation transitions are also done smoothly. Most other animated objects are made up of multiple sequential frames with a set frame delay between each frame.
 
 Properties by object can be found in the following table:
-<!-- @csv: .data/tables/animate.csv -->
+<!-- @csv: data/tables/animate.csv -->
 | **Object ID** | **Not Editable** | **Disable AnimShine** | **Smooth Animation** | **Randomize Start** | **Random Speed** | **Random Frames** | **Random Animations** | **Delayed Loop** | **Frame Delay** |
 | :-----------: | :--------------: | :-------------------: | :------------------: | :-----------------: | :--------------: | :---------------: | :-------------------: | :--------------: | :-------------: |
 |      918      |       Yes        |                       |                      |                     |                  |                   |                       |                  |   0.025 - 0.05  |
