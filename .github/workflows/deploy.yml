@@ -3,8 +3,8 @@ name: Deploy VitePress site
 on:
   push:
       paths:
-      - .vitepress/**
-      - docs/**
+      - ".vitepress/**"
+      - "docs/**"
   workflow_dispatch:
 permissions:
   contents: read
