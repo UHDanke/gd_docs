@@ -4,6 +4,10 @@ export default [
     link: '/to_do_list'
   },
   {
+    text: 'About',
+    link: '/index'
+  },
+  {
     text: '',
     link: ''
   },
@@ -3656,20 +3660,16 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Camera Edge',
-            link: '/triggers/camera/camera_edge'
-          },
-          {
-            text: 'Camera Guide',
-            link: '/triggers/camera/camera_guide'
+            text: 'Default Camera Properties',
+            link: '/triggers/camera/default_camera_properties'
           },
           {
             text: 'Camera Mode',
             link: '/triggers/camera/camera_mode'
           },
           {
-            text: 'Default Camera Properties',
-            link: '/triggers/camera/default_camera_properties'
+            text: 'Camera Guide',
+            link: '/triggers/camera/camera_guide'
           },
           {
             text: 'Gameplay Offset',
@@ -3686,6 +3686,10 @@ export default [
           {
             text: 'Zoom Camera',
             link: '/triggers/camera/zoom_camera'
+          },
+          {
+            text: 'Camera Edge',
+            link: '/triggers/camera/camera_edge'
           }
         ]
       },
@@ -3706,12 +3710,12 @@ export default [
             link: '/triggers/collisions/instant_collision_trigger'
           },
           {
-            text: 'Performance Optimization',
-            link: '/triggers/collisions/performance_optimization'
-          },
-          {
             text: 'State Blocks',
             link: '/triggers/collisions/state_blocks'
+          },
+          {
+            text: 'Performance Optimization',
+            link: '/triggers/collisions/performance_optimization'
           }
         ]
       },
@@ -3720,20 +3724,20 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Advanced Follow',
-            link: '/triggers/follows/advanced_follow'
-          },
-          {
-            text: 'Edit Advanced Follow',
-            link: '/triggers/follows/edit_advanced_follow'
-          },
-          {
             text: 'Follow',
             link: '/triggers/follows/follow'
           },
           {
             text: 'Follow Player Y',
             link: '/triggers/follows/follow_player_y'
+          },
+          {
+            text: 'Advanced Follow',
+            link: '/triggers/follows/advanced_follow'
+          },
+          {
+            text: 'Edit Advanced Follow',
+            link: '/triggers/follows/edit_advanced_follow'
           },
           {
             text: 'Retarget Advanced Follow',
@@ -3746,32 +3750,28 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Count',
-            link: '/triggers/items/count'
+            text: 'Pickup',
+            link: '/triggers/items/pickup'
           },
           {
-            text: 'Counter Labels',
-            link: '/triggers/items/counter_labels'
+            text: 'Count',
+            link: '/triggers/items/count'
           },
           {
             text: 'Instant Count',
             link: '/triggers/items/instant_count'
           },
           {
-            text: 'Item Compare',
-            link: '/triggers/items/item_compare'
-          },
-          {
             text: 'Item Edit',
             link: '/triggers/items/item_edit'
           },
           {
-            text: 'Item Persist',
-            link: '/triggers/items/item_persist'
+            text: 'Item Compare',
+            link: '/triggers/items/item_compare'
           },
           {
-            text: 'Pickup',
-            link: '/triggers/items/pickup'
+            text: 'Item Persist',
+            link: '/triggers/items/item_persist'
           },
           {
             text: 'Time',
@@ -3784,6 +3784,10 @@ export default [
           {
             text: 'Time Event',
             link: '/triggers/items/time_event'
+          },
+          {
+            text: 'Counter Labels',
+            link: '/triggers/items/counter_labels'
           }
         ]
       },
@@ -3880,24 +3884,24 @@ export default [
             link: '/triggers/player/disable_enable_player_trail'
           },
           {
-            text: 'Gameplay Arrow',
-            link: '/triggers/player/gameplay_arrow'
-          },
-          {
-            text: 'Gravity',
-            link: '/triggers/player/gravity'
+            text: 'Show/Hide Player',
+            link: '/triggers/player/show_hide_player'
           },
           {
             text: 'Player Control',
             link: '/triggers/player/player_control'
           },
           {
+            text: 'Gravity',
+            link: '/triggers/player/gravity'
+          },
+          {
             text: 'Reverse',
             link: '/triggers/player/reverse'
           },
           {
-            text: 'Show/Hide Player',
-            link: '/triggers/player/show_hide_player'
+            text: 'Gameplay Arrow',
+            link: '/triggers/player/gameplay_arrow'
           }
         ]
       },
@@ -3946,24 +3950,24 @@ export default [
         collapsed: true,
         items: [
           {
-            text: 'Alpha',
-            link: '/triggers/visual/alpha'
-          },
-          {
             text: 'Color',
             link: '/triggers/visual/color'
-          },
-          {
-            text: 'Link Visible',
-            link: '/triggers/visual/link_visible'
           },
           {
             text: 'Pulse',
             link: '/triggers/visual/pulse'
           },
           {
+            text: 'Alpha',
+            link: '/triggers/visual/alpha'
+          },
+          {
             text: 'Shake',
             link: '/triggers/visual/shake'
+          },
+          {
+            text: 'Link Visible',
+            link: '/triggers/visual/link_visible'
           },
           {
             text: 'UI',
@@ -4032,40 +4036,6 @@ export default [
       {
         text: 'Spawn Triggers',
         link: '/bugs/spawn_triggers'
-      },
-      {
-        text: 'Todo',
-        link: '/bugs/todo'
-      }
-    ]
-  },
-  {
-    text: 'Suggestions',
-    collapsed: false,
-    items: [
-      {
-        text: 'Overview',
-        link: '/suggestions/README'
-      },
-      {
-        text: 'Advanced Follow',
-        link: '/suggestions/advanced_follow'
-      },
-      {
-        text: 'Area Triggers',
-        link: '/suggestions/area_triggers'
-      },
-      {
-        text: 'Misc',
-        link: '/suggestions/misc'
-      },
-      {
-        text: 'Parameter to Item',
-        link: '/suggestions/parameter_to_item'
-      },
-      {
-        text: 'Sequence Control',
-        link: '/suggestions/sequence_control'
       }
     ]
   }
