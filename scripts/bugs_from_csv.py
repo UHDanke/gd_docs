@@ -2,6 +2,7 @@ import csv
 import sys
 import os
 import re
+from datetime import datetime
 
 
 COLUMNS = [
@@ -21,6 +22,23 @@ def category_to_filename(cat):
     return re.sub(r'[^a-z0-9]+', '_', cat.lower()).strip('_') + ".md"
 
 
+def format_date(val):
+    if not val:
+        return ""
+    # Try common formats
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%m/%d/%Y"):
+        try:
+            return datetime.strptime(val, fmt).strftime("%d/%m/%Y")
+        except ValueError:
+            pass
+    # Try parsing the long JS date string e.g. "Thu Dec 18 2025 00:00:00 GMT+0200 (...)"
+    try:
+        return datetime.strptime(val[:15].strip(), "%a %b %d %Y").strftime("%d/%m/%Y")
+    except ValueError:
+        pass
+    return val  # fallback: return as-is
+
+
 def entry_to_lines(entry):
     lines = []
     excluded = entry["Excluded"].upper() == "TRUE"
@@ -34,8 +52,10 @@ def entry_to_lines(entry):
 
     for field in META_FIELDS:
         val = entry[field]
+        if field == "Date":
+            val = format_date(val)
         if val:
-            lines.append(f"**{field}:** {val}")
+            lines.append(f"**{field}:** {val}\\")
     lines.append("")
 
     long_desc = entry["Long Description"]
