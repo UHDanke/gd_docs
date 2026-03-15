@@ -112,17 +112,19 @@ Triggers,Visual,UI,/triggers/visual/ui,
 Bugs,,Overview,/bugs/README,
 Bugs,,Advanced Follow,/bugs/advanced_follow,
 Bugs,,Area Triggers,/bugs/area_triggers,
-Bugs,,Arrow,/bugs/arrow,TRUE
+Bugs,,Arrow Trigger,/bugs/arrow_trigger,
 Bugs,,Collisions,/bugs/collisions,
 Bugs,,Editor,/bugs/editor,
 Bugs,,Enter Effects,/bugs/enter_effects,
 Bugs,,Events,/bugs/events,
+Bugs,,Gradient,/bugs/gradient,
 Bugs,,Items & Timers,/bugs/items_and_timers,
 Bugs,,Keyframes,/bugs/keyframes,
 Bugs,,Misc,/bugs/misc,
 Bugs,,Move Trigger,/bugs/move_trigger,
 Bugs,,Particles,/bugs/particles,
 Bugs,,Spawn Triggers,/bugs/spawn_triggers,
+Bugs,,Uncategorized,/bugs/uncategorized,
 Bugs,,Todo,/bugs/todo,true
 Suggestions,,Overview,/suggestions/README,true
 Suggestions,,Advanced Follow,/suggestions/advanced_follow,true
@@ -131,6 +133,3 @@ Suggestions,,Misc,/suggestions/misc,true
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,true
 Suggestions,,Sequence Control,/suggestions/sequence_control,true
 ,,About,/index,
-Bugs,,Arrow Trigger,/bugs/arrow_trigger,TRUE
-Bugs,,Gradient,/bugs/gradient,TRUE
-Bugs,,Uncategorized,/bugs/uncategorized,TRUE
