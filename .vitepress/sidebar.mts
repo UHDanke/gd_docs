@@ -530,8 +530,8 @@ export default [
         link: '/bugs/area_triggers'
       },
       {
-        text: 'Arrow',
-        link: '/bugs/arrow'
+        text: 'Arrow Trigger',
+        link: '/bugs/arrow_trigger'
       },
       {
         text: 'Collisions',
@@ -548,6 +548,10 @@ export default [
       {
         text: 'Events',
         link: '/bugs/events'
+      },
+      {
+        text: 'Gradient',
+        link: '/bugs/gradient'
       },
       {
         text: 'Items & Timers',
@@ -572,6 +576,10 @@ export default [
       {
         text: 'Spawn Triggers',
         link: '/bugs/spawn_triggers'
+      },
+      {
+        text: 'Uncategorized',
+        link: '/bugs/uncategorized'
       }
     ]
   }
