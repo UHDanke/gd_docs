@@ -25,7 +25,7 @@ jobs:
         run: python scripts/generate_sidebar.py .data/sidebar.csv > .vitepress/sidebar.mts
 
       - name: Commit sidebar
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "regenerate sidebar from CSV"
           file_pattern: .vitepress/sidebar.mts
