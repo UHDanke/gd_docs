@@ -40,7 +40,7 @@ Only the first tick is affected, the effect is properly applied on the second on
 All Area triggers are affected.
 With Area Scale and Area Move, this can crash your game.
 
-### Scale / Rotate Bug
+ Scale / Rotate Bug
 
 Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.
 This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.",,,,,,
@@ -51,16 +51,16 @@ Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standar
 I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.",,,,,,
 Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Area Scale / Rotate / Move visibility issues,"If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.
 
-### Multiple Areas
+ Multiple Areas
 
 Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description.
 
-### Flickering
+ Flickering
 
 Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick.
 Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).
 
-### Rendering
+ Rendering
 
 Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.",,,,,,
 Area Triggers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Toggle Inconsistencies,"Toggle disables Area effects on the object only in very particular cases depending on the area settings.
@@ -181,15 +181,15 @@ Events,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time)
 Input release should trigger on unpausing if the player no longer holds the input.",,,,,,
 Items and Timers,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Count desync,"The values stored inside Count triggers can be updated improperly or not at all when paused and resumed, when spawning pickups from inside other triggers and when using a persistent item due to Count storing the last value of the item when activating.
 
-### Persistent Items
+ Persistent Items
 
 The value stored inside Count and the value of the item will no longer match when the player respawns, if the item is persistent and the value changes after the count was initialized.
 
-### Paused Counts
+ Paused Counts
 
 Count triggers do not update the stored item value if they are paused.
 
-### Count activating its own Item ID
+ Count activating its own Item ID
 
 If a Count trigger activates a Pickup or Item Edit trigger with the same Item ID as the Count's Item ID, this will trigger a new check for all Count triggers of that Item ID.
 
@@ -219,7 +219,7 @@ Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Ti
 Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Scale of Keyframe Parent ID is not relative to rotation and is applied after it,"If a Keyframe Parent ID has different X & Y Scale and Rotation at the same time, rotation is always applied first then Scale X / Y is applied along the level's X / Y axis, not relative to the object's rotation.",,,,,,
 Keyframes,,2.207,Thu Dec 18 2025 00:00:00 GMT+0200 (Eastern European Standard Time),,Warp Skew of keyframes is ignored when animating the keyframe.,"Only the X and Y scale of the keyframe is used for warping the target objects, skewing is ignored.
 
-**## [2.207]** Keyframes merge when copying to another level
+** [2.207]** Keyframes merge when copying to another level
 
 Keyframes have a hidden unique ID which is used to determine what keyframe objects are connected.
 The ID is kept even when copying to another level which results in the copied keyframes combining with existing ones.
@@ -265,7 +265,7 @@ The problems with the current behavior are:
 - Mod multiplier doesn't work as expected with angles over 180, CW or CCW
 - x360 rotations are not multiplied by Mod
 
-## Curve Keyframes with 0 duration break keyframe movement
+ Curve Keyframes with 0 duration break keyframe movement
 
 Keyframes using Curve mode with very low duration like 0 result in very exaggerated movement that can send objects out of bounds, crashing the game.
 
@@ -411,7 +411,7 @@ Due to the spawn limit, this bug is only noticeable if the spawn trigger is rema
 
 You can use a Spawn trigger with a very high delay value to counteract this bug, as even if it's checked twice it will not spawn.
 
-### Spawn Ordered
+ Spawn Ordered
 
 This bug also affects Spawn Ordered, but only when spawning triggers that were moved.
 
