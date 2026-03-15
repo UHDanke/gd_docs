@@ -530,6 +530,10 @@ export default [
         link: '/bugs/area_triggers'
       },
       {
+        text: 'Arrow',
+        link: '/bugs/arrow'
+      },
+      {
         text: 'Collisions',
         link: '/bugs/collisions'
       },
