@@ -22,7 +22,8 @@ Using Enter trigger effects on portals and other objects composed of multiple ob
 **Date:** 18/12/2025  
 
 ### Description
-Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option. Touch Trigger does work however.
+Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.  
+Touch Trigger does work however.
 
 ## Enter Scale & Rotate apply real scaling and rotation on target objects
 
@@ -30,4 +31,8 @@ Legacy (pre-2.2) Enter triggers cannot be spawned with the Spawn Trigger option.
 **Date:** 19/12/2025  
 
 ### Description
-There seems to be no difference between Enter and Area Scale & Rotate. Examples of things affected by this bug: - Keyframe objects get scaled / rotated which can cause keyframes to apply scaling & rotation wrongly - Rotate Follow will copy the rotation of an object affected by Enter Rotate
+There seems to be no difference between Enter and Area Scale & Rotate.  
+  
+Examples of things affected by this bug:  
+- Keyframe objects get scaled / rotated which can cause keyframes to apply scaling & rotation wrongly  
+- Rotate Follow will copy the rotation of an object affected by Enter Rotate

@@ -6,7 +6,8 @@
 **Date:** 18/12/2025  
 
 ### Description
-Ease Out is currently bugged and does not apply the effect properly to the radial proximity options. If the two easings differ they will both apply and conflict \- the game will pick and apply one of them. This is most obvious with opposing easings.
+Ease Out is currently bugged and does not apply the effect properly to the radial proximity options.  
+If the two easings differ they will both apply and conflict \- the game will pick and apply one of them. This is most obvious with opposing easings.
 
 ## ModBack / ModFront do nothing for the radial options
 
@@ -38,7 +39,15 @@ Unpausing the game undoes the effect of Area Fade for one frame.
 **Date:** 30/01/2026  
 
 ### Description
-Area effects are accumulated for every calculation when starting from a Start Position. Only the first tick is affected, the effect is properly applied on the second one. All Area triggers are affected. With Area Scale and Area Move, this can crash your game. Scale / Rotate Bug Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor. This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
+Area effects are accumulated for every calculation when starting from a Start Position.  
+Only the first tick is affected, the effect is properly applied on the second one.  
+All Area triggers are affected.  
+With Area Scale and Area Move, this can crash your game.  
+  
+ Scale / Rotate Bug  
+  
+Scaling or Rotating an object by a large amount makes it impossible to undo the transformation if done inside the editor.  
+This makes all affected objects get their scale and rotation be completely different when stopping playtesting after the bug.
 
 ## DEAP has no effect when used on Area Tint or Area Fade
 
@@ -70,7 +79,8 @@ Edit Area will override other active Edit Areas only if **Duration** \> 0\.
 **Date:** 18/12/2025  
 
 ### Description
-Stop does not work on Edit Area. I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.
+Stop does not work on Edit Area.  
+I am not sure if this is unimplemented or a side effect of how Edit Area was implemented.
 
 ## Area Scale / Rotate / Move visibility issues
 
@@ -78,7 +88,20 @@ Stop does not work on Edit Area. I am not sure if this is unimplemented or a sid
 **Date:** 18/12/2025  
 
 ### Description
-If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation. Multiple Areas Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description. Flickering Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick. Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk). Rendering Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
+If an object stops being visible, Area Scale / Rotate / Move will stop applying in certain situation.  
+  
+ Multiple Areas  
+  
+Example [here](https://youtu.be/8IS5lFdIBus) and level ID in the video description.  
+  
+ Flickering  
+  
+Flickering is caused when a target goes off screen and ends up back on screen when the effect is undone every other tick.  
+Example [here](https://www.youtube.com/watch?v=JgN_ClrC5yk).  
+  
+ Rendering  
+  
+Objects with a hitbox that stop being visible once brought off-screen do not render properly if brough back instantly on-screen.
 
 ## Toggle Inconsistencies
 
@@ -86,7 +109,8 @@ If an object stops being visible, Area Scale / Rotate / Move will stop applying 
 **Date:** 18/12/2025  
 
 ### Description
-Toggle disables Area effects on the object only in very particular cases depending on the area settings. This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.
+Toggle disables Area effects on the object only in very particular cases depending on the area settings.  
+This should be replaced by a dedicated **Ignore Disabled** feature as there is no logic or indication to this behavior.
 
 ## Edit Area Tint / Fade doesn't pause in editor
 
@@ -94,7 +118,9 @@ Toggle disables Area effects on the object only in very particular cases dependi
 **Date:** 18/12/2025  
 
 ### Description
-Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest. [Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
+Edit Area Tint and Edit Area Fade do not get paused when pausing the editor playtest.  
+  
+[Video](https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
 
 ## Scale sliders
 

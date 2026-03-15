@@ -6,7 +6,9 @@
 **Date:** 02/01/2026  
 
 ### Description
-Float properties are rounded to 6 significant digits when objects are copied or the level is saved. This causes lots of precision issues with many float properties that can have high values like object positions. It is NOT a float precision issue, this is caused by the save function using the format %g when casting floats to string.
+Float properties are rounded to 6 significant digits when objects are copied or the level is saved.  
+This causes lots of precision issues with many float properties that can have high values like object positions.  
+It is NOT a float precision issue, this is caused by the save function using the format %g when casting floats to string.
 
 ## Mirror Mode does not do anything in level options.
 
@@ -35,7 +37,8 @@ When entering a dual portal while the first player has non-default gravity the 2
 **Date:** 02/01/2026  
 
 ### Description
-If an object has negative rotation or skew x/y and has a decimal part it offsets until it reaches a whole number value. For example, -32.555 will round to -32.55, then -32.54 then -32.54 and so on until reaching -32.00.
+If an object has negative rotation or skew x/y and has a decimal part it offsets until it reaches a whole number value.  
+For example, -32.555 will round to -32.55, then -32.54 then -32.54 and so on until reaching -32.00.
 
 ## Collectibles cannot be recollected in classic mode after they are reset by Reset trigger
 
