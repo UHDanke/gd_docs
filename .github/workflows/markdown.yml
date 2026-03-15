@@ -23,7 +23,7 @@ jobs:
           python-version: '3.12'
  
       - name: Run mdgen
-        run: python scripts/mdgen.py
+        run: python scripts/mdgen.py docs/
  
       - name: Commit updated markdown
         uses: stefanzweifel/git-auto-commit-action@v5
