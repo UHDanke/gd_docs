@@ -1,0 +1,30 @@
+name: Markdown → CSV
+
+on:
+  push:
+    paths:
+      - docs/bugs/*.md
+      - '!docs/bugs/README.md'
+      - scripts/bugs_to_csv.py
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Convert Markdown to CSV
+        run: python scripts/bugs_to_csv.py docs/bugs/ data/bug_list.csv
+
+      - name: Commit updated CSV
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "updated bugs from markdown to csv"
+          file_pattern: data/bug_list.csv
