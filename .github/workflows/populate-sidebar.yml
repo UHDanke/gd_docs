@@ -3,8 +3,8 @@ name: Populate Sidebar
 on:
   push:
     paths:
-      - docs/**
-      - scripts/populate_sidebar.py
+      - "docs/**"
+      - "scripts/populate_sidebar.py"
   workflow_dispatch:
 
 jobs:
@@ -28,4 +28,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "sync sidebar CSV from docs structure"
-          file_pattern: data/sidebar.csv
+          file_pattern: "data/sidebar.csv"
