@@ -102,7 +102,7 @@ def csv_to_md(csv_path, output_dir):
 
     included = sum(1 for r in cleaned if r["Excluded"].upper() != "TRUE")
     excluded_count = len(cleaned) - included
-    print(f"✅ Converted '{csv_path}' → '{output_dir}/' ({len(categories)} files, {included} included, {excluded_count} excluded)")
+    print(f"Converted '{csv_path}' → '{output_dir}/' ({len(categories)} files, {included} included, {excluded_count} excluded)")
 
 
 if __name__ == "__main__":
