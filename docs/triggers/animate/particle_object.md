@@ -204,7 +204,7 @@ Particle objects do not unload correctly in normal mode, but they do in the edit
 ### Alpha & Blending Behavior
 
 Alpha values are calculated differently depending on the options selected, below you can find a table approximating these calculations.
-
+<!-- @csv: .data/tables/animate.csv -->
 | Additive | Obj Color | Uniform Color | Blending | Solid Alpha | Blending Alpha |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | No | No | No | Either | $(start \cdot (1-t)+end\*t) \cdot base$ | \- |
@@ -217,7 +217,7 @@ Alpha values are calculated differently depending on the options selected, below
 | Yes | Yes | No | Yes | \- | $(base \cdot (1-t)+end \cdot t) \cdot base^2$ |
 | Yes | No | No | Either | \- | $(start \cdot (1-t)+end \cdot t) \cdot base^2$ |
 | Yes | No | Yes | No | $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |
-
+<!-- @end -->
 Notes:
 - $start$ is the initial alpha, equal to: $Start\textunderscore A+Start\textunderscore A\textunderscore Rand$
 - $end$ is the final alpha, equal to: $End\textunderscore A+End\textunderscore A\textunderscore Rand$
