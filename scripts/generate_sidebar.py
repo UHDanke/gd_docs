@@ -84,7 +84,7 @@ def to_js(obj, indent=0) -> str:
 
 
 def main():
-    csv_path = sys.argv[1] if len(sys.argv) > 1 else ".data/sidebar.csv"
+    csv_path = sys.argv[1] if len(sys.argv) > 1 else "data/sidebar.csv"
 
     sidebar = generate_sidebar(csv_path)
     js = f"export default {to_js(sidebar)};\n"
