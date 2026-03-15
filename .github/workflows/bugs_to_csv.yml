@@ -3,8 +3,8 @@ name: Bugs Markdown to CSV
 on:
   push:
     paths:
-      - docs/bugs/**
-      - scripts/bugs_to_csv.py
+      - "docs/bugs/**"
+      - "scripts/bugs_to_csv.py"
   workflow_dispatch:
 
 jobs:
@@ -26,4 +26,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "updated bugs from markdown to csv"
-          file_pattern: data/bug_list.csv
+          file_pattern: "data/bug_list.csv"
