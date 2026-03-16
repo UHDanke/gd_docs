@@ -1,10 +1,6 @@
 name: Bugs Markdown to CSV
 
 on:
-  push:
-    paths:
-      - "docs/bugs/**"
-      - "scripts/bugs_to_csv.py"
   workflow_dispatch:
 
 jobs:
