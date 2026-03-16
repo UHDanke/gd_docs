@@ -1,6 +1,6 @@
 # HDanke's Geometry Dash Editor Docs
 
-These are my own personal notes covering a large portion of Geometry Dash's editor and trigger functionality, they are not intended as a guide or introduction to the game's editor.
+These are my own personal notes covering Geometry Dash's editor and trigger functionality, they are not intended as a guide or introduction to the game's editor.
 
 Most of the functionality has been deduced using in-game tests with some info deduced from decompiled GD binaries. Both methods are time consuming and not entirely reliable so sometimes errors and misinterpretation may slip through.
 
