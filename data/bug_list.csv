@@ -357,8 +357,6 @@ Due to the spawn limit, this bug is only noticeable if the spawn trigger is rema
 
 You can use a Spawn trigger with a very high delay value to counteract this bug, as even if it's checked twice it will not spawn.
 
- Spawn Ordered
-
 This bug also affects Spawn Ordered, but only when spawning triggers that were moved.
 
 The spawn delay of triggers spawned by Spawn Ordered depends partly on their current position, which can be affected by move triggers.
