@@ -7,6 +7,10 @@ on:
       - "scripts/generate_sidebar.py"
   workflow_dispatch:
 
+concurrency:
+  group: generate
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -19,7 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
