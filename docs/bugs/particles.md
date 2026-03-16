@@ -41,19 +41,19 @@ A particle with the Uniform Color option that is spawned will use the color chan
 
 ### Description
 Particle objects calculate transparency inconsistently depending on what settings you select, as shown in the following table:  
-<!-- @csv: data/tables/blending.csv -->
-| **Additive** | **Obj Color** | **Uniform Color** | **Blending** |                **Solid Alpha**                |                  **Blending Alpha**                  |
-| :----------: | :-----------: | :---------------: | :----------: | :-------------------------------------------: | :--------------------------------------------------: |
-|      No      |       No      |         No        |    Either    | $(start \cdot (1-t)+end \cdot t)) \cdot base$ |                          -                           |
-|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |
-|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |
-|      No      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  |                          -                           |
-|      No      |      Yes      |         No        |     Yes      |                       -                       |   $(base^2 \cdot (1-t)+end \cdot t) \cdot base^2$    |
-|    Either    |       No      |        Yes        |     Yes      |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |
-|     Yes      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  | $((1-base) \cdot (1-t)+(1-end) \cdot t) \cdot base$  |
-|     Yes      |      Yes      |         No        |     Yes      |                       -                       |    $(base \cdot (1-t)+end \cdot t) \cdot base^2$     |
-|     Yes      |       No      |         No        |    Either    |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |
-|     Yes      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |
+<!-- @csv: data/tables/blending.csv -->  
+| **Additive** | **Obj Color** | **Uniform Color** | **Blending** |                **Solid Alpha**                |                  **Blending Alpha**                  |  
+| :----------: | :-----------: | :---------------: | :----------: | :-------------------------------------------: | :--------------------------------------------------: |  
+|      No      |       No      |         No        |    Either    | $(start \cdot (1-t)+end \cdot t)) \cdot base$ |                          -                           |  
+|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |  
+|      No      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ |                          -                           |  
+|      No      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  |                          -                           |  
+|      No      |      Yes      |         No        |     Yes      |                       -                       |   $(base^2 \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|    Either    |       No      |        Yes        |     Yes      |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|     Yes      |      Yes      |         No        |      No      |  $(base \cdot (1-t)+end \cdot t) \cdot base$  | $((1-base) \cdot (1-t)+(1-end) \cdot t) \cdot base$  |  
+|     Yes      |      Yes      |         No        |     Yes      |                       -                       |    $(base \cdot (1-t)+end \cdot t) \cdot base^2$     |  
+|     Yes      |       No      |         No        |    Either    |                       -                       |    $(start \cdot (1-t)+end \cdot t) \cdot base^2$    |  
+|     Yes      |       No      |        Yes        |      No      |  $(start \cdot (1-t)+end \cdot t) \cdot base$ | $((1-start) \cdot (1-t)+(1-end) \cdot t) \cdot base$ |  
 <!-- @end -->  
   
 Notes:  
