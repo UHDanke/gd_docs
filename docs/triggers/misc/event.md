@@ -9,7 +9,7 @@ Spawns a **Group ID** when at least one of the selected **Event IDs** is activat
 **Extra ID 2** makes the events require a specific player to trigger the event. If left as 0 the trigger will activate regardless for any Player ID.
 
 The following table lists all events and whether they use **Extra ID** (Material) or **Extra ID 2** (Player):
-
+<!-- @csv: data/tables/events.csv -->
 | ID 	| Event 				 | Material | Player |
 | :---: | :--------------------: | :--------: | :------: |
 | 1  	| Tiny Landing 			 | Yes 		| Yes 	 |
@@ -90,6 +90,7 @@ The following table lists all events and whether they use **Extra ID** (Material
 | 76 	| Fall Speed Low 		 |     		| Yes    |
 | 77 	| Fall Speed Med 		 |     		| Yes    |
 | 78 	| Fall Speed High 		 |     		| Yes    |
+<!-- @end -->
 
 ## Event Requirements
 
