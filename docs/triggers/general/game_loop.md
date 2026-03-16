@@ -1,7 +1,7 @@
 # Game Loop 
 
 ## Activation Order
-
+<!-- @enumerate_list -->
 1. MainTime update
 2. Checkpoint (respawn)
 3. Spawn limit reset #1
@@ -29,6 +29,7 @@
 25. On Death
 26. Player movement & Timeline
 27. Collision (on exit)
+<!-- @end -->
 
 Undetermined:
 - Color
