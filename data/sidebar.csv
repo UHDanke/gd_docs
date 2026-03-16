@@ -133,3 +133,4 @@ Suggestions,,Area Triggers,/suggestions/area_triggers,true
 Suggestions,,Misc,/suggestions/misc,true
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,true
 Suggestions,,Sequence Control,/suggestions/sequence_control,true
+,,Credits,/credits,TRUE
