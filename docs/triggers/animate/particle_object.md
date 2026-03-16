@@ -14,35 +14,6 @@ The Texture tab selects the particle's texture.
 
 Most particle variables can be randomized in a range using a **+-** variable found next to the base one.
 
-Randomized settings
-
-- **Lifetime +-**
-- **Angle +-**
-- **Speed +-**
-- **AccelRad +-**
-- **AccelTan +-**
-- **StartRad +-**
-- **EndRad +-**
-- **RotSec +-**
-- **StartSize +-**
-- **EndSize +-**
-- **StartSpin +-**
-- **EndSpin +-**
-- **Start_R +-**
-- **Start_G +-**
-- **Start_B +-**
-- **Start_A +- **
-- **End_R +-**
-- **End_G +-**
-- **End_B +-**
-- **End_A +-**
-- **Fade In +-**
-- **Fade Out +-**
-- **FrictionP +-**
-- **FrictionS +-**
-- **FrictionR +-**
-- **Respawn +-**
-
 ### Copy Paste
 
 **C** and **P** can be used to copy & paste the particle settings between different particle objects. Copied settings are lost when exiting the editor.
