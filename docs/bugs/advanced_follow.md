@@ -146,3 +146,14 @@ The max rotation speed of the Rotate option does not scale with timewarp.
 
 ### Description
 Adv follow near dist slider has 0 to 1.00 range despite being a distance value like max range
+
+## Unused Ignore GParent and Ignore Linked
+
+**Version:** 2.208  
+**Date:** 16/03/2026  
+
+### Description
+Ignore GParent and Ignore Linked are implemented for Advanced Follow triggers but the UI does not display the options
+
+### Workarounds
+You have to edit the property through other means.

@@ -121,3 +121,14 @@ https://youtu.be/DKtR5YL6qAI?si=Zd47Lgf6qV_ZNnxk)
 
 ### Description
 In the Edit Area Scale trigger, the Scale X and Scale Y sliders appear to be directly copied from the Edit Area Move trigger, resulting in absurdly high limits (100 for Scale X and 200 for Scale Y).
+
+## Edit Area Fade unused From Opacity
+
+**Version:** 2.208  
+**Date:** 16/03/2026  
+
+### Description
+The From Opacity field is implemented for Edit Area Fade but unused / not displayed
+
+### Workarounds
+You have to edit the property through other means.
