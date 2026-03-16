@@ -5,6 +5,9 @@ on:
     paths:
       - "data/sidebar.csv"
       - "scripts/generate_sidebar.py"
+  workflow_run:
+    workflows: ["Populate Sidebar"]
+    types: [completed]
   workflow_dispatch:
 
 concurrency:
@@ -14,7 +17,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name != 'workflow_run'
     permissions:
       contents: write
 
