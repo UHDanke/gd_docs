@@ -2,25 +2,25 @@
 
 There isn't a lot of interest in helping put together this kind of documentation, so i would like to extend my thanks to the following people for their support and help throughout its development:
 <!-- @sort_lines -->
-- jrodo7
-- angelix
-- CyberCube
-- Venom99
-- Bombie
-- Chunlv1
-- forchar
-- Nemo2510
-- hsam
-- stellar
-- CreatorCreepy
-- ivythegreenest
-- TheLastSekret
-- djoxy
-- BreadKing
-- Jeyzor
-- TamaN
-- zmx
 - Alphalaneous
+- Bombie
+- BreadKing
+- Chunlv1
+- CreatorCreepy
+- CyberCube
+- Jeyzor
+- Nemo2510
+- TamaN
+- TheLastSekret
+- Venom99
+- angelix
+- djoxy
+- forchar
+- hsam
+- ivythegreenest
+- jrodo7
+- stellar
+- zmx
 <!-- @end -->
 
 If your name is not here and you remember contributing in some way, or otherwise you are listed but do not want to be credited please let me know.
