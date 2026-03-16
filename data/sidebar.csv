@@ -1,5 +1,6 @@
 Section,Subsection,Text,Link,Exclude
 ,,About,/index,
+,,Credits,/credits,
 ,,To Do List,/to_do_list,
 Editor,Colors & Layers,Color Assignment,/editor/colors_layers/color_assignment,
 Editor,Colors & Layers,Color Channels,/editor/colors_layers/color_channels,
@@ -133,4 +134,3 @@ Suggestions,,Area Triggers,/suggestions/area_triggers,true
 Suggestions,,Misc,/suggestions/misc,true
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,true
 Suggestions,,Sequence Control,/suggestions/sequence_control,true
-,,Credits,/credits,TRUE
