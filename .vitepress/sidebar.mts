@@ -4,6 +4,10 @@ export default [
     link: '/index'
   },
   {
+    text: 'Credits',
+    link: '/credits'
+  },
+  {
     text: 'To Do List',
     link: '/to_do_list'
   },
