@@ -10,86 +10,86 @@ Spawns a **Group ID** when at least one of the selected **Event IDs** is activat
 
 The following table lists all events and whether they use **Extra ID** (Material) or **Extra ID 2** (Player):
 <!-- @csv: data/tables/events.csv -->
-| ID 	| Event 				 | Material | Player |
-| :---: | :--------------------: | :--------: | :------: |
-| 1  	| Tiny Landing 			 | Yes 		| Yes 	 |
-| 2  	| Feather Landing 		 | Yes 		| Yes 	 |
-| 3  	| Soft Landing 			 | Yes 		| Yes 	 |
-| 4  	| Normal Landing 		 | Yes 		| Yes 	 |
-| 5  	| Hard Landing 			 | Yes 		| Yes 	 |
-| 6  	| Hit Head 				 |     		| Yes 	 |
-| 7  	| Orb Touched 			 |     		|     	 |
-| 8  	| Orb Activated 		 |     		| Yes 	 |
-| 9  	| Pad Activated 		 |     		|     	 |
-| 10 	| Gravity Inverted		 |     		| Yes 	 |
-| 11 	| Gravity Restored 		 |     		| Yes 	 |
-| 12 	| Normal Jump 			 |     		| Yes 	 |
-| 13 	| Robot Boost Start 	 |     		| Yes 	 |
-| 14 	| Robot Boost End 		 |     		| Yes 	 |
-| 15 	| UFO Jump				 |     		| Yes 	 |
-| 16 	| Ship Boost Start 		 |     		| Yes 	 |
-| 17 	| Ship Boost End 		 |     		| Yes 	 |
-| 18 	| Spider Teleport 		 |     		| Yes 	 |
-| 19 	| Ball Switch 			 |     		| Yes 	 |
-| 20 	| Swing Switch			 |     		| Yes 	 |
-| 21 	| Wave Push 			 |     		| Yes 	 |
-| 22 	| Wave Release 			 |     		| Yes 	 |
-| 23 	| Dash Start 			 |     		| Yes 	 |
-| 24 	| Dash Stop 			 |     		| Yes 	 |
-| 25 	| Teleported 			 |     		|  	     |
-| 26 	| Portal: Normal 		 |     		|  	     |
-| 27 	| Portal: Ship 			 |     		|  	     |
-| 28 	| Portal: Ball 			 |     		|  	     |
-| 29 	| Portal: UFO 			 |     		|  	     |
-| 30 	| Portal: Wave 			 |     		|  	     |
-| 31 	| Portal: Robot 		 |     		|  	     |
-| 32 	| Portal: Spider 		 |     		|  	     |
-| 33 	| Portal: Swing 		 |     		|  	     |
-| 34 	| Yellow Orb 			 |     		| Yes    |
-| 35 	| Pink Orb 				 |     		| Yes    |
-| 36 	| Red Orb 				 |     		| Yes    |
-| 37 	| Gravity Orb 			 |     		| Yes    |
-| 38 	| Green Orb 			 |     		| Yes    |
-| 39 	| Drop Orb 				 |     		| Yes    |
-| 40 	| Custom Orb 			 |     		| Yes    |
-| 41 	| Dash Orb 				 |     		| Yes    |
-| 42 	| Gravity Dash Orb 		 |     		| Yes    |
-| 43 	| Spider Orb 			 |     		| Yes    |
-| 44 	| Teleport Orb 			 |     		| Yes    |
-| 45 	| Yellow Pad 			 |     		|  	     |
-| 46 	| Pink Pad 				 |     		|  	     |
-| 47 	| Red Pad 				 |     		|  	     |
-| 48 	| Gravity Pad 			 |     		|  	     |
-| 49 	| Spider Pad 			 |     		|  	     |
-| 50 	| Portal: Gravity Flip 	 |     		|  	     |
-| 51 	| Portal: Gravity Normal |     		|  	     |
-| 52 	| Portal: Gravity Invert |     		|  	     |
-| 53 	| Portal: Flip 			 |     		|  	     |
-| 54 	| Portal: Unflip	 	 |     		|  	     |
-| 55 	| Portal: Normal Scale 	 |     		|  	     |
-| 56 	| Portal: Mini Scale 	 |     		|  	     |
-| 57 	| Portal: Dual On 		 |     		|  	     |
-| 58 	| Portal: Dual Off 		 |     		|  	     |
-| 59 	| Portal: Teleport 		 |     		|  	     |
-| 60 	| Checkpoint 			 |     		|  	     |
-| 61 	| Destroy Block 		 |     		|  	     |
-| 62 	| User Coin 			 |     		|  	     |
-| 63 	| Pickup Item 			 |     		|  	     |
-| 64 	| Checkpoint Respawn 	 |     		|  	     |
-| 65 	| Fall Low 				 | Yes 		| Yes    |
-| 66 	| Fall Med 				 | Yes 		| Yes    |
-| 67 	| Fall High 			 | Yes 		| Yes    |
-| 68 	| Fall VHigh 			 | Yes 		| Yes    |
-| 69 	| Jump Push 			 |     		| Yes    |
-| 70 	| Jump Release 			 |     		| Yes    |
-| 71 	| Left Push 			 |     		| Yes    |
-| 72 	| Left Release 			 |     		| Yes    |
-| 73 	| Right Push 			 |     		| Yes    |
-| 74 	| Right Release 		 |     		| Yes    |
-| 75 	| Player Reversed 		 |     		| 	 	 |
-| 76 	| Fall Speed Low 		 |     		| Yes    |
-| 77 	| Fall Speed Med 		 |     		| Yes    |
-| 78 	| Fall Speed High 		 |     		| Yes    |
+| **ID** |       **Event**        | **Material** | **Player** |
+| :----: | :--------------------: | :----------: | :--------: |
+|   1    |      Tiny Landing      |     Yes      |    Yes     |
+|   2    |    Feather Landing     |     Yes      |    Yes     |
+|   3    |      Soft Landing      |     Yes      |    Yes     |
+|   4    |     Normal Landing     |     Yes      |    Yes     |
+|   5    |      Hard Landing      |     Yes      |    Yes     |
+|   6    |        Hit Head        |     Yes      |            |
+|   7    |      Orb Touched       |              |            |
+|   8    |     Orb Activated      |     Yes      |            |
+|   9    |     Pad Activated      |              |            |
+|   10   |    Gravity Inverted    |     Yes      |            |
+|   11   |    Gravity Restored    |     Yes      |            |
+|   12   |      Normal Jump       |     Yes      |            |
+|   13   |   Robot Boost Start    |     Yes      |            |
+|   14   |    Robot Boost End     |     Yes      |            |
+|   15   |        UFO Jump        |     Yes      |            |
+|   16   |    Ship Boost Start    |     Yes      |            |
+|   17   |     Ship Boost End     |     Yes      |            |
+|   18   |    Spider Teleport     |     Yes      |            |
+|   19   |      Ball Switch       |     Yes      |            |
+|   20   |      Swing Switch      |     Yes      |            |
+|   21   |       Wave Push        |     Yes      |            |
+|   22   |      Wave Release      |     Yes      |            |
+|   23   |       Dash Start       |     Yes      |            |
+|   24   |       Dash Stop        |     Yes      |            |
+|   25   |       Teleported       |              |            |
+|   26   |     Portal: Normal     |              |            |
+|   27   |      Portal: Ship      |              |            |
+|   28   |      Portal: Ball      |              |            |
+|   29   |      Portal: UFO       |              |            |
+|   30   |      Portal: Wave      |              |            |
+|   31   |     Portal: Robot      |              |            |
+|   32   |     Portal: Spider     |              |            |
+|   33   |     Portal: Swing      |              |            |
+|   34   |       Yellow Orb       |     Yes      |            |
+|   35   |        Pink Orb        |     Yes      |            |
+|   36   |        Red Orb         |     Yes      |            |
+|   37   |      Gravity Orb       |     Yes      |            |
+|   38   |       Green Orb        |     Yes      |            |
+|   39   |        Drop Orb        |     Yes      |            |
+|   40   |       Custom Orb       |     Yes      |            |
+|   41   |        Dash Orb        |     Yes      |            |
+|   42   |    Gravity Dash Orb    |     Yes      |            |
+|   43   |       Spider Orb       |     Yes      |            |
+|   44   |      Teleport Orb      |     Yes      |            |
+|   45   |       Yellow Pad       |              |            |
+|   46   |        Pink Pad        |              |            |
+|   47   |        Red Pad         |              |            |
+|   48   |      Gravity Pad       |              |            |
+|   49   |       Spider Pad       |              |            |
+|   50   |  Portal: Gravity Flip  |              |            |
+|   51   | Portal: Gravity Normal |              |            |
+|   52   | Portal: Gravity Invert |              |            |
+|   53   |      Portal: Flip      |              |            |
+|   54   |     Portal: Unflip     |              |            |
+|   55   |  Portal: Normal Scale  |              |            |
+|   56   |   Portal: Mini Scale   |              |            |
+|   57   |    Portal: Dual On     |              |            |
+|   58   |    Portal: Dual Off    |              |            |
+|   59   |    Portal: Teleport    |              |            |
+|   60   |       Checkpoint       |              |            |
+|   61   |     Destroy Block      |              |            |
+|   62   |       User Coin        |              |            |
+|   63   |      Pickup Item       |              |            |
+|   64   |   Checkpoint Respawn   |              |            |
+|   65   |        Fall Low        |     Yes      |    Yes     |
+|   66   |        Fall Med        |     Yes      |    Yes     |
+|   67   |       Fall High        |     Yes      |    Yes     |
+|   68   |       Fall VHigh       |     Yes      |    Yes     |
+|   69   |       Jump Push        |     Yes      |            |
+|   70   |      Jump Release      |     Yes      |            |
+|   71   |       Left Push        |     Yes      |            |
+|   72   |      Left Release      |     Yes      |            |
+|   73   |       Right Push       |     Yes      |            |
+|   74   |     Right Release      |     Yes      |            |
+|   75   |    Player Reversed     |              |            |
+|   76   |     Fall Speed Low     |     Yes      |            |
+|   77   |     Fall Speed Med     |     Yes      |            |
+|   78   |    Fall Speed High     |     Yes      |            |
 <!-- @end -->
 
 ## Event Requirements
