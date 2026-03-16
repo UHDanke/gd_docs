@@ -194,7 +194,52 @@ def sort_lines(positional: str, old_content: str, **kwargs: str) -> str:
 
     return "\n".join(sorted(lines, key=sort_key, reverse=reverse))
 
+def enumerate_list(positional: str, old_content: str, **kwargs: str) -> str:
+    """Enumerate lines in a list, fixing any existing numbering.
 
+    Strips leading list markers (``-``, ``*``, ``+``, or any existing
+    ``N.``/``N)`` prefix) and re-numbers from 1.  Blank lines and lines
+    that consist only of whitespace are preserved as-is (not numbered).
+
+    Without a positional argument the block's existing content is
+    re-enumerated in-place.  With a file path the file's lines are read
+    and enumerated from scratch.
+
+    Keyword args
+    ------------
+    --start N       Start numbering from N instead of 1.
+    --keep_blanks   Include blank lines in the count (default: skip them).
+    """
+    start = int(kwargs.get("start", "1"))
+    keep_blanks = _bool_kwarg(kwargs, "keep_blanks")
+
+    if positional:
+        path = Path(positional)
+        if not path.exists():
+            raise FileNotFoundError(f"File not found: {positional}")
+        with open(path, encoding="utf-8") as f:
+            lines = [line.rstrip("\n\r") for line in f]
+    else:
+        lines = old_content.splitlines()
+
+    # Strip any existing list marker: "- ", "* ", "+ ", "1. ", "2) ", etc.
+    _MARKER_RE = re.compile(r"^\s*(?:[-*+]|\d+[.)]) ?")
+
+    output: list[str] = []
+    counter = start
+    for line in lines:
+        if not line.strip():
+            if keep_blanks:
+                output.append(f"{counter}. ")
+                counter += 1
+            else:
+                output.append("")
+        else:
+            clean = _MARKER_RE.sub("", line)
+            output.append(f"{counter}. {clean}")
+            counter += 1
+
+    return "\n".join(output)
 # ---------------------------------------------------------------------------
 # Registry
 # ---------------------------------------------------------------------------
@@ -344,7 +389,7 @@ class MarkdownProcessor:
 registry = MarkdownProcessor()
 registry.add("csv", csv_to_markdown)
 registry.add("sort_lines", sort_lines)
-
+registry.add("enumerate_list", enumerate_list)
 
 # ---------------------------------------------------------------------------
 # Entry point
