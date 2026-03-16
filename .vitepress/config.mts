@@ -7,8 +7,8 @@ export default defineConfig({
   markdown: {
     math: true
   },
-  title: "HDanke's GD Docs",
-  description: "HDanke's Editor Documentation",
+  title: "HDanke's GD Editor Docs",
+  description: "HDanke's Geometry Dash Editor Documentation",
   lang: 'en-US',
   cleanUrls: true,
   themeConfig: {
