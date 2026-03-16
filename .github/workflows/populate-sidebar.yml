@@ -10,6 +10,10 @@ on:
       - "scripts/populate_sidebar.py"
   workflow_dispatch:
 
+concurrency:
+  group: populate
+  cancel-in-progress: true
+
 jobs:
   populate:
     runs-on: ubuntu-latest
