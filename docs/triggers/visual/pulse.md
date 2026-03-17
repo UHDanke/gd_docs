@@ -1,6 +1,6 @@
 # Pulse
 
-Temporarily changes the RGB values of a given color channel.
+Temporarily changes the color values of a given color channel.
 
 ## Behavior
 
