@@ -12,21 +12,20 @@ Additionally, color changes done by Pulse triggers cannot be copied by other pul
 
 ### Rendering
 
-Pulses are applied after color changes, object HSV is applied after all pulses and color changes.
+Pulses are applied after color changes but before object HSV.
 
-Pulses are rendered in the following order, from top to bottom:
-- Group (Color)
-- Group (Color ID + HSV)
-- Group (HSV)
-- Channel (Color ID + HSV)
-- Channel (Color)
-- Channel (HSV)
+Pulses are grouped based off their settings and rendered in the following order:
+- Channel ID (in-place)
+- Channel ID (copy id)
+- Group ID
+
+If two pulses are in the same group then they  render in order of activation.
 
 ### Stacking
 
-HSV pulses stack together, while pulses that copy or apply a color only combine while fading.
+Pulses can stack with other pulses on the same target.
 
-Channel (Color ID + HSV) will disable any pulse below it while active.
+Channel pulses that copy other channels do not stack on the same target, the newest one will be used exclusively over the previous ones.
 
 ## Options
 
@@ -62,7 +61,7 @@ Group applies the pulse effect on all objects part of the group.
 
 ### Exclusive
 
-A Pulse trigger with Exclusive will clear other pulses active on the same target.
+A Pulse trigger with Exclusive will clear other pulses active on the same target. This is not reflected by the editor's preview as it doesn't clear the pulses properly.
 
 For Channel mode, pulses on the same Channel ID are affected.
 
