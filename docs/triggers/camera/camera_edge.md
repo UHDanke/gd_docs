@@ -2,6 +2,8 @@
 
 Defines an object given by **Target ID** as one of the camera's **Left**, **Right**, **Up** or **Down** limit edge.
 
+## Behavior
+
 Target ID must contain a single object or an ID parent.
 
 Edge triggers cannot be stopped, unlocking an edge can only be done by setting the group to an unused group, such as 0, or to a group with more than one target.
