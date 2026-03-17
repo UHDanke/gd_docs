@@ -2,11 +2,15 @@
 
 Makes the item or timer given by **Item ID** persistent between attempts.
 
+## Options
+
 **Persistent** makes the target persistent if enabled and removes persistency if not. Targets continue to be persistent between attempts.
 
 **Reset** resets the value of the target to 0. It does not clear timers.
 
 **TargetAll** targets all persistent items or timers.
+
+## Behavior
 
 When persistent, items and timers keep all of their values and settings between attempts.
 In the case of timers, this includes timer stop options and remaps.
