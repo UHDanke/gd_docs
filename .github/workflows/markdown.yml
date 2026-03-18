@@ -1,4 +1,4 @@
-name: Reformat Markdown Files 
+name: Process Markdown Files 
  
 on:
   push:
@@ -11,7 +11,7 @@ on:
 jobs:
   mdgen:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-actions[bot]'
+    if: "!contains(github.event.head_commit.message, 'Processed markdown files')"
     permissions:
       contents: write
  
@@ -32,6 +32,6 @@ jobs:
       - name: Commit updated markdown
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "reformatted markdown files"
+          commit_message: "Processed markdown files"
           file_pattern: "docs/**"
  
