@@ -2,7 +2,7 @@
 
 Edits the parameters of an active Area Trigger with the given **Group ID**.
 
-## Area Options
+## Options
 
 Common:
 - **Duration**
@@ -47,7 +47,7 @@ Value 99 represents *NaN*, settings with value *NaN* are not affected.
 
 Spawning an Area trigger again will stop and undo active Edit Area effects.
 
-### Multiple Instances
+## Multiple Instances
 
 There can be only one Edit Area effect active for each setting of an Area trigger.
 
@@ -57,7 +57,7 @@ When calling multiple Edit Area triggers that edit the same settings, the last o
 
 Edit Area will override other active Edit Areas only if **Duration** is bigger than 0, this is likely a bug.
 
-### Settings
+## Settings
 
 All Edit Area triggers are functionally identical, they just display different settings. 
 
