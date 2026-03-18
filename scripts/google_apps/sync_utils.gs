@@ -30,7 +30,7 @@ function downloadReplace(csvUrl, sheetName, token) {
  * @param {string} sheetName  - Sheet tab to read from.
  * @param {string} repoOwner  - GitHub username or org.
  * @param {string} repoName   - Repository name.
- * @param {string} filePath   - Path inside the repo (e.g. "data/sidebar.csv").
+ * @param {string} filePath   - Path inside the repo (e.g. ".data/sidebar.csv").
  * @param {string} token      - GitHub personal access token (needs contents: write).
  * @param {string} [branch]   - Branch to commit to (default: "main").
  * @param {string} [message]  - Commit message (default: auto-generated).
@@ -79,6 +79,98 @@ function uploadSheet(sheetName, repoOwner, repoName, filePath, token, branch, me
 }
 
 // ---------------------------------------------------------------------------
+// Push GitHub CSV (batch)
+// ---------------------------------------------------------------------------
+
+/**
+ * Uploads multiple sheets to GitHub as CSVs in a single commit.
+ *
+ * @param {Array<{sheetName: string, filePath: string}>} uploads - Sheets to upload.
+ * @param {string} repoOwner  - GitHub username or org.
+ * @param {string} repoName   - Repository name.
+ * @param {string} token      - GitHub personal access token (needs contents: write).
+ * @param {string} [branch]   - Branch to commit to (default: "main").
+ * @param {string} [message]  - Commit message (default: auto-generated).
+ */
+function uploadSheetsBatch(uploads, repoOwner, repoName, token, branch, message) {
+  branch  = branch  || "main";
+  message = message || `Update ${uploads.length} files from Google Sheets`;
+
+  const headers = {
+    Authorization: `token ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+  const apiBase = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+
+  // 1. Get current HEAD SHA
+  const refResp = UrlFetchApp.fetch(`${apiBase}/git/ref/heads/${branch}`, {
+    headers, muteHttpExceptions: true,
+  });
+  if (refResp.getResponseCode() !== 200)
+    throw new Error(`Failed to get ref: ${refResp.getContentText()}`);
+  const latestCommitSha = JSON.parse(refResp.getContentText()).object.sha;
+
+  // 2. Get base tree SHA
+  const commitResp = UrlFetchApp.fetch(`${apiBase}/git/commits/${latestCommitSha}`, {
+    headers, muteHttpExceptions: true,
+  });
+  const baseTreeSha = JSON.parse(commitResp.getContentText()).tree.sha;
+
+  // 3. Build tree blobs from each sheet
+  const tree = uploads.map(({ sheetName, filePath }) => {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+    if (!sheet) throw new Error(`Sheet not found: "${sheetName}"`);
+    return {
+      path: filePath,
+      mode: "100644",
+      type: "blob",
+      content: sheetToCsv_(sheet),
+    };
+  });
+
+  // 4. Create new tree
+  const treeResp = UrlFetchApp.fetch(`${apiBase}/git/trees`, {
+    method: "post",
+    headers,
+    contentType: "application/json",
+    payload: JSON.stringify({ base_tree: baseTreeSha, tree }),
+    muteHttpExceptions: true,
+  });
+  if (treeResp.getResponseCode() !== 201)
+    throw new Error(`Failed to create tree: ${treeResp.getContentText()}`);
+  const newTreeSha = JSON.parse(treeResp.getContentText()).sha;
+
+  // 5. Create commit
+  const commitCreateResp = UrlFetchApp.fetch(`${apiBase}/git/commits`, {
+    method: "post",
+    headers,
+    contentType: "application/json",
+    payload: JSON.stringify({
+      message,
+      tree: newTreeSha,
+      parents: [latestCommitSha],
+    }),
+    muteHttpExceptions: true,
+  });
+  if (commitCreateResp.getResponseCode() !== 201)
+    throw new Error(`Failed to create commit: ${commitCreateResp.getContentText()}`);
+  const newCommitSha = JSON.parse(commitCreateResp.getContentText()).sha;
+
+  // 6. Update branch ref
+  const updateResp = UrlFetchApp.fetch(`${apiBase}/git/refs/heads/${branch}`, {
+    method: "patch",
+    headers,
+    contentType: "application/json",
+    payload: JSON.stringify({ sha: newCommitSha }),
+    muteHttpExceptions: true,
+  });
+  if (updateResp.getResponseCode() !== 200)
+    throw new Error(`Failed to update ref: ${updateResp.getContentText()}`);
+
+  Logger.log(`uploadSheetsBatch: ${uploads.length} files committed to ${branch}.`);
+}
+
+// ---------------------------------------------------------------------------
 // Sync Spreadsheets
 // ---------------------------------------------------------------------------
 
@@ -93,15 +185,15 @@ function uploadSheet(sheetName, repoOwner, repoName, filePath, token, branch, me
 function syncSheetReplace(sourceId, sourceSheet, targetId, targetSheet) {
   const source = SpreadsheetApp.openById(sourceId).getSheetByName(sourceSheet);
   if (!source) throw new Error(`Sheet "${sourceSheet}" not found in source (${sourceId}).`);
- 
+
   const ss     = SpreadsheetApp.openById(targetId);
   const target = ss.getSheetByName(targetSheet) || ss.insertSheet(targetSheet);
- 
+
   const data = source.getDataRange().getValues();
   target.clearContents();
   target.getRange(1, 1, data.length, data[0].length).setValues(data);
 }
- 
+
 // ---------------------------------------------------------------------------
 // Private
 // ---------------------------------------------------------------------------
