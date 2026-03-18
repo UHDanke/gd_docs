@@ -530,10 +530,6 @@ export default [
         link: '/bugs/misc'
       },
       {
-        text: 'Uncategorized',
-        link: '/bugs/uncategorized'
-      },
-      {
         text: 'Advanced Follow',
         link: '/bugs/advanced_follow'
       },
@@ -584,6 +580,10 @@ export default [
       {
         text: 'Spawn Triggers',
         link: '/bugs/spawn_triggers'
+      },
+      {
+        text: 'Uncategorized',
+        link: '/bugs/uncategorized'
       }
     ]
   }
