@@ -2,7 +2,7 @@ name: Populate Sidebar
 
 on:
   workflow_run:
-    workflows: ["Reformat Markdown Files"]
+    workflows: ["Process Markdown Files"]
     types:
       - completed
   push:
