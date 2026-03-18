@@ -1,4 +1,4 @@
-name: Bugs Markdown to CSV
+name: Update Bugs from Markdown
 
 on:
   workflow_dispatch:
@@ -22,5 +22,5 @@ jobs:
       - name: Commit updated CSV
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "updated bugs from markdown to csv"
+          commit_message: "Updated bugs from markdown to csv"
           file_pattern: "data/bug_list.csv"
