@@ -1,4 +1,4 @@
-name: Bugs CSV to Markdown
+name: Update Bugs from CSV
 
 on:
   push:
