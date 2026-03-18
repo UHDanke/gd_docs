@@ -135,6 +135,18 @@ Notations
 
 ## Proximity Settings
 <!-- @csv: data/tables/area_proximity.csv -->
+|                                                **Image**                                                | **Proximity** | **Offset Direction** | **Inverted** | **Mirrored** |
+| :-----------------------------------------------------------------------------------------------------: | :-----------: | :------------------: | :----------: | :----------: |
+| <img src="https://github.com/user-attachments/assets/8d30a8f5-7813-49c6-b008-bee239b53811" width="50%"> |     Radial    |          X           |              |              |
+| <img src="https://github.com/user-attachments/assets/b9e3d8a0-f7a5-4f50-abff-55bc8ea97878" width="50%"> |     Radial    |          X           |     Yes      |              |
+| <img src="https://github.com/user-attachments/assets/24f5af6d-f09b-476f-80bf-90269069104f" width="50%"> |   Horizontal  |          X           |              |     Yes      |
+| <img src="https://github.com/user-attachments/assets/e7a29b01-8bf9-4409-acf3-59734c621cbb" width="50%"> |   Horizontal  |          X           |     Yes      |     Yes      |
+| <img src="https://github.com/user-attachments/assets/3148644d-6f9a-4bc6-92b1-e3fb5a816ab0" width="50%"> |   Horizontal  |          X           |              |              |
+| <img src="https://github.com/user-attachments/assets/2bab4f43-e4fc-4afc-83cb-841c432dd181" width="50%"> |   Horizontal  |          X           |     Yes      |              |
+| <img src="https://github.com/user-attachments/assets/ba9d01d7-066d-414f-bd5f-62c89ac6ec94" width="50%"> |    Vertical   |          Y           |              |     Yes      |
+| <img src="https://github.com/user-attachments/assets/1c5da365-99c2-4c48-a0f3-db6878e16c25" width="50%"> |    Vertical   |          Y           |     Yes      |     Yes      |
+| <img src="https://github.com/user-attachments/assets/11ae6d24-0702-499f-8f29-4d8b1beef073" width="50%"> |    Vertical   |          Y           |     Yes      |              |
+| <img src="https://github.com/user-attachments/assets/d861d58b-622a-4bcf-b4c5-3fab9074c526" width="50%"> |    Vertical   |          Y           |              |              |
 <!-- @end -->
 
 ## Random Values
