@@ -113,7 +113,6 @@ Triggers,Visual,Link Visible,/triggers/visual/link_visible,
 Triggers,Visual,UI,/triggers/visual/ui,
 Bugs,,Overview,/bugs/README,
 Bugs,,Misc,/bugs/misc,
-Bugs,,Uncategorized,/bugs/uncategorized,
 Bugs,,Advanced Follow,/bugs/advanced_follow,
 Bugs,,Area Triggers,/bugs/area_triggers,
 Bugs,,Arrow Trigger,/bugs/arrow_trigger,
@@ -127,6 +126,7 @@ Bugs,,Keyframes,/bugs/keyframes,
 Bugs,,Move Trigger,/bugs/move_trigger,
 Bugs,,Particles,/bugs/particles,
 Bugs,,Spawn Triggers,/bugs/spawn_triggers,
+Bugs,,Uncategorized,/bugs/uncategorized,
 Bugs,,Todo,/bugs/todo,true
 Suggestions,,Overview,/suggestions/README,true
 Suggestions,,Advanced Follow,/suggestions/advanced_follow,true
