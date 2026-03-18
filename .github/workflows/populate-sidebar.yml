@@ -37,5 +37,5 @@ jobs:
       - name: Commit updated CSV
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "sync sidebar CSV from docs structure"
+          commit_message: "Update sidebar CSV from docs"
           file_pattern: "data/sidebar.csv"
