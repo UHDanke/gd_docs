@@ -153,7 +153,7 @@ Adv follow near dist slider has 0 to 1.00 range despite being a distance value l
 **Date:** 16/03/2026  
 
 ### Description
-Ignore GParent and Ignore Linked are implemented for Advanced Follow triggers but the UI does not display the options
+Ignore GParent and Ignore Linked are implemented for Advanced Follow triggers but the UI does not display the options.
 
 ### Workarounds
 You have to edit the property through other means.

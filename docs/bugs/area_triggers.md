@@ -128,7 +128,7 @@ In the Edit Area Scale trigger, the Scale X and Scale Y sliders appear to be dir
 **Date:** 16/03/2026  
 
 ### Description
-The From Opacity field is implemented for Edit Area Fade but unused / not displayed
+The From Opacity field is implemented for Edit Area Fade but unused / not displayed.
 
 ### Workarounds
 You have to edit the property through other means.

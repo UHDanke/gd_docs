@@ -95,3 +95,19 @@ Assigning NAN (through external editing of the trigger) to an item returns -2^31
 
 ### Description
 Multiply / Divide Pickup operations use single precision floats instead of double precision like in the case of Item Edit which introduces significant errors.
+
+## Pickup uses wrong remaps if spawned while checking Counts
+
+**Version:** 2.208  
+**Date:** 18/03/2026  
+
+### Description
+if you activate a pickup while its already checking through count triggers the new activation doesn’t use its own remaps, it uses the first activation's remaps
+
+## Item Edit does not activate if spawned while checking Counts
+
+**Version:** 2.208  
+**Date:** 18/03/2026  
+
+### Description
+If you activate an item edit while its already checking counts it will not be able to activate again.

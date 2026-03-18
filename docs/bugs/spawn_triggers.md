@@ -44,11 +44,10 @@ I assume the reason this happens is because the level restarts before the spawn 
 ## Count spawn inheritance without Multi Activate
 
 **Version:** 2.208  
-**Date:** 19/01/2026  
+**Date:** 18/03/2026  
 
 ### Description
-If Multi Activate is not selected, the Count's spawn target uses the remaps of the oldest active instance of a subsequent (activated after) Count trigger with the Multi Activate option using the same Item ID.  
-This makes one-time Count activations in remapped setups annoying to execute, since if you stop a Count trigger during a count update it will skip the next (or more, depending on how many were stopped) Count triggers.
+Count triggers without Multi Activate only use their own remaps if there is no other Count trigger that activates after them on the same Item ID, if they exist then the non-multi Count trigger will use their remaps instead.
 
 ## Triggers that are not remappable or not fully remappable
 
