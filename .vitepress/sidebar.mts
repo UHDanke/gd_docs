@@ -124,6 +124,10 @@ export default [
         collapsed: true,
         items: [
           {
+            text: 'Area Mechanics',
+            link: '/triggers/area/area_mechanics'
+          },
+          {
             text: 'Area Triggers',
             link: '/triggers/area/area_triggers'
           },
@@ -134,6 +138,10 @@ export default [
           {
             text: 'Area Stop',
             link: '/triggers/area/area_stop'
+          },
+          {
+            text: 'Area Performance',
+            link: '/triggers/area/area_performance'
           }
         ]
       },
