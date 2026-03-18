@@ -36,7 +36,7 @@ $Y = YMove \cdot EffectStrength + Y_{t}$
 
 ### Relative Movement
 
-$Distance= \sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}$
+$$Distance= \sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}$$
 
 $$Radius = \begin{cases} \dfrac{MoveDist \cdot EffectStrength \cdot Distance}{RFade} & \text{if } Distance < RFade \\[10pt] MoveDist \cdot EffectStrength & \text{if } Distance \geq RFade \end{cases}$$
 
@@ -72,7 +72,7 @@ Unique Settings:
 If linked, objects are scaled along the world XY axis, otherwise they are scaled along their own XY axis. Area Scale does not support relative rotation.
 
 The scale effect applied is calculated using this formula:  
-$EffectScale=1+EffectStrength \cdot (Scale-1)$
+$$EffectScale=1+EffectStrength \cdot (Scale-1)$$
 
 Where *Scale* is **ScaleX** or **ScaleY**.
 
