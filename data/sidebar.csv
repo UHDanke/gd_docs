@@ -22,10 +22,11 @@ Triggers,Animate,Animate Trigger,/triggers/animate/animate_trigger,
 Triggers,Animate,Edit Animation,/triggers/animate/edit_animation,
 Triggers,Animate,Particle Object,/triggers/animate/particle_object,
 Triggers,Animate,Spawn Particle,/triggers/animate/spawn_particle,
+Triggers,Area,Area Mechanics,/triggers/area/area_mechanics,
 Triggers,Area,Area Triggers,/triggers/area/area_triggers,
 Triggers,Area,Edit Area Triggers,/triggers/area/edit_area_triggers,
 Triggers,Area,Area Stop,/triggers/area/area_stop,
-Triggers,Area,Other Notable Interactions,/triggers/area/other_notable_interactions,TRUE
+Triggers,Area,Area Performance,/triggers/area/area_performance,
 Triggers,Audio,Game Audio Settings,/triggers/audio/game_audio_settings,
 Triggers,Audio,FMOD,/triggers/audio/fmod,
 Triggers,Audio,Primary Song,/triggers/audio/primary_song,
@@ -134,5 +135,3 @@ Suggestions,,Area Triggers,/suggestions/area_triggers,true
 Suggestions,,Misc,/suggestions/misc,true
 Suggestions,,Parameter to Item,/suggestions/parameter_to_item,true
 Suggestions,,Sequence Control,/suggestions/sequence_control,true
-Triggers,Area,Area Mechanics,/triggers/area/area_mechanics,TRUE
-Triggers,Area,Area Performance,/triggers/area/area_performance,TRUE
