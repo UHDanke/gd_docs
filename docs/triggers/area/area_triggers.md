@@ -39,6 +39,7 @@ $Y = YMove \cdot EffectStrength + Y_{t}$
 $Distance= \sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}$
 
 $Radius = (3\cdot MoveDist) \cdot EffectStrength\cdot \min(\frac{Distance}{RFade},1)$
+$$Radius = \begin{cases} \dfrac{MoveDist \cdot EffectStrength \cdot Distance}{RFade} & \text{if } Distance < RFade \\[10pt] MoveDist \cdot EffectStrength & \text{if } Distance \geq RFade \end{cases}$$
 
 $Angle = \arctan(\frac{(Y_{c}-Y_{t}}{X_{c}-X_{t}})$
 
