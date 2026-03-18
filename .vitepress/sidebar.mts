@@ -526,6 +526,14 @@ export default [
         link: '/bugs/README'
       },
       {
+        text: 'Misc',
+        link: '/bugs/misc'
+      },
+      {
+        text: 'Uncategorized',
+        link: '/bugs/uncategorized'
+      },
+      {
         text: 'Advanced Follow',
         link: '/bugs/advanced_follow'
       },
@@ -566,10 +574,6 @@ export default [
         link: '/bugs/keyframes'
       },
       {
-        text: 'Misc',
-        link: '/bugs/misc'
-      },
-      {
         text: 'Move Trigger',
         link: '/bugs/move_trigger'
       },
@@ -580,10 +584,6 @@ export default [
       {
         text: 'Spawn Triggers',
         link: '/bugs/spawn_triggers'
-      },
-      {
-        text: 'Uncategorized',
-        link: '/bugs/uncategorized'
       }
     ]
   }
