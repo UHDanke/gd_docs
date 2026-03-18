@@ -134,10 +134,6 @@ export default [
           {
             text: 'Area Stop',
             link: '/triggers/area/area_stop'
-          },
-          {
-            text: 'Other Notable Interactions',
-            link: '/triggers/area/other_notable_interactions'
           }
         ]
       },
