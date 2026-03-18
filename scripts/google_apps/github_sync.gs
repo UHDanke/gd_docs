@@ -15,7 +15,7 @@ const GITHUB_CONFIG_SHEET = "config.github";
 
 // Fallback map used when no config sheet is present.
 const SHEET_MAP = {
-  "sidebar": "data/sidebar.csv"
+  //"sidebar": "data/sidebar.csv"
 };
 
 let _sheetMap = null;
@@ -61,8 +61,9 @@ function uploadAll() {
   const map = getSheetMap_();
   try {
     const { token, owner, repo, branch } = getRepoProps_();
-    for (const [sheetName, filePath] of Object.entries(map)) {
-      uploadSheet(sheetName, owner, repo, filePath, token, branch);
+    const uploads = Object.entries(map).map(([sheetName, filePath]) => ({ sheetName, filePath }));
+    uploadSheetsBatch(uploads, owner, repo, token, branch);
+    for (const { sheetName } of uploads) {
       setGithubStatus_(sheetName, "upload");
     }
   } catch (e) {
@@ -113,13 +114,13 @@ function reloadConfig() {
 
 function initGithubMenu_(ui) {
   ui.createMenu("GitHub")
-    .addItem("Pull Sheet", "downloadCurrent")
-    .addItem("Push Sheet",   "uploadCurrent")
+    .addItem("Pull Sheet",      "downloadCurrent")
+    .addItem("Push Sheet",      "uploadCurrent")
     .addSeparator()
-    .addItem("Pull All Sheets",     "downloadAll")
-    .addItem("Push All Sheets",       "uploadAll")
+    .addItem("Pull All Sheets", "downloadAll")
+    .addItem("Push All Sheets", "uploadAll")
     .addSeparator()
-    .addItem("Reload Config",    "reloadConfig")
+    .addItem("Reload Config",   "reloadConfig")
     .addToUi();
 }
 
