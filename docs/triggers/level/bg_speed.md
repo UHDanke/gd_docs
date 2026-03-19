@@ -2,6 +2,8 @@
 
 Controls the X and Y speed of the background, relative to the camera's movement.
 
+## Notes
+
 The background's movement can be calculated using the formulas:
 $BGMoveX = CMoveX \cdot (1 - SpeedX)$
 $BGMoveY = CMoveY \cdot (1 - SpeedY)$
