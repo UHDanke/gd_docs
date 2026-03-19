@@ -7,7 +7,7 @@ export default defineConfig({
   markdown: {
     math: {
      chtml: {
-       displayAlign: 'left',   
+       displayAlign: 'left'
      },
      svg: {
        displayAlign: 'left'
