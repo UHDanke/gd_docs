@@ -1,6 +1,10 @@
 # Change Ground
 
-Changes the level's Ground to a different preset. There are currently 22 Ground presets.
+Changes the level's Ground to a different preset. 
+
+## Notes
+
+There are currently 22 Ground presets.
 
 3 Line options exist, but the trigger cannot currently set them.
 
