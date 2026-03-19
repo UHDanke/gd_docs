@@ -4,7 +4,7 @@ Stops, pauses or resumes a set of triggers given by **Target ID**.
 
 ## Options
 
-The behavior the trigger can be changed using the **Stop**, **Pause** and **Resume** selectors. Each option also changes the name and texture of the trigger inside the editor.
+The behavior of Stop can be changed using the **Stop**, **Pause** and **Resume** selectors. Each option also changes the name and texture of the trigger inside the editor.
 
 If **Use Control ID** is selected, the stop trigger will target all triggers that share a Control ID instead of a Group ID. Control IDs can be used to target a single instance of a trigger, since Group IDs cannot be remapped while Control IDs can.
 
