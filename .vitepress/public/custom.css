@@ -1,7 +1,7 @@
-td.mjx-container {
-  text-align: left !important;  /* left-align formulas */
-  overflow-x: auto !important;   /* allow horizontal scrolling if needed */
-  overflow-y: visible !important; /* grow vertically */
-  height: auto !important;       /* let height adjust to content */
-  max-height: none !important;   /* remove any max-height restrictions */
+.mjx-container {
+  text-align: left !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  height: auto !important;
+  max-height: none !important;
 }
