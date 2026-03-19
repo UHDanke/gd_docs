@@ -1,6 +1,10 @@
 # Gameplay Offset
 
-Changes the offset between player 1 and the camera's center applied when the player moves left or right. Offset steps are equal to 3 units, or 1/10th of a block.
+Changes the offset between the player and the camera's center applied when the player moves left or right. 
+
+## Notes
+
+Offset steps are equal to 3 units, or 1/10th of a block.
 
 X and Y do not refer to the camera's X and Y, but rather to what axis the player is currently using - **Offset X** is applied when the player is on the X axis and **Offset Y** when the player is on the Y axis (with Rotate Gameplay).
 
