@@ -5,8 +5,10 @@ on:
     paths:
       - "data/sidebar.csv"
       - "scripts/generate_sidebar.py"
+    branches: [main]
   workflow_run:
     workflows: ["Populate Sidebar"]
+    branches: [main]
     types: [completed]
   workflow_dispatch:
 
