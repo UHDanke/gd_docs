@@ -2,6 +2,8 @@
 
 Resets objects from a **Group ID** that have been activated, picked up or destroyed.
 
+##  Notes
+
 Reset only makes the target able to be activated again, it does not undo any of their effects.
 
 Reset works on the following:
