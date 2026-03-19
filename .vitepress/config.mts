@@ -2,11 +2,10 @@ import { defineConfig } from 'vitepress'
 import sidebar from './sidebar.mts';
 
 export default defineConfig({
-  head: [['link', { rel: 'stylesheet', href: '/gd_docs/custom.css' }]],
   base: '/gd_docs/',
   srcDir: "docs",
   markdown: {
-    math: true
+    math: { chtml: { displayAlign: 'left' }
   },
   title: "HDanke's GD Editor Docs",
   description: "HDanke's Geometry Dash Editor Documentation",
