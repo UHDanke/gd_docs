@@ -2,15 +2,17 @@
 
 Controls the X and Y speed of the middleground.
 
+## Notes
+
 Middleground speed works differently for X and Y:
 - X axis: movement is relative to camera movement
 - Y axis: position is relative to camera position
  
 As a side-effect, if you change the middleground's Y speed this will also instantly change the middleground's position.
 
-The middleground's movement and position can be calculated using the formulas:
-$MGMoveX = CMoveX \cdot (1 - SpeedX)$
-$MGPosY = CPosY \cdot (1 - SpeedY) + OffsetY \cdot 3$
+The middleground's movement and position can be calculated using the formulas:  
+$MGMoveX = CMoveX \cdot (1 - SpeedX)$  
+$MGPosY = CPosY \cdot (1 - SpeedY) + OffsetY$
 
 For example, a speed of 1.00 makes the middleground stationary, while a speed of 0.00 matches the camera's movement.
 
