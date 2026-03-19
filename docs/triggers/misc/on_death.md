@@ -2,4 +2,6 @@
 
 Toggles off a **Group ID** when the player dies.
 
-If **Activate Group** is selected, it toggles on and spawns the target group.
+## Notes
+
+If **Activate Group** is selected, toggle on and spawn the target group.
