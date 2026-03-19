@@ -32,17 +32,31 @@ Angle is not affected by object rotation or by **ModFront** / **Modback** but it
 ### XY Movement
 
 $X = XMove \cdot EffectStrength + X_{t}$
+
 $Y = YMove \cdot EffectStrength + Y_{t}$
 
 ### Relative Movement
 
-$$Distance= \sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}$$
+$$
+\begin{aligned}
+Distance= \sqrt{(VerticalOffset+Y_{c}-Y_{t})^{2}+(HorizontalOffset+X_{c}-X_{t})^{2}}
+\end{aligned}
+$$
 
-$$Radius = \begin{cases} \dfrac{MoveDist \cdot EffectStrength \cdot Distance}{RFade} & \text{if } Distance < RFade \\[10pt] MoveDist \cdot EffectStrength & \text{if } Distance \geq RFade \end{cases}$$
+$$
+\begin{aligned}
+Radius = 
+  \begin{cases} 
+    \dfrac{MoveDist \cdot EffectStrength \cdot Distance}{RFade} & \text{if } Distance < RFade \\
+    MoveDist \cdot EffectStrength & \text{if } Distance \geq RFade 
+  \end{cases}
+\end{aligned}
+$$
 
 $Angle = \arctan(\frac{(Y_{c}-Y_{t}}{X_{c}-X_{t}})$
 
 $X = Radius \cdot \cos(Angle) + X_{t}$
+
 $Y = Radius \cdot \sin(Angle) + Y_{t}$
 
 Where:
