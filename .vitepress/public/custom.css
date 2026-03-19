@@ -6,6 +6,6 @@ td mjx-container {
 
 /* Optional horizontal overflow control */
 td mjx-container svg {
-  overflow-x: auto !important;
+  overflow-x: unset !important;
   max-width: 100% !important;
 }
