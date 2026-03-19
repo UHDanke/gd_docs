@@ -1,11 +1,7 @@
-/* Left-align math inside table cells */
-td mjx-container {
-  display: block !important;
-  text-align: left !important;
-}
-
-/* Optional horizontal overflow control */
-td mjx-container svg {
-  overflow-x: unset !important;
-  max-width: 100% !important;
+td.mjx-container {
+  text-align: left !important;  /* left-align formulas */
+  overflow-x: auto !important;   /* allow horizontal scrolling if needed */
+  overflow-y: visible !important; /* grow vertically */
+  height: auto !important;       /* let height adjust to content */
+  max-height: none !important;   /* remove any max-height restrictions */
 }
