@@ -3,11 +3,13 @@ name: Deploy VitePress site
 on:
   workflow_run:
     workflows: ["Generate Sidebar"]
+    branches: [main]
     types:
       - completed
   push:
     paths:
       - ".vitepress/**"
+    branches: [main]
   workflow_dispatch:
 
 permissions:
