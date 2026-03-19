@@ -1,0 +1,11 @@
+/* Left-align math inside table cells */
+td mjx-container {
+  display: block !important;
+  text-align: left !important;
+}
+
+/* Optional horizontal overflow control */
+td mjx-container svg {
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}

@@ -1,16 +1,17 @@
 import { defineConfig } from 'vitepress'
 import sidebar from './sidebar.mts';
+import theme from './theme/index.mts'
 export default defineConfig({
   base: '/gd_docs/',
   srcDir: "docs",
   markdown: {
     math: true
   },
-  head: [['link', { rel: 'stylesheet', href: '/gd_docs/custom.css' }]],
   title: "HDanke's GD Editor Docs",
   description: "HDanke's Geometry Dash Editor Documentation",
   lang: 'en-US',
   cleanUrls: true,
+  theme,
   themeConfig: {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/UHDanke/gd_docs' }
