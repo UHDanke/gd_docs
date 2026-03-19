@@ -6,6 +6,7 @@ on:
       - "data/tables/**"
       - "docs/**"
       - "scripts/mdgen.py"
+    branches: [main]
   workflow_dispatch:
  
 jobs:
