@@ -1,4 +1,4 @@
 td mjx-container {
-  text-align: left;
-  overflow-x: unset;
+  text-align: left !important;
+  overflow-x: unset !important;
 }
