@@ -186,10 +186,6 @@ export default [
             link: '/triggers/audio/edit_sfx'
           },
           {
-            text: 'Loop',
-            link: '/triggers/audio/loop'
-          },
-          {
             text: 'Volume Proximity',
             link: '/triggers/audio/volume_proximity'
           },
