@@ -5,7 +5,14 @@ export default defineConfig({
   base: '/gd_docs/',
   srcDir: "docs",
   markdown: {
-    math: { chtml: { displayAlign: 'left' } }
+    math: {
+    chtml: {
+      displayAlign: 'left',   // aligns display math left
+      displayIndent: '0em'    // no indent
+    },
+    svg: {
+      displayAlign: 'left'
+    }
   },
   title: "HDanke's GD Editor Docs",
   description: "HDanke's Geometry Dash Editor Documentation",
