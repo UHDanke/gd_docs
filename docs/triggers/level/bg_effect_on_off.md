@@ -3,4 +3,5 @@
 Enables / Disables the background particles that appear when your current gamemode is Ship, UFO, Wave or Swing.
 
 ## Notes
+
 This trigger affects the spawning of particles not their visibility, particles will not disappear or reappear instantly.
