@@ -2,6 +2,8 @@
 
 Changes the player's gravity multiplier.
 
+## Notes
+
 The game only allows multipliers between 0.10 and 2.00, and between -2.00 and -0.10. Negative gravity accelerates away from the ground.
 
 Gravity only affects the gravity acceleration of the player, it does not affect the player's max fall speed.
