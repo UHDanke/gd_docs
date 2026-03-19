@@ -6,12 +6,13 @@ export default defineConfig({
   srcDir: "docs",
   markdown: {
     math: {
-    chtml: {
-      displayAlign: 'left',   // aligns display math left
-      displayIndent: '0em'    // no indent
-    },
-    svg: {
-      displayAlign: 'left'
+     chtml: {
+       displayAlign: 'left',
+       displayIndent: '0em'    
+     },
+     svg: {
+       displayAlign: 'left'
+     }
     }
   },
   title: "HDanke's GD Editor Docs",
