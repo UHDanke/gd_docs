@@ -5,6 +5,7 @@ on:
     paths:
       - "data/bug_list.csv"
       - "scripts/bugs_from_csv.py"
+    branches: [main]
   workflow_dispatch:
 
 jobs:
