@@ -3,11 +3,13 @@ name: Populate Sidebar
 on:
   workflow_run:
     workflows: ["Process Markdown Files"]
+    branches: [main]
     types:
       - completed
   push:
     paths:
       - "scripts/populate_sidebar.py"
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
