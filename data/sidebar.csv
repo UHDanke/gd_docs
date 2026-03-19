@@ -36,7 +36,7 @@ Triggers,Audio,Edit Song,/triggers/audio/edit_song,
 Triggers,Audio,Song Guidelines,/triggers/audio/song_guidelines,
 Triggers,Audio,SFX,/triggers/audio/sfx,
 Triggers,Audio,Edit SFX,/triggers/audio/edit_sfx,
-Triggers,Audio,Loop,/triggers/audio/loop,
+Triggers,Audio,Loop,/triggers/audio/loop,TRUE
 Triggers,Audio,Volume Proximity,/triggers/audio/volume_proximity,
 Triggers,Audio,BPM Guide,/triggers/audio/bpm_guide,
 Triggers,Camera,Default Camera Properties,/triggers/camera/default_camera_properties,
