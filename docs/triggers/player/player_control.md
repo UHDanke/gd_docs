@@ -1,15 +1,18 @@
-# Gravity
+# Player Control
 
-Changes the player's gravity multiplier.
+Controls a player's current actions.
 
-The game only allows multipliers between 0.10 and 2.00, and between -2.00 and -0.10. Negative gravity accelerates away from the ground.
+## Options
 
-Gravity only affects the gravity acceleration of the player, it does not affect the player's max fall speed.
+**P1** and **P2** specify which players the trigger targets. If none are selected the trigger has no effect.
 
-By default, it affects all active players. 
+**Stop Jump** stops the player's current jump if held.
 
-If **P1** or **P2** is selected, Gravity affects only the respective player. 
+**Stop Move** stops the player's current left / right movement in platformer mode 
 
-If **PT** is selected, only the player that touches the trigger changes gravity (**Touch Trigger** must also be selected, otherwise it does nothing).
+**Stop Rot** behavior depends on mode:
+- Cube: resets the cube's spin direction
+- Ball: stops the ball's rotation completely
+- Other: no effect
 
-If P1 enters a dual portal, P2 will not copy P1's gravity and use default (1.00) gravity.
+**Stop Slide** stops the player's low-friction state after a force is applied (from teleport or a force object, for example).
