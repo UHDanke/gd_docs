@@ -4,7 +4,7 @@ Controls a player's current actions.
 
 ## Options
 
-**P1** and **P2** specify which players the trigger targets. If none are selected the trigger has no effect.
+**P1** and **P2** specify which players the trigger targets, if none are selected the trigger has no effect.
 
 **Stop Jump** stops the player's current jump if held.
 
