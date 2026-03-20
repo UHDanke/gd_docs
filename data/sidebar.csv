@@ -36,7 +36,6 @@ Triggers,Audio,Edit Song,/triggers/audio/edit_song,
 Triggers,Audio,Song Guidelines,/triggers/audio/song_guidelines,
 Triggers,Audio,SFX,/triggers/audio/sfx,
 Triggers,Audio,Edit SFX,/triggers/audio/edit_sfx,
-Triggers,Audio,Loop,/triggers/audio/loop,TRUE
 Triggers,Audio,Volume Proximity,/triggers/audio/volume_proximity,
 Triggers,Audio,BPM Guide,/triggers/audio/bpm_guide,
 Triggers,Camera,Default Camera Properties,/triggers/camera/default_camera_properties,
@@ -86,12 +85,15 @@ Triggers,Misc,Timewarp,/triggers/misc/timewarp,
 Triggers,Misc,Toggle,/triggers/misc/toggle,
 Triggers,Misc,Toggle Object,/triggers/misc/toggle_object,
 Triggers,Misc,Touch,/triggers/misc/touch,
+Triggers,Player,Start Position,/triggers/player/start_position,true
 Triggers,Player,Disable/Enable Player Trail,/triggers/player/disable_enable_player_trail,
 Triggers,Player,Show/Hide Player,/triggers/player/show_hide_player,
 Triggers,Player,Player Control,/triggers/player/player_control,
 Triggers,Player,Gravity,/triggers/player/gravity,
+Triggers,Player,Teleport,/triggers/player/teleport,true
 Triggers,Player,Reverse,/triggers/player/reverse,
 Triggers,Player,Gameplay Arrow,/triggers/player/gameplay_arrow,
+Triggers,Gameplay,Checkpoint,/triggers/gameplay/checkpoint,true
 Triggers,Shaders,Shaders,/triggers/shaders/shaders,true
 Triggers,Spawn,Activation Limits,/triggers/spawn/activation_limits,
 Triggers,Spawn,Adv Random,/triggers/spawn/adv_random,
@@ -128,7 +130,6 @@ Bugs,,Move Trigger,/bugs/move_trigger,
 Bugs,,Particles,/bugs/particles,
 Bugs,,Spawn Triggers,/bugs/spawn_triggers,
 Bugs,,Uncategorized,/bugs/uncategorized,
-Bugs,,Todo,/bugs/todo,true
 Suggestions,,Overview,/suggestions/README,true
 Suggestions,,Advanced Follow,/suggestions/advanced_follow,true
 Suggestions,,Area Triggers,/suggestions/area_triggers,true
