@@ -110,71 +110,81 @@ While **EffectID**s are not remappable, ID 0 can be used to use the same Area tr
 
 ## Effect Strength Coefficient
 
-The effect of Area triggers varies depending on the distance between the center and targets.
-The strength coefficient represents the proportion of the applied effect for all Area triggers.
+The effect of Area triggers varies depending on the distance between the center and targets, the strength coefficient represents the proportion of the effect applied for all Area triggers.
+
+### Formulas
+
+**Radial:**
+
+$$\Delta = \sqrt{(Target_x - (Center_x + Offset))^2 + (Target_y - (Center_y + OffsetY))^2}$$
+
+**Horizontal:**
+
+$$\Delta = Target_X - ( Center_X + Offset )$$
+
+**Vertical:**
+
+$$\Delta = Target_Y - ( Center_Y + Offset )$$
+
+**Mod:**
+
+$$\Delta' = 
+\begin{cases} 
+\Delta \cdot M_b & \text{if } \Delta < 0 \text{ and not mirrored} \\ 
+\Delta \cdot M_f & \text{if } \Delta \geq 0 \text{ and not mirrored} \\ 
+|\Delta| \cdot M_b & \text{if } \Delta < 0 \text{ and mirrored} \\ 
+|\Delta| \cdot |M_f| & \text{if } \Delta \geq 0 \text{ and mirrored} 
+\end{cases}$$
+
+**Length:**
+
+$$Normalized = \frac{\Delta'}{Length}$$
+
+**Deadzone:**
+
+$$EffectStrength = \frac{Normalized - Deadzone}{1 - Deadzone}$$
+
+**Clamped:**
+
+$$EffectStrength = 
+\begin{cases} 0 & \text{if } t < 0 \\ 
+t & \text{if } 0 \leq t \leq 1 \\ 
+1 & \text{if } t > 1 
+\end{cases}$$
+
+**Inverted:**
+
+$$EffectStrength = 
+\begin{cases} 
+EffectStrength & \text{if not inverted} \\ 
+1 - EffectStrength & \text{if inverted} 
+\end{cases}$$
 
 ### Distance
+
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.
 
 The distance value is sensible to float and addition errors \- centering an object perfectly after it is moved is not always possible.
 
+### Mod
+
 For horizontal and vertical proximity, **ModBack** is applied if $CenterPos>TargetPos$ and **ModFront** is applied if $CenterPos<TargetPos$.
 
 For the symmetrical options, the value of **Distance** is always positive when **ModFront** is applied, even if the value of **ModFront** is negative.
-
-Distance can be calculated using these formulas:
-
-$\Delta = Offset + CenterPos - TargetPos$
-
-Where:
-- Offset is OffsetY for $\Delta_y$ in Radial mode.
- 
-$$
-Distance_{Radial} = \sqrt{\Delta_y^2 + \Delta_x^2}
-$$
-
-$$
-Distance_{Horizontal} = 
-  \begin{cases}
-	\Delta_x \cdot Mod_{Back} & \Delta_x > 0 \\
-	\Delta_x \cdot Mod_{Front} & \Delta_x < 0 \quad \text{(or } \left| \Delta_x \cdot Mod_{Front} \right| \text{ if Mirrored)}
-  \end{cases}
-$$
-
-$$
-Distance_{Vertical} = 
-  \begin{cases}
-	\Delta_y \cdot Mod_{Back} & \Delta_y > 0 \\
-	\Delta_y \cdot Mod_{Front} & \Delta_y < 0 \quad \text{(or } \left| \Delta_y \cdot Mod_{Front} \right| \text{ if Mirrored)}
-  \end{cases}
-$$
-
-### Ease Out
-
-With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** is applied on **ModFront**.
-
-**Easing2** is mistakenly applied when using radial proximity, conflicting with **Easing**.
 
 ### Length and Deadzone
 
 **Length** and **Deadzone** determine the strength of the effect at different distances, from a min of 0 to a max of 1.
 
 If **Length** is 0 or **Deadzone** is 1, then the value steps directly between max and min.
-Otherwise, the value follows a linear equation bounded between \[1,0\] using the formula:
-
-$EffectStrength_{\ |⟹}=\frac{Distance-Length\cdot Deadzone}{Length\cdot(1-Deadzone)}$
-
-$EffectStrength_{\ |⟹}=1-EffectStrength_{\ |⟸}$
 
 The result is fed into the **Easing** function and is then used to calculate the strength of the effect applied.
 
-Notations
+### Ease Out
 
-* L = Length
-* Dz = Deadzone
-* Max - Distance value at max strength
-* Min - Distance value at min strength
-* Center - Strength value at distance 0
+With **Ease Out** enabled, **Easing** is applied on **ModBack** and **Easing2** is applied on **ModFront**.
+
+**Easing2** is mistakenly applied when using radial proximity, conflicting with **Easing**.
 
 ## Visibility
 
