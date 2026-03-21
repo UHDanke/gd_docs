@@ -160,6 +160,14 @@ EffectStrength & \text{if not inverted} \\
 1 - EffectStrength & \text{if inverted} 
 \end{cases}$$
 
+**Easing:**
+
+$$EffectStrength = 
+\begin{cases} 
+\text{ease}(t, \text{Easing2}) & \text{if } \Delta \geq 0 \text{ and EaseOut} \\
+\text{ease}(t, \text{Easing}) & \text{otherwise} 
+\end{cases}$$
+
 ### Distance
 
 Distance is calculated between center and affected object then multiplied by **ModFront** / **ModBack**.
