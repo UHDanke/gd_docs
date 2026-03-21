@@ -27,7 +27,6 @@ The following require additional testing before documentation can start:
 The following need to be rewritten or reorganized:
 - Spawn
 - Spawn Remapping
-- Area triggers
 - Count
 
 ## Exclusions
