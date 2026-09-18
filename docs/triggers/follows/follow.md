@@ -4,7 +4,7 @@ Copies a target's movement on the X and Y axis for a set duration and applies it
 
 ## Settings
 
-**X/Y Mod** multiply the followed movement on the X/Y axis.
+**X**/**Y Mod** multiply the followed movement on the X/Y axis.
 
 **Move Time** is how long the follow will be active.
 
@@ -28,10 +28,10 @@ Follows will copy the movements of previous Follows based on spawn order.
 
 For all Follow triggers there can only be one instance per unique combination of follow and target IDs.
 
-Calling a new instance will update the X / Y Mod values of the active one and refresh the Move Time if it's longer than the remaining time.
+Calling a new instance will update the **X**/**Y Mod** values of the active one and refresh the **Move Time** if it's longer than the remaining time.
 
 ### Duration
 
-For compatibility with Scale, Rotate and Move which are delayed by one tick, Follow is active by an additional tick prior to stopping.
+For compatibility with Scale, Rotate and Move which start working from the second time they are updated, Follow is active by an additional follow update before stopping.
 
-If Move Time is 0, then Follow will be active for 2 ticks.
+If **Move Time** is 0, then Follow will be active for two follow updates.
