@@ -12,7 +12,7 @@ Time Event triggers do not spawn groups on their own, they assign extra groups f
 
 Time Events store the timer's current value when checked. Unlike Count, pausing the Time Event does not prevent it from updating its value.
 
-If a Time Event is initialized on an active timer, it will spawn instantly (even if the timer is paused) if:
+If a Time Event is initialized on an active timer, it will spawn instantly (even if the timer is paused by Time Control or Stop) if:
 - $(TimerMod > 0) \land (TargetTime > 0) \land (Time >= TargetTime)$
 - $(TimerMod < 0) \land (TargetTime < 0) \land (Time <= TargetTime)$
 
