@@ -56,13 +56,13 @@ This is an intentional fix to the 2.1 ACE exploit which has remained in place as
   
 Item Edit and Time triggers are not affected by either issue.
 
-## Item Attempts value only returns 1
+## Item Attempts value updates late/not at all
 
-**Version:** 2.207  
-**Date:** 18/12/2025  
+**Version:** 2.208  
+**Date:** 16/09/2026  
 
 ### Description
-Attempts item is not updated on new attempts and always returns value 1 when used inside Item Edit or Item Compare.
+Attempts item does not work in Item edit, always returning 1. In Item comp, Attempts item only increases the frame after the player respawns, meaning running a comparison the exact frame of the respawn uses the previous attempt's value.
 
 ## Timers reversed spawn order
 
